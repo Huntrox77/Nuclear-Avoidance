@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://ieri1l2pt0lw"]
+
+[ext_resource type="Script" path="res://Scripts/Player 1.gd" id="1_24d4e"]
+[ext_resource type="Script" path="res://Scenes/Player 2.gd" id="2_luomt"]
+[ext_resource type="Script" path="res://Scripts/Void.gd" id="2_m3bdd"]
+[ext_resource type="Texture2D" uid="uid://box2151gvttwq" path="res://Sprites/Platform (7).png" id="4_w865l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
+size = Vector2(1411, 193)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lw4pf"]
+resource_name = "Platforms"
+texture = ExtResource("4_w865l")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -3, 32, -32, 15)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 15.5, 3.5, 32, -32, 32)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_qrh47"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_lw4pf")
+
+[node name="Arena_01" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+
+[node name="Player 1" type="CharacterBody2D" parent="."]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_24d4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1"]
+position = Vector2(-1, -328)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+
+[node name="ColorRect" type="ColorRect" parent="Player 1"]
+offset_left = -31.0
+offset_top = -358.0
+offset_right = 29.0
+offset_bottom = -298.0
+
+[node name="Player 2" type="CharacterBody2D" parent="."]
+position = Vector2(98, 0)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_luomt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
+position = Vector2(-1, -328)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+
+[node name="ColorRect" type="ColorRect" parent="Player 2"]
+offset_left = -31.0
+offset_top = -358.0
+offset_right = 29.0
+offset_bottom = -298.0
+color = Color(1, 1, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_m3bdd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-6.5, 86.5)
+shape = SubResource("RectangleShape2D_v81yx")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qrh47")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -131069, 65537, 0, -131070, 65537, 1, -131071, 65537, 1, -65538, 65537, 1, -65537, 1, 1, -131072, 1, 1, -65539, 1, 1)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
