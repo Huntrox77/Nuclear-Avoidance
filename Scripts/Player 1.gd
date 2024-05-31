@@ -26,4 +26,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	#Code to pause the game by sending them back to the title screen.
+	if Input.is_action_pressed("Pause"):
+		get_tree().change_scene_to_file("res://Scenes/titlescreen.tscn")
 

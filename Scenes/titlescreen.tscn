@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://4w1gncy6lgoo"]
+
+[ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="1_orava"]
+
+[node name="Title Screen" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -575.0
+offset_top = -324.0
+offset_right = 578.0
+offset_bottom = 323.0
+
+[node name="Play Button" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 281.0
+offset_right = 726.0
+offset_bottom = 376.0
+action_mode = 0
+text = "Play"
+script = ExtResource("1_orava")
+
+[connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]

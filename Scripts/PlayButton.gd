@@ -1,4 +1,4 @@
-extends Area2D
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,10 +12,7 @@ func _process(_delta):
 	pass
 
 
-
-
-func _on_body_entered(body):
-	# Sets the object, that enters its area, to be at x and y 0.
-	body.position.x = 0
-	body.position.y = 0
+func _on_pressed():
+	# Code to change the scene to the game.
+	get_tree().change_scene_to_file("res://Scenes/gameplay.tscn")
 	pass # Replace with function body.

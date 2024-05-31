@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ieri1l2pt0lw"]
 
 [ext_resource type="Script" path="res://Scripts/Player 1.gd" id="1_24d4e"]
-[ext_resource type="Script" path="res://Scenes/Player 2.gd" id="2_luomt"]
+[ext_resource type="Script" path="res://Scripts/Player 2.gd" id="2_luomt"]
 [ext_resource type="Script" path="res://Scripts/Void.gd" id="2_m3bdd"]
 [ext_resource type="Texture2D" uid="uid://box2151gvttwq" path="res://Sprites/Platform (7).png" id="4_w865l"]
 
@@ -84,5 +84,7 @@ shape = SubResource("RectangleShape2D_v81yx")
 tile_set = SubResource("TileSet_qrh47")
 format = 2
 layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -131069, 65537, 0, -131070, 65537, 1, -131071, 65537, 1, -65538, 65537, 1, -65537, 1, 1, -131072, 1, 1, -65539, 1, 1)
+
+[node name="Node2D" type="Node2D" parent="TileMap"]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
