@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=13 format=3 uid="uid://ieri1l2pt0lw"]
 
-[ext_resource type="Script" path="res://Scripts/Player 1.gd" id="1_24d4e"]
-[ext_resource type="Script" path="res://Scripts/Player 2.gd" id="2_luomt"]
-[ext_resource type="Script" path="res://Scripts/Void.gd" id="2_m3bdd"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="1_24d4e"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="2_luomt"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_m3bdd"]
 [ext_resource type="Texture2D" uid="uid://box2151gvttwq" path="res://Sprites/Platform (7).png" id="4_w865l"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="5_0035v"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="6_mcktn"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="7_w2lnd"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="8_hi8pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
 
@@ -87,4 +91,22 @@ layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -131069, 65537, 0, -131070, 6
 
 [node name="Node2D" type="Node2D" parent="TileMap"]
 
+[node name="Nuke Spawner" type="Node2D" parent="."]
+script = ExtResource("5_0035v")
+nuke_scene = ExtResource("6_mcktn")
+
+[node name="Timer" type="Timer" parent="Nuke Spawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="Blackout Timer" type="Node2D" parent="."]
+script = ExtResource("7_w2lnd")
+blackout = ExtResource("8_hi8pq")
+
+[node name="Timer" type="Timer" parent="Blackout Timer"]
+wait_time = 10.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Nuke Spawner/Timer" to="Nuke Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Blackout Timer/Timer" to="Blackout Timer" method="_on_timer_timeout"]

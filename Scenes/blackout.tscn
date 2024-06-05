@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dswsedgoqefr7"]
+
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout 1.gd" id="1_pfjlt"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout 2.gd" id="2_g8j7g"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout 3.gd" id="3_2pwul"]
+
+[node name="Blackout" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+
+[node name="Blackout 1" type="ColorRect" parent="."]
+offset_left = -198.0
+offset_top = -697.0
+offset_right = 276.0
+offset_bottom = 22.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_pfjlt")
+
+[node name="Timer" type="Timer" parent="Blackout 1"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Blackout 2" type="ColorRect" parent="."]
+offset_left = -589.0
+offset_top = -693.0
+offset_right = -185.0
+offset_bottom = 26.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("2_g8j7g")
+
+[node name="Timer" type="Timer" parent="Blackout 2"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Blackout 3" type="ColorRect" parent="."]
+offset_left = 225.0
+offset_top = -700.0
+offset_right = 629.0
+offset_bottom = 19.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("3_2pwul")
+
+[node name="Timer" type="Timer" parent="Blackout 3"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Blackout 1/Timer" to="Blackout 1" method="_on_timer_timeout"]
+[connection signal="timeout" from="Blackout 2/Timer" to="Blackout 2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Blackout 3/Timer" to="Blackout 3" method="_on_timer_timeout"]

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=4 format=3 uid="uid://4w1gncy6lgoo"]
 
-[ext_resource type="Script" path="res://Scripts/PlayButton.gd" id="1_orava"]
+[ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_orava"]
+[ext_resource type="Texture2D" uid="uid://c7d6bf8mqcm04" path="res://Sprites/download-removebg-preview.png" id="2_btccf"]
+[ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_ily45"]
 
 [node name="Title Screen" type="Node2D"]
 
@@ -13,6 +15,7 @@ offset_left = -575.0
 offset_top = -324.0
 offset_right = 578.0
 offset_bottom = 323.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Play Button" type="Button" parent="Buttons"]
 layout_mode = 0
@@ -21,7 +24,26 @@ offset_top = 281.0
 offset_right = 726.0
 offset_bottom = 376.0
 action_mode = 0
-text = "Play"
+text = "Play Game"
 script = ExtResource("1_orava")
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit Button" type="Button" parent="Buttons"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+light_mask = 0
+layout_mode = 0
+offset_left = 1033.0
+offset_top = 26.0
+offset_right = 1123.0
+offset_bottom = 109.0
+tooltip_text = "Quit Game."
+icon = ExtResource("2_btccf")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_ily45")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Exit Button" to="Buttons/Exit Button" method="_on_pressed"]
