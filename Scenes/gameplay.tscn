@@ -1,8 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=15 format=3 uid="uid://ieri1l2pt0lw"]
 
 [ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="1_24d4e"]
 [ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="2_luomt"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_m3bdd"]
+[ext_resource type="Script" path="res://Scenes/Player 3.gd" id="3_10vxc"]
+[ext_resource type="Script" path="res://Scenes/Player 4.gd" id="4_4v6ba"]
 [ext_resource type="Texture2D" uid="uid://box2151gvttwq" path="res://Sprites/Platform (7).png" id="4_w865l"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="5_0035v"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="6_mcktn"]
@@ -50,6 +52,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("1_24d4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player 1"]
+visible = false
 position = Vector2(-1, -328)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
@@ -66,6 +69,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("2_luomt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player 2"]
+visible = false
 position = Vector2(-1, -328)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
@@ -76,6 +80,42 @@ offset_top = -358.0
 offset_right = 29.0
 offset_bottom = -298.0
 color = Color(1, 1, 0, 1)
+
+[node name="Player 3" type="CharacterBody2D" parent="."]
+position = Vector2(-102, 0)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_10vxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 3"]
+visible = false
+position = Vector2(-1, -328)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+
+[node name="ColorRect" type="ColorRect" parent="Player 3"]
+offset_left = -31.0
+offset_top = -358.0
+offset_right = 29.0
+offset_bottom = -298.0
+color = Color(0.627451, 0, 0.717647, 1)
+
+[node name="Player 4" type="CharacterBody2D" parent="."]
+position = Vector2(7.98702e-06, -100)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_4v6ba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player 4"]
+visible = false
+position = Vector2(-1, -328)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+
+[node name="ColorRect" type="ColorRect" parent="Player 4"]
+offset_left = -31.0
+offset_top = -358.0
+offset_right = 29.0
+offset_bottom = -298.0
+color = Color(0.741176, 0, 0.309804, 1)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("2_m3bdd")
