@@ -16,6 +16,5 @@ func _process(_delta):
 
 func _on_body_entered(body):
 	# Sets the object, that enters its area, to be at x and y 0.
-	body.position.x = 0
-	body.position.y = 0
+	body.queue_free()
 	pass # Replace with function body.

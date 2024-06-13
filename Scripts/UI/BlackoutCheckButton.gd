@@ -9,15 +9,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 # Turn blackout on or off
 func _on_toggled(toggled_on):
 	if toggled_on == true:
 		Modifier.Blackout = true
-		print("modifiers on")
 	else:
 		Modifier.Blackout = false
-		print("modifiers off")
 	pass # Replace with function body.

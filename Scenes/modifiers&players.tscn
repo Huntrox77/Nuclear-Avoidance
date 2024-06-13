@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=7 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ModifierPlayButton.gd" id="1_sdd1x"]
 [ext_resource type="Texture2D" uid="uid://btp510j1q57x2" path="res://Sprites/652322_arrows_512x512.png" id="2_hqcv6"]
-[ext_resource type="Script" path="res://Scenes/ModifierBackButton.gd" id="2_ryqr0"]
-[ext_resource type="Script" path="res://Scenes/BlackoutCheckButton.gd" id="4_m14et"]
+[ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_ryqr0"]
+[ext_resource type="Script" path="res://Scripts/UI/BlackoutCheckButton.gd" id="4_m14et"]
+[ext_resource type="Script" path="res://Scripts/UI/SmashbrosCheckButton.gd" id="5_18ka2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -54,7 +55,7 @@ expand_icon = true
 script = ExtResource("2_ryqr0")
 metadata/_edit_use_anchors_ = true
 
-[node name="CheckButton" type="CheckButton" parent="Buttons"]
+[node name="Blackout Button" type="CheckButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.145
@@ -71,6 +72,24 @@ action_mode = 0
 text = "Blackout "
 expand_icon = true
 script = ExtResource("4_m14et")
+
+[node name="SmashBros Button" type="CheckButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.145
+anchor_top = 0.192
+anchor_right = 0.145
+anchor_bottom = 0.192
+offset_left = -120.185
+offset_top = 32.776
+offset_right = 98.815
+offset_bottom = 95.776
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Lossful Air controls "
+expand_icon = true
+script = ExtResource("5_18ka2")
 
 [node name="Modifiers and Players Text" type="RichTextLabel" parent="Buttons"]
 layout_mode = 1
@@ -89,4 +108,5 @@ fit_content = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Back Button" to="Buttons/Back Button" method="_on_pressed"]
-[connection signal="toggled" from="Buttons/CheckButton" to="Buttons/CheckButton" method="_on_toggled"]
+[connection signal="toggled" from="Buttons/Blackout Button" to="Buttons/Blackout Button" method="_on_toggled"]
+[connection signal="toggled" from="Buttons/SmashBros Button" to="Buttons/SmashBros Button" method="_on_toggled"]
