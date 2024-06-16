@@ -1,29 +1,29 @@
-[gd_scene load_steps=23 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=24 format=3 uid="uid://c6nmtk6u04s26"]
 
-[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="1_24d4e"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="2_luomt"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_m3bdd"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="3_10vxc"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="4_4v6ba"]
-[ext_resource type="Texture2D" uid="uid://box2151gvttwq" path="res://Sprites/Platform (7).png" id="4_w865l"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="5_0035v"]
-[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="6_mcktn"]
-[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="7_w2lnd"]
-[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="8_hi8pq"]
-[ext_resource type="PackedScene" uid="uid://bm4143cbgle0v" path="res://Scenes/nuke_scene2.tscn" id="9_6k3iv"]
-[ext_resource type="PackedScene" uid="uid://bpc2b6ba2vmn0" path="res://Scenes/nuke_scene3.tscn" id="10_4n5fa"]
-[ext_resource type="PackedScene" uid="uid://bpofayk41fioq" path="res://Scenes/nuke_scene4.tscn" id="11_wieg8"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="13_ngh31"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="14_mhs40"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="15_t35m4"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="16_dommd"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_v66px"]
+[ext_resource type="Texture2D" uid="uid://box2151gvttwq" path="res://Sprites/Platform (7).png" id="2_cj6p0"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="3_r3afn"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="4_bf6oa"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="5_j47ur"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="6_5gggg"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="7_3oot2"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="8_0ial0"]
+[ext_resource type="PackedScene" uid="uid://bm4143cbgle0v" path="res://Scenes/nuke_scene2.tscn" id="9_b8tcc"]
+[ext_resource type="PackedScene" uid="uid://bpc2b6ba2vmn0" path="res://Scenes/nuke_scene3.tscn" id="10_ork4i"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="11_8tmsx"]
+[ext_resource type="PackedScene" uid="uid://bpofayk41fioq" path="res://Scenes/nuke_scene4.tscn" id="11_rk6ti"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="12_4mu5f"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="13_ax7j2"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="14_182f6"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="15_xhppg"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="16_fpbbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
 size = Vector2(1411, 193)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lw4pf"]
 resource_name = "Platforms"
-texture = ExtResource("4_w865l")
+texture = ExtResource("2_cj6p0")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -50,7 +50,10 @@ sources/1 = SubResource("TileSetAtlasSource_lw4pf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47ljh"]
-size = Vector2(510.5, 64.5)
+size = Vector2(127, 64.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4swy1"]
+size = Vector2(192, 65)
 
 [node name="Arena_01" type="Node2D"]
 
@@ -58,7 +61,7 @@ size = Vector2(510.5, 64.5)
 position = Vector2(0, -324)
 
 [node name="void" type="Area2D" parent="."]
-script = ExtResource("2_m3bdd")
+script = ExtResource("1_v66px")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6.5, 86.5)
@@ -67,7 +70,7 @@ shape = SubResource("RectangleShape2D_v81yx")
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qrh47")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -131069, 65537, 0, -131070, 65537, 1, -131071, 65537, 1, -65538, 65537, 1, -65537, 1, 1, -131072, 1, 1, -65539, 1, 1)
+layer_0/tile_data = PackedInt32Array(-65544, 1, 0, -65542, 65537, 0, -131067, 1, 0, -131065, 65537, 0, -131066, 65537, 1, -65543, 1, 1, -131072, 65537, 0, -65537, 1, 0)
 
 [node name="Node2D" type="Node2D" parent="TileMap"]
 
@@ -76,7 +79,7 @@ layer_0/tile_data = PackedInt32Array(-65540, 1, 0, -131069, 65537, 0, -131070, 6
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
 position = Vector2(-50, -170)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("1_24d4e")
+script = ExtResource("3_r3afn")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
@@ -94,7 +97,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
 position = Vector2(48, -170)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("2_luomt")
+script = ExtResource("4_bf6oa")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
@@ -113,7 +116,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
 position = Vector2(-152, -170)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("3_10vxc")
+script = ExtResource("5_j47ur")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
@@ -132,7 +135,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
 position = Vector2(145, -171)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_4v6ba")
+script = ExtResource("6_5gggg")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
@@ -151,11 +154,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Nuke Stuff" type="Node" parent="."]
 
 [node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
-script = ExtResource("5_0035v")
-nuke_scene = ExtResource("6_mcktn")
-nuke_scene2 = ExtResource("9_6k3iv")
-nuke_scene3 = ExtResource("10_4n5fa")
-nuke_scene4 = ExtResource("11_wieg8")
+script = ExtResource("7_3oot2")
+nuke_scene = ExtResource("8_0ial0")
+nuke_scene2 = ExtResource("9_b8tcc")
+nuke_scene3 = ExtResource("10_ork4i")
+nuke_scene4 = ExtResource("11_rk6ti")
 
 [node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
 wait_time = 5.0
@@ -176,14 +179,22 @@ autostart = true
 [node name="Bomb Blow Area" type="Area2D" parent="Nuke Stuff"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuke Stuff/Bomb Blow Area"]
-position = Vector2(-0.25, -95.25)
+position = Vector2(-0.5, -95.25)
 shape = SubResource("RectangleShape2D_47ljh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Nuke Stuff/Bomb Blow Area"]
+position = Vector2(416, -95.5)
+shape = SubResource("RectangleShape2D_4swy1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Nuke Stuff/Bomb Blow Area"]
+position = Vector2(-416, -95)
+shape = SubResource("RectangleShape2D_4swy1")
 
 [node name="Modifier Stuff" type="Node" parent="."]
 
 [node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
-script = ExtResource("7_w2lnd")
-blackout = ExtResource("8_hi8pq")
+script = ExtResource("11_8tmsx")
+blackout = ExtResource("12_4mu5f")
 
 [node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
 wait_time = 10.0
@@ -204,7 +215,7 @@ offset_bottom = -589.0
 theme_override_font_sizes/normal_font_size = 26
 text = "Player 1: 100% Control left"
 fit_content = true
-script = ExtResource("13_ngh31")
+script = ExtResource("13_ax7j2")
 
 [node name="P2" type="RichTextLabel" parent="GUI\'s"]
 layout_mode = 0
@@ -215,7 +226,7 @@ offset_bottom = -589.0
 theme_override_font_sizes/normal_font_size = 26
 text = "Player 2: 100% Control left"
 fit_content = true
-script = ExtResource("14_mhs40")
+script = ExtResource("14_182f6")
 
 [node name="P3" type="RichTextLabel" parent="GUI\'s"]
 layout_mode = 0
@@ -226,7 +237,7 @@ offset_bottom = -15.0
 theme_override_font_sizes/normal_font_size = 26
 text = "Player 1: 100% Control left"
 fit_content = true
-script = ExtResource("15_t35m4")
+script = ExtResource("15_xhppg")
 
 [node name="P4" type="RichTextLabel" parent="GUI\'s"]
 layout_mode = 0
@@ -237,10 +248,11 @@ offset_bottom = -15.0
 theme_override_font_sizes/normal_font_size = 26
 text = "Player 2: 100% Control left"
 fit_content = true
-script = ExtResource("16_dommd")
+script = ExtResource("16_fpbbb")
 
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]

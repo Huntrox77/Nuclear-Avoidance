@@ -9,11 +9,13 @@ extends Node2D
 var randmovespeed = randf_range(0.5, 2)
 var move = true
 var splosion = false
+var negspawnradius = -234
+var spawnradius = 234
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(randmovespeed)
-	position.x = randi_range(-234, 234)
+	position.x = randi_range(-464, 464)
 	$BlastRadius/CollisionShape2D.disabled = true #disables collision with nuke pre-explosion
 
 
@@ -24,7 +26,9 @@ func _process(_delta):
 
 # Launches the player in the direction away from the explosion
 func launch(body):
-	body.velocity = -(body.global_position.direction_to(ExplosivePoint.global_position).normalized() * 900)
+	print(ExplosivePoint.global_position.direction_to(body.global_position))
+	body.velocity = (ExplosivePoint.global_position.direction_to(body.global_position) * 3100)
+	body.velocity.y = randi_range(-300, -600)
 	if Modifier.Smashbros == true:
 		body.aircontrol -= 0.01
 

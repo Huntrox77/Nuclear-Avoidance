@@ -1,10 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=14 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ModifierPlayButton.gd" id="1_sdd1x"]
 [ext_resource type="Texture2D" uid="uid://btp510j1q57x2" path="res://Sprites/652322_arrows_512x512.png" id="2_hqcv6"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_ryqr0"]
-[ext_resource type="Script" path="res://Scripts/UI/BlackoutCheckButton.gd" id="4_m14et"]
-[ext_resource type="Script" path="res://Scripts/UI/SmashbrosCheckButton.gd" id="5_18ka2"]
+[ext_resource type="Texture2D" uid="uid://bdaqhq1u8kxw" path="res://Sprites/Scug1nochoose.png" id="6_mjvak"]
+[ext_resource type="Texture2D" uid="uid://coam47xs7lh54" path="res://Sprites/Scug.png" id="7_b15i1"]
+[ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="8_f8al2"]
+[ext_resource type="Texture2D" uid="uid://okoyc6qmk2bg" path="res://Sprites/Scug2nochoose.png" id="8_q1y4y"]
+[ext_resource type="Texture2D" uid="uid://cl8ifukgeglmg" path="res://Sprites/Scug2.png" id="9_bqvku"]
+[ext_resource type="Texture2D" uid="uid://dvd38rxnjklhe" path="res://Sprites/Scug3nochoose.png" id="10_nkxd5"]
+[ext_resource type="Texture2D" uid="uid://sm2n565dcbxa" path="res://Sprites/Scug3.png" id="11_llayv"]
+[ext_resource type="Texture2D" uid="uid://bgs1hel61ibnq" path="res://Sprites/Scug4nochoose.png" id="12_dq5p0"]
+[ext_resource type="Texture2D" uid="uid://jnldje555juf" path="res://Sprites/Scug4.png" id="13_nn6sm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -19,6 +26,7 @@ offset_left = -575.0
 offset_top = -324.0
 offset_right = 578.0
 offset_bottom = 323.0
+script = ExtResource("8_f8al2")
 metadata/_edit_use_anchors_ = true
 
 [node name="Play Button" type="Button" parent="Buttons"]
@@ -58,55 +66,121 @@ metadata/_edit_use_anchors_ = true
 [node name="Blackout Button" type="CheckButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.145
-anchor_top = 0.192
-anchor_right = 0.145
-anchor_bottom = 0.192
-offset_left = -120.185
-offset_top = -31.224
-offset_right = 98.815
-offset_bottom = 31.776
+anchor_left = 0.136
+anchor_top = 0.556
+anchor_right = 0.136
+anchor_bottom = 0.556
+offset_left = -109.808
+offset_top = -34.732
+offset_right = 109.192
+offset_bottom = 28.268
 theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Blackout "
 expand_icon = true
-script = ExtResource("4_m14et")
 
 [node name="SmashBros Button" type="CheckButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.145
-anchor_top = 0.192
-anchor_right = 0.145
-anchor_bottom = 0.192
-offset_left = -120.185
-offset_top = 32.776
-offset_right = 98.815
-offset_bottom = 95.776
+anchor_left = 0.202
+anchor_top = 0.655
+anchor_right = 0.202
+anchor_bottom = 0.655
+offset_left = -185.906
+offset_top = -34.785
+offset_right = 186.094
+offset_bottom = 28.215
 theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Lossful Air controls "
 expand_icon = true
-script = ExtResource("5_18ka2")
 
 [node name="Modifiers and Players Text" type="RichTextLabel" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.135
-anchor_top = 0.072
-anchor_right = 0.135
-anchor_bottom = 0.072
-offset_left = -118.655
-offset_top = -35.584
-offset_right = 962.345
-offset_bottom = -3.584
+anchor_left = 0.5
+anchor_top = 0.078
+anchor_right = 0.5
+anchor_bottom = 0.078
+offset_left = -539.5
+offset_top = -39.466
+offset_right = 541.5
+offset_bottom = 270.534
 theme_override_font_sizes/normal_font_size = 48
-text = " Modifiers											Players"
+text = " Modifiers											Players 
+
+
+	  														  Maps"
 fit_content = true
+
+[node name="P1" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.554
+anchor_top = 0.217
+anchor_right = 0.554
+anchor_bottom = 0.217
+offset_left = -54.762
+offset_top = -54.399
+offset_right = 54.238
+offset_bottom = 54.601
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("6_mjvak")
+texture_pressed = ExtResource("7_b15i1")
+
+[node name="P2" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67
+anchor_top = 0.217
+anchor_right = 0.67
+anchor_bottom = 0.217
+offset_left = -54.51
+offset_top = -54.399
+offset_right = 54.49
+offset_bottom = 54.601
+toggle_mode = true
+texture_normal = ExtResource("8_q1y4y")
+texture_pressed = ExtResource("9_bqvku")
+
+[node name="P3" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.787
+anchor_top = 0.217
+anchor_right = 0.787
+anchor_bottom = 0.217
+offset_left = -54.4111
+offset_top = -54.399
+offset_right = 54.5889
+offset_bottom = 54.601
+toggle_mode = true
+texture_normal = ExtResource("10_nkxd5")
+texture_pressed = ExtResource("11_llayv")
+
+[node name="P4" type="TextureButton" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.902
+anchor_top = 0.219
+anchor_right = 0.902
+anchor_bottom = 0.219
+offset_left = -54.0061
+offset_top = -54.693
+offset_right = 54.9939
+offset_bottom = 54.307
+toggle_mode = true
+texture_normal = ExtResource("12_dq5p0")
+texture_pressed = ExtResource("13_nn6sm")
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Back Button" to="Buttons/Back Button" method="_on_pressed"]
-[connection signal="toggled" from="Buttons/Blackout Button" to="Buttons/Blackout Button" method="_on_toggled"]
-[connection signal="toggled" from="Buttons/SmashBros Button" to="Buttons/SmashBros Button" method="_on_toggled"]
+[connection signal="pressed" from="Buttons/Blackout Button" to="Buttons" method="_on_blackout_button_pressed"]
+[connection signal="pressed" from="Buttons/SmashBros Button" to="Buttons" method="_on_smash_bros_button_pressed"]
+[connection signal="pressed" from="Buttons/P1" to="Buttons" method="_on_p_1_pressed"]
+[connection signal="pressed" from="Buttons/P2" to="Buttons" method="_on_p_2_pressed"]
+[connection signal="pressed" from="Buttons/P3" to="Buttons" method="_on_p_3_pressed"]
+[connection signal="pressed" from="Buttons/P4" to="Buttons" method="_on_p_4_pressed"]
