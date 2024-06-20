@@ -8,14 +8,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	
 	pass
 
-
-func _on_pressed():
 	# Code to change the scene to the game.
-	if Modifier.map1on == true:
-		get_tree().change_scene_to_file("res://Scenes/gameplay.tscn")
-	elif Modifier.map2on == true:
-		get_tree().change_scene_to_file("res://Scenes/gameplay2.tscn")
-	pass # Replace with function body.
+func _on_pressed():
+	if Modifier.playersleft == 0:
+		pass
+	else:
+		if Modifier.map1 == true:
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay.tscn")
+			Modifier.map1 = false
+			Modifier.gameplaying = true
+		elif Modifier.map2 == true:
+			Modifier.currentmap = "map2"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay2.tscn")
+			Modifier.map2 = false
+			Modifier.gameplaying = true

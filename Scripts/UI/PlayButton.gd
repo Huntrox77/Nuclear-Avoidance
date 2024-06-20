@@ -14,5 +14,5 @@ func _process(_delta):
 
 func _on_pressed():
 	# Code to change the scene to the game.
-	get_tree().change_scene_to_file("res://Scenes/modifiers&players.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
 	pass # Replace with function body.

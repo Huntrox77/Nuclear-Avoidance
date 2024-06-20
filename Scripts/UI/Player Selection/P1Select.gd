@@ -24,19 +24,34 @@ func _process(_delta):
 
 func _on_p_1_pressed():
 	Modifier.p1selection = not Modifier.p1selection
-	print(	Modifier.p1selection)
+	if Modifier.p1selection == true:
+		Modifier.playersleft += 1
+	else:
+		Modifier.playersleft -= 1
 
 
 func _on_p_2_pressed():
 	Modifier.p2selection = not Modifier.p2selection
+	if Modifier.p2selection == true:
+		Modifier.playersleft += 1
+	else:
+		Modifier.playersleft -= 1
 
 
 func _on_p_3_pressed():
 	Modifier.p3selection = not Modifier.p3selection
+	if Modifier.p3selection == true:
+		Modifier.playersleft += 1
+	else:
+		Modifier.playersleft -= 1
 
 
 func _on_p_4_pressed():
 	Modifier.p4selection = not Modifier.p4selection
+	if Modifier.p4selection == true:
+		Modifier.playersleft += 1
+	else:
+		Modifier.playersleft -= 1
 
 
 func _on_smash_bros_button_pressed():
@@ -44,6 +59,33 @@ func _on_smash_bros_button_pressed():
 	pass # Replace with function body.
 
 
+func _on_impaction_pressed():
+	Modifier.Impaction = not Modifier.Impaction
+	pass # Replace with function body.
+
+
 func _on_blackout_button_pressed():
 	Modifier.Blackout = not Modifier.Blackout
+	pass # Replace with function body.
+
+
+func _on_crumble_pressed():
+	Modifier.Crumble = not Modifier.Crumble
+	pass # Replace with function body.
+
+
+func _on_map_2_toggled(_stoggled_on):
+	Modifier.map2 = not Modifier.map2
+
+
+func _on_map_1_toggled(_toggled_on):
+	Modifier.map1 = not Modifier.map1
+
+
+func _on_sweeper_pressed():
+	Modifier.Sweeper = not Modifier.Sweeper
+
+
+func _on_ice_pressed():
+	Modifier.Ice = not Modifier.Ice
 	pass # Replace with function body.

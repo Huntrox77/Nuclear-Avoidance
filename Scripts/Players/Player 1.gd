@@ -11,7 +11,9 @@ var groundslide = 0.5
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	
+	if Modifier.Ice == true:
+		groundslide = 0.01
+		aircontrol = 0.01
 	# Kills player if they dont exist
 	if Modifier.p1selection == false:
 		queue_free()
@@ -42,8 +44,3 @@ func _physics_process(delta):
 	
 
 	move_and_slide()
-	
-	#Code to pause the game by sending them back to the title screen.
-	if Input.is_action_pressed("Pause"):
-		get_tree().change_scene_to_file("res://Scenes/titlescreen.tscn")
-

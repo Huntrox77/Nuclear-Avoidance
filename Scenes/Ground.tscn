@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://crvy5gfiqpum2"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Grounds.gd" id="1_5l6sl"]
+[ext_resource type="Texture2D" uid="uid://b27jbjt41t6il" path="res://Sprites/Platform (7) (3).png" id="1_fxb6l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goni1"]
+size = Vector2(64, 64)
+
+[node name="Ground" type="StaticBody2D"]
+position = Vector2(-160, -113)
+script = ExtResource("1_5l6sl")
+metadata/GroundM = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fxb6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_goni1")
+
+[node name="Reappeartimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Reappeartimer" to="." method="_on_reappeartimer_timeout"]

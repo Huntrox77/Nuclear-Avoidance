@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://4w1gncy6lgoo"]
 
-[ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_orava"]
-[ext_resource type="Texture2D" uid="uid://c7d6bf8mqcm04" path="res://Sprites/download-removebg-preview.png" id="2_btccf"]
-[ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_ily45"]
+[ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
+[ext_resource type="Texture2D" uid="uid://c7d6bf8mqcm04" path="res://Sprites/download-removebg-preview.png" id="2_4lefj"]
+[ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_unan6"]
 
 [node name="Title Screen" type="Node2D"]
 
@@ -25,7 +25,7 @@ offset_right = 726.0
 offset_bottom = 376.0
 action_mode = 0
 text = "Play Game"
-script = ExtResource("1_orava")
+script = ExtResource("1_nig56")
 metadata/_edit_use_anchors_ = true
 
 [node name="Exit Button" type="Button" parent="Buttons"]
@@ -38,11 +38,11 @@ offset_top = 26.0
 offset_right = 1123.0
 offset_bottom = 109.0
 tooltip_text = "Quit Game."
-icon = ExtResource("2_btccf")
+icon = ExtResource("2_4lefj")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("3_ily45")
+script = ExtResource("3_unan6")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]

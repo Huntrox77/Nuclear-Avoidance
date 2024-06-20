@@ -80,6 +80,7 @@ script = ExtResource("1_24d4e")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+visible = false
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
 one_way_collision = true
@@ -98,6 +99,7 @@ script = ExtResource("2_luomt")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+visible = false
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
 one_way_collision = true
@@ -117,6 +119,7 @@ script = ExtResource("3_10vxc")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+visible = false
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
 one_way_collision = true
@@ -136,6 +139,7 @@ script = ExtResource("4_4v6ba")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+visible = false
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
 one_way_collision = true
@@ -151,6 +155,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Nuke Stuff" type="Node" parent="."]
 
 [node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
+visible = false
 script = ExtResource("5_0035v")
 nuke_scene = ExtResource("6_mcktn")
 nuke_scene2 = ExtResource("9_6k3iv")
@@ -176,6 +181,7 @@ autostart = true
 [node name="Bomb Blow Area" type="Area2D" parent="Nuke Stuff"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nuke Stuff/Bomb Blow Area"]
+visible = false
 position = Vector2(-0.25, -95.25)
 shape = SubResource("RectangleShape2D_47ljh")
 
@@ -190,6 +196,7 @@ wait_time = 10.0
 autostart = true
 
 [node name="GUI\'s" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -243,4 +250,5 @@ script = ExtResource("16_dommd")
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]

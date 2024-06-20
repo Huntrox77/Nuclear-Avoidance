@@ -64,6 +64,93 @@ shape = SubResource("CircleShape2D_m0t8s")
 [node name="ExplosivePoint" type="Node2D" parent="Nuke/BlastRadius"]
 position = Vector2(0, 80)
 
+[node name="Nuke2" type="Area2D" parent="."]
+position = Vector2(-537, -714)
+collision_layer = 2
+script = ExtResource("1_qbu4d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nuke2"]
+position = Vector2(52, 145)
+scale = Vector2(0.551852, 0.551852)
+sprite_frames = SubResource("SpriteFrames_w2rcf")
+animation = &"Explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nuke2/AnimatedSprite2D"]
+
+[node name="Bomb" type="CollisionPolygon2D" parent="Nuke2"]
+polygon = PackedVector2Array(17, 137, 4, 139, -6, 146, -11, 150, -14, 156, -17, 167, -16, 183, -8, 193, 1, 201, 15, 204, 28, 202, 40, 193, 47, 182, 49, 168, 121, 128, 75, 136, 78, 118, 59, 123, 61, 86)
+
+[node name="Explodimer" type="Timer" parent="Nuke2"]
+wait_time = 0.9
+one_shot = true
+
+[node name="BlastRadius" type="Area2D" parent="Nuke2"]
+position = Vector2(55, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nuke2/BlastRadius"]
+shape = SubResource("CircleShape2D_m0t8s")
+
+[node name="ExplosivePoint" type="Node2D" parent="Nuke2/BlastRadius"]
+position = Vector2(0, 80)
+
+[node name="Nuke3" type="Area2D" parent="."]
+position = Vector2(-537, -714)
+collision_layer = 2
+script = ExtResource("1_qbu4d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nuke3"]
+position = Vector2(52, 145)
+scale = Vector2(0.551852, 0.551852)
+sprite_frames = SubResource("SpriteFrames_w2rcf")
+animation = &"Explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nuke3/AnimatedSprite2D"]
+
+[node name="Bomb" type="CollisionPolygon2D" parent="Nuke3"]
+polygon = PackedVector2Array(17, 137, 4, 139, -6, 146, -11, 150, -14, 156, -17, 167, -16, 183, -8, 193, 1, 201, 15, 204, 28, 202, 40, 193, 47, 182, 49, 168, 121, 128, 75, 136, 78, 118, 59, 123, 61, 86)
+
+[node name="Explodimer" type="Timer" parent="Nuke3"]
+wait_time = 0.9
+one_shot = true
+
+[node name="BlastRadius" type="Area2D" parent="Nuke3"]
+position = Vector2(55, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nuke3/BlastRadius"]
+shape = SubResource("CircleShape2D_m0t8s")
+
+[node name="ExplosivePoint" type="Node2D" parent="Nuke3/BlastRadius"]
+position = Vector2(0, 80)
+
+[node name="Nuke4" type="Area2D" parent="."]
+position = Vector2(-537, -714)
+collision_layer = 2
+script = ExtResource("1_qbu4d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nuke4"]
+position = Vector2(52, 145)
+scale = Vector2(0.551852, 0.551852)
+sprite_frames = SubResource("SpriteFrames_w2rcf")
+animation = &"Explosion"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Nuke4/AnimatedSprite2D"]
+
+[node name="Bomb" type="CollisionPolygon2D" parent="Nuke4"]
+polygon = PackedVector2Array(17, 137, 4, 139, -6, 146, -11, 150, -14, 156, -17, 167, -16, 183, -8, 193, 1, 201, 15, 204, 28, 202, 40, 193, 47, 182, 49, 168, 121, 128, 75, 136, 78, 118, 59, 123, 61, 86)
+
+[node name="Explodimer" type="Timer" parent="Nuke4"]
+wait_time = 0.9
+one_shot = true
+
+[node name="BlastRadius" type="Area2D" parent="Nuke4"]
+position = Vector2(55, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nuke4/BlastRadius"]
+shape = SubResource("CircleShape2D_m0t8s")
+
+[node name="ExplosivePoint" type="Node2D" parent="Nuke4/BlastRadius"]
+position = Vector2(0, 80)
+
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
 
@@ -71,3 +158,15 @@ position = Vector2(0, -324)
 [connection signal="body_entered" from="Nuke" to="Nuke" method="_on_body_entered"]
 [connection signal="timeout" from="Nuke/Explodimer" to="Nuke" method="_on_explodimer_timeout"]
 [connection signal="body_entered" from="Nuke/BlastRadius" to="Nuke" method="_on_blast_radius_body_entered"]
+[connection signal="area_entered" from="Nuke2" to="Nuke2" method="_on_area_entered"]
+[connection signal="body_entered" from="Nuke2" to="Nuke2" method="_on_body_entered"]
+[connection signal="timeout" from="Nuke2/Explodimer" to="Nuke2" method="_on_explodimer_timeout"]
+[connection signal="body_entered" from="Nuke2/BlastRadius" to="Nuke2" method="_on_blast_radius_body_entered"]
+[connection signal="area_entered" from="Nuke3" to="Nuke3" method="_on_area_entered"]
+[connection signal="body_entered" from="Nuke3" to="Nuke3" method="_on_body_entered"]
+[connection signal="timeout" from="Nuke3/Explodimer" to="Nuke3" method="_on_explodimer_timeout"]
+[connection signal="body_entered" from="Nuke3/BlastRadius" to="Nuke3" method="_on_blast_radius_body_entered"]
+[connection signal="area_entered" from="Nuke4" to="Nuke4" method="_on_area_entered"]
+[connection signal="body_entered" from="Nuke4" to="Nuke4" method="_on_body_entered"]
+[connection signal="timeout" from="Nuke4/Explodimer" to="Nuke4" method="_on_explodimer_timeout"]
+[connection signal="body_entered" from="Nuke4/BlastRadius" to="Nuke4" method="_on_blast_radius_body_entered"]

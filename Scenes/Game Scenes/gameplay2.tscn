@@ -1,0 +1,220 @@
+[gd_scene load_steps=21 format=3 uid="uid://c6nmtk6u04s26"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_ymoph"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="2_ud4p6"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="3_gdfi1"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="4_pk1fj"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="5_oiui2"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_mqb0i"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="7_u0opw"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_rm4sd"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="9_bni3s"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="10_i0o1t"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="11_muvi2"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="12_v0plv"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="13_ckjvh"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="14_htbeu"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/AddGround2.gd" id="15_hb7om"]
+[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_ph17f"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_3qrgp"]
+[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_mwq87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
+size = Vector2(4653, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[node name="Arena_01" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+
+[node name="void" type="Area2D" parent="."]
+script = ExtResource("1_ymoph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+position = Vector2(-7.5, 86.5)
+shape = SubResource("RectangleShape2D_v81yx")
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player 1" type="CharacterBody2D" parent="Players"]
+position = Vector2(-50, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_ud4p6")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
+offset_left = -28.75
+offset_top = -31.25
+offset_right = 31.25
+offset_bottom = 28.75
+metadata/_edit_use_anchors_ = true
+
+[node name="Player 2" type="CharacterBody2D" parent="Players"]
+position = Vector2(48, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_gdfi1")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
+offset_left = -28.75
+offset_top = -32.5
+offset_right = 31.25
+offset_bottom = 27.5
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player 3" type="CharacterBody2D" parent="Players"]
+position = Vector2(-412, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_pk1fj")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.627451, 0, 0.717647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Player 4" type="CharacterBody2D" parent="Players"]
+position = Vector2(416, -171)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("5_oiui2")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
+offset_left = -27.5
+offset_top = -31.25
+offset_right = 32.5
+offset_bottom = 28.75
+color = Color(0.741176, 0, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Nuke Stuff" type="Node" parent="."]
+
+[node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
+script = ExtResource("6_mqb0i")
+nuke_scene = ExtResource("7_u0opw")
+sweeper_scene = ExtResource("8_rm4sd")
+
+[node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 15.0
+autostart = true
+
+[node name="Timer3" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 30.0
+autostart = true
+
+[node name="Timer4" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 45.0
+autostart = true
+
+[node name="Swimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 18.33
+one_shot = true
+
+[node name="SwimerTimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+one_shot = true
+autostart = true
+
+[node name="Modifier Stuff" type="Node" parent="."]
+
+[node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
+script = ExtResource("9_bni3s")
+blackout = ExtResource("10_i0o1t")
+
+[node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
+wait_time = 10.0
+autostart = true
+
+[node name="GUI\'s" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -551.0
+offset_top = -625.0
+offset_right = -215.0
+offset_bottom = -589.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 1: 100% Control left"
+fit_content = true
+script = ExtResource("11_muvi2")
+
+[node name="P2" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -625.0
+offset_right = 545.0
+offset_bottom = -589.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 2: 100% Control left"
+fit_content = true
+script = ExtResource("12_v0plv")
+
+[node name="P3" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -551.0
+offset_top = -51.0
+offset_right = -215.0
+offset_bottom = -15.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 1: 100% Control left"
+fit_content = true
+script = ExtResource("13_ckjvh")
+
+[node name="P4" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -51.0
+offset_right = 545.0
+offset_bottom = -15.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 2: 100% Control left"
+fit_content = true
+script = ExtResource("14_htbeu")
+
+[node name="Grounds" type="Node" parent="."]
+script = ExtResource("15_hb7om")
+GroundLeft = ExtResource("16_ph17f")
+Ground = ExtResource("17_3qrgp")
+GroundRight = ExtResource("18_mwq87")
+
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
+[connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]

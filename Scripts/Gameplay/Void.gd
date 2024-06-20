@@ -1,5 +1,5 @@
 extends Area2D
-
+@onready var Modifier = get_node("/root/Modifiers")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,4 +17,5 @@ func _process(_delta):
 func _on_body_entered(body):
 	# Sets the object, that enters its area, to be at x and y 0.
 	body.queue_free()
+	Modifier.playersleft -= 1
 	pass # Replace with function body.

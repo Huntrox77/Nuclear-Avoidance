@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bghs6em6eqof8"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Sweeper.gd" id="1_b153m"]
+[ext_resource type="Texture2D" uid="uid://nuvn2m322pir" path="res://Sprites/Pusher.png" id="2_f6eal"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sweeper" type="Area2D" parent="."]
+script = ExtResource("1_b153m")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sweeper"]
+polygon = PackedVector2Array(30, -30, 30, 30, 14, 30, 14, 7, -32, 7, -32, -10, 14, -10, 14, -30)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sweeper"]
+texture = ExtResource("2_f6eal")
+
+[node name="Kill thy self" type="Timer" parent="Sweeper"]
+wait_time = 7.5
+autostart = true
+
+[node name="Sweepingtime" type="Timer" parent="Sweeper"]
+wait_time = 1.75
+autostart = true
+
+[connection signal="body_entered" from="Sweeper" to="Sweeper" method="_on_body_entered"]
+[connection signal="timeout" from="Sweeper/Kill thy self" to="Sweeper" method="_on_kill_thy_self_timeout"]
+[connection signal="timeout" from="Sweeper/Sweepingtime" to="Sweeper" method="_on_sweepingtime_timeout"]

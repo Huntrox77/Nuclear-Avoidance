@@ -12,7 +12,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	
+	if Modifier.Ice == true:
+		groundslide = 0.1
+		aircontrol = 0.01
 	# Kills player if they dont exist
 	if Modifier.p2selection == false:
 		queue_free()
