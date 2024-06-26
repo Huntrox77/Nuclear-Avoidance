@@ -24,3 +24,18 @@ func _on_pressed():
 			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay2.tscn")
 			Modifier.map2 = false
 			Modifier.gameplaying = true
+		elif Modifier.map3 == true:
+			Modifier.currentmap = "map3"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay3.tscn")
+			Modifier.map3 = false
+			Modifier.gameplaying = true
+		elif Modifier.map4 == true:
+			Modifier.currentmap = "map4"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay4.tscn")
+			Modifier.map4 = false
+			Modifier.gameplaying = true
+		elif Modifier.map5 == true:
+			Modifier.currentmap = "map5"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay5.tscn")
+			Modifier.map5 = false
+			Modifier.gameplaying = true

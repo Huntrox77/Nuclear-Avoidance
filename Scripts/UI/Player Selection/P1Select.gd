@@ -74,7 +74,19 @@ func _on_crumble_pressed():
 	pass # Replace with function body.
 
 
-func _on_map_2_toggled(_stoggled_on):
+func _on_map_4_toggled(_toggled_on):
+	Modifier.map4 = not Modifier.map4
+
+
+func _on_map_5_toggled(_toggled_on):
+	Modifier.map5 = not Modifier.map5
+
+
+func _on_map_3_toggled(_toggled_on):
+	Modifier.map3 = not Modifier.map3
+
+
+func _on_map_2_toggled(_toggled_on):
 	Modifier.map2 = not Modifier.map2
 
 
@@ -88,4 +100,9 @@ func _on_sweeper_pressed():
 
 func _on_ice_pressed():
 	Modifier.Ice = not Modifier.Ice
+	pass # Replace with function body.
+
+
+func _on_fog_pressed():
+	Modifier.Fog = not Modifier.Fog
 	pass # Replace with function body.

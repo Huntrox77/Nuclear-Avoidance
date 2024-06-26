@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=16 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierPlayButton.gd" id="2_i5d18"]
-[ext_resource type="Texture2D" uid="uid://btp510j1q57x2" path="res://Sprites/652322_arrows_512x512.png" id="3_ojoyc"]
+[ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/BackArrow.png" id="3_ojoyc"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="4_efgvg"]
 [ext_resource type="Texture2D" uid="uid://bdaqhq1u8kxw" path="res://Sprites/Scug1nochoose.png" id="5_chenq"]
 [ext_resource type="Texture2D" uid="uid://coam47xs7lh54" path="res://Sprites/Scug.png" id="6_aol7f"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://sm2n565dcbxa" path="res://Sprites/Scug3.png" id="10_d5ebb"]
 [ext_resource type="Texture2D" uid="uid://bgs1hel61ibnq" path="res://Sprites/Scug4nochoose.png" id="11_6ge4a"]
 [ext_resource type="Texture2D" uid="uid://jnldje555juf" path="res://Sprites/Scug4.png" id="12_677y4"]
+[ext_resource type="Script" path="res://Scripts/Secrets/Clam.gd" id="13_lf0ho"]
+[ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -141,6 +143,25 @@ text = "Modifiers
 fit_content = true
 scroll_active = false
 
+[node name="Clam" type="RichTextLabel" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.051
+anchor_right = 0.158
+anchor_bottom = 0.051
+offset_left = 185.826
+offset_top = 532.003
+offset_right = 689.826
+offset_bottom = 748.003
+theme_override_font_sizes/normal_font_size = 52
+text = "Calamity Active!
+
+"
+fit_content = true
+scroll_active = false
+script = ExtResource("13_lf0ho")
+
 [node name="Players" type="RichTextLabel" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
@@ -165,9 +186,9 @@ anchor_top = 0.051
 anchor_right = 0.158
 anchor_bottom = 0.051
 offset_left = 593.826
-offset_top = 194.003
-offset_right = 907.826
-offset_bottom = 266.003
+offset_top = 209.003
+offset_right = 728.826
+offset_bottom = 281.003
 theme_override_font_sizes/normal_font_size = 52
 text = "Maps"
 fit_content = true
@@ -188,6 +209,18 @@ text = "Map 1"
 [node name="Map2" type="CheckButton" parent="Buttons/Map Container"]
 layout_mode = 2
 text = "Map 2"
+
+[node name="Map3" type="CheckButton" parent="Buttons/Map Container"]
+layout_mode = 2
+text = "Map 3"
+
+[node name="Map4" type="CheckButton" parent="Buttons/Map Container"]
+layout_mode = 2
+text = "Map 4"
+
+[node name="Map5" type="CheckButton" parent="Buttons/Map Container"]
+layout_mode = 2
+text = "Map 5"
 
 [node name="Modifiers Container" type="GridContainer" parent="Buttons"]
 layout_mode = 0
@@ -237,6 +270,7 @@ action_mode = 0
 text = "Sweeper
 "
 expand_icon = true
+script = ExtResource("13_ufcak")
 
 [node name="Ice" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
@@ -244,6 +278,14 @@ theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Slippery"
+expand_icon = true
+
+[node name="Fog" type="CheckButton" parent="Buttons/Modifiers Container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Fog of War"
 expand_icon = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
@@ -254,9 +296,13 @@ expand_icon = true
 [connection signal="pressed" from="Buttons/P4" to="Buttons" method="_on_p_4_pressed"]
 [connection signal="toggled" from="Buttons/Map Container/Map1" to="Buttons" method="_on_map_1_toggled"]
 [connection signal="toggled" from="Buttons/Map Container/Map2" to="Buttons" method="_on_map_2_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/Map3" to="Buttons" method="_on_map_3_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/Map4" to="Buttons" method="_on_map_4_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/Map5" to="Buttons" method="_on_map_5_toggled"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Blackout Button" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/SmashBros Button" to="Buttons" method="_on_smash_bros_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Impaction" to="Buttons" method="_on_impaction_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Crumble" to="Buttons" method="_on_crumble_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Sweeper" to="Buttons" method="_on_sweeper_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Ice" to="Buttons" method="_on_ice_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/Fog" to="Buttons" method="_on_fog_pressed"]

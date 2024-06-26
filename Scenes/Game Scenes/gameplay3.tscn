@@ -1,0 +1,282 @@
+[gd_scene load_steps=25 format=3 uid="uid://qdnvsjmntuhi"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_buvqp"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1ylfr"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="2_jngu4"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="3_52fe2"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="4_ra15w"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_uldfh"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="5_v17lr"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_21lkd"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_wikyi"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="7_wdus6"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_l0lws"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="9_50f8h"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="10_37cxf"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="11_14tuc"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="12_3jtad"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="13_3vsae"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="14_btle7"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="14_r5hop"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround3.gd" id="15_lbbx5"]
+[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_tb2gu"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_26vm1"]
+[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_nvji0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
+size = Vector2(4653, 193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[node name="Arena_01" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+
+[node name="void" type="Area2D" parent="."]
+script = ExtResource("1_buvqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+position = Vector2(-7.5, 86.5)
+shape = SubResource("RectangleShape2D_v81yx")
+
+[node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("2_1ylfr")
+
+[node name="ColorRect" type="ColorRect" parent="void"]
+visible = false
+z_index = 1
+offset_left = -584.0
+offset_top = -651.0
+offset_right = 575.0
+offset_bottom = 21.0
+color = Color(0.713726, 0, 0.74902, 0.156863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="void"]
+visible = false
+z_index = 3
+offset_left = -560.0
+offset_top = -61.0
+offset_right = -136.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0.760784, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "You are no god... but I shall feast upon your essence regardless!"
+
+[node name="TextTimer" type="Timer" parent="void"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player 1" type="CharacterBody2D" parent="Players"]
+position = Vector2(-467, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("2_jngu4")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
+offset_left = -28.75
+offset_top = -31.25
+offset_right = 31.25
+offset_bottom = 28.75
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 1"]
+visible = false
+position = Vector2(-1.25, -0.625001)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("4_uldfh")
+
+[node name="Player 2" type="CharacterBody2D" parent="Players"]
+position = Vector2(471, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("3_52fe2")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
+offset_left = -28.75
+offset_top = -32.5
+offset_right = 31.25
+offset_bottom = 27.5
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 2"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("6_wikyi")
+
+[node name="Player 3" type="CharacterBody2D" parent="Players"]
+position = Vector2(-412, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_ra15w")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.627451, 0, 0.717647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 3"]
+visible = false
+position = Vector2(-1.25, -0.625001)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("4_uldfh")
+
+[node name="Player 4" type="CharacterBody2D" parent="Players"]
+position = Vector2(416, -171)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("5_v17lr")
+metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
+offset_left = -27.5
+offset_top = -31.25
+offset_right = 32.5
+offset_bottom = 28.75
+color = Color(0.741176, 0, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 4"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("6_wikyi")
+
+[node name="Nuke Stuff" type="Node" parent="."]
+
+[node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
+script = ExtResource("6_21lkd")
+nuke_scene = ExtResource("7_wdus6")
+sweeper_scene = ExtResource("8_l0lws")
+
+[node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 15.0
+autostart = true
+
+[node name="Timer3" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 30.0
+autostart = true
+
+[node name="Timer4" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 45.0
+autostart = true
+
+[node name="Swimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 18.33
+one_shot = true
+
+[node name="SwimerTimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+one_shot = true
+autostart = true
+
+[node name="Modifier Stuff" type="Node" parent="."]
+
+[node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
+script = ExtResource("9_50f8h")
+blackout = ExtResource("10_37cxf")
+fog = ExtResource("14_r5hop")
+
+[node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
+wait_time = 10.0
+autostart = true
+
+[node name="GUI\'s" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -551.0
+offset_top = -625.0
+offset_right = -215.0
+offset_bottom = -589.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 1: 100% Control left"
+fit_content = true
+script = ExtResource("11_14tuc")
+
+[node name="P2" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -625.0
+offset_right = 545.0
+offset_bottom = -589.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 2: 100% Control left"
+fit_content = true
+script = ExtResource("12_3jtad")
+
+[node name="P3" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -551.0
+offset_top = -51.0
+offset_right = -215.0
+offset_bottom = -15.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 1: 100% Control left"
+fit_content = true
+script = ExtResource("13_3vsae")
+
+[node name="P4" type="RichTextLabel" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -51.0
+offset_right = 545.0
+offset_bottom = -15.0
+theme_override_font_sizes/normal_font_size = 26
+text = "Player 2: 100% Control left"
+fit_content = true
+script = ExtResource("14_btle7")
+
+[node name="Grounds" type="Node" parent="."]
+script = ExtResource("15_lbbx5")
+GroundLeft = ExtResource("16_tb2gu")
+Ground = ExtResource("17_26vm1")
+GroundRight = ExtResource("18_nvji0")
+
+[node name="Timer" type="Timer" parent="Grounds"]
+wait_time = 7.0
+autostart = true
+
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
+[connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
+[connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Grounds/Timer" to="Grounds" method="_on_timer_timeout"]

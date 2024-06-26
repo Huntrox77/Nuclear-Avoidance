@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d342vv4g7762h"]
 
-[ext_resource type="Texture2D" uid="uid://csseftdp3pjdq" path="res://Sprites/Platform (7) (1).png" id="1_4vt00"]
+[ext_resource type="Texture2D" uid="uid://dwnlkw12reoue" path="res://Sprites/GroundL.png" id="1_4vt00"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Grounds.gd" id="1_meo42"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goni1"]
@@ -16,6 +16,7 @@ texture = ExtResource("1_4vt00")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_goni1")
+one_way_collision = true
 
 [node name="Reappeartimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -5,6 +5,8 @@ extends Node2D
 @onready var timer = $Explodimer
 @onready var raidus = $BlastRadius/CollisionShape2D
 @onready var ExplosivePoint = $BlastRadius/ExplosivePoint
+@onready var AnimSprite = $AnimatedSprite2D
+@onready var Sprite = $Sprite2D
 
 var randmovespeed = randf_range(0.33, 4.33)
 var move = true
@@ -12,8 +14,15 @@ var splosion = false
 var negspawnradius = -234
 var spawnradius = 234
 var expspeed = 3100
+var randiY = randi_range(1, 3)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Modifier.Yharon == true:
+		Sprite.show()
+		AnimSprite.hide()
+	else:
+		Sprite.hide()
+		AnimSprite.show()
 	if self.name == "Nuke2":
 		if Modifier.Nuke2 == false:
 			self.queue_free()
@@ -28,15 +37,30 @@ func _ready():
 	if Modifier.currentmap == "map2":
 		negspawnradius = -464
 		spawnradius = 464
+	if Modifier.currentmap == "map3":
+		negspawnradius = -664
+		spawnradius = 464
 
-	position.x = randi_range(negspawnradius, spawnradius)
+	if Modifier.currentmap == "map5":
+		if randiY == 1:
+			position.y = -630
+		elif randiY == 2:
+			position.y = -460
+		elif  randiY == 3:
+			position.y = -300
+	else:
+		position.x = randi_range(negspawnradius, spawnradius)
+
 	$BlastRadius/CollisionShape2D.disabled = true #disables collision with nuke pre-explosion
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if move == true:
-		position += Vector2(0, randmovespeed) # Movement
+		if Modifier.currentmap == "map5":
+			position -= Vector2(randmovespeed, 0) # Movement
+		else:
+			position += Vector2(0, randmovespeed)
 
 # Launches the player in the direction away from the explosion
 func launch(body):

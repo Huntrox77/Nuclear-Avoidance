@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcv5hh4o4rswm"]
+
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout.gd" id="1_bsetm"]
+
+[node name="Blackout" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+
+[node name="Fog" type="ColorRect" parent="."]
+offset_left = -626.0
+offset_top = -702.0
+offset_right = 647.0
+offset_bottom = -324.0
+color = Color(0.286275, 0.286275, 0.286275, 0.980392)
+script = ExtResource("1_bsetm")
