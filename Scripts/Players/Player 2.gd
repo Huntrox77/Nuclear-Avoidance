@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 @onready var Modifier = get_node("/root/Modifiers")
+@onready var SpawnPos1 = get_parent().get_parent().get_child(8).get_child(0)
+@onready var SpawnPos2 = get_parent().get_parent().get_child(8).get_child(1)
+@onready var SpawnPos3 = get_parent().get_parent().get_child(8).get_child(2)
+@onready var SpawnPos4 = get_parent().get_parent().get_child(8).get_child(3)
 @onready var Sprite = $Sprite
 @onready var Shape = $ColorRect
 const SPEED = 300.0
@@ -18,51 +22,16 @@ func _ready():
 		Sprite.show()
 		Shape.hide()
 		
-	if Modifier.currentmap == "map1":
-		if randi_spawn == 1:
-			position.x = 145
-		elif randi_spawn == 2:
-			position.x = -145
-		elif randi_spawn == 3:
-			position.x = 48
-		elif randi_spawn == 4:
-			position.x = -48
-	elif Modifier.currentmap == "map2":
-		if randi_spawn == 1:
-			position.x = -50
-		elif randi_spawn == 2:
-			position.x = -412
-		elif randi_spawn == 3:
-			position.x = 48
-		elif randi_spawn == 4:
-			position.x = 416
-	elif Modifier.currentmap == "map3":
-		if randi_spawn == 1:
-			position.x = -467
-		elif randi_spawn == 2:
-			position.x = 471
-		elif randi_spawn == 3:
-			position.x = -467
-		elif randi_spawn == 4:
-			position.x = 471
-	elif Modifier.currentmap == "map4":
-		if randi_spawn == 1:
-			position.x = -50
-		elif randi_spawn == 2:
-			position.x = -412
-		elif randi_spawn == 3:
-			position.x = 48
-		elif randi_spawn == 4:
-			position.x = 416
-	elif Modifier.currentmap == "map5":
-		if randi_spawn == 1:
-			position.y = -530
-		elif randi_spawn == 2:
-			position.y = -430
-		elif randi_spawn == 3:
-			position.y = -330
-		elif randi_spawn == 4:
-			position.y = -530
+	if randi_spawn == 1:
+		position = SpawnPos1.position
+	elif randi_spawn == 2:
+		position = SpawnPos2.position
+	elif randi_spawn == 3:
+		position = SpawnPos3.position
+	elif randi_spawn == 4:
+		position = SpawnPos4.position
+
+
 func _physics_process(delta):
 	if Modifier.Ice == true:
 		groundslide = 0.01

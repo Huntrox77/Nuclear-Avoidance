@@ -40,8 +40,11 @@ func _ready():
 	if Modifier.currentmap == "map3":
 		negspawnradius = -664
 		spawnradius = 464
-
 	if Modifier.currentmap == "map5":
+		negspawnradius = -664
+		spawnradius = 464
+
+	if Modifier.currentmap == "SidewaysBombMap1":
 		if randiY == 1:
 			position.y = -630
 		elif randiY == 2:
@@ -57,7 +60,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if move == true:
-		if Modifier.currentmap == "map5":
+		if Modifier.currentmap == "SidewaysBombMap1":
 			position -= Vector2(randmovespeed, 0) # Movement
 		else:
 			position += Vector2(0, randmovespeed)
@@ -88,19 +91,20 @@ func _on_blast_radius_body_entered(body):
 	if move == false:
 		if body.has_meta("Player"):
 			launch(body)
-		else:
-			if Modifier.Impaction == true:
-				body.position.y += randi_range(10, 20)
-			elif Modifier.Crumble == true:
-				body.position.y += 1000
-				body.timer.start()
-				pass
+		elif Modifier.Impaction == true:
+			body.position.y += randi_range(10, 20)
+		elif Modifier.Crumble == true:
+			body.position.y += 1000
+			body.timer.start()
 
 
 # Explosion Script
 func _on_body_entered(body):
 	if body.name == "BlastRadius":
 		pass
+	if body.has_meta("PlayerOnly"):
+		if body.get_meta("PlayerOnly") == true:
+			pass
 	else:
 		move = false
 		raidus.set_deferred("disabled", false)

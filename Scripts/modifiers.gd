@@ -29,16 +29,14 @@ var Nuke4 = false
 var playersleft = 2
 var currentmap = "map1"
 
+func _resetnukes():
+	Nuke2 = false
+	Nuke3 = false
+	Nuke4 = false
+
 func _reset():
 	gameplaying = false
 	map1 = true
-	Blackout = false
-	Fog = false
-	Smashbros = false
-	Ice = false
-	Crumble = false
-	Impaction = false
-	Sweeper = false
 	p1aircontrol = 0.09
 	p2aircontrol = 0.09
 	p3aircontrol = 0.09
@@ -51,9 +49,7 @@ func _reset():
 	map3 = false
 	map4 = false
 	map5 = false
-	Nuke2 = false
-	Nuke3 = false
-	Nuke4 = false
+	_resetnukes()
 	playersleft = 2
 	currentmap = "map1"
 
@@ -77,6 +73,7 @@ func _process(_delta):
 		Yharon = true
 	if gameplaying == true:
 		if playersleft == 0:
+			_resetnukes()
 			if map2 == true:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay2.tscn")
 				map2 = false

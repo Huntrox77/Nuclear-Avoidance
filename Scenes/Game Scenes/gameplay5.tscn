@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d236nnawauve3"]
+[gd_scene load_steps=26 format=3 uid="uid://d236nnawauve3"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_pswfu"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_uxi58"]
@@ -20,11 +20,21 @@
 [ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="18_xebui"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround5.gd" id="19_hbwba"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="20_riy2t"]
+[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/DirtBackroung.png" id="21_8gjo7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
 size = Vector2(4653, 193)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
+texture = ExtResource("21_8gjo7")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nsxlv"]
+sources/1 = SubResource("TileSetAtlasSource_3dxoi")
 
 [node name="Arena_01" type="Node2D"]
 
@@ -71,6 +81,9 @@ one_shot = true
 z_index = 2
 position = Vector2(-426, -535)
 scale = Vector2(0.8, 0.8)
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 1.5708
 script = ExtResource("3_fvx4c")
 metadata/Player = "Player"
 
@@ -265,6 +278,26 @@ script = ExtResource("18_xebui")
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("19_hbwba")
 GroundRight = ExtResource("20_riy2t")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nsxlv")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(-1114115, 1, 0, -1179647, 65537, 0, -917503, 65537, 0, -655359, 1, 0, -393215, 65537, 0, -327683, 1, 0, -589827, 1, 0, -851971, 65537, 0, -786450, 65537, 0, -786454, 1, 0, -1048594, 1, 0, -1048598, 1, 0, -851951, 65537, 0, -1114095, 65537, 0, -851947, 1, 0, -1114091, 65537, 0)
+
+[node name="SpawnPos\'" type="Node" parent="."]
+
+[node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-62, -472)
+
+[node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(44, -475)
+
+[node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-62, -159)
+
+[node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(44, -162)
 
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]

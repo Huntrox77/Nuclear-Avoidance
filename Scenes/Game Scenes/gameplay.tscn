@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=26 format=3 uid="uid://ieri1l2pt0lw"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fwjbu"]
 [ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="2_4e03n"]
@@ -27,6 +27,8 @@
 size = Vector2(6629, 193)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[sub_resource type="TileSet" id="TileSet_muvba"]
 
 [node name="Arena_01" type="Node2D"]
 
@@ -269,6 +271,26 @@ script = ExtResource("15_xbgmn")
 GroundLeft = ExtResource("16_1c585")
 Ground = ExtResource("17_q7kd4")
 GroundRight = ExtResource("18_t4g3v")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_muvba")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
+
+[node name="SpawnPos\'" type="Node" parent="."]
+
+[node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-151, -174)
+
+[node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(46, -172)
+
+[node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-48, -173)
+
+[node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(147, -173)
 
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]

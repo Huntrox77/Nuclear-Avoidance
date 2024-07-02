@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=17 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierPlayButton.gd" id="2_i5d18"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://jnldje555juf" path="res://Sprites/Scug4.png" id="12_677y4"]
 [ext_resource type="Script" path="res://Scripts/Secrets/Clam.gd" id="13_lf0ho"]
 [ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
+[ext_resource type="Script" path="res://Scripts/UI/KeepModifiers.gd" id="14_dqpoy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -228,21 +229,23 @@ offset_top = 94.0
 offset_right = 372.0
 offset_bottom = 208.0
 
-[node name="Blackout Button" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Blackout" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Blackout "
 expand_icon = true
+script = ExtResource("14_dqpoy")
 
-[node name="SmashBros Button" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="SmashBros" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 34
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Lossful Air controls "
 expand_icon = true
+script = ExtResource("14_dqpoy")
 
 [node name="Impaction" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
@@ -252,6 +255,7 @@ action_mode = 0
 text = "Bomb Impacts
 "
 expand_icon = true
+script = ExtResource("14_dqpoy")
 
 [node name="Crumble" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
@@ -261,6 +265,7 @@ action_mode = 0
 text = "Crumble
 "
 expand_icon = true
+script = ExtResource("14_dqpoy")
 
 [node name="Sweeper" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
@@ -279,6 +284,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Slippery"
 expand_icon = true
+script = ExtResource("14_dqpoy")
 
 [node name="Fog" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
@@ -287,6 +293,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Fog of War"
 expand_icon = true
+script = ExtResource("14_dqpoy")
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Back Button" to="Buttons/Back Button" method="_on_pressed"]
@@ -299,8 +306,8 @@ expand_icon = true
 [connection signal="toggled" from="Buttons/Map Container/Map3" to="Buttons" method="_on_map_3_toggled"]
 [connection signal="toggled" from="Buttons/Map Container/Map4" to="Buttons" method="_on_map_4_toggled"]
 [connection signal="toggled" from="Buttons/Map Container/Map5" to="Buttons" method="_on_map_5_toggled"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Blackout Button" to="Buttons" method="_on_blackout_button_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/SmashBros Button" to="Buttons" method="_on_smash_bros_button_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Impaction" to="Buttons" method="_on_impaction_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Crumble" to="Buttons" method="_on_crumble_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Sweeper" to="Buttons" method="_on_sweeper_pressed"]

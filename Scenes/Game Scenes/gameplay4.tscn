@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dtsminrhe8yj1"]
+[gd_scene load_steps=26 format=3 uid="uid://dtsminrhe8yj1"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fss8k"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_y7w5l"]
@@ -27,6 +27,8 @@
 size = Vector2(4653, 193)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[sub_resource type="TileSet" id="TileSet_cbfel"]
 
 [node name="Arena_01" type="Node2D"]
 
@@ -277,6 +279,26 @@ autostart = true
 [node name="Timer3" type="Timer" parent="Grounds"]
 wait_time = 4.0
 autostart = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cbfel")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
+
+[node name="SpawnPos\'" type="Node" parent="."]
+
+[node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-471, -348)
+
+[node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(467, -349)
+
+[node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-415, -349)
+
+[node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(416, -343)
 
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]

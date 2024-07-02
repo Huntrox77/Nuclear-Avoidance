@@ -16,7 +16,6 @@ texture = ExtResource("1_t1v5j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_goni1")
-one_way_collision = true
 
 [node name="Reappeartimer" type="Timer" parent="."]
 wait_time = 5.0

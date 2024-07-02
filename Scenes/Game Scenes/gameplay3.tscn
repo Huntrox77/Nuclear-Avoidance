@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://qdnvsjmntuhi"]
+[gd_scene load_steps=28 format=3 uid="uid://qdnvsjmntuhi"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_buvqp"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1ylfr"]
@@ -22,11 +22,21 @@
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_tb2gu"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_26vm1"]
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_nvji0"]
+[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/DirtBackroung.png" id="23_vom0y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
 size = Vector2(4653, 193)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4ggo"]
+texture = ExtResource("23_vom0y")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bla64"]
+sources/0 = SubResource("TileSetAtlasSource_m4ggo")
 
 [node name="Arena_01" type="Node2D"]
 
@@ -269,6 +279,26 @@ GroundRight = ExtResource("18_nvji0")
 [node name="Timer" type="Timer" parent="Grounds"]
 wait_time = 7.0
 autostart = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_bla64")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
+
+[node name="SpawnPos\'" type="Node" parent="."]
+
+[node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-465, -174)
+
+[node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(473, -173)
+
+[node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-412, -170)
+
+[node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(418, -172)
 
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
