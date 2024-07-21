@@ -67,6 +67,7 @@ shape = SubResource("CircleShape2D_m0t8s")
 position = Vector2(-2, 80)
 
 [node name="Sprite2D" type="Sprite2D" parent="Nuke"]
+visible = false
 position = Vector2(64, 143)
 scale = Vector2(0.734234, 0.734234)
 texture = ExtResource("4_d2flp")
@@ -107,7 +108,6 @@ scale = Vector2(0.734234, 0.734234)
 texture = ExtResource("4_d2flp")
 
 [node name="Nuke3" type="Area2D" parent="."]
-visible = false
 position = Vector2(417, -723)
 collision_layer = 2
 script = ExtResource("1_qbu4d")
@@ -143,7 +143,6 @@ scale = Vector2(0.734234, 0.734234)
 texture = ExtResource("4_d2flp")
 
 [node name="Nuke4" type="Area2D" parent="."]
-visible = false
 position = Vector2(417, -723)
 collision_layer = 2
 script = ExtResource("1_qbu4d")

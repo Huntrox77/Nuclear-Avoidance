@@ -205,6 +205,12 @@ one_shot = true
 one_shot = true
 autostart = true
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_muvba")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
+
 [node name="Modifier Stuff" type="Node" parent="."]
 
 [node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
@@ -271,12 +277,6 @@ script = ExtResource("15_xbgmn")
 GroundLeft = ExtResource("16_1c585")
 Ground = ExtResource("17_q7kd4")
 GroundRight = ExtResource("18_t4g3v")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_muvba")
-rendering_quadrant_size = 64
-format = 2
-layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
 
 [node name="SpawnPos\'" type="Node" parent="."]
 
