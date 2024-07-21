@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8xdxotuoxlsx"
-path="res://.godot/imported/Platform (7) (2).png-006727f4aae0fcfda39da2b1fb8ac102.ctex"
+uid="uid://c4h86eqm2fqcl"
+path="res://.godot/imported/WoodPlatform.png-ab46fae24793650c9b2ec3be2d65b580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Platform (7) (2).png"
-dest_files=["res://.godot/imported/Platform (7) (2).png-006727f4aae0fcfda39da2b1fb8ac102.ctex"]
+source_file="res://Sprites/WoodPlatform.png"
+dest_files=["res://.godot/imported/WoodPlatform.png-ab46fae24793650c9b2ec3be2d65b580.ctex"]
 
 [params]
 

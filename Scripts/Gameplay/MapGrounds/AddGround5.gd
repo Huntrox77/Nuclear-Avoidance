@@ -1,6 +1,6 @@
 extends Node
 @export var GroundRight:PackedScene
-@onready var Besprite = preload("res://Sprites/BehindGround.png")
+@onready var Besprite = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
