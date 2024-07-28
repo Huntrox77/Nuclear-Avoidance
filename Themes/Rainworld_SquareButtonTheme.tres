@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://2os1x4i4c3g5"]
+
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="1_k1uct"]
+[ext_resource type="StyleBox" uid="uid://dcsrqxsry8qx8" path="res://StyleBoxes/BlackBG_WhiteOutline_StyleBox.tres" id="2_kubre"]
+
+[resource]
+default_font_size = 24
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.588235, 0.588235, 0.588235, 1)
+Button/colors/font_pressed_color = Color(0.215686, 0.215686, 0.215686, 1)
+Button/styles/focus = ExtResource("1_k1uct")
+Button/styles/hover = ExtResource("2_kubre")
+Button/styles/normal = ExtResource("2_kubre")
+Button/styles/pressed = ExtResource("2_kubre")

@@ -4,6 +4,7 @@ extends Control
 @onready var P2Button = get_node("P2")
 @onready var P3Button = get_node("P3")
 @onready var P4Button = get_node("P4")
+@onready var AdvModBut = $AdvMod
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,6 +15,10 @@ func _ready():
 func _process(_delta):
 	if Modifier.p1selection == true:
 		P1Button.button_pressed = true
+	if Modifier.AdvMod == false:
+		AdvModBut.hide()
+	else:
+		AdvModBut.show()
 	if Modifier.p2selection == true:
 		P2Button.button_pressed = true
 	if Modifier.p3selection == true:
@@ -105,4 +110,9 @@ func _on_ice_pressed():
 
 func _on_fog_pressed():
 	Modifier.Fog = not Modifier.Fog
+	pass # Replace with function body.
+
+
+func _on_adv_mod_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Menus/Advanced Modifiers.tscn")
 	pass # Replace with function body.

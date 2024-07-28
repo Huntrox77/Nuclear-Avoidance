@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1k34sp6aj5kc"]
+
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_avbpt"]
+
+[node name="ChallengeSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Challenges" type="GridContainer" parent="."]
+clip_contents = true
+layout_mode = 2
+offset_left = -370.0
+offset_top = -216.0
+offset_right = 390.0
+offset_bottom = 113.0
+columns = 10
+
+[node name="Button" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "1"
+expand_icon = true
+
+[node name="Button2" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "2"
+expand_icon = true
+
+[node name="Button3" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "3"
+expand_icon = true
+
+[node name="Button4" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "4
+"
+expand_icon = true
+
+[node name="Button5" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "5
+"
+expand_icon = true
+
+[node name="Button6" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "6
+"
+expand_icon = true
+
+[node name="Button7" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "7
+"
+expand_icon = true
+
+[node name="Button8" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "8"
+expand_icon = true
+
+[node name="Button9" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "9"
+expand_icon = true
+
+[node name="Button10" type="Button" parent="Challenges"]
+layout_mode = 2
+theme = ExtResource("1_avbpt")
+text = "10"
+expand_icon = true

@@ -15,6 +15,7 @@ config/description="Bomb go woo
 "
 run/main_scene="res://Scenes/Menus/modifiers&players.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=60
 boot_splash/bg_color=Color(0.235294, 0.470588, 1, 1)
 config/icon="res://Sprites/Nuke.png"
 

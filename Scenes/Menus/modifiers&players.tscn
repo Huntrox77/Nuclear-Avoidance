@@ -48,6 +48,21 @@ text = "Play"
 script = ExtResource("2_i5d18")
 metadata/_edit_use_anchors_ = true
 
+[node name="AdvMod" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.254836
+anchor_top = 0.0381933
+anchor_right = 0.394932
+anchor_bottom = 0.111741
+offset_left = 0.17395
+offset_top = 0.28894
+offset_right = -0.356079
+offset_bottom = -0.296997
+action_mode = 0
+text = "Advanced Modifiers"
+metadata/_edit_use_anchors_ = true
+
 [node name="Back Button" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
@@ -65,6 +80,7 @@ icon = ExtResource("3_ojoyc")
 expand_icon = true
 script = ExtResource("4_efgvg")
 metadata/_edit_use_anchors_ = true
+metadata/Back2Menu = true
 
 [node name="P1" type="TextureButton" parent="Buttons"]
 layout_mode = 1
@@ -195,31 +211,34 @@ text = "Maps"
 fit_content = true
 scroll_active = false
 
-[node name="Map Container" type="GridContainer" parent="Buttons"]
-layout_mode = 0
-offset_left = 575.0
+[node name="Map Container" type="ScrollContainer" parent="Buttons"]
+layout_mode = 2
+offset_left = 599.0
 offset_top = 324.0
-offset_right = 1151.0
-offset_bottom = 527.0
+offset_right = 706.0
+offset_bottom = 501.0
 
-[node name="Map1" type="CheckButton" parent="Buttons/Map Container"]
+[node name="HBoxContainer" type="VBoxContainer" parent="Buttons/Map Container"]
+layout_mode = 2
+
+[node name="Map1" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
 button_pressed = true
 text = "Map 1"
 
-[node name="Map2" type="CheckButton" parent="Buttons/Map Container"]
+[node name="Map2" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
 text = "Map 2"
 
-[node name="Map3" type="CheckButton" parent="Buttons/Map Container"]
+[node name="Map3" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
 text = "Map 3"
 
-[node name="Map4" type="CheckButton" parent="Buttons/Map Container"]
+[node name="Map4" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
 text = "Map 4"
 
-[node name="Map5" type="CheckButton" parent="Buttons/Map Container"]
+[node name="Map5" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
 text = "Map 5"
 
@@ -296,16 +315,17 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/AdvMod" to="Buttons" method="_on_adv_mod_pressed"]
 [connection signal="pressed" from="Buttons/Back Button" to="Buttons/Back Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/P1" to="Buttons" method="_on_p_1_pressed"]
 [connection signal="pressed" from="Buttons/P2" to="Buttons" method="_on_p_2_pressed"]
 [connection signal="pressed" from="Buttons/P3" to="Buttons" method="_on_p_3_pressed"]
 [connection signal="pressed" from="Buttons/P4" to="Buttons" method="_on_p_4_pressed"]
-[connection signal="toggled" from="Buttons/Map Container/Map1" to="Buttons" method="_on_map_1_toggled"]
-[connection signal="toggled" from="Buttons/Map Container/Map2" to="Buttons" method="_on_map_2_toggled"]
-[connection signal="toggled" from="Buttons/Map Container/Map3" to="Buttons" method="_on_map_3_toggled"]
-[connection signal="toggled" from="Buttons/Map Container/Map4" to="Buttons" method="_on_map_4_toggled"]
-[connection signal="toggled" from="Buttons/Map Container/Map5" to="Buttons" method="_on_map_5_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/HBoxContainer/Map1" to="Buttons" method="_on_map_1_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/HBoxContainer/Map2" to="Buttons" method="_on_map_2_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/HBoxContainer/Map3" to="Buttons" method="_on_map_3_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/HBoxContainer/Map4" to="Buttons" method="_on_map_4_toggled"]
+[connection signal="toggled" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_toggled"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Impaction" to="Buttons" method="_on_impaction_pressed"]

@@ -1,5 +1,6 @@
 extends Node
 # Modifiers
+var AdvMod = false
 var Blackout = false
 var Fog = false
 var Smashbros = false
@@ -7,6 +8,8 @@ var Ice = false
 var Crumble = false
 var Impaction = false
 var Sweeper = false
+var DMNSC = 0
+var GravityMult = 100
 
 # Global Stuff
 var gameplaying = false
@@ -67,6 +70,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	ProjectSettings.set_setting("physics/2d/default_gravity", GravityMult * 9.8)
 	#list of players
 	var listofplayers = [p1selection, p2selection, p3selection, p4selection]
 	if Clam == true:

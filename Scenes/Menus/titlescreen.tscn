@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
-[ext_resource type="Texture2D" uid="uid://q0400brjygcn" path="res://Sprites/DOG.png" id="2_4lefj"]
+[ext_resource type="Texture2D" uid="uid://cjmvkra7ok58k" path="res://Sprites/Red X.png" id="2_5fyfu"]
 [ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_unan6"]
 
 [node name="Title Screen" type="Node2D"]
@@ -38,12 +38,28 @@ offset_top = 26.0
 offset_right = 1123.0
 offset_bottom = 109.0
 tooltip_text = "Quit Game."
-icon = ExtResource("2_4lefj")
+icon = ExtResource("2_5fyfu")
 flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("3_unan6")
 metadata/_edit_use_anchors_ = true
 
+[node name="Settings" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.430031
+anchor_top = 0.671887
+anchor_right = 0.570127
+anchor_bottom = 0.745435
+offset_left = 0.17395
+offset_top = 0.28894
+offset_right = -0.356079
+offset_bottom = -0.296997
+action_mode = 0
+text = "Settings"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Exit Button" to="Buttons/Exit Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="Buttons/Exit Button" method="_on_settings_pressed"]

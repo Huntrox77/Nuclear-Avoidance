@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://bijf1mjlkepfu"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Sliders.gd" id="1_avl2f"]
+[ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/BackArrow.png" id="2_ud6ak"]
+[ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="3_p7ts3"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DMNSC" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = -490.0
+offset_top = -203.0
+offset_right = -287.0
+offset_bottom = -171.0
+max_value = 8.0
+value = 5.0
+script = ExtResource("1_avl2f")
+
+[node name="Labale" type="RichTextLabel" parent="DMNSC"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -19.0
+offset_right = 259.0
+offset_bottom = 4.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Amount Of Diagonally Moving Nukes"
+fit_content = true
+
+[node name="Percentage" type="RichTextLabel" parent="DMNSC"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4.0
+offset_right = 627.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 16
+text = "0%
+"
+fit_content = true
+
+[node name="Gravity" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = -489.0
+offset_top = -151.0
+offset_right = -286.0
+offset_bottom = -119.0
+max_value = 200.0
+value = 5.0
+script = ExtResource("1_avl2f")
+
+[node name="Percentage" type="RichTextLabel" parent="Gravity"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4.0
+offset_right = 682.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 16
+text = "0%
+"
+fit_content = true
+
+[node name="Labale" type="RichTextLabel" parent="Gravity"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = -18.0
+offset_right = 145.0
+offset_bottom = 5.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Gravity
+"
+fit_content = true
+
+[node name="Modifiers" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.158
+anchor_top = 0.051
+anchor_right = 0.158
+anchor_bottom = 0.051
+offset_left = -307.0
+offset_top = -322.0
+offset_right = 310.0
+offset_bottom = -250.0
+theme_override_font_sizes/normal_font_size = 52
+text = "Advanced Modifiers
+"
+fit_content = true
+scroll_active = false
+
+[node name="Back2Modifiers" type="Button" parent="."]
+layout_mode = 0
+offset_left = -557.0
+offset_top = 261.0
+offset_right = -403.0
+offset_bottom = 306.0
+text = "Back"
+icon = ExtResource("2_ud6ak")
+expand_icon = true
+script = ExtResource("3_p7ts3")
+
+[connection signal="pressed" from="Back2Modifiers" to="Back2Modifiers" method="_on_pressed"]

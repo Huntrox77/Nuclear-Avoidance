@@ -15,8 +15,13 @@ var negspawnradius = -234
 var spawnradius = 234
 var expspeed = 3100
 var randiY = randi_range(1, 3)
+var movex = 0
+var movex1 = 1
+var movex2 = 4
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	movex2 = 10 - Modifier.DMNSC
 	if Modifier.Yharon == true:
 		Sprite.show()
 		AnimSprite.hide()
@@ -43,16 +48,14 @@ func _ready():
 	if Modifier.currentmap == "map5":
 		negspawnradius = -664
 		spawnradius = 464
-
-	if Modifier.currentmap == "SidewaysBombMap1":
-		if randiY == 1:
-			position.y = -630
-		elif randiY == 2:
-			position.y = -460
-		elif  randiY == 3:
-			position.y = -300
+	position.x = randi_range(negspawnradius, spawnradius)
+	if randi_range(movex1, movex2) == 2:
+		if position.x <= 0:
+			movex = -1
+		else:
+			movex = 1
 	else:
-		position.x = randi_range(negspawnradius, spawnradius)
+		movex = 0
 
 	$BlastRadius/CollisionShape2D.disabled = true #disables collision with nuke pre-explosion
 
@@ -60,10 +63,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if move == true:
-		if Modifier.currentmap == "SidewaysBombMap1":
-			position -= Vector2(randmovespeed, 0) # Movement
-		else:
-			position += Vector2(0, randmovespeed)
+		if movex == -1:
+			position -= Vector2(-randmovespeed * 0.5, -randmovespeed) #Positive Diagonal Movement
+		elif movex == 1:
+			position -= Vector2(randmovespeed * 0.5, -randmovespeed) #Diagonal Movement
+		elif movex == 0:
+			position += Vector2(0, randmovespeed) #Movement
 
 # Launches the player in the direction away from the explosion
 func launch(body):
