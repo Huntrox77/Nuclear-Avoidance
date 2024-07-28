@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b54x5poduok87"]
 
 [ext_resource type="Script" path="res://Scripts/UI/AllTheButtonStuffInSettings.gd" id="1_ilj2u"]
-[ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/BackArrow.png" id="1_k63ou"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_cxbd7"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="4_kvfiq"]
 
 [node name="Settings" type="Node2D"]
 
@@ -18,17 +18,17 @@ script = ExtResource("1_ilj2u")
 [node name="Back Button" type="Button" parent="Buttons and Stuff"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0992845
-anchor_top = 0.920451
-anchor_right = 0.0992845
-anchor_bottom = 0.920451
+anchor_left = -1.77572
+anchor_top = 0.92045
+anchor_right = -1.05072
+anchor_bottom = 0.92045
 offset_left = -562.971
-offset_top = 226.182
-offset_right = -408.971
-offset_bottom = 271.182
+offset_top = 213.182
+offset_right = -375.971
+offset_bottom = 258.182
+theme = ExtResource("4_kvfiq")
 action_mode = 0
-text = "Back"
-icon = ExtResource("1_k63ou")
+text = "                  < Back "
 expand_icon = true
 script = ExtResource("2_cxbd7")
 metadata/_edit_use_anchors_ = true

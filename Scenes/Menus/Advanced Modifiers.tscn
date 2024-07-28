@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bijf1mjlkepfu"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sliders.gd" id="1_avl2f"]
-[ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/BackArrow.png" id="2_ud6ak"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_7aw80"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="3_p7ts3"]
 
 [node name="Node2D" type="Control"]
@@ -92,12 +92,12 @@ scroll_active = false
 
 [node name="Back2Modifiers" type="Button" parent="."]
 layout_mode = 0
-offset_left = -557.0
-offset_top = 261.0
-offset_right = -403.0
-offset_bottom = 306.0
-text = "Back"
-icon = ExtResource("2_ud6ak")
+offset_left = -619.0
+offset_top = 247.0
+offset_right = -427.0
+offset_bottom = 292.0
+theme = ExtResource("2_7aw80")
+text = "               < Back"
 expand_icon = true
 script = ExtResource("3_p7ts3")
 

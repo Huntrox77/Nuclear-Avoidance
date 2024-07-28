@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1k34sp6aj5kc"]
+[gd_scene load_steps=3 format=3 uid="uid://b1k34sp6aj5kc"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_avbpt"]
+[ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_euinn"]
 
 [node name="ChallengeSelect" type="Control"]
 layout_mode = 3
@@ -80,3 +81,15 @@ layout_mode = 2
 theme = ExtResource("1_avbpt")
 text = "10"
 expand_icon = true
+
+[node name="Back Button" type="Button" parent="."]
+offset_left = -607.0
+offset_top = 250.0
+offset_right = -415.0
+offset_bottom = 295.0
+theme = ExtResource("1_avbpt")
+text = "               < Back"
+expand_icon = true
+script = ExtResource("2_euinn")
+
+[connection signal="pressed" from="Back Button" to="Back Button" method="_on_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=18 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierPlayButton.gd" id="2_i5d18"]
 [ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/BackArrow.png" id="3_ojoyc"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="4_efgvg"]
@@ -35,18 +36,23 @@ metadata/_edit_use_anchors_ = true
 [node name="Play Button" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.829858
-anchor_top = 0.875906
-anchor_right = 0.962148
-anchor_bottom = 0.949454
-offset_left = 0.17395
-offset_top = 0.28894
-offset_right = -0.356079
-offset_bottom = -0.296997
+anchor_left = 0.86964
+anchor_top = 0.916909
+anchor_right = 1.04487
+anchor_bottom = 0.917
+offset_left = -5.69507
+offset_top = -23.24
+offset_right = 31.262
+offset_bottom = 21.701
+theme = ExtResource("2_dymia")
 action_mode = 0
-text = "Play"
+text = " Play >                       "
+icon = ExtResource("3_ojoyc")
+alignment = 0
+expand_icon = true
 script = ExtResource("2_i5d18")
 metadata/_edit_use_anchors_ = true
+metadata/Back2Menu = true
 
 [node name="AdvMod" type="Button" parent="Buttons"]
 layout_mode = 1
@@ -59,6 +65,7 @@ offset_left = 0.17395
 offset_top = 0.28894
 offset_right = -0.356079
 offset_bottom = -0.296997
+theme = ExtResource("2_dymia")
 action_mode = 0
 text = "Advanced Modifiers"
 metadata/_edit_use_anchors_ = true
@@ -68,14 +75,15 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0992845
 anchor_top = 0.920451
-anchor_right = 0.0992845
+anchor_right = 0.0593886
 anchor_bottom = 0.920451
 offset_left = -76.475
-offset_top = -22.532
+offset_top = -25.532
 offset_right = 77.525
-offset_bottom = 22.468
+offset_bottom = 19.468
+theme = ExtResource("2_dymia")
 action_mode = 0
-text = "Back"
+text = "< Back "
 icon = ExtResource("3_ojoyc")
 expand_icon = true
 script = ExtResource("4_efgvg")
@@ -93,6 +101,7 @@ offset_left = -54.762
 offset_top = -54.399
 offset_right = 54.238
 offset_bottom = 54.601
+theme = ExtResource("2_dymia")
 toggle_mode = true
 button_pressed = true
 texture_normal = ExtResource("5_chenq")

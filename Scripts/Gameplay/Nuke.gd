@@ -45,6 +45,9 @@ func _ready():
 	if Modifier.currentmap == "map3":
 		negspawnradius = -664
 		spawnradius = 464
+	if Modifier.currentmap == "map4":
+		negspawnradius = -664
+		spawnradius = 464
 	if Modifier.currentmap == "map5":
 		negspawnradius = -664
 		spawnradius = 464
