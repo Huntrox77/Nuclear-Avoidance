@@ -13,3 +13,5 @@ Button/styles/focus = ExtResource("1_k1uct")
 Button/styles/hover = ExtResource("2_kubre")
 Button/styles/normal = ExtResource("2_kubre")
 Button/styles/pressed = ExtResource("2_kubre")
+RichTextLabel/styles/normal = ExtResource("2_kubre")
+VBoxContainer/constants/separation = 18

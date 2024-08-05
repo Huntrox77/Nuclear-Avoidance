@@ -69,6 +69,23 @@ action_mode = 0
 text = "Settings"
 metadata/_edit_use_anchors_ = true
 
+[node name="Achievments" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.430031
+anchor_top = 0.611609
+anchor_right = 0.570127
+anchor_bottom = 0.685157
+offset_left = 0.17395
+offset_top = 0.28894
+offset_right = -1.35675
+offset_bottom = 2.70337
+theme = ExtResource("1_0l6ev")
+theme_override_font_sizes/font_size = 19
+action_mode = 0
+text = "Achievements"
+metadata/_edit_use_anchors_ = true
+
 [node name="Exit Button" type="Button" parent="Buttons"]
 modulate = Color(1, 0, 0, 1)
 self_modulate = Color(1, 0, 0, 1)
@@ -89,4 +106,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Challenges" to="Buttons/Challenges" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="Buttons/Exit Button" method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/Achievments" to="Buttons/Exit Button" method="_on_achievments_pressed"]
 [connection signal="pressed" from="Buttons/Exit Button" to="Buttons/Exit Button" method="_on_pressed"]

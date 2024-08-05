@@ -22,6 +22,7 @@ config/icon="res://Sprites/Nuke.png"
 [autoload]
 
 Modifiers="*res://Scripts/modifiers.gd"
+GlobalTexts="*res://Scripts/GlobalTexts.gd"
 
 [display]
 

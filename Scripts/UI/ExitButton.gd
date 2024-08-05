@@ -20,3 +20,8 @@ func _on_pressed():
 
 func _on_settings_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/settings.tscn")
+
+
+func _on_achievments_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Menus/achievements.tscn")
+	pass # Replace with function body.

@@ -177,6 +177,7 @@ offset_right = 159.0
 offset_bottom = -50.0
 theme = ExtResource("1_avbpt")
 text = "Play"
+script = ExtResource("4_tt3cm")
 
 [connection signal="pressed" from="Challenges/Button" to="Challenges" method="_on_button_pressed"]
 [connection signal="pressed" from="Challenges/Button2" to="Challenges" method="_on_button_2_pressed"]

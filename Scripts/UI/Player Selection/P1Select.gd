@@ -25,7 +25,16 @@ func _process(_delta):
 		P3Button.button_pressed = true
 	if Modifier.p4selection == true:
 		P4Button.button_pressed = true
-
+	if Modifier.map1 == true:
+		$"Map Container/HBoxContainer/Map1".button_pressed = true
+	if Modifier.map2 == true:
+		$"Map Container/HBoxContainer/Map2".button_pressed = true
+	if Modifier.map3 == true:
+		$"Map Container/HBoxContainer/Map3".button_pressed = true
+	if Modifier.map4 == true:
+		$"Map Container/HBoxContainer/Map4".button_pressed = true
+	if Modifier.map5 == true:
+		$"Map Container/HBoxContainer/Map5".button_pressed = true
 
 func _on_p_1_pressed():
 	Modifier.p1selection = not Modifier.p1selection
@@ -79,26 +88,6 @@ func _on_crumble_pressed():
 	pass # Replace with function body.
 
 
-func _on_map_4_toggled(_toggled_on):
-	Modifier.map4 = not Modifier.map4
-
-
-func _on_map_5_toggled(_toggled_on):
-	Modifier.map5 = not Modifier.map5
-
-
-func _on_map_3_toggled(_toggled_on):
-	Modifier.map3 = not Modifier.map3
-
-
-func _on_map_2_toggled(_toggled_on):
-	Modifier.map2 = not Modifier.map2
-
-
-func _on_map_1_toggled(_toggled_on):
-	Modifier.map1 = not Modifier.map1
-
-
 func _on_sweeper_pressed():
 	Modifier.Sweeper = not Modifier.Sweeper
 
@@ -116,3 +105,23 @@ func _on_fog_pressed():
 func _on_adv_mod_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/Advanced Modifiers.tscn")
 	pass # Replace with function body.
+
+
+func _on_map_1_pressed():
+	Modifier.map1 = not Modifier.map1
+
+
+func _on_map_2_pressed():
+	Modifier.map2 = not Modifier.map2
+
+
+func _on_map_3_pressed():
+	Modifier.map3 = not Modifier.map3
+
+
+func _on_map_4_pressed():
+	Modifier.map4 = not Modifier.map4
+
+
+func _on_map_5_toggled(toggled_on):
+	Modifier.map5 = not Modifier.map5
