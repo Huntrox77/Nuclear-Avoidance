@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=6 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
-[ext_resource type="Texture2D" uid="uid://cjmvkra7ok58k" path="res://Sprites/Red X.png" id="2_5fyfu"]
+[ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_6gjgd"]
 [ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_unan6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8b1ob"]
+font = ExtResource("2_6gjgd")
+font_size = 36
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Title Screen" type="Node2D"]
 
@@ -17,36 +23,77 @@ offset_top = -324.0
 offset_right = 578.0
 offset_bottom = 323.0
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Play Button" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0641804
-anchor_top = -0.109737
-anchor_right = 0.0650477
-anchor_bottom = -0.109737
+anchor_left = -0.262793
+anchor_top = -0.125193
+anchor_right = -0.244579
+anchor_bottom = -0.125193
+offset_left = 422.0
+offset_top = 281.0
+offset_right = 587.0
+offset_bottom = 331.0
+pivot_offset = Vector2(334, -310)
+theme = ExtResource("1_0l6ev")
+theme_override_fonts/font = ExtResource("2_6gjgd")
+action_mode = 0
+text = "Play Local"
+script = ExtResource("1_nig56")
+metadata/_edit_use_anchors_ = true
+
+[node name="Online" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.187337
+anchor_top = -0.0278207
+anchor_right = -0.153513
+anchor_bottom = -0.0278207
 offset_left = 422.0
 offset_top = 281.0
 offset_right = 582.0
 offset_bottom = 331.0
+pivot_offset = Vector2(334, -310)
 theme = ExtResource("1_0l6ev")
+theme_override_fonts/font = ExtResource("2_6gjgd")
 action_mode = 0
-text = "Local Co-op"
-script = ExtResource("1_nig56")
+text = "Play Online"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit Game" type="Button" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105635
+anchor_top = 0.6
+anchor_right = 0.266635
+anchor_bottom = 0.677
+offset_left = -2.79701
+offset_top = -0.200012
+offset_right = -2.42999
+offset_bottom = -0.019043
+pivot_offset = Vector2(334, -310)
+theme = ExtResource("1_0l6ev")
+theme_override_fonts/font = ExtResource("2_6gjgd")
+action_mode = 0
+text = "Quit Game"
+script = ExtResource("3_unan6")
 metadata/_edit_use_anchors_ = true
 
 [node name="Challenges" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0641804
-anchor_top = -0.0123648
-anchor_right = 0.0650477
-anchor_bottom = -0.0123648
+anchor_left = -0.355594
+anchor_top = -0.027821
+anchor_right = -0.333044
+anchor_bottom = -0.027821
 offset_left = 422.0
 offset_top = 281.0
 offset_right = 582.0
 offset_bottom = 331.0
 theme = ExtResource("1_0l6ev")
+theme_override_fonts/font = ExtResource("2_6gjgd")
 action_mode = 0
 text = "Challenges
 "
@@ -56,15 +103,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Settings" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.430031
-anchor_top = 0.515782
-anchor_right = 0.570127
-anchor_bottom = 0.58933
+anchor_left = 0.0102568
+anchor_top = 0.503417
+anchor_right = 0.150353
+anchor_bottom = 0.576965
 offset_left = 0.17395
 offset_top = 0.28894
 offset_right = -1.35675
 offset_bottom = 2.70337
 theme = ExtResource("1_0l6ev")
+theme_override_fonts/font = ExtResource("2_6gjgd")
 action_mode = 0
 text = "Settings"
 metadata/_edit_use_anchors_ = true
@@ -72,39 +120,48 @@ metadata/_edit_use_anchors_ = true
 [node name="Achievments" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.430031
-anchor_top = 0.611609
-anchor_right = 0.570127
-anchor_bottom = 0.685157
+anchor_left = 0.155964
+anchor_top = 0.503417
+anchor_right = 0.352434
+anchor_bottom = 0.576965
 offset_left = 0.17395
 offset_top = 0.28894
 offset_right = -1.35675
 offset_bottom = 2.70337
+pivot_offset = Vector2(69, -65)
 theme = ExtResource("1_0l6ev")
-theme_override_font_sizes/font_size = 19
+theme_override_fonts/font = ExtResource("2_6gjgd")
+theme_override_font_sizes/font_size = 22
 action_mode = 0
 text = "Achievements"
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit Button" type="Button" parent="Buttons"]
-modulate = Color(1, 0, 0, 1)
-self_modulate = Color(1, 0, 0, 1)
-light_mask = 0
+[node name="Panel" type="Panel" parent="Buttons"]
+z_index = -5
 layout_mode = 0
-offset_left = 1033.0
-offset_top = 26.0
-offset_right = 1123.0
-offset_bottom = 109.0
-tooltip_text = "Quit Game."
-icon = ExtResource("2_5fyfu")
-flat = true
-icon_alignment = 1
-expand_icon = true
-script = ExtResource("3_unan6")
-metadata/_edit_use_anchors_ = true
+offset_right = 417.0
+offset_bottom = 647.0
+mouse_filter = 2
+theme = ExtResource("1_0l6ev")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Buttons"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 50.0
+offset_right = 416.0
+offset_bottom = 159.0
+theme = ExtResource("1_0l6ev")
+text = "Nuclear Avoidance"
+label_settings = SubResource("LabelSettings_8b1ob")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Online" to="Buttons/Online" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Quit Game" to="Buttons/Quit Game" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Challenges" to="Buttons/Quit Game" method="_on_challenges_pressed"]
 [connection signal="pressed" from="Buttons/Challenges" to="Buttons/Challenges" method="_on_pressed"]
-[connection signal="pressed" from="Buttons/Settings" to="Buttons/Exit Button" method="_on_settings_pressed"]
-[connection signal="pressed" from="Buttons/Achievments" to="Buttons/Exit Button" method="_on_achievments_pressed"]
-[connection signal="pressed" from="Buttons/Exit Button" to="Buttons/Exit Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="Buttons/Quit Game" method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/Achievments" to="Buttons/Quit Game" method="_on_achievments_pressed"]

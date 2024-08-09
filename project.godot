@@ -23,6 +23,7 @@ config/icon="res://Sprites/Nuke.png"
 
 Modifiers="*res://Scripts/modifiers.gd"
 GlobalTexts="*res://Scripts/GlobalTexts.gd"
+KeepBetweenSaves="*res://Scripts/keep_between_saves.gd"
 
 [display]
 

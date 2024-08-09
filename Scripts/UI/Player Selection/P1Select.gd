@@ -123,5 +123,5 @@ func _on_map_4_pressed():
 	Modifier.map4 = not Modifier.map4
 
 
-func _on_map_5_toggled(toggled_on):
+func _on_map_5_toggled(_toggled_on):
 	Modifier.map5 = not Modifier.map5

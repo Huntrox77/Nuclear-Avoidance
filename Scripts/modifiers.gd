@@ -12,6 +12,7 @@ var DMNSC = 0
 var GravityMult = 100
 
 # Global Stuff
+var reset = false
 var p1aircontrol = 0.09
 var p2aircontrol = 0.09
 var p3aircontrol = 0.09
@@ -74,6 +75,30 @@ func _reset():
 	_resetmaps()
 	_resetnukes()
 
+func _resetmods():
+	gameplaying = false
+	p1aircontrol = 0.09
+	p2aircontrol = 0.09
+	p3aircontrol = 0.09
+	p4aircontrol = 0.09
+	p1selection = true
+	p2selection = true
+	p3selection = false
+	p4selection = false
+	playersleft = 2
+	reset = false
+	AdvMod = false
+	Blackout = false
+	Fog = false
+	Smashbros = false
+	Ice = false
+	Crumble = false
+	Impaction = false
+	Sweeper = false
+	DMNSC = 0
+	GravityMult = 100
+	_resetnukes()
+	
 #Silly Stuff
 var DOG = false
 var Yharon = false
@@ -83,6 +108,8 @@ var DOGMUSIC2 = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if reset == true:
+		_resetmods()
 	ProjectSettings.set_setting("physics/2d/default_gravity", GravityMult * 9.8)
 	var listofplayers = [p1selection, p2selection, p3selection, p4selection]
 	if Clam == true:

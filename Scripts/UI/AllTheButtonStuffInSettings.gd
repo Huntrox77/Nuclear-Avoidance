@@ -25,11 +25,14 @@ func _on_check_button_toggled(toggled_on):
 
 func _on_option_button_item_selected(index):
 	if index == 0:
-		GlobalText.textspeed = 0.03
+		GlobalText.textspeed = 1
 		GlobalText.KeepChoice = 0
 	if index == 1:
-		GlobalText.textspeed = 0.02
+		GlobalText.textspeed = 0.03
 		GlobalText.KeepChoice = 1
 	if index == 2:
-		GlobalText.textspeed = 0.01
+		GlobalText.textspeed = 0.02
 		GlobalText.KeepChoice = 2
+	if index == 3:
+		GlobalText.textspeed = 0.01
+		GlobalText.KeepChoice = 3

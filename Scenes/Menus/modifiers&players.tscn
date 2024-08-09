@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=19 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/Secrets/Clam.gd" id="13_lf0ho"]
 [ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
 [ext_resource type="Script" path="res://Scripts/UI/KeepModifiers.gd" id="14_dqpoy"]
+[ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="14_nwcpy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -70,7 +71,7 @@ action_mode = 0
 text = "Advanced Modifiers"
 metadata/_edit_use_anchors_ = true
 
-[node name="Back Button" type="Button" parent="Buttons"]
+[node name="Menu Button" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0593886
@@ -152,22 +153,23 @@ toggle_mode = true
 texture_normal = ExtResource("11_6ge4a")
 texture_pressed = ExtResource("12_677y4")
 
-[node name="Modifiers" type="RichTextLabel" parent="Buttons"]
+[node name="Modifiers" type="Label" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.158
 anchor_top = 0.051
 anchor_right = 0.158
 anchor_bottom = 0.051
-offset_left = -142.174
+offset_left = -138.174
 offset_top = -18.997
-offset_right = 171.826
+offset_right = 112.826
 offset_bottom = 53.003
-theme_override_font_sizes/normal_font_size = 52
+theme_override_fonts/font = ExtResource("14_nwcpy")
+theme_override_font_sizes/font_size = 32
 text = "Modifiers
 "
-fit_content = true
-scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Clam" type="RichTextLabel" parent="Buttons"]
 layout_mode = 1
@@ -188,37 +190,39 @@ fit_content = true
 scroll_active = false
 script = ExtResource("13_lf0ho")
 
-[node name="Players" type="RichTextLabel" parent="Buttons"]
+[node name="Players" type="Label" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.158
 anchor_top = 0.051
 anchor_right = 0.158
 anchor_bottom = 0.051
-offset_left = 569.826
+offset_left = 401.826
 offset_top = -18.997
-offset_right = 883.826
+offset_right = 912.826
 offset_bottom = 53.003
-theme_override_font_sizes/normal_font_size = 52
+theme_override_fonts/font = ExtResource("14_nwcpy")
+theme_override_font_sizes/font_size = 36
 text = "Players"
-fit_content = true
-scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Maps" type="RichTextLabel" parent="Buttons"]
+[node name="Maps" type="Label" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.158
 anchor_top = 0.051
 anchor_right = 0.158
 anchor_bottom = 0.051
-offset_left = 593.826
+offset_left = 401.826
 offset_top = 209.003
-offset_right = 728.826
+offset_right = 913.826
 offset_bottom = 281.003
-theme_override_font_sizes/normal_font_size = 52
+theme_override_fonts/font = ExtResource("14_nwcpy")
+theme_override_font_sizes/font_size = 36
 text = "Maps"
-fit_content = true
-scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Map Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 2
@@ -252,14 +256,15 @@ text = "Map 5"
 
 [node name="Modifiers Container" type="GridContainer" parent="Buttons"]
 layout_mode = 0
+offset_left = 43.0
 offset_top = 94.0
-offset_right = 372.0
-offset_bottom = 208.0
+offset_right = 477.0
+offset_bottom = 447.0
+theme_override_constants/h_separation = 0
 
 [node name="Blackout" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+theme = ExtResource("2_dymia")
 action_mode = 0
 text = "Blackout "
 expand_icon = true
@@ -267,7 +272,7 @@ script = ExtResource("14_dqpoy")
 
 [node name="SmashBros" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Lossful Air controls "
@@ -276,7 +281,7 @@ script = ExtResource("14_dqpoy")
 
 [node name="Impaction" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Bomb Impacts
@@ -286,7 +291,7 @@ script = ExtResource("14_dqpoy")
 
 [node name="Crumble" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Crumble
@@ -296,7 +301,7 @@ script = ExtResource("14_dqpoy")
 
 [node name="Sweeper" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Sweeper
@@ -306,7 +311,7 @@ script = ExtResource("13_ufcak")
 
 [node name="Ice" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Slippery"
@@ -315,16 +320,25 @@ script = ExtResource("14_dqpoy")
 
 [node name="Fog" type="CheckButton" parent="Buttons/Modifiers Container"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
+theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
 text = "Fog of War"
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
+[node name="Panel" type="Panel" parent="."]
+z_index = -5
+offset_left = -553.0
+offset_top = -311.0
+offset_right = 557.0
+offset_bottom = 313.0
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/AdvMod" to="Buttons" method="_on_adv_mod_pressed"]
-[connection signal="pressed" from="Buttons/Back Button" to="Buttons/Back Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Menu Button" to="Buttons/Menu Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/P1" to="Buttons" method="_on_p_1_pressed"]
 [connection signal="pressed" from="Buttons/P2" to="Buttons" method="_on_p_2_pressed"]
 [connection signal="pressed" from="Buttons/P3" to="Buttons" method="_on_p_3_pressed"]

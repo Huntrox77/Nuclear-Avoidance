@@ -1,8 +1,6 @@
-extends Node
-var ChallengeText = ""
-var ChallengeTextVis = 0
-var textspeed = 1
-var KeepChoice = 0
+extends ScrollContainer
+@onready var Saves = get_node("/root/KeepBetweenSaves")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -10,7 +8,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if ChallengeTextVis == 1:
-		pass
-	else:
-		ChallengeTextVis += textspeed
+	if Saves.ChallengeOneComplete == true:
+		$"Container/Achievement 1/RedX".hide()
+		$"Container/Achievement 1/Check".show()
