@@ -13,7 +13,7 @@ var move = true
 var splosion = false
 var negspawnradius = -234
 var spawnradius = 234
-var expspeed = 3100
+var expspeed = 4200
 var randiY = randi_range(1, 3)
 var movex = 0
 var movex1 = 1
@@ -40,7 +40,7 @@ func _ready():
 			
 	# Changes spawn radius for map 2
 	if Modifier.currentmap == "map2":
-		negspawnradius = -464
+		negspawnradius = -664
 		spawnradius = 464
 	if Modifier.currentmap == "map3":
 		negspawnradius = -664
@@ -85,12 +85,12 @@ func launch(body):
 	if Modifier.Smashbros:
 		pass
 	else:
-		body.velocity.y = randi_range(-300, -600)
+		body.velocity.y = randi_range(-450, -750)
 	
 	if Modifier.Smashbros == true:
 		body.aircontrol -= 0.01
 
-# Delete Itself
+# Delete Itself7
 func _on_explodimer_timeout():
 	queue_free()
 

@@ -22,7 +22,7 @@ var p2selection = true
 var p3selection = false
 var p4selection = false
 var gameplaying = false
-var ChallengeOrLocal = "Local"
+var ChallengeOrLocal = "local"
 var map1 = true
 var map2 = false
 var map3 = false
@@ -147,8 +147,14 @@ func _process(_delta):
 						playersleft += 1
 			else:
 				_reset()
-				get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
+				if ChallengeOrLocal == "local":
+					get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
+				elif ChallengeOrLocal == "Challenge":
+					get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
 	#Code to pause the game by sending them back to the title screen.
 	if Input.is_action_pressed("Pause"):
 		_reset()
-		get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
+		if ChallengeOrLocal == "local":
+			get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
+		elif ChallengeOrLocal == "Challenge":
+			get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")

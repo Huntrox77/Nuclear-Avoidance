@@ -101,6 +101,7 @@ mouse_filter = 2
 theme = ExtResource("2_7aw80")
 
 [node name="Back2Modifiers" type="Button" parent="."]
+layout_mode = 0
 offset_left = -607.0
 offset_top = 250.0
 offset_right = -415.0

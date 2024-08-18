@@ -6,6 +6,9 @@ extends Node2D
 @onready var Swimer = $Swimer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Modifier.ChallengeOrLocal == "Challenge":
+		Modifier.Nuke2 = true
+		Modifier.Nuke3 = true
 	pass # Replace with function body.
 
 

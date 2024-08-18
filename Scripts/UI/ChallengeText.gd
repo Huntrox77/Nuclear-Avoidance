@@ -1,4 +1,4 @@
-extends RichTextLabel
+extends Label
 @onready var GlobalText = get_node("/root/GlobalTexts")
 @onready var Modifier = get_node("/root/Modifiers")
 var Vis = 0
@@ -9,6 +9,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	Vis = GlobalText.ChallengeTextVis
-	visible_ratio = Vis
-	text = GlobalText.ChallengeText
+	if name == "ChallengeText":
+		text = GlobalText.ChallengeText
+		visible_ratio = 1
+	else:
+		Vis = GlobalText.ChallengeTextVis
+		visible_ratio = Vis
+		text = GlobalText.DescText

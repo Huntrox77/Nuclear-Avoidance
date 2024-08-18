@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b54x5poduok87"]
+[gd_scene load_steps=6 format=3 uid="uid://b54x5poduok87"]
 
 [ext_resource type="Script" path="res://Scripts/UI/AllTheButtonStuffInSettings.gd" id="1_ilj2u"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_cxbd7"]
+[ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="3_pf0l7"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="4_kvfiq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lnbot"]
+font = ExtResource("3_pf0l7")
+font_size = 42
 
 [node name="Settings" type="Node2D"]
 
@@ -23,9 +28,9 @@ anchor_left = -9.233
 anchor_top = -5.82
 anchor_right = -9.233
 anchor_bottom = -5.82
-offset_left = 554.32
+offset_left = 463.32
 offset_top = 50.8
-offset_right = 910.32
+offset_right = 923.32
 offset_bottom = 92.8
 theme = ExtResource("4_kvfiq")
 theme_override_font_sizes/font_size = 24
@@ -50,21 +55,21 @@ popup/item_2/id = 1
 popup/item_3/text = "Slow"
 popup/item_3/id = 2
 
-[node name="Modifiers" type="RichTextLabel" parent="Buttons and Stuff"]
+[node name="Modifiers" type="Label" parent="Buttons and Stuff"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.158
 anchor_top = 0.051
 anchor_right = 0.158
 anchor_bottom = 0.051
-offset_left = -96.32
+offset_left = -101.32
 offset_top = -300.04
-offset_right = 114.68
+offset_right = 118.68
 offset_bottom = -228.04
-theme_override_font_sizes/normal_font_size = 52
 text = "Settings"
-fit_content = true
-scroll_active = false
+label_settings = SubResource("LabelSettings_lnbot")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel" type="Panel" parent="Buttons and Stuff"]
 z_index = -5
@@ -77,6 +82,7 @@ mouse_filter = 2
 theme = ExtResource("4_kvfiq")
 
 [node name="Back Button" type="Button" parent="Buttons and Stuff"]
+layout_mode = 0
 offset_left = -593.0
 offset_top = 250.0
 offset_right = -401.0

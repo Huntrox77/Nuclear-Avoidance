@@ -11,3 +11,6 @@ func _process(_delta):
 	if Saves.ChallengeOneComplete == true:
 		$"Container/Achievement 1/RedX".hide()
 		$"Container/Achievement 1/Check".show()
+	elif Saves.ChallengeTwoComplete == true:
+		$"Container/Achievement 2/RedX".hide()
+		$"Container/Achievement 2/Check".show()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dtsminrhe8yj1"]
+[gd_scene load_steps=27 format=3 uid="uid://dtsminrhe8yj1"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fss8k"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_y7w5l"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="14_6x8ac"]
 [ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="14_ewhg0"]
 [ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="15_icl6x"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="15_lwwaa"]
 [ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="16_o8b1v"]
 [ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="17_bn441"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround4.gd" id="18_68srx"]
@@ -218,48 +219,50 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="P1" type="RichTextLabel" parent="GUI\'s"]
+[node name="P1" type="Label" parent="GUI\'s"]
 layout_mode = 0
 offset_left = -551.0
 offset_top = -625.0
-offset_right = -215.0
-offset_bottom = -589.0
-theme_override_font_sizes/normal_font_size = 26
-text = "Player 1: 100% Control left"
-fit_content = true
+offset_right = -329.0
+offset_bottom = -584.0
+theme = ExtResource("15_lwwaa")
+text = "Player 1: 10%"
+vertical_alignment = 1
 script = ExtResource("14_ewhg0")
 
-[node name="P2" type="RichTextLabel" parent="GUI\'s"]
+[node name="P2" type="Label" parent="GUI\'s"]
 layout_mode = 0
-offset_left = 209.0
+offset_left = 314.0
 offset_top = -625.0
-offset_right = 545.0
-offset_bottom = -589.0
-theme_override_font_sizes/normal_font_size = 26
-text = "Player 2: 100% Control left"
-fit_content = true
+offset_right = 541.0
+offset_bottom = -584.0
+theme = ExtResource("15_lwwaa")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("15_icl6x")
 
-[node name="P3" type="RichTextLabel" parent="GUI\'s"]
+[node name="P3" type="Label" parent="GUI\'s"]
 layout_mode = 0
 offset_left = -551.0
 offset_top = -51.0
-offset_right = -215.0
-offset_bottom = -15.0
-theme_override_font_sizes/normal_font_size = 26
-text = "Player 1: 100% Control left"
-fit_content = true
+offset_right = -329.0
+offset_bottom = -10.0
+theme = ExtResource("15_lwwaa")
+text = "Player 1: 10%"
+vertical_alignment = 1
 script = ExtResource("16_o8b1v")
 
-[node name="P4" type="RichTextLabel" parent="GUI\'s"]
+[node name="P4" type="Label" parent="GUI\'s"]
 layout_mode = 0
-offset_left = 209.0
+offset_left = 314.0
 offset_top = -51.0
-offset_right = 545.0
-offset_bottom = -15.0
-theme_override_font_sizes/normal_font_size = 26
-text = "Player 2: 100% Control left"
-fit_content = true
+offset_right = 541.0
+offset_bottom = -10.0
+theme = ExtResource("15_lwwaa")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="Grounds" type="Node" parent="."]

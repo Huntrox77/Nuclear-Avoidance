@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1k34sp6aj5kc"]
+[gd_scene load_steps=6 format=3 uid="uid://b1k34sp6aj5kc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Challenges.gd" id="1_agl05"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_avbpt"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_euinn"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="4_k8mhk"]
 [ext_resource type="Script" path="res://Scripts/UI/ChallengeText.gd" id="4_tt3cm"]
 
 [node name="ChallengeSelect" type="Control"]
@@ -159,6 +160,7 @@ script = ExtResource("2_euinn")
 
 [node name="Panel" type="Panel" parent="."]
 z_index = -5
+layout_mode = 0
 offset_left = -553.0
 offset_top = -311.0
 offset_right = 557.0
@@ -178,17 +180,29 @@ action_mode = 0
 text = "Play >              "
 expand_icon = true
 
-[node name="ChallengeText" type="RichTextLabel" parent="."]
+[node name="ChallengeText" type="Label" parent="."]
 layout_mode = 2
-offset_left = -80.0
+offset_left = -96.0
 offset_top = -46.0
-offset_right = 80.0
-offset_bottom = -6.0
+offset_right = 98.0
+offset_bottom = -5.0
 theme = ExtResource("1_avbpt")
 text = "Challenge 1"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_tt3cm")
+
+[node name="Description" type="Label" parent="."]
+layout_mode = 2
+offset_left = -553.0
+offset_top = -91.0
+offset_right = 557.0
+offset_bottom = -51.0
+theme = ExtResource("1_avbpt")
+theme_override_styles/normal = ExtResource("4_k8mhk")
+text = "Description Goes Here"
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("4_tt3cm")
 
 [connection signal="pressed" from="Challenges/Button" to="Challenges" method="_on_button_pressed"]

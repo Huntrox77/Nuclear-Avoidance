@@ -104,6 +104,12 @@ position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
 
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 2"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
+
 [node name="Achievement 3" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
 layout_mode = 2
@@ -358,6 +364,7 @@ mouse_filter = 2
 theme = ExtResource("1_tu6iy")
 
 [node name="Back Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = -607.0
 offset_top = 250.0
 offset_right = -415.0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=7 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_6gjgd"]
 [ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_unan6"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="5_kcqfq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8b1ob"]
 font = ExtResource("2_6gjgd")
@@ -152,6 +153,7 @@ offset_top = 50.0
 offset_right = 416.0
 offset_bottom = 159.0
 theme = ExtResource("1_0l6ev")
+theme_override_styles/normal = ExtResource("5_kcqfq")
 text = "Nuclear Avoidance"
 label_settings = SubResource("LabelSettings_8b1ob")
 horizontal_alignment = 1

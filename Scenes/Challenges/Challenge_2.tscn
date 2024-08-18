@@ -1,21 +1,21 @@
-[gd_scene load_steps=19 format=3 uid="uid://b1bc0ft3ej8da"]
+[gd_scene load_steps=19 format=3 uid="uid://d2cugesap60c2"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_q7rei"]
-[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_7fut0"]
-[ext_resource type="Script" path="res://Scripts/Players/Player_1_ChallengeMode.gd" id="3_2uwab"]
-[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_kedub"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="9_04cbn"]
-[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="10_x4i4g"]
-[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="11_lqeho"]
-[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="12_bcuw0"]
-[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="13_0nfek"]
-[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="14_5v0gl"]
-[ext_resource type="Script" path="res://Scripts/UI/ChallengeTimers.gd" id="15_cvc1f"]
-[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="16_74315"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround.gd" id="19_i5bll"]
-[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="20_hc1t2"]
-[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="21_tt23i"]
-[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="22_svit2"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_31r28"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_igdc5"]
+[ext_resource type="Script" path="res://Scripts/Players/Player_1_ChallengeMode.gd" id="3_elng6"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_g6ue8"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="5_xxrtc"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="6_pfql5"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="7_ex2r2"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="8_lasx4"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="9_02rq7"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="10_7iaw2"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround2.gd" id="11_hlyma"]
+[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="12_8do2l"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="13_r1vtw"]
+[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="14_wsj65"]
+[ext_resource type="Script" path="res://Scripts/UI/ChallengeTimers.gd" id="15_lqns3"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="16_ucc7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
 size = Vector2(6629, 193)
@@ -28,14 +28,14 @@ size = Vector2(6629, 193)
 position = Vector2(0, -324)
 
 [node name="void" type="Area2D" parent="."]
-script = ExtResource("1_q7rei")
+script = ExtResource("1_31r28")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-5, 102)
 shape = SubResource("RectangleShape2D_v81yx")
 
 [node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
-stream = ExtResource("2_7fut0")
+stream = ExtResource("2_igdc5")
 
 [node name="ColorRect" type="ColorRect" parent="void"]
 visible = false
@@ -66,7 +66,7 @@ one_shot = true
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
 position = Vector2(-50, -170)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("3_2uwab")
+script = ExtResource("3_elng6")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
@@ -86,14 +86,14 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("4_kedub")
+texture = ExtResource("4_g6ue8")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
 [node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
-script = ExtResource("9_04cbn")
-nuke_scene = ExtResource("10_x4i4g")
-sweeper_scene = ExtResource("11_lqeho")
+script = ExtResource("5_xxrtc")
+nuke_scene = ExtResource("6_pfql5")
+sweeper_scene = ExtResource("7_ex2r2")
 
 [node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
 wait_time = 5.0
@@ -122,38 +122,38 @@ autostart = true
 [node name="Modifier Stuff" type="Node" parent="."]
 
 [node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
-script = ExtResource("12_bcuw0")
-blackout = ExtResource("13_0nfek")
-fog = ExtResource("14_5v0gl")
+script = ExtResource("8_lasx4")
+blackout = ExtResource("9_02rq7")
+fog = ExtResource("10_7iaw2")
 
 [node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
 wait_time = 10.0
 autostart = true
 
 [node name="Grounds" type="Node" parent="."]
-script = ExtResource("19_i5bll")
-GroundLeft = ExtResource("20_hc1t2")
-Ground = ExtResource("21_tt23i")
-GroundRight = ExtResource("22_svit2")
+script = ExtResource("11_hlyma")
+GroundLeft = ExtResource("12_8do2l")
+Ground = ExtResource("13_r1vtw")
+GroundRight = ExtResource("14_wsj65")
 
-[node name="Timers" type="Node" parent="."]
-script = ExtResource("15_cvc1f")
+[node name="Timers2" type="Node" parent="."]
+script = ExtResource("15_lqns3")
 
-[node name="CounterTimer" type="Timer" parent="Timers"]
+[node name="CounterTimer" type="Timer" parent="Timers2"]
 autostart = true
 
-[node name="Time2Survive" type="Timer" parent="Timers"]
-wait_time = 45.0
+[node name="Time2Survive" type="Timer" parent="Timers2"]
+wait_time = 60.0
 one_shot = true
 autostart = true
 
-[node name="RichTextLabel" type="Label" parent="Timers"]
+[node name="RichTextLabel" type="Label" parent="Timers2"]
 offset_left = -115.0
 offset_top = -618.0
 offset_right = 117.0
 offset_bottom = -546.0
-theme = ExtResource("16_74315")
-text = "Time Left: 45"
+theme = ExtResource("16_ucc7a")
+text = "Time Left: 60"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -168,5 +168,5 @@ vertical_alignment = 1
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timers/CounterTimer" to="Timers" method="_on_counter_timer_timeout"]
-[connection signal="timeout" from="Timers/Time2Survive" to="Timers" method="_on_time_2_survive_timeout"]
+[connection signal="timeout" from="Timers2/CounterTimer" to="Timers2" method="_on_counter_timer_timeout"]
+[connection signal="timeout" from="Timers2/Time2Survive" to="Timers2" method="_on_time_2_survive_timeout"]
