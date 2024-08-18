@@ -21,39 +21,24 @@ offset_right = 26.0
 offset_bottom = 40.0
 script = ExtResource("1_ilj2u")
 
-[node name="CheckButton" type="CheckButton" parent="Buttons and Stuff"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -9.233
-anchor_top = -5.82
-anchor_right = -9.233
-anchor_bottom = -5.82
-offset_left = 463.32
-offset_top = 50.8
-offset_right = 923.32
-offset_bottom = 92.8
-theme = ExtResource("4_kvfiq")
-theme_override_font_sizes/font_size = 24
-text = "Enable Advanced Modifers"
-
 [node name="OptionButton" type="OptionButton" parent="Buttons and Stuff"]
 layout_mode = 0
-offset_left = 352.0
-offset_top = -115.0
-offset_right = 554.0
-offset_bottom = -75.0
+offset_left = 216.0
+offset_top = -137.0
+offset_right = 552.0
+offset_bottom = -96.0
 theme = ExtResource("4_kvfiq")
 item_count = 4
 selected = 0
 allow_reselect = true
-popup/item_0/text = "Instant"
-popup/item_0/id = 3
-popup/item_1/text = "Fast"
-popup/item_1/id = 0
-popup/item_2/text = "Normal"
-popup/item_2/id = 1
-popup/item_3/text = "Slow"
-popup/item_3/id = 2
+popup/item_0/text = "Text Speed: Instant"
+popup/item_0/id = 0
+popup/item_1/text = "Text Speed: Fast"
+popup/item_1/id = 1
+popup/item_2/text = "Text Speed: Normal"
+popup/item_2/id = 2
+popup/item_3/text = "Text Speed: Slow"
+popup/item_3/id = 3
 
 [node name="Modifiers" type="Label" parent="Buttons and Stuff"]
 layout_mode = 1
@@ -71,16 +56,6 @@ label_settings = SubResource("LabelSettings_lnbot")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="Buttons and Stuff"]
-z_index = -5
-layout_mode = 0
-offset_left = -540.0
-offset_top = -311.0
-offset_right = 570.0
-offset_bottom = 313.0
-mouse_filter = 2
-theme = ExtResource("4_kvfiq")
-
 [node name="Back Button" type="Button" parent="Buttons and Stuff"]
 layout_mode = 0
 offset_left = -593.0
@@ -93,6 +68,114 @@ text = "               < Back"
 expand_icon = true
 script = ExtResource("2_cxbd7")
 
-[connection signal="toggled" from="Buttons and Stuff/CheckButton" to="Buttons and Stuff" method="_on_check_button_toggled"]
+[node name="Panel" type="Panel" parent="Buttons and Stuff"]
+z_index = -5
+layout_mode = 0
+offset_left = -540.0
+offset_top = -311.0
+offset_right = 570.0
+offset_bottom = 313.0
+mouse_filter = 2
+theme = ExtResource("4_kvfiq")
+
+[node name="PlayerTab" type="TabBar" parent="Buttons and Stuff"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -471.0
+offset_top = -183.0
+offset_right = -31.0
+offset_bottom = -140.0
+theme = ExtResource("4_kvfiq")
+tab_count = 4
+tab_alignment = 1
+clip_tabs = false
+scrolling_enabled = false
+tab_0/title = "Player 1"
+tab_1/title = "Player 2"
+tab_2/title = "Player 3"
+tab_3/title = "Player 4"
+
+[node name="Player1ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 43.0
+offset_right = 294.0
+offset_bottom = 86.0
+theme = ExtResource("4_kvfiq")
+tab_count = 4
+tab_alignment = 1
+clip_tabs = false
+scrolling_enabled = false
+tab_0/title = "Keyboard"
+tab_1/title = "Controller 1"
+tab_2/title = "Controller 2"
+tab_3/title = "Controller3"
+
+[node name="Player2ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 43.0
+offset_right = 294.0
+offset_bottom = 86.0
+theme = ExtResource("4_kvfiq")
+tab_count = 4
+tab_alignment = 1
+clip_tabs = false
+scrolling_enabled = false
+tab_0/title = "Keyboard"
+tab_1/title = "Controller 1"
+tab_2/title = "Controller 2"
+tab_3/title = "Controller3"
+
+[node name="Player3ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 43.0
+offset_right = 294.0
+offset_bottom = 86.0
+theme = ExtResource("4_kvfiq")
+tab_count = 4
+tab_alignment = 1
+clip_tabs = false
+scrolling_enabled = false
+tab_0/title = "Keyboard"
+tab_1/title = "Controller 1"
+tab_2/title = "Controller 2"
+tab_3/title = "Controller3"
+
+[node name="Player4ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_top = 43.0
+offset_right = 294.0
+offset_bottom = 86.0
+theme = ExtResource("4_kvfiq")
+tab_count = 4
+tab_alignment = 1
+clip_tabs = false
+scrolling_enabled = false
+tab_0/title = "Keyboard"
+tab_1/title = "Controller 1"
+tab_2/title = "Controller 2"
+tab_3/title = "Controller3"
+
 [connection signal="item_selected" from="Buttons and Stuff/OptionButton" to="Buttons and Stuff" method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Buttons and Stuff/Back Button" to="Buttons and Stuff/Back Button" method="_on_pressed"]
+[connection signal="tab_clicked" from="Buttons and Stuff/PlayerTab" to="Buttons and Stuff" method="_on_player_tab_tab_clicked"]

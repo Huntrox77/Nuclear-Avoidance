@@ -15,10 +15,6 @@ func _ready():
 func _process(_delta):
 	if Modifier.p1selection == true:
 		P1Button.button_pressed = true
-	if Modifier.AdvMod == false:
-		AdvModBut.hide()
-	else:
-		AdvModBut.show()
 	if Modifier.p2selection == true:
 		P2Button.button_pressed = true
 	if Modifier.p3selection == true:

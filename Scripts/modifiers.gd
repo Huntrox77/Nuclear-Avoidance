@@ -1,6 +1,5 @@
 extends Node
 # Modifiers
-var AdvMod = false
 var Blackout = false
 var Fog = false
 var Smashbros = false
@@ -87,7 +86,6 @@ func _resetmods():
 	p4selection = false
 	playersleft = 2
 	reset = false
-	AdvMod = false
 	Blackout = false
 	Fog = false
 	Smashbros = false

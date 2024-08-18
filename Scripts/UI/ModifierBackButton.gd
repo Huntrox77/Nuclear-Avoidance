@@ -31,7 +31,5 @@ func _on_pressed():
 				i.show()
 		SettingsSize = true
 	else:
-		get_tree().change_scene_to_file("res://Scenes/Menus/titlescreen.tscn")
-	if name == "Back2Modifiers":
-		get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
-	pass # Replace with function body.
+		if name == "Back2Modifiers":
+			get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
