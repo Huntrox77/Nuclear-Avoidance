@@ -21,9 +21,13 @@ func _ready():
 	if name == "Fog":
 		if Modifier.Fog == true:
 			button_pressed = true
+	if name == "Power":
+		if Modifier.Power == true:
+			button_pressed = true
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	print(Modifier.Power)
 	pass

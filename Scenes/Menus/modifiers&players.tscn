@@ -71,7 +71,7 @@ action_mode = 0
 text = "Advanced Modifiers"
 metadata/_edit_use_anchors_ = true
 
-[node name="Menu Button" type="Button" parent="Buttons"]
+[node name="Back Button" type="Button" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0593886
@@ -327,6 +327,15 @@ text = "Fog of War"
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
+[node name="Power" type="CheckButton" parent="Buttons/Modifiers Container"]
+layout_mode = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Power-ups"
+expand_icon = true
+script = ExtResource("14_dqpoy")
+
 [node name="Panel" type="Panel" parent="."]
 z_index = -5
 offset_left = -553.0
@@ -338,7 +347,7 @@ theme = ExtResource("2_dymia")
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/AdvMod" to="Buttons" method="_on_adv_mod_pressed"]
-[connection signal="pressed" from="Buttons/Menu Button" to="Buttons/Menu Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Back Button" to="Buttons/Back Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/P1" to="Buttons" method="_on_p_1_pressed"]
 [connection signal="pressed" from="Buttons/P2" to="Buttons" method="_on_p_2_pressed"]
 [connection signal="pressed" from="Buttons/P3" to="Buttons" method="_on_p_3_pressed"]
@@ -355,3 +364,4 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Modifiers Container/Sweeper" to="Buttons" method="_on_sweeper_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Ice" to="Buttons" method="_on_ice_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Fog" to="Buttons" method="_on_fog_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/Power" to="Buttons" method="_on_power_pressed"]

@@ -7,6 +7,7 @@ var Ice = false
 var Crumble = false
 var Impaction = false
 var Sweeper = false
+var Power = false
 var DMNSC = 0
 var GravityMult = 100
 
@@ -93,6 +94,7 @@ func _resetmods():
 	Crumble = false
 	Impaction = false
 	Sweeper = false
+	Power = false
 	DMNSC = 0
 	GravityMult = 100
 	_resetnukes()

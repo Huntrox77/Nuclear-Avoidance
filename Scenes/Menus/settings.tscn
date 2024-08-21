@@ -24,9 +24,9 @@ script = ExtResource("1_ilj2u")
 [node name="OptionButton" type="OptionButton" parent="Buttons and Stuff"]
 layout_mode = 0
 offset_left = 216.0
-offset_top = -137.0
+offset_top = -138.0
 offset_right = 552.0
-offset_bottom = -96.0
+offset_bottom = -97.0
 theme = ExtResource("4_kvfiq")
 item_count = 4
 selected = 0
@@ -116,6 +116,36 @@ tab_1/title = "Controller 1"
 tab_2/title = "Controller 2"
 tab_3/title = "Controller3"
 
+[node name="Controls" type="GridContainer" parent="Buttons and Stuff/PlayerTab/Player1ControlTab"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.357
+anchor_bottom = 8.628
+offset_left = 56.0
+offset_top = 96.0
+offset_right = -94.133
+offset_bottom = -36.004
+theme_override_constants/v_separation = 25
+
+[node name="Left" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
+layout_mode = 2
+text = "a"
+
+[node name="Right" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
+layout_mode = 2
+text = "d
+"
+
+[node name="Jump" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
+layout_mode = 2
+text = "w
+"
+
+[node name="Speacial" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
+layout_mode = 2
+text = "s
+"
+
 [node name="Player2ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
 visible = false
 layout_mode = 1
@@ -135,6 +165,35 @@ tab_0/title = "Keyboard"
 tab_1/title = "Controller 1"
 tab_2/title = "Controller 2"
 tab_3/title = "Controller3"
+
+[node name="Controls" type="GridContainer" parent="Buttons and Stuff/PlayerTab/Player2ControlTab"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.357
+anchor_bottom = 8.628
+offset_left = 56.0
+offset_top = 96.0
+offset_right = -94.133
+offset_bottom = -36.004
+theme_override_constants/v_separation = 25
+
+[node name="Left" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
+layout_mode = 2
+text = "Left"
+
+[node name="Right" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
+layout_mode = 2
+text = "Right"
+
+[node name="Jump" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
+layout_mode = 2
+text = "Up
+"
+
+[node name="Speacial" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
+layout_mode = 2
+text = "Down
+"
 
 [node name="Player3ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
 visible = false
@@ -156,6 +215,34 @@ tab_1/title = "Controller 1"
 tab_2/title = "Controller 2"
 tab_3/title = "Controller3"
 
+[node name="Controls" type="GridContainer" parent="Buttons and Stuff/PlayerTab/Player3ControlTab"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.357
+anchor_bottom = 8.628
+offset_left = 56.0
+offset_top = 96.0
+offset_right = -94.133
+offset_bottom = -36.004
+theme_override_constants/v_separation = 25
+
+[node name="Left" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
+layout_mode = 2
+text = "j"
+
+[node name="Right" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
+layout_mode = 2
+text = "l"
+
+[node name="Jump" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
+layout_mode = 2
+text = "i
+"
+
+[node name="Speacial" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
+layout_mode = 2
+text = "k"
+
 [node name="Player4ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
 visible = false
 layout_mode = 1
@@ -175,6 +262,34 @@ tab_0/title = "Keyboard"
 tab_1/title = "Controller 1"
 tab_2/title = "Controller 2"
 tab_3/title = "Controller3"
+
+[node name="Controls" type="GridContainer" parent="Buttons and Stuff/PlayerTab/Player4ControlTab"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.357
+anchor_bottom = 8.628
+offset_left = 56.0
+offset_top = 96.0
+offset_right = -94.133
+offset_bottom = -36.004
+theme_override_constants/v_separation = 25
+
+[node name="Left" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
+layout_mode = 2
+text = "f"
+
+[node name="Right" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
+layout_mode = 2
+text = "h"
+
+[node name="Jump" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
+layout_mode = 2
+text = "t"
+
+[node name="Speacial" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
+layout_mode = 2
+text = "g
+"
 
 [connection signal="item_selected" from="Buttons and Stuff/OptionButton" to="Buttons and Stuff" method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Buttons and Stuff/Back Button" to="Buttons and Stuff/Back Button" method="_on_pressed"]

@@ -121,3 +121,8 @@ func _on_map_4_pressed():
 
 func _on_map_5_toggled(_toggled_on):
 	Modifier.map5 = not Modifier.map5
+
+
+func _on_power_pressed():
+	Modifier.Power = not Modifier.Power
+	pass # Replace with function body.
