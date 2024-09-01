@@ -1,16 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=15 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_6gjgd"]
 [ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_unan6"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="5_kcqfq"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_j2lwn"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="7_r4wjf"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_uwdjg"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="9_m05l0"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_n42oj"]
+[ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_h4j2j"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8b1ob"]
 font = ExtResource("2_6gjgd")
 font_size = 36
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t31xx"]
+size = Vector2(12446, 154)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5cryv"]
 
 [node name="Title Screen" type="Node2D"]
 
@@ -160,6 +171,78 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Nuke Stuff" type="Node" parent="."]
+
+[node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
+script = ExtResource("6_j2lwn")
+nuke_scene = ExtResource("7_r4wjf")
+sweeper_scene = ExtResource("8_uwdjg")
+
+[node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+autostart = true
+
+[node name="Timer3" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+autostart = true
+
+[node name="Timer4" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 1e+09
+autostart = true
+
+[node name="Swimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 18.33
+one_shot = true
+
+[node name="SwimerTimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+one_shot = true
+autostart = true
+
+[node name="void" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("9_m05l0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+position = Vector2(-6, 574)
+shape = SubResource("RectangleShape2D_t31xx")
+
+[node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("10_n42oj")
+
+[node name="ColorRect" type="ColorRect" parent="void"]
+visible = false
+z_index = 1
+offset_left = -584.0
+offset_top = -651.0
+offset_right = 575.0
+offset_bottom = 21.0
+color = Color(0.713726, 0, 0.74902, 0.156863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="void"]
+visible = false
+z_index = 3
+offset_left = -560.0
+offset_top = -61.0
+offset_right = -136.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0.760784, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "You are no god... but I shall feast upon your essence regardless!"
+
+[node name="TextTimer" type="Timer" parent="void"]
+wait_time = 3.0
+one_shot = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(203, 7)
+script = ExtResource("11_h4j2j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_5cryv")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Online" to="Buttons/Online" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Quit Game" to="Buttons/Quit Game" method="_on_pressed"]
@@ -167,3 +250,12 @@ autowrap_mode = 3
 [connection signal="pressed" from="Buttons/Challenges" to="Buttons/Challenges" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="Buttons/Quit Game" method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/Achievments" to="Buttons/Quit Game" method="_on_achievments_pressed"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
+[connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
+[connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]

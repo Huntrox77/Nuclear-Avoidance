@@ -1,7 +1,7 @@
 extends GridContainer
 @onready var GlobalText = get_node("/root/GlobalTexts")
 @onready var Modifier = get_node("/root/Modifiers")
-@onready var Save = get_node("/root/KeepBetweenSaves")
+@onready var Save = get_node("/root/ConfigScript")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

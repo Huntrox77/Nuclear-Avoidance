@@ -4,9 +4,9 @@ extends HSlider
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if name == "DMNSC":
-		value = 4
+		value = Modifier.DMNSC
 	if name == "Gravity":
-		value = 100
+		value = Modifier.GravityMult
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

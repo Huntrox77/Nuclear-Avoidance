@@ -1,5 +1,6 @@
 extends Node
 # Modifiers
+var listofplayers = []
 var Blackout = false
 var Fog = false
 var Smashbros = false
@@ -8,7 +9,8 @@ var Crumble = false
 var Impaction = false
 var Sweeper = false
 var Power = false
-var DMNSC = 0
+var Collide = false
+var DMNSC = 4
 var GravityMult = 100
 
 # Global Stuff
@@ -21,6 +23,7 @@ var p1selection = true
 var p2selection = true
 var p3selection = false
 var p4selection = false
+var p5selection = false
 var gameplaying = false
 var ChallengeOrLocal = "local"
 var map1 = true
@@ -28,16 +31,18 @@ var map2 = false
 var map3 = false
 var map4 = false
 var map5 = false
-var resmap1 = true
+var map6 = false
+var resmap1 = false
 var resmap2 = false
 var resmap3 = false
 var resmap4 = false
 var resmap5 = false
+var resmap6 = false
 var Nuke2 = false
 var Nuke3 = false
 var Nuke4 = false
 var playersleft = 2
-var currentmap = "map1"
+var currentmap = "menu"
 var currentmapno = 1
 var ChallengeNo = 1
 
@@ -52,11 +57,14 @@ func _resetmaps():
 	map3 = resmap3
 	map4 = resmap4
 	map5 = resmap5
+	map6 = resmap6
 	resmap1 = false
 	resmap2 = false
 	resmap3 = false
 	resmap4 = false
 	resmap5 = false
+	resmap6 = false
+	currentmap = "menu"
 
 func _ready():
 	pass # Replace with function body.
@@ -67,11 +75,9 @@ func _reset():
 	p2aircontrol = 0.09
 	p3aircontrol = 0.09
 	p4aircontrol = 0.09
-	p1selection = true
-	p2selection = true
-	p3selection = false
-	p4selection = false
-	playersleft = 2
+	for i in listofplayers:
+		if i == true:
+			playersleft += 1
 	_resetmaps()
 	_resetnukes()
 
@@ -85,6 +91,7 @@ func _resetmods():
 	p2selection = true
 	p3selection = false
 	p4selection = false
+	p5selection = false
 	playersleft = 2
 	reset = false
 	Blackout = false
@@ -95,12 +102,12 @@ func _resetmods():
 	Impaction = false
 	Sweeper = false
 	Power = false
-	DMNSC = 0
+	Collide = false
+	DMNSC = 4
 	GravityMult = 100
 	_resetnukes()
 	
 #Silly Stuff
-var DOG = false
 var Yharon = false
 var Clam = false
 var DOGMUSIC = false
@@ -111,7 +118,7 @@ func _process(_delta):
 	if reset == true:
 		_resetmods()
 	ProjectSettings.set_setting("physics/2d/default_gravity", GravityMult * 9.8)
-	var listofplayers = [p1selection, p2selection, p3selection, p4selection]
+	listofplayers = [p1selection, p2selection, p3selection, p4selection, p5selection]
 	if Clam == true:
 		Yharon = true
 	if gameplaying == true:
@@ -145,6 +152,13 @@ func _process(_delta):
 				for i in listofplayers:
 					if i == true:
 						playersleft += 1
+			elif map6 == true:
+				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay6.tscn")
+				map6 = false
+				resmap6 = true
+				for i in listofplayers:
+					if i == true:
+						playersleft += 1
 			else:
 				_reset()
 				if ChallengeOrLocal == "local":
@@ -153,8 +167,10 @@ func _process(_delta):
 					get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
 	#Code to pause the game by sending them back to the title screen.
 	if Input.is_action_pressed("Pause"):
-		_reset()
-		if ChallengeOrLocal == "local":
-			get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
-		elif ChallengeOrLocal == "Challenge":
-			get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
+		if gameplaying == true:
+			listofplayers = 0
+			_reset()
+			if ChallengeOrLocal == "local":
+				get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
+			elif ChallengeOrLocal == "Challenge":
+				get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")

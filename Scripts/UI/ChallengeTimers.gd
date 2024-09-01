@@ -1,6 +1,6 @@
 extends Node
 @onready var Modifier = get_node("/root/Modifiers")
-@onready var Saves = get_node("/root/KeepBetweenSaves")
+@onready var Saves = get_node("/root/ConfigScript")
 var timeleft = null
 # Called when the node enters the scene tree for the first time.
 func _ready():

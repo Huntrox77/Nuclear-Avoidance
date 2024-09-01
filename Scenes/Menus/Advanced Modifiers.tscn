@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bijf1mjlkepfu"]
+[gd_scene load_steps=5 format=3 uid="uid://bijf1mjlkepfu"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sliders.gd" id="1_avl2f"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_7aw80"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="3_p7ts3"]
+[ext_resource type="Script" path="res://Scripts/Players/P5.gd" id="4_pcirl"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -112,4 +113,20 @@ text = "               < Back"
 expand_icon = true
 script = ExtResource("3_p7ts3")
 
+[node name="P5" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.554
+anchor_top = 0.217
+anchor_right = 0.554
+anchor_bottom = 0.217
+offset_left = -517.0
+offset_top = -97.0
+offset_right = -368.0
+offset_bottom = -56.0
+theme = ExtResource("2_7aw80")
+text = "Player 5"
+script = ExtResource("4_pcirl")
+
 [connection signal="pressed" from="Back2Modifiers" to="Back2Modifiers" method="_on_pressed"]
+[connection signal="pressed" from="P5" to="P5" method="_on_pressed"]

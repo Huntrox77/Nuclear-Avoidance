@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_cxbd7"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="3_pf0l7"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="4_kvfiq"]
-[ext_resource type="Script" path="res://Scripts/Players/PlayerControls.gd" id="5_cwdhd"]
+[ext_resource type="Script" path="res://Scripts/PlayerControls.gd" id="5_cwdhd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lnbot"]
 font = ExtResource("3_pf0l7")

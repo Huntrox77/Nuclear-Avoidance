@@ -4,7 +4,7 @@ extends Area2D
 var sweepingdir = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if Modifier.DOG == true:
+	if Modifier.Clam == true:
 		$Sprite2D.texture = DOGSprite
 		$Sprite2D.position.x = -130
 		$CollisionPolygon2D.scale.x = 4.788
@@ -22,7 +22,6 @@ func _ready():
 		position.x = 287
 		position.y = -176
 		sweepingdir = not sweepingdir
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

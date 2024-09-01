@@ -16,6 +16,7 @@ func _on_pressed():
 		pass
 	else:
 		if Modifier.map1 == true:
+			Modifier.currentmap = "map1"
 			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay.tscn")
 			Modifier.map1 = false
 			Modifier.gameplaying = true
@@ -44,3 +45,9 @@ func _on_pressed():
 			Modifier.map5 = false
 			Modifier.gameplaying = true
 			Modifier.resmap5 = true
+		elif Modifier.map6 == true:
+			Modifier.currentmap = "map6"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay6.tscn")
+			Modifier.map6 = false
+			Modifier.gameplaying = true
+			Modifier.resmap6 = true

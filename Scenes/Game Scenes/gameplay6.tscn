@@ -1,46 +1,47 @@
-[gd_scene load_steps=31 format=3 uid="uid://qdnvsjmntuhi"]
+[gd_scene load_steps=32 format=3 uid="uid://dnviwam2n05ij"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_buvqp"]
-[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1ylfr"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="2_jngu4"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="3_52fe2"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="4_ra15w"]
-[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_uldfh"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="5_v17lr"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_21lkd"]
-[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_wikyi"]
-[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="7_wdus6"]
-[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_l0lws"]
-[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="9_50f8h"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 5.gd" id="9_eytm8"]
-[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="10_37cxf"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="11_14tuc"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="12_3jtad"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="13_3vsae"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="14_btle7"]
-[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="14_r5hop"]
-[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="15_a3kop"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround3.gd" id="15_lbbx5"]
-[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_tb2gu"]
-[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_26vm1"]
-[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_nvji0"]
-[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/DirtBackroung.png" id="23_vom0y"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_x2aj1"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1anp0"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="3_1uwrw"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_j066y"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="5_mejj8"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_4x1fo"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="7_jiucm"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="8_vplhv"]
+[ext_resource type="Script" path="res://Scripts/Players/Player 5.gd" id="9_odnhy"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="10_ot83h"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="11_ssdcy"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="12_7nr08"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="13_did21"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="14_gubce"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="15_vtj2n"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="16_5sxev"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="17_bwmpd"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="18_ccmn5"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="19_aug1b"]
+[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="20_drsut"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround6.gd" id="21_0pl0g"]
+[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="22_sg67c"]
+[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/DirtBackroung.png" id="23_bmt1h"]
+[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="23_dmus0"]
+[ext_resource type="Texture2D" uid="uid://dmg3wif6x4awv" path="res://Sprites/Spikes.png" id="25_0pjkm"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Spikes.gd" id="25_1rfor"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u84nq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
 size = Vector2(12446, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ris1u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xykij"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4ggo"]
-texture = ExtResource("23_vom0y")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
+texture = ExtResource("23_bmt1h")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_bla64"]
-sources/0 = SubResource("TileSetAtlasSource_m4ggo")
+[sub_resource type="TileSet" id="TileSet_nsxlv"]
+sources/1 = SubResource("TileSetAtlasSource_3dxoi")
 
 [node name="Arena_01" type="Node2D"]
 
@@ -50,14 +51,14 @@ position = Vector2(0, -324)
 [node name="void" type="Area2D" parent="."]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_buvqp")
+script = ExtResource("1_x2aj1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 234)
-shape = SubResource("RectangleShape2D_u84nq")
+shape = SubResource("RectangleShape2D_wrwvd")
 
 [node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
-stream = ExtResource("2_1ylfr")
+stream = ExtResource("2_1anp0")
 
 [node name="ColorRect" type="ColorRect" parent="void"]
 visible = false
@@ -86,9 +87,12 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(-467, -170)
+z_index = 2
+position = Vector2(-426, -535)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("2_jngu4")
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("3_1uwrw")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
@@ -107,12 +111,13 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("4_uldfh")
+texture = ExtResource("4_j066y")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(471, -170)
+z_index = 2
+position = Vector2(-424, -532)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("3_52fe2")
+script = ExtResource("5_mejj8")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
@@ -132,12 +137,13 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("6_wikyi")
+texture = ExtResource("6_4x1fo")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(-412, -170)
+z_index = 2
+position = Vector2(-424, -536)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_ra15w")
+script = ExtResource("7_jiucm")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
@@ -157,12 +163,13 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("4_uldfh")
+texture = ExtResource("4_j066y")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(416, -171)
+z_index = 2
+position = Vector2(-425, -533)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("5_v17lr")
+script = ExtResource("8_vplhv")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
@@ -182,18 +189,18 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("6_wikyi")
+texture = ExtResource("6_4x1fo")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(-425, -533)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("9_eytm8")
+script = ExtResource("9_odnhy")
 metadata/Player = "Player"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_ris1u")
+shape = SubResource("RectangleShape2D_xykij")
 one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
@@ -208,14 +215,14 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("6_wikyi")
+texture = ExtResource("6_4x1fo")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
 [node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
-script = ExtResource("6_21lkd")
-nuke_scene = ExtResource("7_wdus6")
-sweeper_scene = ExtResource("8_l0lws")
+script = ExtResource("10_ot83h")
+nuke_scene = ExtResource("11_ssdcy")
+sweeper_scene = ExtResource("12_7nr08")
 
 [node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
 wait_time = 5.0
@@ -244,9 +251,9 @@ autostart = true
 [node name="Modifier Stuff" type="Node" parent="."]
 
 [node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
-script = ExtResource("9_50f8h")
-blackout = ExtResource("10_37cxf")
-fog = ExtResource("14_r5hop")
+script = ExtResource("13_did21")
+blackout = ExtResource("14_gubce")
+fog = ExtResource("15_vtj2n")
 
 [node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
 wait_time = 10.0
@@ -264,10 +271,10 @@ offset_left = -551.0
 offset_top = -625.0
 offset_right = -329.0
 offset_bottom = -584.0
-theme = ExtResource("15_a3kop")
+theme = ExtResource("16_5sxev")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("11_14tuc")
+script = ExtResource("17_bwmpd")
 
 [node name="P2" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -275,11 +282,11 @@ offset_left = 314.0
 offset_top = -625.0
 offset_right = 541.0
 offset_bottom = -584.0
-theme = ExtResource("15_a3kop")
+theme = ExtResource("16_5sxev")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("12_3jtad")
+script = ExtResource("18_ccmn5")
 
 [node name="P3" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -287,10 +294,10 @@ offset_left = -551.0
 offset_top = -51.0
 offset_right = -329.0
 offset_bottom = -10.0
-theme = ExtResource("15_a3kop")
+theme = ExtResource("16_5sxev")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("13_3vsae")
+script = ExtResource("19_aug1b")
 
 [node name="P4" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -298,41 +305,71 @@ offset_left = 314.0
 offset_top = -51.0
 offset_right = 541.0
 offset_bottom = -10.0
-theme = ExtResource("15_a3kop")
+theme = ExtResource("16_5sxev")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("14_btle7")
+script = ExtResource("20_drsut")
 
 [node name="Grounds" type="Node" parent="."]
-script = ExtResource("15_lbbx5")
-GroundLeft = ExtResource("16_tb2gu")
-Ground = ExtResource("17_26vm1")
-GroundRight = ExtResource("18_nvji0")
-
-[node name="Timer" type="Timer" parent="Grounds"]
-wait_time = 7.0
-autostart = true
+script = ExtResource("21_0pl0g")
+GroundLeft = ExtResource("22_sg67c")
+GroundRight = ExtResource("23_dmus0")
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_bla64")
+tile_set = SubResource("TileSet_nsxlv")
 rendering_quadrant_size = 64
 format = 2
-layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
 
 [node name="SpawnPos\'" type="Node" parent="."]
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-465, -232)
+position = Vector2(46, -157)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(473, -231)
+position = Vector2(-63, -157)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-412, -228)
+position = Vector2(-257, -157)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(418, -230)
+position = Vector2(256, -157)
+
+[node name="Spikes" type="Node" parent="."]
+script = ExtResource("25_1rfor")
+
+[node name="Spikes" type="Sprite2D" parent="Spikes"]
+position = Vector2(-312, -137)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("25_0pjkm")
+
+[node name="Spike" type="Area2D" parent="Spikes/Spikes"]
+position = Vector2(312, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes/Spikes/Spike"]
+polygon = PackedVector2Array(-340, -113, -340, -129, -332, -129, -332, -137, -324, -137, -324, -129, -316, -129, -316, -137, -308, -137, -308, -129, -300, -129, -300, -137, -292, -137, -292, -129, -284, -129, -284, -113)
+
+[node name="Spikes2" type="Sprite2D" parent="Spikes"]
+position = Vector2(-8, -137)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("25_0pjkm")
+
+[node name="Spike" type="Area2D" parent="Spikes/Spikes2"]
+position = Vector2(312, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes/Spikes2/Spike"]
+polygon = PackedVector2Array(-340, -113, -340, -129, -332, -129, -332, -137, -324, -137, -324, -129, -316, -129, -316, -137, -308, -137, -308, -129, -300, -129, -300, -137, -292, -137, -292, -129, -284, -129, -284, -113)
+
+[node name="Spikes3" type="Sprite2D" parent="Spikes"]
+position = Vector2(312, -137)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("25_0pjkm")
+
+[node name="Spike" type="Area2D" parent="Spikes/Spikes3"]
+position = Vector2(312, 145)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes/Spikes3/Spike"]
+polygon = PackedVector2Array(-340, -113, -340, -129, -332, -129, -332, -137, -324, -137, -324, -129, -316, -129, -316, -137, -308, -137, -308, -129, -300, -129, -300, -137, -292, -137, -292, -129, -284, -129, -284, -113)
 
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
@@ -344,4 +381,6 @@ position = Vector2(418, -230)
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
-[connection signal="timeout" from="Grounds/Timer" to="Grounds" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Spikes/Spikes/Spike" to="Spikes" method="_on_spike_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes2/Spike" to="Spikes" method="_on_spike_body_entered"]
+[connection signal="body_entered" from="Spikes/Spikes3/Spike" to="Spikes" method="_on_spike_body_entered"]

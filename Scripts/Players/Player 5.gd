@@ -18,11 +18,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	var randi_spawn = randi_range(1, 4)
-	#Funny Sprite Enabling
 	if Modifier.Clam == true:
 		Sprite.show()
 		Shape.hide()
-	#Random Spawn
+		
 	if randi_spawn == 1:
 		position = SpawnPos1.position
 	elif randi_spawn == 2:
@@ -31,29 +30,28 @@ func _ready():
 		position = SpawnPos3.position
 	elif randi_spawn == 4:
 		position = SpawnPos4.position
-
+	
 func _physics_process(delta):
-	print(position.x)
-	#Funny Sprite Enabling
 	if Modifier.Ice == true:
 		groundslide = 0.01
 		aircontrol = 0.01
 	# Kills player if they dont exist
-	if Modifier.p1selection == false:
+	if Modifier.p5selection == false:
 		queue_free()
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	Modifier.p1aircontrol = aircontrol
+	Modifier.p4aircontrol = aircontrol
 
 	# Handle jump.
-	if Input.is_action_pressed("p1-jump") and is_on_floor():
+	if Input.is_action_pressed("p5-jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("p1-left", "p1-right")
+	var direction = Input.get_axis("p5-left", "p5-right")
 
 	if direction:
 		if is_on_floor():
@@ -64,7 +62,5 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, groundslide)
 	else:
 		velocity.x = lerp(velocity.x, 0.0, airslide)
-	
-	
 
 	move_and_slide()

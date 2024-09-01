@@ -13,6 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	#Players
 	if Modifier.p1selection == true:
 		P1Button.button_pressed = true
 	if Modifier.p2selection == true:
@@ -21,6 +22,7 @@ func _process(_delta):
 		P3Button.button_pressed = true
 	if Modifier.p4selection == true:
 		P4Button.button_pressed = true
+	#Maps
 	if Modifier.map1 == true:
 		$"Map Container/HBoxContainer/Map1".button_pressed = true
 	if Modifier.map2 == true:
@@ -31,6 +33,8 @@ func _process(_delta):
 		$"Map Container/HBoxContainer/Map4".button_pressed = true
 	if Modifier.map5 == true:
 		$"Map Container/HBoxContainer/Map5".button_pressed = true
+	if Modifier.map6 == true:
+		$"Map Container/HBoxContainer/Map6".button_pressed = true
 
 func _on_p_1_pressed():
 	Modifier.p1selection = not Modifier.p1selection
@@ -98,6 +102,15 @@ func _on_fog_pressed():
 	pass # Replace with function body.
 
 
+func _on_power_pressed():
+	Modifier.Power = not Modifier.Power
+	pass # Replace with function body.
+
+
+func _on_collide_pressed():
+	Modifier.Collide = not Modifier.Collide
+
+
 func _on_adv_mod_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/Advanced Modifiers.tscn")
 	pass # Replace with function body.
@@ -119,10 +132,9 @@ func _on_map_4_pressed():
 	Modifier.map4 = not Modifier.map4
 
 
-func _on_map_5_toggled(_toggled_on):
+func _on_map_5_pressed():
 	Modifier.map5 = not Modifier.map5
 
 
-func _on_power_pressed():
-	Modifier.Power = not Modifier.Power
-	pass # Replace with function body.
+func _on_map_6_pressed():
+	Modifier.map6 = not Modifier.map6

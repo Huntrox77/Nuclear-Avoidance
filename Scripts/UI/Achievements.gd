@@ -1,5 +1,5 @@
 extends ScrollContainer
-@onready var Saves = get_node("/root/KeepBetweenSaves")
+@onready var Saves = get_node("/root/ConfigScript")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

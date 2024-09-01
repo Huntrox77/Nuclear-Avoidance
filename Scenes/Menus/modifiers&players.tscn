@@ -254,12 +254,16 @@ text = "Map 4"
 layout_mode = 2
 text = "Map 5"
 
+[node name="Map6" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+layout_mode = 2
+text = "Map 6"
+
 [node name="Modifiers Container" type="GridContainer" parent="Buttons"]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 94.0
 offset_right = 477.0
-offset_bottom = 447.0
+offset_bottom = 549.0
 theme_override_constants/h_separation = 0
 
 [node name="Blackout" type="CheckButton" parent="Buttons/Modifiers Container"]
@@ -336,6 +340,15 @@ text = "Power-ups"
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
+[node name="Collide" type="CheckButton" parent="Buttons/Modifiers Container"]
+layout_mode = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Player Collision"
+expand_icon = true
+script = ExtResource("14_dqpoy")
+
 [node name="Panel" type="Panel" parent="."]
 z_index = -5
 offset_left = -553.0
@@ -356,7 +369,8 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map2" to="Buttons" method="_on_map_2_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map3" to="Buttons" method="_on_map_3_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map4" to="Buttons" method="_on_map_4_pressed"]
-[connection signal="toggled" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_toggled"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map6" to="Buttons" method="_on_map_6_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Impaction" to="Buttons" method="_on_impaction_pressed"]
@@ -365,3 +379,4 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Modifiers Container/Ice" to="Buttons" method="_on_ice_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Fog" to="Buttons" method="_on_fog_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Power" to="Buttons" method="_on_power_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/Collide" to="Buttons" method="_on_collide_pressed"]
