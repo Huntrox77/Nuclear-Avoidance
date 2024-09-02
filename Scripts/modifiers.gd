@@ -26,6 +26,7 @@ var p4selection = false
 var p5selection = false
 var gameplaying = false
 var ChallengeOrLocal = "local"
+var loop = true
 var map1 = true
 var map2 = false
 var map3 = false
@@ -159,6 +160,8 @@ func _process(_delta):
 				for i in listofplayers:
 					if i == true:
 						playersleft += 1
+			elif loop == true:
+					_resetmaps()
 			else:
 				_reset()
 				if ChallengeOrLocal == "local":

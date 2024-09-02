@@ -353,10 +353,10 @@ script = ExtResource("14_dqpoy")
 
 [node name="Loop Button" type="TextureButton" parent="Buttons"]
 layout_mode = 0
-offset_left = 724.0
-offset_top = 454.0
-offset_right = 764.0
-offset_bottom = 494.0
+offset_left = 721.0
+offset_top = 460.0
+offset_right = 761.0
+offset_bottom = 500.0
 theme = ExtResource("2_dymia")
 toggle_mode = true
 texture_normal = ExtResource("18_v0ldg")
@@ -365,9 +365,11 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Panel" type="Panel" parent="Buttons/Loop Button"]
+z_index = -1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="."]
 z_index = -5
@@ -400,3 +402,4 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Modifiers Container/Fog" to="Buttons" method="_on_fog_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Power" to="Buttons" method="_on_power_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/Collide" to="Buttons" method="_on_collide_pressed"]
+[connection signal="pressed" from="Buttons/Loop Button" to="Buttons" method="_on_loop_button_pressed"]

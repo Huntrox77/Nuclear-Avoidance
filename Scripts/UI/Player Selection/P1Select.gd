@@ -23,6 +23,8 @@ func _process(_delta):
 	if Modifier.p4selection == true:
 		P4Button.button_pressed = true
 	#Maps
+	if Modifier.loop == true:
+		$"Loop Button".button_pressed = true
 	if Modifier.map1 == true:
 		$"Map Container/HBoxContainer/Map1".button_pressed = true
 	if Modifier.map2 == true:
@@ -116,6 +118,9 @@ func _on_adv_mod_pressed():
 	pass # Replace with function body.
 
 
+func _on_loop_button_pressed():
+	Modifier.loop = not Modifier.loop
+
 func _on_map_1_pressed():
 	Modifier.map1 = not Modifier.map1
 
@@ -138,3 +143,6 @@ func _on_map_5_pressed():
 
 func _on_map_6_pressed():
 	Modifier.map6 = not Modifier.map6
+
+
+
