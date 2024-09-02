@@ -2,8 +2,10 @@ extends Area2D
 @onready var Modifier = get_node("/root/Modifiers")
 @onready var DOGSprite = preload("res://Sprites/DOG.png")
 var sweepingdir = false
+var randomsweeperplace16 = randi_range(1,6)
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomsweeperplace16 = randi_range(1,6)
 	if Modifier.Clam == true:
 		$Sprite2D.texture = DOGSprite
 		$Sprite2D.position.x = -130
@@ -12,16 +14,36 @@ func _ready():
 		if Modifier.DOGMUSIC2 == false:
 			Modifier.DOGMUSIC = true
 			Modifier.DOGMUSIC2 = true
-	if Modifier.currentmap == "map2":
+	if Modifier.currentmap == "map1":
 		if randi_range(1,2) == 1:
+			position.x = -287
+			position.y = -176
+		else:
+			position.x = 287
+			position.y = -176
 			sweepingdir = not sweepingdir
-	if randi_range(1,2) == 1:
-		position.x = -287
-		position.y = -176
-	else:
-		position.x = 287
-		position.y = -176
-		sweepingdir = not sweepingdir
+	if Modifier.currentmap == "map2" or "map3" or "map4":
+		if randomsweeperplace16 == 1:
+			position.x = -600
+			position.y = -176
+		elif randomsweeperplace16 == 2:
+			position.x = -200
+			position.y = -176
+			sweepingdir = not sweepingdir
+		elif randomsweeperplace16 == 3:
+			position.x = -200
+			position.y = -176
+		elif randomsweeperplace16 == 4:
+			position.x = 200
+			position.y = -176
+			sweepingdir = not sweepingdir
+		elif randomsweeperplace16 == 5:
+			position.x = 200
+			position.y = -176
+		elif randomsweeperplace16 == 6:
+			position.x = 600
+			position.y = -176
+			sweepingdir = not sweepingdir
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

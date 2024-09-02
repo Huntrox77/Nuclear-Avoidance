@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=21 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -17,6 +17,8 @@
 [ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
 [ext_resource type="Script" path="res://Scripts/UI/KeepModifiers.gd" id="14_dqpoy"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="14_nwcpy"]
+[ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/RedArrows.png" id="18_v0ldg"]
+[ext_resource type="Texture2D" uid="uid://dbtoxbijx0u5f" path="res://Sprites/GreenArrows.png" id="19_6l8jy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -348,6 +350,24 @@ action_mode = 0
 text = "Player Collision"
 expand_icon = true
 script = ExtResource("14_dqpoy")
+
+[node name="Loop Button" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 454.0
+offset_right = 764.0
+offset_bottom = 494.0
+theme = ExtResource("2_dymia")
+toggle_mode = true
+texture_normal = ExtResource("18_v0ldg")
+texture_pressed = ExtResource("19_6l8jy")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="Buttons/Loop Button"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Panel" type="Panel" parent="."]
 z_index = -5
