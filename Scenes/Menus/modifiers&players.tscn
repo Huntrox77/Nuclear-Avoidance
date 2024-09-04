@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=24 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -17,7 +17,10 @@
 [ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
 [ext_resource type="Script" path="res://Scripts/UI/KeepModifiers.gd" id="14_dqpoy"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="14_nwcpy"]
+[ext_resource type="Script" path="res://Scripts/UI/FavouriteButton.gd" id="17_8y8lk"]
+[ext_resource type="Texture2D" uid="uid://bytalcosl6lpe" path="res://Sprites/GreyStar.png" id="18_5xysq"]
 [ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/RedArrows.png" id="18_v0ldg"]
+[ext_resource type="Texture2D" uid="uid://cgrmkd8krqru0" path="res://Sprites/YellowStar.png" id="19_4komw"]
 [ext_resource type="Texture2D" uid="uid://dbtoxbijx0u5f" path="res://Sprites/GreenArrows.png" id="19_6l8jy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
@@ -260,15 +263,17 @@ text = "Map 5"
 layout_mode = 2
 text = "Map 6"
 
-[node name="Modifiers Container" type="GridContainer" parent="Buttons"]
+[node name="Modifiers Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 94.0
-offset_right = 477.0
+offset_right = 485.0
 offset_bottom = 549.0
-theme_override_constants/h_separation = 0
 
-[node name="Blackout" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons/Modifiers Container"]
+layout_mode = 2
+
+[node name="Blackout" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 action_mode = 0
@@ -276,7 +281,19 @@ text = "Blackout "
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
-[node name="SmashBros" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Blackout"]
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="SmashBros" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -285,7 +302,7 @@ text = "Lossful Air controls "
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
-[node name="Impaction" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Impaction" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -295,17 +312,20 @@ text = "Bomb Impacts
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
-[node name="Crumble" type="CheckButton" parent="Buttons/Modifiers Container"]
-layout_mode = 2
-theme = ExtResource("2_dymia")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
-action_mode = 0
-text = "Crumble
-"
-expand_icon = true
-script = ExtResource("14_dqpoy")
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Impaction"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
 
-[node name="Sweeper" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Sweeper" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -315,7 +335,42 @@ text = "Sweeper
 expand_icon = true
 script = ExtResource("13_ufcak")
 
-[node name="Ice" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Sweeper"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="Crumble" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Crumble
+"
+expand_icon = true
+script = ExtResource("14_dqpoy")
+
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Crumble"]
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="Ice" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -324,7 +379,19 @@ text = "Slippery"
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
-[node name="Fog" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Ice"]
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="Fog" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -333,7 +400,19 @@ text = "Fog of War"
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
-[node name="Power" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Fog"]
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="Power" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -342,7 +421,19 @@ text = "Power-ups"
 expand_icon = true
 script = ExtResource("14_dqpoy")
 
-[node name="Collide" type="CheckButton" parent="Buttons/Modifiers Container"]
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Power"]
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="Collide" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
@@ -350,6 +441,18 @@ action_mode = 0
 text = "Player Collision"
 expand_icon = true
 script = ExtResource("14_dqpoy")
+
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Collide"]
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
 
 [node name="Loop Button" type="TextureButton" parent="Buttons"]
 layout_mode = 0
@@ -393,13 +496,21 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map4" to="Buttons" method="_on_map_4_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map6" to="Buttons" method="_on_map_6_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Impaction" to="Buttons" method="_on_impaction_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Crumble" to="Buttons" method="_on_crumble_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Sweeper" to="Buttons" method="_on_sweeper_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Ice" to="Buttons" method="_on_ice_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Fog" to="Buttons" method="_on_fog_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Power" to="Buttons" method="_on_power_pressed"]
-[connection signal="pressed" from="Buttons/Modifiers Container/Collide" to="Buttons" method="_on_collide_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Impaction" to="Buttons" method="_on_impaction_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Impaction/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Impaction/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Sweeper" to="Buttons" method="_on_sweeper_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Sweeper/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Sweeper/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Crumble" to="Buttons" method="_on_crumble_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Crumble/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Crumble/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Ice" to="Buttons" method="_on_ice_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Ice/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Ice/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Fog" to="Buttons" method="_on_fog_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Fog/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Fog/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Power" to="Buttons" method="_on_power_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Power/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Power/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Collide" to="Buttons" method="_on_collide_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Collide/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Collide/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Loop Button" to="Buttons" method="_on_loop_button_pressed"]

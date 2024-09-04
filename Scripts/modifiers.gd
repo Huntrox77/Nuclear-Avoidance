@@ -26,7 +26,7 @@ var p4selection = false
 var p5selection = false
 var gameplaying = false
 var ChallengeOrLocal = "local"
-var loop = true
+var loop = false
 var map1 = true
 var map2 = false
 var map3 = false
@@ -127,6 +127,7 @@ func _process(_delta):
 			_resetnukes()
 			if map2 == true:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay2.tscn")
+				currentmap = "map2"
 				map2 = false
 				resmap2 = true
 				for i in listofplayers:
@@ -134,6 +135,7 @@ func _process(_delta):
 						playersleft += 1
 			elif map3 == true:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay3.tscn")
+				currentmap = "map3"
 				map3 = false
 				resmap3 = true
 				for i in listofplayers:
@@ -141,6 +143,7 @@ func _process(_delta):
 						playersleft += 1
 			elif map4 == true:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay4.tscn")
+				currentmap = "map4"
 				map4 = false
 				resmap4 = true
 				for i in listofplayers:
@@ -148,6 +151,7 @@ func _process(_delta):
 						playersleft += 1
 			elif map5 == true:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay5.tscn")
+				currentmap = "map5"
 				map5 = false
 				resmap5 = true
 				for i in listofplayers:
@@ -155,6 +159,7 @@ func _process(_delta):
 						playersleft += 1
 			elif map6 == true:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay6.tscn")
+				currentmap = "map6"
 				map6 = false
 				resmap6 = true
 				for i in listofplayers:

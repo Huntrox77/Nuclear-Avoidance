@@ -26,6 +26,7 @@ func _ready():
 		position = SpawnPos1.position
 	elif randi_spawn == 2:
 		position = SpawnPos2.position
+		position.y -= 25
 	elif randi_spawn == 3:
 		position = SpawnPos3.position
 	elif randi_spawn == 4:

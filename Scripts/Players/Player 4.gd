@@ -30,6 +30,7 @@ func _ready():
 		position = SpawnPos3.position
 	elif randi_spawn == 4:
 		position = SpawnPos4.position
+		position.y -= 25
 	
 func _physics_process(delta):
 	if Modifier.Ice == true:

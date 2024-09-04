@@ -25,6 +25,7 @@ func _ready():
 	#Random Spawn
 	if randi_spawn == 1:
 		position = SpawnPos1.position
+		position.y -= 25
 	elif randi_spawn == 2:
 		position = SpawnPos2.position
 	elif randi_spawn == 3:
@@ -33,7 +34,7 @@ func _ready():
 		position = SpawnPos4.position
 
 func _physics_process(delta):
-	print(position.x)
+	#print(position.x)
 	#Funny Sprite Enabling
 	if Modifier.Ice == true:
 		groundslide = 0.01
