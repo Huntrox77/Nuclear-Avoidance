@@ -263,6 +263,14 @@ text = "Map 5"
 layout_mode = 2
 text = "Map 6"
 
+[node name="Map7" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+layout_mode = 2
+text = "Map 7"
+
+[node name="Map8" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+layout_mode = 2
+text = "Map 8"
+
 [node name="Modifiers Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 0
 offset_left = 43.0
@@ -282,6 +290,7 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Blackout"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 6.0
 offset_right = 388.0
@@ -298,9 +307,22 @@ layout_mode = 2
 theme = ExtResource("2_dymia")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
 action_mode = 0
-text = "Lossful Air controls "
+text = "Control %                  "
 expand_icon = true
 script = ExtResource("14_dqpoy")
+
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/SmashBros"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
 
 [node name="Impaction" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
 layout_mode = 2
@@ -359,6 +381,7 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Crumble"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 6.0
 offset_right = 388.0
@@ -380,6 +403,7 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Ice"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 6.0
 offset_right = 388.0
@@ -401,6 +425,7 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Fog"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 6.0
 offset_right = 388.0
@@ -422,6 +447,7 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Power"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 6.0
 offset_right = 388.0
@@ -443,6 +469,29 @@ expand_icon = true
 script = ExtResource("14_dqpoy")
 
 [node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Collide"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
+[node name="HomingBombs" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Homing Bombs"
+expand_icon = true
+script = ExtResource("14_dqpoy")
+
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/HomingBombs"]
+layout_mode = 0
 offset_left = 353.0
 offset_top = 6.0
 offset_right = 388.0
@@ -496,9 +545,12 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map4" to="Buttons" method="_on_map_4_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map6" to="Buttons" method="_on_map_6_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map7" to="Buttons" method="_on_map_7_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map8" to="Buttons" method="_on_map_8_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros/Favourite" to="Buttons/Modifiers Container/VBoxContainer/SmashBros/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Impaction" to="Buttons" method="_on_impaction_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Impaction/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Impaction/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Sweeper" to="Buttons" method="_on_sweeper_pressed"]
@@ -513,4 +565,6 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Power/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Power/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Collide" to="Buttons" method="_on_collide_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Collide/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Collide/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/HomingBombs" to="Buttons" method="_on_homing_bombs_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/HomingBombs/Favourite" to="Buttons/Modifiers Container/VBoxContainer/HomingBombs/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Loop Button" to="Buttons" method="_on_loop_button_pressed"]

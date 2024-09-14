@@ -27,6 +27,10 @@ func _process(_delta):
 		panel.position.x += 0.3
 		panel.size.y -= 0.33
 		panel.position.y += 0.2
+		panel.get_child(0).scale.x += 0.1
+		panel.get_child(0).position.x += 0.3
+		panel.get_child(0).scale.y -= 0.0033
+		panel.get_child(0).position.y += 0.2
 
 
 func _on_pressed():

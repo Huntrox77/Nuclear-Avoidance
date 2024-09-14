@@ -37,6 +37,10 @@ func _process(_delta):
 		$"Map Container/HBoxContainer/Map5".button_pressed = true
 	if Modifier.map6 == true:
 		$"Map Container/HBoxContainer/Map6".button_pressed = true
+	if Modifier.map7 == true:
+		$"Map Container/HBoxContainer/Map7".button_pressed = true
+	if Modifier.map8 == true:
+		$"Map Container/HBoxContainer/Map8".button_pressed = true
 
 func _on_p_1_pressed():
 	Modifier.p1selection = not Modifier.p1selection
@@ -96,7 +100,10 @@ func _on_sweeper_pressed():
 
 func _on_ice_pressed():
 	Modifier.Ice = not Modifier.Ice
-	pass # Replace with function body.
+	if Modifier.PSpeed == 200:
+		Modifier.PSpeed = 100
+	elif Modifier.PSpeed == 100:
+		Modifier.PSpeed = 200
 
 
 func _on_fog_pressed():
@@ -113,6 +120,10 @@ func _on_collide_pressed():
 	Modifier.Collide = not Modifier.Collide
 
 
+func _on_homing_bombs_pressed():
+	Modifier.Follow = not Modifier.Follow
+
+
 func _on_adv_mod_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menus/Advanced Modifiers.tscn")
 	pass # Replace with function body.
@@ -120,6 +131,7 @@ func _on_adv_mod_pressed():
 
 func _on_loop_button_pressed():
 	Modifier.loop = not Modifier.loop
+
 
 func _on_map_1_pressed():
 	Modifier.map1 = not Modifier.map1
@@ -145,4 +157,9 @@ func _on_map_6_pressed():
 	Modifier.map6 = not Modifier.map6
 
 
+func _on_map_7_pressed():
+	Modifier.map7 = not Modifier.map7
 
+
+func _on_map_8_pressed():
+	Modifier.map8 = not Modifier.map8

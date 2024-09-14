@@ -1,17 +1,13 @@
-[gd_scene load_steps=28 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=31 format=3 uid="uid://ieri1l2pt0lw"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fwjbu"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="2_4e03n"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_d24qj"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="3_ki4em"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_4jrcg"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="4_j5vt3"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="5_bbv76"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_f5sj4"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_pgol6"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="7_u7388"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_5cbcc"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 5.gd" id="9_k7hdk"]
+[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="9_k7hdk"]
 [ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="9_vv3bj"]
 [ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="10_lrmh6"]
 [ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="11_py5b1"]
@@ -24,11 +20,26 @@
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_1c585"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_q7kd4"]
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_t4g3v"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="25_306pg"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="25_noejh"]
+[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="25_qm8gj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
 size = Vector2(12446, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eiewv"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e8uv"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1usqa"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wj1mc"]
+size = Vector2(60, 60)
 
 [sub_resource type="TileSet" id="TileSet_muvba"]
 
@@ -78,14 +89,8 @@ one_shot = true
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
 position = Vector2(-50, -170)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("2_4e03n")
+script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
 offset_left = -30.0
@@ -100,17 +105,17 @@ position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("4_4jrcg")
 
-[node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(48, -170)
-scale = Vector2(0.8, 0.8)
-script = ExtResource("3_ki4em")
-metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_q1nq8")
 one_way_collision = true
+
+[node name="Player 2" type="CharacterBody2D" parent="Players"]
+position = Vector2(48, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("9_k7hdk")
+metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
 offset_left = -30.0
@@ -126,17 +131,16 @@ position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("6_f5sj4")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+visible = false
+shape = SubResource("RectangleShape2D_eiewv")
+one_way_collision = true
+
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
 position = Vector2(-152, -170)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_j5vt3")
+script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
 offset_left = -30.0
@@ -152,17 +156,16 @@ position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("4_4jrcg")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+visible = false
+shape = SubResource("RectangleShape2D_7e8uv")
+one_way_collision = true
+
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
 position = Vector2(145, -171)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("5_bbv76")
+script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
 offset_left = -30.0
@@ -178,17 +181,16 @@ position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("6_f5sj4")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+visible = false
+shape = SubResource("RectangleShape2D_1usqa")
+one_way_collision = true
+
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
 position = Vector2(145, -171)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
 offset_left = -30.0
@@ -203,6 +205,11 @@ visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("6_f5sj4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
+visible = false
+shape = SubResource("RectangleShape2D_wj1mc")
+one_way_collision = true
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -324,6 +331,47 @@ position = Vector2(-48, -173)
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
 position = Vector2(147, -173)
 
+[node name="Timer" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("15_qfbco")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("25_noejh")
+
+[node name="Timer" type="Timer" parent="Timer"]
+wait_time = 0.01
+autostart = true
+
+[node name="Trans" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("15_qfbco")
+theme_override_styles/normal = ExtResource("25_306pg")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="Label" parent="."]
+z_index = 5
+offset_left = -576.0
+offset_top = -648.0
+offset_right = 576.0
+theme = ExtResource("15_qfbco")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/normal = ExtResource("25_306pg")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("25_qm8gj")
+
+[node name="Timer" type="Timer" parent="Countdown"]
+
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
@@ -334,3 +382,5 @@ position = Vector2(147, -173)
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]

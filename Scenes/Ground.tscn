@@ -7,9 +7,16 @@
 size = Vector2(64, 64)
 
 [node name="Ground" type="StaticBody2D"]
+z_index = 20
 position = Vector2(-160, -113)
 script = ExtResource("1_5l6sl")
 metadata/GroundM = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.160784, 0.509804, 0.129412, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_fxb6l")

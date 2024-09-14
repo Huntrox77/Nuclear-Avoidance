@@ -1,21 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://d342vv4g7762h"]
+[gd_scene load_steps=3 format=3 uid="uid://d342vv4g7762h"]
 
 [ext_resource type="Texture2D" uid="uid://dwnlkw12reoue" path="res://Sprites/GroundL.png" id="1_4vt00"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Grounds.gd" id="1_meo42"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_goni1"]
-size = Vector2(64, 64)
-
 [node name="Ground" type="StaticBody2D"]
+z_index = 20
 position = Vector2(-224, -113)
 script = ExtResource("1_meo42")
 metadata/GroundL = true
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.160784, 0.509804, 0.129412, 1)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_4vt00")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_goni1")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-32, -32, -32, 16, -20, 16, -20, 24, -4, 24, -4, 32, 32, 32, 32, -32)
 
 [node name="Reappeartimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -7,6 +7,8 @@ func _ready():
 		value = Modifier.DMNSC
 	if name == "Gravity":
 		value = Modifier.GravityMult
+	if name == "Speed":
+		value = Modifier.PSpeed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,4 +20,8 @@ func _process(_delta):
 	if name == "Gravity":
 		var valueamount = value
 		Modifier.GravityMult = value
+		Per.text = str(valueamount) + "%"
+	if name == "Speed":
+		var valueamount = value
+		Modifier.PSpeed = value
 		Per.text = str(valueamount) + "%"

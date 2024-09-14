@@ -1,14 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://dnviwam2n05ij"]
+[gd_scene load_steps=35 format=3 uid="uid://dnviwam2n05ij"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_x2aj1"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1anp0"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 1.gd" id="3_1uwrw"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_j066y"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 2.gd" id="5_mejj8"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_4x1fo"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 3.gd" id="7_jiucm"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 4.gd" id="8_vplhv"]
-[ext_resource type="Script" path="res://Scripts/Players/Player 5.gd" id="9_odnhy"]
+[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="9_odnhy"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="10_ot83h"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="11_ssdcy"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="12_7nr08"]
@@ -27,13 +23,26 @@
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="23_xf25k"]
 [ext_resource type="Texture2D" uid="uid://dmg3wif6x4awv" path="res://Sprites/Spikes.png" id="25_0pjkm"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Spikes.gd" id="25_1rfor"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="28_fik82"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="29_st63l"]
+[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="30_v15tl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
 size = Vector2(12446, 154)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ycbt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xykij"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qyi"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vskdj"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_230jj"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tklm"]
+size = Vector2(60, 60)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
 texture = ExtResource("23_bmt1h")
@@ -88,24 +97,16 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-z_index = 2
-position = Vector2(-426, -535)
+position = Vector2(-50, -170)
 scale = Vector2(0.8, 0.8)
-floor_stop_on_slope = false
-floor_block_on_wall = false
-script = ExtResource("3_1uwrw")
+script = ExtResource("9_odnhy")
 metadata/Player = "Player"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
-
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
-offset_left = -28.75
-offset_top = -31.25
-offset_right = 31.25
-offset_bottom = 28.75
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Players/Player 1"]
@@ -114,23 +115,23 @@ position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("4_j066y")
 
-[node name="Player 2" type="CharacterBody2D" parent="Players"]
-z_index = 2
-position = Vector2(-424, -532)
-scale = Vector2(0.8, 0.8)
-script = ExtResource("5_mejj8")
-metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
+shape = SubResource("RectangleShape2D_4ycbt")
 one_way_collision = true
 
+[node name="Player 2" type="CharacterBody2D" parent="Players"]
+position = Vector2(48, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("9_odnhy")
+metadata/Player = "Player"
+
 [node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
-offset_left = -28.75
-offset_top = -32.5
-offset_right = 31.25
-offset_bottom = 27.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 color = Color(1, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -140,17 +141,16 @@ position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("6_4x1fo")
 
-[node name="Player 3" type="CharacterBody2D" parent="Players"]
-z_index = 2
-position = Vector2(-424, -536)
-scale = Vector2(0.8, 0.8)
-script = ExtResource("7_jiucm")
-metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+visible = false
+shape = SubResource("RectangleShape2D_v8qyi")
 one_way_collision = true
+
+[node name="Player 3" type="CharacterBody2D" parent="Players"]
+position = Vector2(-152, -170)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("9_odnhy")
+metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
 offset_left = -30.0
@@ -162,27 +162,26 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Sprite" type="Sprite2D" parent="Players/Player 3"]
 visible = false
-position = Vector2(-1.25, -0.625001)
+position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("4_j066y")
 
-[node name="Player 4" type="CharacterBody2D" parent="Players"]
-z_index = 2
-position = Vector2(-425, -533)
-scale = Vector2(0.8, 0.8)
-script = ExtResource("8_vplhv")
-metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+visible = false
+shape = SubResource("RectangleShape2D_vskdj")
 one_way_collision = true
 
+[node name="Player 4" type="CharacterBody2D" parent="Players"]
+position = Vector2(145, -171)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("9_odnhy")
+metadata/Player = "Player"
+
 [node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
-offset_left = -27.5
-offset_top = -31.25
-offset_right = 32.5
-offset_bottom = 28.75
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
 color = Color(0.741176, 0, 0.309804, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -192,17 +191,16 @@ position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("6_4x1fo")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+visible = false
+shape = SubResource("RectangleShape2D_230jj")
+one_way_collision = true
+
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(-425, -533)
+position = Vector2(145, -171)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_odnhy")
 metadata/Player = "Player"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_xykij")
-one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
 offset_left = -30.0
@@ -217,6 +215,11 @@ visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("6_4x1fo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
+visible = false
+shape = SubResource("RectangleShape2D_5tklm")
+one_way_collision = true
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -373,6 +376,47 @@ position = Vector2(312, 145)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spikes/Spikes3/Spike"]
 polygon = PackedVector2Array(-340, -113, -340, -129, -332, -129, -332, -137, -324, -137, -324, -129, -316, -129, -316, -137, -308, -137, -308, -129, -300, -129, -300, -137, -292, -137, -292, -129, -284, -129, -284, -113)
 
+[node name="Timer" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("16_5sxev")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("28_fik82")
+
+[node name="Timer" type="Timer" parent="Timer"]
+wait_time = 0.01
+autostart = true
+
+[node name="Trans" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("16_5sxev")
+theme_override_styles/normal = ExtResource("29_st63l")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="Label" parent="."]
+z_index = 5
+offset_left = -576.0
+offset_top = -648.0
+offset_right = 576.0
+theme = ExtResource("16_5sxev")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/normal = ExtResource("29_st63l")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("30_v15tl")
+
+[node name="Timer" type="Timer" parent="Countdown"]
+
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
@@ -386,3 +430,5 @@ polygon = PackedVector2Array(-340, -113, -340, -129, -332, -129, -332, -137, -32
 [connection signal="body_entered" from="Spikes/Spikes/Spike" to="Spikes" method="_on_spike_body_entered"]
 [connection signal="body_entered" from="Spikes/Spikes2/Spike" to="Spikes" method="_on_spike_body_entered"]
 [connection signal="body_entered" from="Spikes/Spikes3/Spike" to="Spikes" method="_on_spike_body_entered"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]

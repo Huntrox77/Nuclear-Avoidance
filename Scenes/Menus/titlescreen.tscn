@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=16 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
@@ -11,6 +11,9 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="9_m05l0"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_n42oj"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_h4j2j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
+size = Vector2(417, 647)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8b1ob"]
 font = ExtResource("2_6gjgd")
@@ -157,6 +160,15 @@ mouse_filter = 2
 theme = ExtResource("1_0l6ev")
 metadata/_edit_lock_ = true
 
+[node name="Area2D" type="Area2D" parent="Buttons/Panel"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("9_m05l0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Panel/Area2D"]
+position = Vector2(208.5, 323.5)
+shape = SubResource("RectangleShape2D_3oj3v")
+
 [node name="Label" type="Label" parent="Buttons"]
 layout_mode = 0
 offset_left = 1.0
@@ -250,6 +262,7 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 [connection signal="pressed" from="Buttons/Challenges" to="Buttons/Challenges" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Settings" to="Buttons/Quit Game" method="_on_settings_pressed"]
 [connection signal="pressed" from="Buttons/Achievments" to="Buttons/Quit Game" method="_on_achievments_pressed"]
+[connection signal="area_entered" from="Buttons/Panel/Area2D" to="Buttons/Panel/Area2D" method="_on_area_entered"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]

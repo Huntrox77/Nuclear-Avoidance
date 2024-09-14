@@ -27,6 +27,9 @@ func _ready():
 	if name == "Collide":
 		if Modifier.Collide == true:
 			button_pressed = true
+	if name == "HomingBombs":
+		if Modifier.Follow == true:
+			button_pressed = true
 	pass # Replace with function body.
 
 

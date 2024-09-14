@@ -22,15 +22,15 @@ func _ready():
 	#Top platform 1
 	add_child(GR)
 	GR.set_meta("PlayerOnly", true)
-	GR.get_child(0).texture = Besprite
-	GR.get_child(1).one_way_collision = true
+	GR.get_child(1).texture = Besprite
+	GR.get_child(2).one_way_collision = true
 	GR.position.x = 24
 	GR.position.y += -290 + 64
 	
 	add_child(GR2)
 	GR2.set_meta("PlayerOnly", true)
-	GR2.get_child(0).texture = Besprite
-	GR2.get_child(1).one_way_collision = true
+	GR2.get_child(1).texture = Besprite
+	GR2.get_child(2).one_way_collision = true
 	GR2.position.x = -40
 	GR2.position.y += -290 + 64
 	
@@ -46,15 +46,15 @@ func _ready():
 	#Top platform 2
 	add_child(GR5)
 	GR5.set_meta("PlayerOnly", true)
-	GR5.get_child(0).texture = Besprite
-	GR5.get_child(1).one_way_collision = true
+	GR5.get_child(1).texture = Besprite
+	GR5.get_child(2).one_way_collision = true
 	GR5.position.x = 344
 	GR5.position.y += -226 + 64
 	
 	add_child(GR6)
 	GR6.set_meta("PlayerOnly", true)
-	GR6.get_child(0).texture = Besprite
-	GR6.get_child(1).one_way_collision = true
+	GR6.get_child(1).texture = Besprite
+	GR6.get_child(2).one_way_collision = true
 	GR6.position.x = 280
 	GR6.position.y += -226 + 64
 	
@@ -70,15 +70,15 @@ func _ready():
 	#Top platform 3
 	add_child(GR9)
 	GR9.set_meta("PlayerOnly", true)
-	GR9.get_child(0).texture = Besprite
-	GR9.get_child(1).one_way_collision = true
+	GR9.get_child(1).texture = Besprite
+	GR9.get_child(2).one_way_collision = true
 	GR9.position.x = -344
 	GR9.position.y += -226 + 64
 	
 	add_child(GR10)
 	GR10.set_meta("PlayerOnly", true)
-	GR10.get_child(0).texture = Besprite
-	GR10.get_child(1).one_way_collision = true
+	GR10.get_child(1).texture = Besprite
+	GR10.get_child(2).one_way_collision = true
 	GR10.position.x = -280
 	GR10.position.y += -226 + 64
 	

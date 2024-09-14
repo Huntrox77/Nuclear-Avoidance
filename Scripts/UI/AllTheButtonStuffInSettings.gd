@@ -11,6 +11,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$OptionButton.selected = Config.TextSpeed
+	$Timer.selected = Config.InTimer
+	$HowManyPlayersLeft.selected = Config.HowManyPlayersLeftChoice
 	pass
 
 func _on_option_button_item_selected(index):
@@ -49,3 +51,14 @@ func _on_player_tab_tab_clicked(tab):
 		$PlayerTab/Player2ControlTab.hide()
 		$PlayerTab/Player3ControlTab.hide()
 		$PlayerTab/Player4ControlTab.show()
+
+
+func _on_timer_item_selected(index):
+	Modifier.InTimer = index
+	Config.InTimer = index
+
+
+
+func _on_how_many_players_left_item_selected(index):
+	Modifier.HowManyPlayersLeftChoice = index
+	Config.HowManyPlayersLeftChoice = index
