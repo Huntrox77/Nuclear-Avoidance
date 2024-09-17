@@ -1,7 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://qdnvsjmntuhi"]
+[gd_scene load_steps=35 format=3 uid="uid://qdnvsjmntuhi"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_buvqp"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1ylfr"]
+[ext_resource type="AudioStream" uid="uid://gtd741w2wmo1" path="res://Music/28 - Threat - Sky Islands.mp3" id="3_yt0ee"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="4_hed4v"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_uldfh"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_21lkd"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_wikyi"]
@@ -91,6 +93,12 @@ text = "You are no god... but I shall feast upon your essence regardless!"
 [node name="TextTimer" type="Timer" parent="void"]
 wait_time = 3.0
 one_shot = true
+
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("3_yt0ee")
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("4_hed4v")
 
 [node name="Players" type="Node" parent="."]
 

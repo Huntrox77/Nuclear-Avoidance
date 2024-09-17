@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=18 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_uwdjg"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="9_m05l0"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_n42oj"]
+[ext_resource type="AudioStream" uid="uid://gtd741w2wmo1" path="res://Music/28 - Threat - Sky Islands.mp3" id="11_2fc7k"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_h4j2j"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="12_fkia3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
 size = Vector2(417, 647)
@@ -247,11 +249,23 @@ text = "You are no god... but I shall feast upon your essence regardless!"
 wait_time = 3.0
 one_shot = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("11_2fc7k")
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("12_fkia3")
+
+[node name="Mouse" type="CharacterBody2D" parent="."]
 position = Vector2(203, 7)
 script = ExtResource("11_h4j2j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="ColorRect" type="ColorRect" parent="Mouse"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.827451, 0.360784, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse"]
 shape = SubResource("CircleShape2D_5cryv")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 

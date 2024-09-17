@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://b4io5qe43popf"]
+[gd_scene load_steps=36 format=3 uid="uid://c2217i4d3oty3"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_nqk46"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_p5tjy"]
 [ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="3_02iep"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_b35s7"]
+[ext_resource type="AudioStream" uid="uid://3wuiotvo6106" path="res://Music/20 - Threat - Superstructure.mp3" id="4_vdvfs"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_ipffu"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="10_uj8tb"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="11_5b2ej"]
@@ -65,6 +66,9 @@ position = Vector2(0, 434)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_nqk46")
+
+[node name="FP" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("4_vdvfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 234)

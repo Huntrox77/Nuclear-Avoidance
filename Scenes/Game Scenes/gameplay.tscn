@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=33 format=3 uid="uid://ieri1l2pt0lw"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fwjbu"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_d24qj"]
+[ext_resource type="AudioStream" uid="uid://gtd741w2wmo1" path="res://Music/28 - Threat - Sky Islands.mp3" id="3_103se"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_4jrcg"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_f5sj4"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_pgol6"]
@@ -20,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_1c585"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_q7kd4"]
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_t4g3v"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="24_bhx12"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="25_306pg"]
 [ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="25_noejh"]
 [ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="25_qm8gj"]
@@ -59,6 +61,12 @@ shape = SubResource("RectangleShape2D_v81yx")
 
 [node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
 stream = ExtResource("2_d24qj")
+
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("3_103se")
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("24_bhx12")
 
 [node name="ColorRect" type="ColorRect" parent="void"]
 visible = false

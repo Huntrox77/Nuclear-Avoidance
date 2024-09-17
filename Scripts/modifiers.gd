@@ -108,7 +108,6 @@ func _reset():
 	for i in listofplayers:
 		if i == true:
 			playersleft += 1
-	playersleft -= 1
 	_resetmaps()
 	_resetnukes()
 
@@ -149,7 +148,6 @@ func _resetplayers():
 	for i in listofplayers:
 			if i == true:
 				playersleft += 1
-	playersleft -= 1
 	if listofplayers[0] == true:
 		P1Alive = true
 	if listofplayers[1] == true:
