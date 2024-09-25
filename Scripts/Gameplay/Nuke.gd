@@ -1,12 +1,12 @@
 extends Node2D
 
 @onready var Modifier = get_node("/root/Modifiers")
-@onready var anim = $AnimatedSprite2D
 @onready var timer = $Explodimer
 @onready var raidus = $BlastRadius/CollisionShape2D
 @onready var ExplosivePoint = $BlastRadius/ExplosivePoint
-@onready var AnimSprite = $AnimatedSprite2D
-@onready var Sprite = $Sprite2D
+@onready var ExplosiveAnim = $Explosion
+@onready var Nuke = $Nuke
+@onready var Yharon = $Yharon
 @export var Explosion:PackedScene
 
 var randmovespeed = randf_range(0.33, 4.33)
@@ -44,11 +44,13 @@ func _ready():
 	randomspawnbutlikemore = randi_range(1,3)
 	movex2 = 10 - Modifier.DMNSC
 	if Modifier.Yharon == true:
-		Sprite.show()
-		AnimSprite.hide()
+		Yharon.show()
+		ExplosiveAnim.hide()
+		Nuke.hide()
 	else:
-		Sprite.hide()
-		AnimSprite.show()
+		Yharon.hide()
+		ExplosiveAnim.hide()
+		Nuke.show()
 	if self.name == "Nuke2":
 		if Modifier.Nuke2 == false:
 			self.queue_free()
@@ -252,7 +254,9 @@ func _on_body_entered(body):
 		Expl.get_child(0).color = Color(body.get_child(0).color)
 		Expl.position = position
 		Expl.get_child(0).one_shot = true
-		anim.play("Explosion")
+		Nuke.hide()
+		ExplosiveAnim.show()
+		ExplosiveAnim.play("Explosion")
 		timer.start()
 
 

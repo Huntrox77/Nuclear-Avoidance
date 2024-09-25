@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bqgvil0ikimm8"]
+[gd_scene format=3 uid="uid://n78qi4ywrbwj"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-z_index = 15
+z_index = 5
 position = Vector2(-1, 122)
 rotation = 3.14159
 scale = Vector2(1.5, 1.5)

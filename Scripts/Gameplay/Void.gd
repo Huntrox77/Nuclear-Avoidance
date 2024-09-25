@@ -24,8 +24,6 @@ func _process(_delta):
 	pass
 
 
-
-
 func _on_body_entered(body):
 	# Sets the object, that enters its area, to be at x and y 0.
 	if body.name == "Player 1":
