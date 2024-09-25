@@ -7,7 +7,7 @@ extends Node2D
 @onready var ExplosivePoint = $BlastRadius/ExplosivePoint
 @onready var AnimSprite = $AnimatedSprite2D
 @onready var Sprite = $Sprite2D
-@export var Explosion:PackedScene
+@onready var Nuke = $Nuke
 
 var randmovespeed = randf_range(0.33, 4.33)
 var randmovespeedY = randf_range(-4.33, 4.33)
@@ -45,10 +45,10 @@ func _ready():
 	movex2 = 10 - Modifier.DMNSC
 	if Modifier.Yharon == true:
 		Sprite.show()
-		AnimSprite.hide()
+		Nuke.hide()
 	else:
 		Sprite.hide()
-		AnimSprite.show()
+		Nuke.show()
 	if self.name == "Nuke2":
 		if Modifier.Nuke2 == false:
 			self.queue_free()
@@ -239,20 +239,17 @@ func _chooseplayer():
 
 # Explosion Script
 func _on_body_entered(body):
-	var Expl = Explosion.instantiate()
 	if body.name == "BlastRadius":
 		pass
 	if body.has_meta("PlayerOnly"):
 		if body.get_meta("PlayerOnly") == true:
 			pass
 	else:
+		anim.show()
+		anim.play("Explosion")
+		Nuke.hide()
+		timer.start()
 		move = false
 		raidus.set_deferred("disabled", false)
-		get_parent().add_child(Expl)
-		Expl.get_child(0).color = Color(body.get_child(0).color)
-		Expl.position = position
-		Expl.get_child(0).one_shot = true
-		anim.play("Explosion")
-		timer.start()
 
 
