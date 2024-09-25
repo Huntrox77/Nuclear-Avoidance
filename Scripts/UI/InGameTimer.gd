@@ -7,9 +7,11 @@ var Minute = 0
 var Trans
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	position.y = -625
 	Trans = get_parent().get_node("Trans")	
 	hide()
 	Trans.hide()
+	Trans.position.y = -625
 	if Modifier.InTimer == 0:
 		print(Modifier.InTimer)
 	elif Modifier.InTimer == 1:

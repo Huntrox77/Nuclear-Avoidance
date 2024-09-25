@@ -3,43 +3,43 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_buvqp"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1ylfr"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_uldfh"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_80b8j"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_21lkd"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_wikyi"]
-[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/nuke_scene.tscn" id="7_wdus6"]
-[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/Sweeper.tscn" id="8_l0lws"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_wdus6"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_l0lws"]
 [ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="9_50f8h"]
 [ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="9_eytm8"]
-[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/blackout.tscn" id="10_37cxf"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P1slidelabel.gd" id="11_14tuc"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P2slidelabel.gd" id="12_3jtad"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P3slidelabel.gd" id="13_3vsae"]
-[ext_resource type="Script" path="res://Scripts/UI/slidelabel/P4slidelabel.gd" id="14_btle7"]
-[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/Fog.tscn" id="14_r5hop"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="10_37cxf"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="14_btle7"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="14_r5hop"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="15_a3kop"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround3.gd" id="15_lbbx5"]
-[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/GroundLeft.tscn" id="16_tb2gu"]
-[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/Ground.tscn" id="17_26vm1"]
-[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/GroundRight.tscn" id="18_nvji0"]
+[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/In Game Stuff/GroundLeft.tscn" id="16_tb2gu"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="17_26vm1"]
+[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/In Game Stuff/GroundRight.tscn" id="18_nvji0"]
 [ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/DirtBackroung.png" id="23_vom0y"]
 [ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="26_dhk5y"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="26_tvwrp"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="27_bfrmt"]
+[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="27_rp6ur"]
 [ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="28_q6ndc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u84nq"]
 size = Vector2(12446, 154)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r4fa"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y814n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ehjl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4k7j"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mutes"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ins04"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikoyl"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04a1l"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i4c8a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cqb3"]
 size = Vector2(60, 60)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4ggo"]
@@ -114,10 +114,35 @@ scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("4_uldfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+visible = false
 position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_2r4fa")
+shape = SubResource("RectangleShape2D_y814n")
 one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 1"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 1"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 1"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_80b8j")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
 position = Vector2(48, -170)
@@ -141,8 +166,32 @@ texture = ExtResource("6_wikyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
-shape = SubResource("RectangleShape2D_5ehjl")
+shape = SubResource("RectangleShape2D_m4k7j")
 one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 2"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 2"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 2"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_80b8j")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
 position = Vector2(-152, -170)
@@ -166,8 +215,32 @@ texture = ExtResource("4_uldfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
-shape = SubResource("RectangleShape2D_mutes")
+shape = SubResource("RectangleShape2D_ins04")
 one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 3"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 3"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 3"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_80b8j")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
 position = Vector2(145, -171)
@@ -191,8 +264,32 @@ texture = ExtResource("6_wikyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
-shape = SubResource("RectangleShape2D_ikoyl")
+shape = SubResource("RectangleShape2D_04a1l")
 one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 4"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 4"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 4"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_80b8j")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
 position = Vector2(145, -171)
@@ -216,8 +313,32 @@ texture = ExtResource("6_wikyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
-shape = SubResource("RectangleShape2D_i4c8a")
+shape = SubResource("RectangleShape2D_4cqb3")
 one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 5"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 5"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 5"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_80b8j")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -268,48 +389,84 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
-layout_mode = 0
-offset_left = -551.0
+offset_left = -552.0
 offset_top = -625.0
-offset_right = -329.0
+offset_right = -330.0
 offset_bottom = -584.0
 theme = ExtResource("15_a3kop")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("11_14tuc")
+script = ExtResource("14_btle7")
 
 [node name="P2" type="Label" parent="GUI\'s"]
-layout_mode = 0
-offset_left = 314.0
+offset_left = -304.0
 offset_top = -625.0
-offset_right = 541.0
+offset_right = -77.0
 offset_bottom = -584.0
 theme = ExtResource("15_a3kop")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("12_3jtad")
+script = ExtResource("14_btle7")
 
 [node name="P3" type="Label" parent="GUI\'s"]
-layout_mode = 0
-offset_left = -551.0
-offset_top = -51.0
-offset_right = -329.0
-offset_bottom = -10.0
+offset_left = 78.0
+offset_top = -625.0
+offset_right = 300.0
+offset_bottom = -584.0
 theme = ExtResource("15_a3kop")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("13_3vsae")
+script = ExtResource("14_btle7")
 
 [node name="P4" type="Label" parent="GUI\'s"]
-layout_mode = 0
-offset_left = 314.0
-offset_top = -51.0
-offset_right = 541.0
-offset_bottom = -10.0
+offset_left = 326.0
+offset_top = -625.0
+offset_right = 553.0
+offset_bottom = -584.0
 theme = ExtResource("15_a3kop")
 text = "Player 2: 10%"
 horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("14_btle7")
+
+[node name="P1Score" type="Label" parent="GUI\'s"]
+offset_left = -533.0
+offset_top = -65.0
+offset_right = -333.0
+offset_bottom = -24.0
+theme = ExtResource("15_a3kop")
+text = "P1 Points: 0"
+vertical_alignment = 1
+script = ExtResource("14_btle7")
+
+[node name="P2Score" type="Label" parent="GUI\'s"]
+offset_left = -245.5
+offset_top = -65.0
+offset_right = -40.5
+offset_bottom = -24.0
+theme = ExtResource("15_a3kop")
+text = "P2 Points: 0"
+vertical_alignment = 1
+script = ExtResource("14_btle7")
+
+[node name="P3Score" type="Label" parent="GUI\'s"]
+offset_left = 42.0
+offset_top = -65.0
+offset_right = 247.0
+offset_bottom = -24.0
+theme = ExtResource("15_a3kop")
+text = "P3 Points: 0"
+vertical_alignment = 1
+script = ExtResource("14_btle7")
+
+[node name="P4Score" type="Label" parent="GUI\'s"]
+offset_left = 329.5
+offset_top = -65.0
+offset_right = 534.5
+offset_bottom = -24.0
+theme = ExtResource("15_a3kop")
+text = "P4 Points: 0"
 vertical_alignment = 1
 script = ExtResource("14_btle7")
 
@@ -384,6 +541,14 @@ script = ExtResource("28_q6ndc")
 
 [node name="Timer" type="Timer" parent="Countdown"]
 
+[node name="Power-Ups" type="Node" parent="."]
+script = ExtResource("26_tvwrp")
+Shield = ExtResource("27_rp6ur")
+
+[node name="Timer" type="Timer" parent="Power-Ups"]
+wait_time = 15.0
+one_shot = true
+
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
@@ -397,3 +562,4 @@ script = ExtResource("28_q6ndc")
 [connection signal="timeout" from="Grounds/Timer" to="Grounds" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
 [connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
+[connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]

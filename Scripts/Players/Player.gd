@@ -12,11 +12,13 @@ var JUMP_VELOCITY = -400.0
 var airslide = 0.02
 var aircontrol = 0.09
 var groundslide = 0.5
+var coyotetime = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	$Shield.hide()
 	SPEED = 3 * Modifier.PSpeed
 	var randi_spawn = randi_range(1, 4)
 	#Funny Sprite Enabling
@@ -43,8 +45,16 @@ func _ready():
 			up_direction = Vector2(0, 1)
 
 func _physics_process(delta):
-	Modifier.playerX[0] = position.x
-	#print(position.x)
+	if name == "Player 1":
+		Modifier.playerX[0] = position.x
+	if name == "Player 2":
+		Modifier.playerX[1] = position.x
+	if name == "Player 3":
+		Modifier.playerX[2] = position.x
+	if name == "Player 4":
+		Modifier.playerX[3] = position.x
+	if name == "Player 5":
+		Modifier.playerX[4] = position.x
 	#Funny Sprite Enabling
 	if Modifier.Ice == true:
 		groundslide = 0.01
@@ -78,23 +88,47 @@ func _physics_process(delta):
 			direction = Input.get_axis("p1-left", "p1-right")
 			if Input.is_action_pressed("p1-jump") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
+			elif Input.is_action_pressed("p1-jump") and coyotetime == true:
+				velocity.y = JUMP_VELOCITY
+				coyotetime = false
 		if name == "Player 2":
 			direction = Input.get_axis("p2-left", "p2-right")
 			if Input.is_action_pressed("p2-jump") and is_on_floor():
+				if is_on_floor():
+					coyotetime = false
 				velocity.y = JUMP_VELOCITY
+			elif Input.is_action_pressed("p2-jump") and coyotetime == true:
+				velocity.y = JUMP_VELOCITY
+				coyotetime = false
 		if name == "Player 3":
 			direction = Input.get_axis("p3-left", "p3-right")
 			if Input.is_action_pressed("p3-jump") and is_on_floor():
+				if is_on_floor():
+					coyotetime = false
 				velocity.y = JUMP_VELOCITY
+			elif Input.is_action_pressed("p3-jump") and coyotetime == true:
+				velocity.y = JUMP_VELOCITY
+				coyotetime = false
 		if name == "Player 4":
 			direction = Input.get_axis("p4-left", "p4-right")
 			if Input.is_action_pressed("p4-jump") and is_on_floor():
+				if is_on_floor():
+					coyotetime = false
 				velocity.y = JUMP_VELOCITY
+			elif Input.is_action_pressed("p4-jump") and coyotetime == true:
+				velocity.y = JUMP_VELOCITY
+				coyotetime = false
 		if name == "Player 5":
 			direction = Input.get_axis("p5-left", "p5-right")
 			if Input.is_action_pressed("p5-jump") and is_on_floor():
+				if is_on_floor():
+					coyotetime = false
 				velocity.y = JUMP_VELOCITY
-		
+			elif Input.is_action_pressed("p5-jump") and coyotetime == true:
+				velocity.y = JUMP_VELOCITY
+				coyotetime = false
+
+
 		if direction:
 			if is_on_floor():
 				velocity.x = lerp(velocity.x, direction * SPEED, groundslide)
@@ -105,6 +139,21 @@ func _physics_process(delta):
 		else:
 			velocity.x = lerp(velocity.x, 0.0, airslide)
 	
-	
-
 	move_and_slide()
+
+func _process(_delta):
+	if is_on_floor():
+		coyotetime = true
+
+	if not is_on_floor():
+		var timer = get_tree().create_timer(0.1)
+		timer.connect("timeout", _coyotetime)
+
+	if has_meta("Shield"):
+		if get_meta("Shield", true):
+			$Shield.show()
+		else:
+			$Shield.hide()
+
+func _coyotetime():
+	coyotetime = false

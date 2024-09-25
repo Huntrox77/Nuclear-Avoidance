@@ -9,6 +9,10 @@ func _ready():
 		value = Modifier.GravityMult
 	if name == "Speed":
 		value = Modifier.PSpeed
+	if name == "Power Min Time":
+		value = Modifier.powermintime
+	if name == "Power Max Time":
+		value = Modifier.powermaxtime
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,3 +29,11 @@ func _process(_delta):
 		var valueamount = value
 		Modifier.PSpeed = value
 		Per.text = str(valueamount) + "%"
+	if name == "Power Min Time":
+		var valueamount = value
+		Modifier.powermintime = value
+		Per.text = str(valueamount) + "s"
+	if name == "Power Max Time":
+		var valueamount = value
+		Modifier.powermaxtime = value
+		Per.text = str(valueamount) + "s"

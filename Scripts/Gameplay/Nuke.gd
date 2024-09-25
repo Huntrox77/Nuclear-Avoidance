@@ -23,7 +23,7 @@ var negspawnradius3 = -234
 var spawnradius3 = 234
 var expspeed = 4200
 var randiY = randi_range(1, 3)
-var RandiPlayer = randi_range(0, 0)
+var RandiPlayer = randi_range(0, 4)
 var movex = 0
 var movex1 = 1
 var movex2 = 4
@@ -43,7 +43,6 @@ func _ready():
 		Halfit = 100
 	randomspawnbutlikemore = randi_range(1,3)
 	movex2 = 10 - Modifier.DMNSC
-	RandiPlayer = randi_range(0,4)
 	if Modifier.Yharon == true:
 		Sprite.show()
 		AnimSprite.hide()
@@ -151,7 +150,7 @@ func _ready():
 func _process(_delta):
 	if Modifier.Follow == false:
 		if move == true:
-			if Modifier.currentmap != "map7" or "map8":
+			if Modifier.currentmap != "map7" and Modifier.currentmap != "map8":
 				if movex == -1:
 					position -= Vector2(-randmovespeed * 0.5, -randmovespeed) #Positive Diagonal Movement
 				elif movex == 1:
@@ -176,6 +175,17 @@ func _process(_delta):
 				position.y += randmovespeed
 				upsidedownbomb = false
 
+#Pre-Launching Exceptions and Arguments
+func prelaunch(body):
+	#If have a shield pass the explosion
+	if body.has_meta("Shield") == true:
+		if body.get_meta("Shield") == true:
+			body.set_meta("Shield", false)
+		else:
+			launch(body)
+	else:
+		launch(body)
+
 # Launches the player in the direction away from the explosion
 func launch(body):
 	#Change Y Launch for the smashbros gamemode.
@@ -196,7 +206,7 @@ func launch(body):
 	if Modifier.Smashbros == true:
 		body.aircontrol -= 0.01
 
-# Delete Itself7
+# Delete Itself
 func _on_explodimer_timeout():
 	queue_free()
 
@@ -204,26 +214,27 @@ func _on_explodimer_timeout():
 func _on_blast_radius_body_entered(body):
 	if move == false:
 		if body.has_meta("Player"):
-			launch(body)
+			prelaunch(body)
 		elif Modifier.Impaction == true:
 			body.position.y += randi_range(10, 20)
 		elif Modifier.Crumble == true:
 			body.position.y += 1000
 			body.timer.start()
 
+# Chooses a player to follow on hominh gamemode
 func _chooseplayer():
 	if RandiPlayer == 0 and Modifier.P1Alive == true:
-		print(1)
+		pass
 	elif RandiPlayer == 1 and Modifier.P2Alive == true:
-		print(2)
+		pass
 	elif RandiPlayer == 2 and Modifier.P3Alive == true:
-		print(3)
+		pass
 	elif RandiPlayer == 3 and Modifier.P4Alive == true:
-		print(4)
+		pass
 	elif RandiPlayer == 4 and Modifier.P5Alive == true:
-		print(5)
+		pass
 	else:
-		RandiPlayer = randi_range(0,4)
+		RandiPlayer = randi_range(0,4	)
 		_chooseplayer()
 
 # Explosion Script

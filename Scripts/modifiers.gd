@@ -53,6 +53,8 @@ var resmap8 = false
 var Nuke2 = false
 var Nuke3 = false
 var Nuke4 = false
+var powermintime = 10
+var powermaxtime = 25
 var playersleft = 2
 var HowManyPlayersLeft = 1
 var HowManyPlayersLeftChoice = 1
@@ -108,9 +110,13 @@ func _reset():
 	for i in listofplayers:
 		if i == true:
 			playersleft += 1
-	playersleft -= 1
 	_resetmaps()
 	_resetnukes()
+	P1Points = 0
+	P2Points = 0
+	P3Points = 0
+	P4Points = 0
+	P5Points = 0
 
 func _resetmods():
 	gameplaying = false
@@ -149,7 +155,6 @@ func _resetplayers():
 	for i in listofplayers:
 			if i == true:
 				playersleft += 1
-	playersleft -= 1
 	if listofplayers[0] == true:
 		P1Alive = true
 	if listofplayers[1] == true:
@@ -161,9 +166,7 @@ func _resetplayers():
 	if listofplayers[4] == true:
 		P5Alive = true
 
-
 func _awardpoints():
-	
 	if listofplayers[0] == true:
 		if P1Alive == true:
 			P1Points += 1

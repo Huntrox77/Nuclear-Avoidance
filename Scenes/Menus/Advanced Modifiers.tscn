@@ -78,9 +78,9 @@ fit_content = true
 layout_mode = 1
 anchors_preset = -1
 offset_left = -488.0
-offset_top = -97.0
+offset_top = -96.0
 offset_right = -285.0
-offset_bottom = -65.0
+offset_bottom = -64.0
 grow_horizontal = 2
 max_value = 200.0
 value = 5.0
@@ -106,6 +106,79 @@ offset_bottom = 28.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 16
 text = "Player Speed
+
+"
+fit_content = true
+
+[node name="Power Min Time" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -488.0
+offset_top = -39.0
+offset_right = -285.0
+offset_bottom = -7.0
+grow_horizontal = 2
+min_value = 5.0
+max_value = 60.0
+value = 10.0
+script = ExtResource("1_avl2f")
+
+[node name="Percentage" type="RichTextLabel" parent="Power Min Time"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4.0
+offset_right = 682.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 16
+text = "10s"
+fit_content = true
+
+[node name="Labale" type="RichTextLabel" parent="Power Min Time"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -18.0
+offset_right = 233.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "Power Up Min Spawn Time
+
+"
+fit_content = true
+
+[node name="Power Max Time" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -488.0
+offset_top = 12.0
+offset_right = -285.0
+offset_bottom = 44.0
+grow_horizontal = 2
+min_value = 5.0
+max_value = 60.0
+value = 10.0
+script = ExtResource("1_avl2f")
+
+[node name="Percentage" type="RichTextLabel" parent="Power Max Time"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 4.0
+offset_right = 682.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 16
+text = "25s
+"
+fit_content = true
+
+[node name="Labale" type="RichTextLabel" parent="Power Max Time"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -18.0
+offset_right = 233.0
+offset_bottom = 51.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "Power Up Max Spawn Time
 
 "
 fit_content = true
@@ -156,10 +229,10 @@ anchor_left = 0.554
 anchor_top = 0.217
 anchor_right = 0.554
 anchor_bottom = 0.217
-offset_left = -517.0
-offset_top = -44.0
-offset_right = -368.0
-offset_bottom = -3.0
+offset_left = 378.0
+offset_top = -217.0
+offset_right = 527.0
+offset_bottom = -176.0
 theme = ExtResource("2_7aw80")
 text = "Player 5"
 script = ExtResource("4_pcirl")
