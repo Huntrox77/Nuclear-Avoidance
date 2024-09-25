@@ -136,9 +136,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 3"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 3"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 4" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -166,9 +172,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 4"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 4"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 5" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -185,7 +197,8 @@ offset_top = 12.0
 offset_right = 55.0
 offset_bottom = 52.0
 theme = ExtResource("1_tu6iy")
-text = "5"
+text = "5
+"
 
 [node name="Label" type="Label" parent="ScrollContainer/Container/Achievement 5"]
 layout_mode = 0
@@ -196,9 +209,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 5"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 5"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 6" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -226,9 +245,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 6"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 6"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 7" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -256,9 +281,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 7"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 7"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 8" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -275,7 +306,8 @@ offset_top = 12.0
 offset_right = 55.0
 offset_bottom = 52.0
 theme = ExtResource("1_tu6iy")
-text = "8"
+text = "8
+"
 
 [node name="Label" type="Label" parent="ScrollContainer/Container/Achievement 8"]
 layout_mode = 0
@@ -286,9 +318,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 8"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 8"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 9" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -305,7 +343,8 @@ offset_top = 12.0
 offset_right = 55.0
 offset_bottom = 52.0
 theme = ExtResource("1_tu6iy")
-text = "9"
+text = "9
+"
 
 [node name="Label" type="Label" parent="ScrollContainer/Container/Achievement 9"]
 layout_mode = 0
@@ -316,9 +355,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 9"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 9"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Achievement 10" type="RichTextLabel" parent="ScrollContainer/Container"]
 custom_minimum_size = Vector2(0, 65)
@@ -335,10 +380,8 @@ offset_top = 12.0
 offset_right = 55.0
 offset_bottom = 52.0
 theme = ExtResource("1_tu6iy")
-text = "10"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
+text = "10
+"
 
 [node name="Label" type="Label" parent="ScrollContainer/Container/Achievement 10"]
 layout_mode = 0
@@ -349,9 +392,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RedX" type="Sprite2D" parent="ScrollContainer/Container/Achievement 10"]
-position = Vector2(466, 33)
+position = Vector2(466, 36)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_bhle1")
+
+[node name="Check" type="Sprite2D" parent="ScrollContainer/Container/Achievement 10"]
+visible = false
+position = Vector2(465.875, 34.875)
+scale = Vector2(0.097168, 0.097168)
+texture = ExtResource("5_sifh2")
 
 [node name="Panel2" type="Panel" parent="."]
 z_index = -5

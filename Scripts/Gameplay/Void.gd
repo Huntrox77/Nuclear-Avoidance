@@ -3,6 +3,20 @@ extends Area2D
 var Players = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if Modifier.gameplaying == true:
+		if name == "void2":
+			pass
+		else:
+			if Modifier.currentmap == "map7" or Modifier.currentmap == "map8":
+				$FP.play()
+				$FP.pitch_scale = randf_range(0.90, 1.10)
+			else:
+				if randi_range(1,2) == 1:
+					$SkyIslands.play()
+					$SkyIslands.pitch_scale = randf_range(0.90, 1.10)
+				else:
+					$Outskirts.play()
+					$Outskirts.pitch_scale = randf_range(0.90, 1.10)
 	if name == "void":
 		Players = get_parent().get_child(2).get_children()
 		$ColorRect.hide()
@@ -16,6 +30,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Modifier.DOGMUSIC == true:
+		$SkyIslands.queue_free()
+		$Outskirts.queue_free()
 		$UniCollapse.play()
 		$ColorRect.show()
 		$RichTextLabel.show()
