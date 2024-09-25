@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var Modifier = get_node("/root/Modifiers")
 @onready var Sprite = $Sprite
 @onready var Shape = $ColorRect
-var SPEED = 300.0
-var JUMP_VELOCITY = -400.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 var airslide = 0.02
 var aircontrol = 0.09
 var groundslide = 0.5

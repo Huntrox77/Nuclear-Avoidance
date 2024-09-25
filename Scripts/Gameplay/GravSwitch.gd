@@ -12,7 +12,6 @@ func _process(_delta):
 
 
 func _on_grav_switch_1_body_entered(body):
-	print(body.velocity)
 	if body.gravity > 0:
 		if Modifier.Crumble == true:
 			body.velocity += Vector2(0, 250)

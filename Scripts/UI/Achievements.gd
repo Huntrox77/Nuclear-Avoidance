@@ -14,9 +14,3 @@ func _process(_delta):
 	if Saves.ChallengeTwoComplete == true:
 		$"Container/Achievement 2/RedX".hide()
 		$"Container/Achievement 2/Check".show()
-	if Saves.ChallengeThreeComplete == true:
-		$"Container/Achievement 3/RedX".hide()
-		$"Container/Achievement 3/Check".show()
-	if Saves.ChallengeFourComplete == true:
-		$"Container/Achievement 4/RedX".hide()
-		$"Container/Achievement 4/Check".show()
