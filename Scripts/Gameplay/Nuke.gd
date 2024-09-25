@@ -234,7 +234,7 @@ func _chooseplayer():
 	elif RandiPlayer == 4 and Modifier.P5Alive == true:
 		pass
 	else:
-		RandiPlayer = randi_range(0,4	)
+		RandiPlayer = randi_range(0,4)
 		_chooseplayer()
 
 # Explosion Script

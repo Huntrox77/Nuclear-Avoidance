@@ -207,5 +207,7 @@ script = ExtResource("4_tt3cm")
 
 [connection signal="pressed" from="Challenges/Button" to="Challenges" method="_on_button_pressed"]
 [connection signal="pressed" from="Challenges/Button2" to="Challenges" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Challenges/Button3" to="Challenges" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Challenges/Button4" to="Challenges" method="_on_button_4_pressed"]
 [connection signal="pressed" from="Back Button" to="Back Button" method="_on_pressed"]
 [connection signal="pressed" from="Play" to="Challenges" method="_on_play_pressed"]

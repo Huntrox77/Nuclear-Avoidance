@@ -10,8 +10,11 @@ var Favourites = []
 var HowManyPlayersLeftChoice = 1
 var ChallengeOneComplete = false
 var ChallengeTwoComplete = false
+var ChallengeThreeComplete = false
+var ChallengeFourComplete = false
 var achievements = []
 var InTimer = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	config.load("res://config.cfg")
@@ -22,11 +25,13 @@ func _ready():
 	HowManyPlayersLeftChoice = config.get_value("Playersleft", "Choice")
 	ChallengeOneComplete = config.get_value("Achivements", "Completed")[0] 
 	ChallengeTwoComplete = config.get_value("Achivements", "Completed")[1]
-	pass # Replace with function body.
+	ChallengeThreeComplete = config.get_value("Achivements", "Completed")[2] 
+	ChallengeFourComplete = config.get_value("Achivements", "Completed")[3]
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	achievements = [ChallengeOneComplete, ChallengeTwoComplete]
+	achievements = [ChallengeOneComplete, ChallengeTwoComplete, ChallengeThreeComplete, ChallengeFourComplete]
 	config.set_value("Textspeed", "Choice", TextSpeed) 
 	config.set_value("PlayerOne", "Controls", player1con)
 	config.set_value("Achivements", "Completed", achievements)
@@ -36,7 +41,7 @@ func _process(_delta):
 	Modifier.InTimer = InTimer
 	Modifier.HowManyPlayersLeftChoice = HowManyPlayersLeftChoice
 	_save()
-	pass
+
 
 
 func _save():
