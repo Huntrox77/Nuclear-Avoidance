@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://dnviwam2n05ij"]
+[gd_scene load_steps=36 format=3 uid="uid://dnviwam2n05ij"]
 
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_to8e0"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_x2aj1"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1anp0"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_j066y"]
@@ -54,6 +55,7 @@ texture_region_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_3dxoi")
 
 [node name="Arena_01" type="Node2D"]
+script = ExtResource("1_to8e0")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
@@ -196,7 +198,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_rk1ea")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(-152, -170)
+position = Vector2(-348, -253)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_odnhy")
 metadata/Player = "Player"
@@ -245,7 +247,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_rk1ea")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(350, -256)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_odnhy")
 metadata/Player = "Player"
@@ -294,7 +296,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_rk1ea")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(-348, -303)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_odnhy")
 metadata/Player = "Player"
@@ -391,6 +393,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -552.0
 offset_top = -625.0
 offset_right = -330.0
@@ -401,6 +404,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P2" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -304.0
 offset_top = -625.0
 offset_right = -77.0
@@ -412,6 +416,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P3" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 78.0
 offset_top = -625.0
 offset_right = 300.0
@@ -422,6 +427,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P4" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 326.0
 offset_top = -625.0
 offset_right = 553.0
@@ -433,6 +439,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -533.0
 offset_top = -65.0
 offset_right = -333.0
@@ -443,6 +450,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -245.5
 offset_top = -65.0
 offset_right = -40.5
@@ -453,6 +461,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = -65.0
 offset_right = 247.0
@@ -463,6 +472,7 @@ vertical_alignment = 1
 script = ExtResource("20_drsut")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 329.5
 offset_top = -65.0
 offset_right = 534.5

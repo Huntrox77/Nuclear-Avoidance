@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @onready var Modifier = get_node("/root/Modifiers")
 @onready var SpawnPos1 = get_parent().get_parent().get_child(8).get_child(0)
@@ -13,52 +13,12 @@ var airslide = 0.02
 var aircontrol = 0.09
 var groundslide = 0.5
 var coyotetime = true
+var notspawned = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	$Shield.hide()
-	SPEED = 3 * Modifier.PSpeed
-	var randi_spawn = randi_range(1, 4)
-	#Funny Sprite Enabling
-	if Modifier.Clam == true:
-		Sprite.show()
-		Shape.hide()
-	#Random Spawn
-	if randi_spawn == 1:
-		position = SpawnPos1.position
-		position.y -= 25
-	elif randi_spawn == 2:
-		position = SpawnPos2.position
-	elif randi_spawn == 3:
-		position = SpawnPos3.position
-		if Modifier.currentmap == "map7" or Modifier.currentmap == "map8":
-			gravity = -gravity
-			JUMP_VELOCITY = -JUMP_VELOCITY
-			up_direction = Vector2(0, 1)
-	elif randi_spawn == 4:
-		position = SpawnPos4.position
-		if Modifier.currentmap == "map7" or Modifier.currentmap == "map8":
-			gravity = -gravity
-			JUMP_VELOCITY = -JUMP_VELOCITY
-			up_direction = Vector2(0, 1)
-
-func _physics_process(delta):
-	if name == "Player 1":
-		Modifier.playerX[0] = position.x
-	if name == "Player 2":
-		Modifier.playerX[1] = position.x
-	if name == "Player 3":
-		Modifier.playerX[2] = position.x
-	if name == "Player 4":
-		Modifier.playerX[3] = position.x
-	if name == "Player 5":
-		Modifier.playerX[4] = position.x
-	#Funny Sprite Enabling
-	if Modifier.Ice == true:
-		groundslide = 0.01
-		aircontrol = 0.01
 	# Kills player if they dont exist
 	if Modifier.p1selection == false:
 		if name == "Player 1":
@@ -75,6 +35,19 @@ func _physics_process(delta):
 	if Modifier.p5selection == false:
 		if name == "Player 5":
 			queue_free()
+
+	$Shield.hide()
+	SPEED = 3 * Modifier.PSpeed
+	#Funny Sprite Enabling
+	if Modifier.Clam == true:
+		Sprite.show()
+		Shape.hide()
+
+func _physics_process(delta):
+	#Funny Sprite Enabling
+	if Modifier.Ice == true:
+		groundslide = 0.01
+		aircontrol = 0.01
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta

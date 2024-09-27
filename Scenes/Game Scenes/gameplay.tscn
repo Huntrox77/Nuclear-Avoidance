@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://ieri1l2pt0lw"]
+[gd_scene load_steps=32 format=3 uid="uid://ieri1l2pt0lw"]
 
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_bl3c4"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fwjbu"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_d24qj"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_4jrcg"]
@@ -44,6 +45,7 @@ size = Vector2(60, 60)
 [sub_resource type="TileSet" id="TileSet_muvba"]
 
 [node name="Arena_01" type="Node2D"]
+script = ExtResource("1_bl3c4")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
@@ -87,7 +89,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(-50, -170)
+position = Vector2(-50, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
@@ -137,7 +139,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_6t6da")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(48, -170)
+position = Vector2(48, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
@@ -186,7 +188,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_6t6da")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(-152, -170)
+position = Vector2(-152, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
@@ -235,7 +237,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_6t6da")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(145, -265)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
@@ -284,7 +286,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_6t6da")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(145, -265)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_k7hdk")
 metadata/Player = "Player"
@@ -485,16 +487,16 @@ GroundRight = ExtResource("18_t4g3v")
 [node name="SpawnPos\'" type="Node" parent="."]
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-151, -174)
+position = Vector2(-151, -195)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(46, -172)
+position = Vector2(60, -195)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-48, -173)
+position = Vector2(-53, -194)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(147, -173)
+position = Vector2(147, -194)
 
 [node name="Timer" type="Label" parent="."]
 offset_left = -51.0

@@ -18,15 +18,15 @@ var InTimer = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	config.load("res://config.cfg")
-	TextSpeed = config.get_value("Textspeed", "Choice") 
-	player1con = config.get_value("PlayerOne", "Controls") 
-	Favourites = config.get_value("Modifiers", "Favourited")
-	InTimer = config.get_value("Timer", "Choice")
-	HowManyPlayersLeftChoice = config.get_value("Playersleft", "Choice")
-	ChallengeOneComplete = config.get_value("Achivements", "Completed")[0] 
-	ChallengeTwoComplete = config.get_value("Achivements", "Completed")[1]
-	ChallengeThreeComplete = config.get_value("Achivements", "Completed")[2] 
-	ChallengeFourComplete = config.get_value("Achivements", "Completed")[3]
+	TextSpeed = config.get_value("Textspeed", "Choice", 1) 
+	player1con = config.get_value("PlayerOne", "Controls", player1con) 
+	Favourites = config.get_value("Modifiers", "Favourited", [])
+	InTimer = config.get_value("Timer", "Choice", 1)
+	HowManyPlayersLeftChoice = config.get_value("Playersleft", "Choice", 1)
+	ChallengeOneComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[0] 
+	ChallengeTwoComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[1]
+	ChallengeThreeComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[2] 
+	ChallengeFourComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[3]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

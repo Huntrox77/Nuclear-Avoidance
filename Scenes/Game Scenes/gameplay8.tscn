@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://c5kq1kc6ucumj"]
+[gd_scene load_steps=40 format=3 uid="uid://c5kq1kc6ucumj"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_78c1i"]
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_s8scq"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_v7vqw"]
 [ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="3_vki55"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_t6y3i"]
@@ -58,7 +59,11 @@ sources/1 = SubResource("TileSetAtlasSource_3dxoi")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j57a7"]
 size = Vector2(40, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2o1f"]
+size = Vector2(1166, 117)
+
 [node name="Arena_01" type="Node2D"]
+script = ExtResource("1_s8scq")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
@@ -140,7 +145,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(-50, -170)
+position = Vector2(-56, -479)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -190,7 +195,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_p3fmh")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(48, -170)
+position = Vector2(42, -479)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -239,7 +244,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_p3fmh")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(-152, -170)
+position = Vector2(-61, -532)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -288,7 +293,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_p3fmh")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(46, -535)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -337,7 +342,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_p3fmh")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(-9, -534)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -434,6 +439,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -552.0
 offset_top = -625.0
 offset_right = -330.0
@@ -444,6 +450,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P2" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -304.0
 offset_top = -625.0
 offset_right = -77.0
@@ -455,6 +462,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P3" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 78.0
 offset_top = -625.0
 offset_right = 300.0
@@ -465,6 +473,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P4" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 326.0
 offset_top = -625.0
 offset_right = 553.0
@@ -476,6 +485,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -533.0
 offset_top = -65.0
 offset_right = -333.0
@@ -486,6 +496,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -245.5
 offset_top = -65.0
 offset_right = -40.5
@@ -496,6 +507,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = -65.0
 offset_right = 247.0
@@ -506,6 +518,7 @@ vertical_alignment = 1
 script = ExtResource("16_so0y8")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 329.5
 offset_top = -65.0
 offset_right = 534.5
@@ -618,6 +631,21 @@ position = Vector2(30, 10)
 scale = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_j57a7")
 
+[node name="DeleteSwitch" type="Area2D" parent="GravSwitch"]
+position = Vector2(30, -265)
+scale = Vector2(-1, 1)
+
+[node name="Timer" type="Timer" parent="GravSwitch/DeleteSwitch"]
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="GravSwitch/DeleteSwitch"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwitch/DeleteSwitch"]
+position = Vector2(16, 48.5)
+shape = SubResource("RectangleShape2D_s2o1f")
+
 [node name="Platfroms" type="Node" parent="."]
 
 [node name="Platform" type="Sprite2D" parent="Platfroms"]
@@ -687,4 +715,6 @@ one_shot = true
 [connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
 [connection signal="body_entered" from="GravSwitch/GravSwitch1" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
 [connection signal="body_entered" from="GravSwitch/GravSwitch2" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
+[connection signal="body_entered" from="GravSwitch/DeleteSwitch" to="GravSwitch" method="_on_delete_switch_body_entered"]
+[connection signal="timeout" from="GravSwitch/DeleteSwitch/Timer" to="GravSwitch" method="_on_timer_timeout"]
 [connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]

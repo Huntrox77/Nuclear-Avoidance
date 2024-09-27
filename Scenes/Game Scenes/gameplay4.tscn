@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://dtsminrhe8yj1"]
+[gd_scene load_steps=32 format=3 uid="uid://dtsminrhe8yj1"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fss8k"]
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_i3cv1"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_y7w5l"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_trkks"]
 [ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_todjc"]
@@ -27,23 +28,24 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk722"]
 size = Vector2(12446, 154)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qtr3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ren4f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w71an"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsvu7"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iveu6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78my5"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_guif7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuft7"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjge0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_622sj"]
 size = Vector2(60, 60)
 
 [sub_resource type="TileSet" id="TileSet_cbfel"]
 
 [node name="Arena_01" type="Node2D"]
+script = ExtResource("1_i3cv1")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
@@ -87,7 +89,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(-50, -170)
+position = Vector2(40.7646, -407.602)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
 metadata/Player = "Player"
@@ -109,7 +111,7 @@ texture = ExtResource("4_trkks")
 visible = false
 position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_2qtr3")
+shape = SubResource("RectangleShape2D_ren4f")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 1"]
@@ -137,7 +139,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(48, -170)
+position = Vector2(-54.7826, -226.023)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
 metadata/Player = "Player"
@@ -158,7 +160,7 @@ texture = ExtResource("6_c2t1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
-shape = SubResource("RectangleShape2D_w71an")
+shape = SubResource("RectangleShape2D_vsvu7")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 2"]
@@ -186,7 +188,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(-152, -170)
+position = Vector2(-61.2354, -407.602)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
 metadata/Player = "Player"
@@ -207,7 +209,7 @@ texture = ExtResource("4_trkks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
-shape = SubResource("RectangleShape2D_iveu6")
+shape = SubResource("RectangleShape2D_78my5")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 3"]
@@ -235,7 +237,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(42.2174, -227.023)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
 metadata/Player = "Player"
@@ -256,7 +258,7 @@ texture = ExtResource("6_c2t1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
-shape = SubResource("RectangleShape2D_guif7")
+shape = SubResource("RectangleShape2D_wuft7")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 4"]
@@ -284,7 +286,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(145, -171)
+position = Vector2(-6.00935, -226.926)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
 metadata/Player = "Player"
@@ -305,7 +307,7 @@ texture = ExtResource("6_c2t1p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
-shape = SubResource("RectangleShape2D_hjge0")
+shape = SubResource("RectangleShape2D_622sj")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 5"]
@@ -381,6 +383,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -552.0
 offset_top = -625.0
 offset_right = -330.0
@@ -391,6 +394,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P2" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -304.0
 offset_top = -625.0
 offset_right = -77.0
@@ -402,6 +406,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P3" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 78.0
 offset_top = -625.0
 offset_right = 300.0
@@ -412,6 +417,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P4" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 326.0
 offset_top = -625.0
 offset_right = 553.0
@@ -423,6 +429,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -533.0
 offset_top = -65.0
 offset_right = -333.0
@@ -433,6 +440,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = -245.5
 offset_top = -65.0
 offset_right = -40.5
@@ -443,6 +451,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 42.0
 offset_top = -65.0
 offset_right = 247.0
@@ -453,6 +462,7 @@ vertical_alignment = 1
 script = ExtResource("17_bn441")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
 offset_left = 329.5
 offset_top = -65.0
 offset_right = 534.5

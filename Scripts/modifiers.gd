@@ -1,8 +1,16 @@
 extends Node
 @onready var Config = get_node("/root/ConfigScript")
 
+# Players
+var PlayerOne = null
+var PlayerTwo = null
+var PlayerThree = null
+var PlayerFour = null
+var PlayerFive = null
+
 # Modifiers
 var listofplayers = []
+var spawnsused = []
 var Blackout = false
 var Fog = false
 var Smashbros = false
@@ -152,6 +160,7 @@ var DOGMUSIC2 = false
 
 
 func _resetplayers():
+	spawnsused = []
 	for i in listofplayers:
 			if i == true:
 				playersleft += 1
