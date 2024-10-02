@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://17etr8vtr1ye"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_tu6iy"]
-[ext_resource type="Texture2D" uid="uid://cjmvkra7ok58k" path="res://Sprites/Red X.png" id="2_bhle1"]
+[ext_resource type="Texture2D" uid="uid://cjmvkra7ok58k" path="res://Sprites/UI/Red X.png" id="2_bhle1"]
 [ext_resource type="Script" path="res://Scripts/UI/Achievements.gd" id="3_fucnu"]
 [ext_resource type="StyleBox" uid="uid://dcsrqxsry8qx8" path="res://StyleBoxes/BlackBG_WhiteOutline_StyleBox.tres" id="3_rmtqv"]
-[ext_resource type="Texture2D" uid="uid://doyv3vrgpp531" path="res://Sprites/Check.webp" id="5_sifh2"]
+[ext_resource type="Texture2D" uid="uid://doyv3vrgpp531" path="res://Sprites/UI/Check.webp" id="5_sifh2"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="6_e1vkb"]
 
 [node name="Achievements" type="Control"]

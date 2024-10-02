@@ -1,11 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://dtsminrhe8yj1"]
+[gd_scene load_steps=33 format=3 uid="uid://dtsminrhe8yj1"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fss8k"]
 [ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_i3cv1"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_y7w5l"]
-[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_trkks"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="4_trkks"]
 [ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_todjc"]
-[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/ClamHood.png" id="6_c2t1p"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="6_c2t1p"]
 [ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="9_3h2td"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="9_jsm5r"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="10_nm07e"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="13_rd4nt"]
 [ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="14_6x8ac"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="15_lwwaa"]
+[ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="16_wytkn"]
 [ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="17_bn441"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround4.gd" id="18_68srx"]
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/In Game Stuff/GroundLeft.tscn" id="19_an7lg"]
@@ -89,6 +90,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(40.7646, -407.602)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
@@ -139,6 +141,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(-54.7826, -226.023)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
@@ -188,6 +191,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(-61.2354, -407.602)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
@@ -237,6 +241,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(42.2174, -227.023)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
@@ -286,6 +291,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_todjc")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(-6.00935, -226.926)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_3h2td")
@@ -471,6 +477,12 @@ theme = ExtResource("15_lwwaa")
 text = "P4 Points: 0"
 vertical_alignment = 1
 script = ExtResource("17_bn441")
+
+[node name="Sky1" type="Sprite2D" parent="GUI\'s"]
+z_index = -20
+position = Vector2(-0.999855, -267)
+scale = Vector2(0.598437, 0.598437)
+texture = ExtResource("16_wytkn")
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("18_68srx")

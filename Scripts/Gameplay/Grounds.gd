@@ -3,14 +3,14 @@ extends StaticBody2D
 @onready var timer = $Reappeartimer
 @onready var Sprite = $Sprite2D
 @onready var Collision = $CollisionShape2D
-@onready var GSprite = preload("res://Sprites/Ground.png")
-@onready var GAltSprite = preload("res://Sprites/GroundAlt.png")
-@onready var GSnowSprite = preload("res://Sprites/GroundSnow.png")
-@onready var GSnowAltSprite = preload("res://Sprites/GroundAltSnow.png")
-@onready var GLSnowSprite = preload("res://Sprites/GroundLSnow.png")
-@onready var GLSprite = preload("res://Sprites/GroundL.png")
-@onready var GRSnowSprite = preload("res://Sprites/GroundRSnow.png")
-@onready var GRSprite = preload("res://Sprites/GroundR.png")
+@onready var GSprite = preload("res://Sprites/Grounds/Ground.png")
+@onready var GAltSprite = preload("res://Sprites/Grounds/GroundAlt.png")
+@onready var GSnowSprite = preload("res://Sprites/Grounds/GroundSnow.png")
+@onready var GSnowAltSprite = preload("res://Sprites/Grounds/GroundAltSnow.png")
+@onready var GLSnowSprite = preload("res://Sprites/Grounds/GroundLSnow.png")
+@onready var GLSprite = preload("res://Sprites/Grounds/GroundL.png")
+@onready var GRSnowSprite = preload("res://Sprites/Grounds/GroundRSnow.png")
+@onready var GRSprite = preload("res://Sprites/Grounds/GroundR.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if has_meta("GroundM") == true:

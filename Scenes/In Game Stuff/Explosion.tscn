@@ -3,7 +3,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-z_index = 5
+z_index = -3
 position = Vector2(-1, 122)
 rotation = 3.14159
 scale = Vector2(1.5, 1.5)

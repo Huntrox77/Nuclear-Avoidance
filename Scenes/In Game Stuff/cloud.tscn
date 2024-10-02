@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0523n340r45t"]
+
+[ext_resource type="Texture2D" uid="uid://reetycoqdiso" path="res://Sprites/InGame/Cloud1.png" id="1_fdmt5"]
+[ext_resource type="Texture2D" uid="uid://c78ju8d0x4st7" path="res://Sprites/InGame/Cloud2.png" id="2_hdwwk"]
+[ext_resource type="Texture2D" uid="uid://cydudln4617gw" path="res://Sprites/InGame/Cloud3.png" id="3_oy31l"]
+[ext_resource type="Script" path="res://Scripts/UI/Cloud.gd" id="4_mqhou"]
+
+[node name="Cloud" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(859, 163)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fdmt5")
+script = ExtResource("4_mqhou")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(1444, 34)
+scale = Vector2(0.320001, 0.320001)
+texture = ExtResource("2_hdwwk")
+script = ExtResource("4_mqhou")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(959, -223)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("3_oy31l")
+script = ExtResource("4_mqhou")

@@ -40,7 +40,7 @@ func _on_pressed():
 		Modifier.P5Points = 0
 		if Modifier.map1 == true:
 			Modifier.currentmap = "map1"
-			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay1.tscn")
 			Modifier.map1 = false
 			Modifier.gameplaying = true
 			Modifier.resmap1 = true
@@ -100,5 +100,13 @@ func _on_pressed():
 			Modifier.map8 = false
 			Modifier.gameplaying = true
 			Modifier.resmap8 = true
+			_playeralive()
+			countdown()
+		elif Modifier.map9 == true:
+			Modifier.currentmap = "map9"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay9.tscn")
+			Modifier.map9 = false
+			Modifier.gameplaying = true
+			Modifier.resmap9 = true
 			_playeralive()
 			countdown()

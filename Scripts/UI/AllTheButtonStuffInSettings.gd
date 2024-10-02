@@ -13,6 +13,7 @@ func _process(_delta):
 	$OptionButton.selected = Config.TextSpeed
 	$Timer.selected = Config.InTimer
 	$HowManyPlayersLeft.selected = Config.HowManyPlayersLeftChoice
+	$"UI Size".selected = Config.UISize
 	pass
 
 func _on_option_button_item_selected(index):
@@ -62,3 +63,8 @@ func _on_timer_item_selected(index):
 func _on_how_many_players_left_item_selected(index):
 	Modifier.HowManyPlayersLeftChoice = index
 	Config.HowManyPlayersLeftChoice = index
+
+
+func _on_ui_size_item_selected(index):
+	Modifier.UISize = index
+	Config.UISize = index

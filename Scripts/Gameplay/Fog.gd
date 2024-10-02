@@ -1,14 +1,22 @@
 extends GridContainer
 @onready var Modifier = get_node("/root/Modifiers")
-var TRANSPARENT_DIST = 128 / 2
-var OPAQUE_DIST = 255 / 2
+var listofplayers = []
+var PlayerNo = 0.75
+var TRANSPARENT_DIST = 128
+var OPAQUE_DIST = 255
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	PlayerNo = 0.8
+	listofplayers = Modifier.listofplayers
+	for i in listofplayers:
+		if i == true:
+			PlayerNo += 0.1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	TRANSPARENT_DIST = 128 / PlayerNo
+	OPAQUE_DIST = 255 / PlayerNo
 	var Players = [Modifier.PlayerOne, Modifier.PlayerTwo, Modifier.PlayerThree, Modifier.PlayerFour, Modifier.PlayerFive]
 	for i in get_children():
 		var distance = 100000000

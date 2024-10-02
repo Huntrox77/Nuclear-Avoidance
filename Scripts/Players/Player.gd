@@ -36,6 +36,7 @@ func _ready():
 		if name == "Player 5":
 			queue_free()
 
+	show()
 	$Shield.hide()
 	SPEED = 3 * Modifier.PSpeed
 	#Funny Sprite Enabling

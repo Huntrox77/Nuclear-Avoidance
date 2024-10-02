@@ -73,6 +73,23 @@ popup/item_0/id = 0
 popup/item_1/text = "End game on: 1 player left"
 popup/item_1/id = 1
 
+[node name="UI Size" type="OptionButton" parent="Buttons and Stuff"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 56.0
+offset_right = 552.0
+offset_bottom = 97.0
+theme = ExtResource("4_kvfiq")
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "UI Size: Large"
+popup/item_0/id = 0
+popup/item_1/text = "UI Size: Normal"
+popup/item_1/id = 1
+popup/item_2/text = "UI Size: Small"
+popup/item_2/id = 2
+
 [node name="Modifiers" type="Label" parent="Buttons and Stuff"]
 layout_mode = 1
 anchors_preset = -1
@@ -329,6 +346,7 @@ text = "g
 [connection signal="item_selected" from="Buttons and Stuff/OptionButton" to="Buttons and Stuff" method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="Buttons and Stuff/Timer" to="Buttons and Stuff" method="_on_timer_item_selected"]
 [connection signal="item_selected" from="Buttons and Stuff/HowManyPlayersLeft" to="Buttons and Stuff" method="_on_how_many_players_left_item_selected"]
+[connection signal="item_selected" from="Buttons and Stuff/UI Size" to="Buttons and Stuff" method="_on_ui_size_item_selected"]
 [connection signal="pressed" from="Buttons and Stuff/Back Button" to="Buttons and Stuff/Back Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="Buttons and Stuff/PlayerTab" to="Buttons and Stuff" method="_on_player_tab_tab_clicked"]
 [connection signal="toggled" from="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Left" to="Buttons and Stuff/PlayerTab" method="_on_left_toggled"]

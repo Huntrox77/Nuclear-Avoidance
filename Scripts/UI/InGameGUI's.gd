@@ -10,6 +10,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Modifier.UISize == 0:
+		scale.x = 1
+		scale.y = 1
+	if Modifier.UISize == 1:
+		scale.x = 0.85
+		scale.y = 0.85
+	if Modifier.UISize == 2:
+		scale.x = 0.7
+		scale.y = 0.7
 	# AirControls
 	if name == "P1":
 		smashno = Modifier.p1aircontrol

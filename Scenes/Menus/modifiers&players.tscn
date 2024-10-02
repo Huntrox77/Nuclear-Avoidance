@@ -3,25 +3,25 @@
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierPlayButton.gd" id="2_i5d18"]
-[ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/BackArrow.png" id="3_ojoyc"]
+[ext_resource type="Texture2D" uid="uid://tulqc4vxju8l" path="res://Sprites/UI/BackArrow.png" id="3_ojoyc"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="4_efgvg"]
-[ext_resource type="Texture2D" uid="uid://bdaqhq1u8kxw" path="res://Sprites/Scug1nochoose.png" id="5_chenq"]
-[ext_resource type="Texture2D" uid="uid://coam47xs7lh54" path="res://Sprites/Scug.png" id="6_aol7f"]
-[ext_resource type="Texture2D" uid="uid://okoyc6qmk2bg" path="res://Sprites/Scug2nochoose.png" id="7_uwjmx"]
-[ext_resource type="Texture2D" uid="uid://cl8ifukgeglmg" path="res://Sprites/Scug2.png" id="8_jitkp"]
-[ext_resource type="Texture2D" uid="uid://dvd38rxnjklhe" path="res://Sprites/Scug3nochoose.png" id="9_8lfwy"]
-[ext_resource type="Texture2D" uid="uid://sm2n565dcbxa" path="res://Sprites/Scug3.png" id="10_d5ebb"]
-[ext_resource type="Texture2D" uid="uid://bgs1hel61ibnq" path="res://Sprites/Scug4nochoose.png" id="11_6ge4a"]
-[ext_resource type="Texture2D" uid="uid://jnldje555juf" path="res://Sprites/Scug4.png" id="12_677y4"]
+[ext_resource type="Texture2D" uid="uid://bdaqhq1u8kxw" path="res://Sprites/UI/Scug1nochoose.png" id="5_chenq"]
+[ext_resource type="Texture2D" uid="uid://coam47xs7lh54" path="res://Sprites/UI/Scug.png" id="6_aol7f"]
+[ext_resource type="Texture2D" uid="uid://okoyc6qmk2bg" path="res://Sprites/UI/Scug2nochoose.png" id="7_uwjmx"]
+[ext_resource type="Texture2D" uid="uid://cl8ifukgeglmg" path="res://Sprites/UI/Scug2.png" id="8_jitkp"]
+[ext_resource type="Texture2D" uid="uid://dvd38rxnjklhe" path="res://Sprites/UI/Scug3nochoose.png" id="9_8lfwy"]
+[ext_resource type="Texture2D" uid="uid://sm2n565dcbxa" path="res://Sprites/UI/Scug3.png" id="10_d5ebb"]
+[ext_resource type="Texture2D" uid="uid://bgs1hel61ibnq" path="res://Sprites/UI/Scug4nochoose.png" id="11_6ge4a"]
+[ext_resource type="Texture2D" uid="uid://jnldje555juf" path="res://Sprites/UI/Scug4.png" id="12_677y4"]
 [ext_resource type="Script" path="res://Scripts/Secrets/Clam.gd" id="13_lf0ho"]
 [ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
 [ext_resource type="Script" path="res://Scripts/UI/KeepModifiers.gd" id="14_dqpoy"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="14_nwcpy"]
 [ext_resource type="Script" path="res://Scripts/UI/FavouriteButton.gd" id="17_8y8lk"]
-[ext_resource type="Texture2D" uid="uid://bytalcosl6lpe" path="res://Sprites/GreyStar.png" id="18_5xysq"]
-[ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/RedArrows.png" id="18_v0ldg"]
-[ext_resource type="Texture2D" uid="uid://cgrmkd8krqru0" path="res://Sprites/YellowStar.png" id="19_4komw"]
-[ext_resource type="Texture2D" uid="uid://dbtoxbijx0u5f" path="res://Sprites/GreenArrows.png" id="19_6l8jy"]
+[ext_resource type="Texture2D" uid="uid://bytalcosl6lpe" path="res://Sprites/UI/GreyStar.png" id="18_5xysq"]
+[ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/UI/RedArrows.png" id="18_v0ldg"]
+[ext_resource type="Texture2D" uid="uid://cgrmkd8krqru0" path="res://Sprites/UI/YellowStar.png" id="19_4komw"]
+[ext_resource type="Texture2D" uid="uid://dbtoxbijx0u5f" path="res://Sprites/UI/GreenArrows.png" id="19_6l8jy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -270,6 +270,10 @@ text = "Map 7"
 [node name="Map8" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
 text = "Map 8"
+
+[node name="Map9" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+layout_mode = 2
+text = "Map 9"
 
 [node name="Modifiers Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 0
@@ -547,6 +551,7 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map6" to="Buttons" method="_on_map_6_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map7" to="Buttons" method="_on_map_7_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map8" to="Buttons" method="_on_map_8_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map9" to="Buttons" method="_on_map_9_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]

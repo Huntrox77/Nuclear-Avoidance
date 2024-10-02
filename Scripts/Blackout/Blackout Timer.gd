@@ -4,6 +4,7 @@ extends Node2D
 
 @export var blackout:PackedScene
 @export var fog:PackedScene
+@export var Cloud:PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Modifier.Fog == true:
@@ -21,3 +22,9 @@ func _on_timer_timeout():
 		var k = blackout.instantiate()
 		add_child(k)
 	pass
+
+
+func _on_cloud_timer_timeout():
+	var C = Cloud.instantiate()
+	add_child(C)
+	

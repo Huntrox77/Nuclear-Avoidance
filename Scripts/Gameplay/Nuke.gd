@@ -31,6 +31,7 @@ var Halfit = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var RandomRock = randi_range(1,3)
 	if Modifier.currentmap == "map7" or Modifier.currentmap == "map8":
 		if randmovespeedY <= 0:
 			position.y = 32
@@ -47,10 +48,12 @@ func _ready():
 		Yharon.show()
 		ExplosiveAnim.hide()
 		Nuke.hide()
+		$Rock1.hide()
+		$Rock2.hide()
+		$Rock3.hide()
 	else:
 		Yharon.hide()
 		ExplosiveAnim.hide()
-		Nuke.show()
 	if self.name == "Nuke2":
 		if Modifier.Nuke2 == false:
 			self.queue_free()
@@ -63,6 +66,7 @@ func _ready():
 			
 	# Changes spawn radius for map 2
 	if Modifier.currentmap == "map1":
+		$Rock.queue_free()
 		negspawnradius = -230
 		spawnradius = 235
 		negspawnradius2 = -230
@@ -70,6 +74,7 @@ func _ready():
 		negspawnradius3 = -230
 		spawnradius3 = 235
 	if Modifier.currentmap == "map2":
+		$Rock.queue_free()
 		negspawnradius = -490
 		spawnradius = -340
 		negspawnradius2 = -45
@@ -77,6 +82,7 @@ func _ready():
 		negspawnradius3 = -340
 		spawnradius3 = 490
 	if Modifier.currentmap == "map3":
+		$Rock.queue_free()
 		negspawnradius = -490
 		spawnradius = -340
 		negspawnradius2 = -300
@@ -84,6 +90,7 @@ func _ready():
 		negspawnradius3 = 340
 		spawnradius3 = 490
 	if Modifier.currentmap == "map4":
+		$Rock.queue_free()
 		negspawnradius = -490
 		spawnradius = -340
 		negspawnradius2 = -45
@@ -91,6 +98,7 @@ func _ready():
 		negspawnradius3 = -340
 		spawnradius3 = 490
 	if Modifier.currentmap == "map5":
+		$Rock.queue_free()
 		negspawnradius = -540
 		spawnradius = -280
 		negspawnradius2 = -60
@@ -98,6 +106,7 @@ func _ready():
 		negspawnradius3 = 280
 		spawnradius3 = 540
 	if Modifier.currentmap == "map6":
+		$Rock.queue_free()
 		negspawnradius = -490
 		spawnradius = -340
 		negspawnradius2 = -45
@@ -105,6 +114,7 @@ func _ready():
 		negspawnradius3 = -340
 		spawnradius3 = 490
 	if Modifier.currentmap == "map7":
+		$Rock.queue_free()
 		negspawnradius = -96
 		spawnradius = -96
 		negspawnradius2 = 0
@@ -112,13 +122,32 @@ func _ready():
 		negspawnradius3 = 96
 		spawnradius3 = 96
 	if Modifier.currentmap == "map8":
+		$Rock.queue_free()
 		negspawnradius = -500
 		spawnradius = -372
 		negspawnradius2 = -64
 		spawnradius2 = 64
 		negspawnradius3 = 500
 		spawnradius3 = -372
+	if Modifier.currentmap == "map9":
+		$Bomb.queue_free()
+		if RandomRock == 1:
+			$Rock1.show()
+			$Nuke.hide()
+		elif RandomRock == 2:
+			$Rock2.show()
+			$Nuke.hide()
+		elif RandomRock == 3:
+			$Rock3.show()
+			$Nuke.hide()
+		negspawnradius = -100
+		spawnradius = 500
+		negspawnradius2 = -100
+		spawnradius2 = 500
+		negspawnradius3 = -100
+		spawnradius3 = 500
 	if Modifier.currentmap == "menu":
+		$Rock.queue_free()
 		negspawnradius = -100
 		spawnradius = 500
 		negspawnradius2 = -100
@@ -255,6 +284,9 @@ func _on_body_entered(body):
 		Expl.position = position
 		Expl.get_child(0).one_shot = true
 		Nuke.hide()
+		$Rock1.hide()
+		$Rock2.hide()
+		$Rock3.hide()
 		ExplosiveAnim.show()
 		ExplosiveAnim.play("Explosion")
 		timer.start()

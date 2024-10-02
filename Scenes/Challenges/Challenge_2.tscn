@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_31r28"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_igdc5"]
 [ext_resource type="Script" path="res://Scripts/Players/Player_1_ChallengeMode.gd" id="3_elng6"]
-[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/Clam.png" id="4_g6ue8"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="4_g6ue8"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="5_xxrtc"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="6_pfql5"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="7_ex2r2"]

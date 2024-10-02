@@ -1,0 +1,829 @@
+[gd_scene load_steps=47 format=3 uid="uid://6da6lksj0ijf"]
+
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_0opni"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_aoast"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_85isp"]
+[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="4_v8dmk"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="5_3ogcf"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="6_58b3u"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="7_3lydt"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="8_upkdh"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="9_e6000"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="10_rqsin"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="11_ycqyj"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="12_b77hh"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="13_d8h16"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="14_wat2e"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="15_ce4ij"]
+[ext_resource type="Texture2D" uid="uid://dv8f2b2hao1sk" path="res://Sprites/Backgrounds/CaveBG.png" id="16_lyk8w"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround9.gd" id="17_dl8n8"]
+[ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="17_pjtgv"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="17_r3jvq"]
+[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="18_50ykw"]
+[ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="18_u84rt"]
+[ext_resource type="Texture2D" uid="uid://ba3o1ur7v6rrm" path="res://Sprites/Grounds/PlatformRight.png" id="19_pb1q1"]
+[ext_resource type="Texture2D" uid="uid://3v2d52ctqy2" path="res://Sprites/Grounds/PlatformLeft.png" id="20_8lcat"]
+[ext_resource type="Texture2D" uid="uid://do7jn4j7njan2" path="res://Sprites/Grounds/StonePlatformRight.png" id="21_6qbj4"]
+[ext_resource type="Texture2D" uid="uid://c4h86eqm2fqcl" path="res://Sprites/Grounds/WoodPlatform.png" id="21_08hxu"]
+[ext_resource type="Texture2D" uid="uid://cr751rypspfhe" path="res://Sprites/Grounds/StonePlatformLeft.png" id="22_13ha6"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="22_wrdv2"]
+[ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="23_ahniq"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="23_wnxve"]
+[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="24_oo3eg"]
+[ext_resource type="Texture2D" uid="uid://bsj8xxw6uc6u2" path="res://Sprites/Grounds/StonePlatform.png" id="24_r1gh4"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="25_5ojgr"]
+[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="26_wsw1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
+size = Vector2(12446, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlp6b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlml5"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0n6v"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5vht"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyrw2"]
+size = Vector2(60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btuk5"]
+atlas = ExtResource("17_pjtgv")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuqlr"]
+atlas = ExtResource("17_pjtgv")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcfvy"]
+atlas = ExtResource("17_pjtgv")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijx56"]
+atlas = ExtResource("17_pjtgv")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6o7al"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btuk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuqlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcfvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijx56")
+}],
+"loop": true,
+"name": &"LavaLamp",
+"speed": 1.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
+texture = ExtResource("18_50ykw")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nsxlv"]
+sources/1 = SubResource("TileSetAtlasSource_3dxoi")
+
+[node name="Arena_01" type="Node2D"]
+script = ExtResource("1_0opni")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+metadata/_edit_lock_ = true
+
+[node name="void" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_aoast")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+position = Vector2(-6, 234)
+shape = SubResource("RectangleShape2D_wrwvd")
+
+[node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("3_85isp")
+
+[node name="ColorRect" type="ColorRect" parent="void"]
+visible = false
+z_index = 1
+offset_left = -584.0
+offset_top = -651.0
+offset_right = 575.0
+offset_bottom = 21.0
+color = Color(0.713726, 0, 0.74902, 0.156863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="void"]
+visible = false
+z_index = 3
+offset_left = -560.0
+offset_top = -61.0
+offset_right = -136.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0.760784, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "You are no god... but I shall feast upon your essence regardless!"
+
+[node name="TextTimer" type="Timer" parent="void"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player 1" type="CharacterBody2D" parent="Players"]
+visible = false
+z_index = -3
+position = Vector2(-508, -196)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_v8dmk")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 1"]
+visible = false
+position = Vector2(-1.25, -0.625001)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("5_3ogcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+visible = false
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_mlp6b")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 1"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 1"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 1"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("6_58b3u")
+
+[node name="Player 2" type="CharacterBody2D" parent="Players"]
+visible = false
+z_index = -3
+position = Vector2(-507, -272)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_v8dmk")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 2"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("7_3lydt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+visible = false
+shape = SubResource("RectangleShape2D_xlml5")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 2"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 2"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 2"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("6_58b3u")
+
+[node name="Player 3" type="CharacterBody2D" parent="Players"]
+visible = false
+z_index = -3
+position = Vector2(80, -213)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_v8dmk")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.627451, 0, 0.717647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 3"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("5_3ogcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+visible = false
+shape = SubResource("RectangleShape2D_j0n6v")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 3"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 3"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 3"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("6_58b3u")
+
+[node name="Player 4" type="CharacterBody2D" parent="Players"]
+visible = false
+z_index = -3
+position = Vector2(77.9999, -273)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_v8dmk")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.741176, 0, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 4"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("7_3lydt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+visible = false
+shape = SubResource("RectangleShape2D_g5vht")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 4"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 4"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 4"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("6_58b3u")
+
+[node name="Player 5" type="CharacterBody2D" parent="Players"]
+visible = false
+z_index = -3
+position = Vector2(-147, -301)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("4_v8dmk")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0, 0.8, 0.180392, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 5"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("7_3lydt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
+visible = false
+shape = SubResource("RectangleShape2D_qyrw2")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 5"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 5"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 5"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("6_58b3u")
+
+[node name="Nuke Stuff" type="Node" parent="."]
+
+[node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
+script = ExtResource("8_upkdh")
+nuke_scene = ExtResource("9_e6000")
+sweeper_scene = ExtResource("10_rqsin")
+
+[node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 15.0
+autostart = true
+
+[node name="Timer3" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 30.0
+autostart = true
+
+[node name="Timer4" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 45.0
+autostart = true
+
+[node name="Swimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 18.33
+one_shot = true
+
+[node name="SwimerTimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+one_shot = true
+autostart = true
+
+[node name="Modifier Stuff" type="Node" parent="."]
+
+[node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
+script = ExtResource("11_ycqyj")
+blackout = ExtResource("12_b77hh")
+fog = ExtResource("13_d8h16")
+
+[node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
+wait_time = 10.0
+autostart = true
+
+[node name="GUI\'s" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -552.0
+offset_top = -625.0
+offset_right = -330.0
+offset_bottom = -584.0
+theme = ExtResource("14_wat2e")
+text = "Player 1: 10%"
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P2" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -304.0
+offset_top = -625.0
+offset_right = -77.0
+offset_bottom = -584.0
+theme = ExtResource("14_wat2e")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P3" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = -625.0
+offset_right = 300.0
+offset_bottom = -584.0
+theme = ExtResource("14_wat2e")
+text = "Player 1: 10%"
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P4" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = -625.0
+offset_right = 553.0
+offset_bottom = -584.0
+theme = ExtResource("14_wat2e")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P1Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -533.0
+offset_top = -65.0
+offset_right = -333.0
+offset_bottom = -24.0
+theme = ExtResource("14_wat2e")
+text = "P1 Points: 0"
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P2Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = -245.5
+offset_top = -65.0
+offset_right = -40.5
+offset_bottom = -24.0
+theme = ExtResource("14_wat2e")
+text = "P2 Points: 0"
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P3Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = -65.0
+offset_right = 247.0
+offset_bottom = -24.0
+theme = ExtResource("14_wat2e")
+text = "P3 Points: 0"
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="P4Score" type="Label" parent="GUI\'s"]
+layout_mode = 0
+offset_left = 329.5
+offset_top = -65.0
+offset_right = 534.5
+offset_bottom = -24.0
+theme = ExtResource("14_wat2e")
+text = "P4 Points: 0"
+vertical_alignment = 1
+script = ExtResource("15_ce4ij")
+
+[node name="Cave" type="Polygon2D" parent="GUI\'s"]
+z_index = -2
+color = Color(0.247059, 0.101961, 0, 1)
+invert_enabled = true
+polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -510, -292, -551, -183, -505, -55, -398.657, -40.6469, -358.582, -130.417, -345, -256, -323, -122, -300.347, -27.3781, -179, -11, 23, -44, 74, -39, 86, -78, 94, -127, 119, -186, 160, -126, 174, -28, 324, -17, 528, -92, 563, -272, 542.714, -358.484, 476, -277, 498, -453, 455, -516, 299, -558, 246.726, -585.241, 184, -438, 201.781, -608.664, 157, -632, 79.4575, -628.329, 59, -532, 36.9736, -626.318, -119.63, -618.905, -175, -386, -225.489, -613.894)
+
+[node name="Cave2" type="Polygon2D" parent="GUI\'s"]
+z_index = -1
+position = Vector2(-11, 57)
+scale = Vector2(-1.2, 1.2)
+color = Color(0.203922, 0.0784314, 0, 1)
+invert_enabled = true
+polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -510, -292, -551, -183, -505, -55, -398.657, -40.6469, -358.582, -130.417, -345, -256, -323, -122, -300.347, -27.3781, -179, -11, 23, -44, 74, -39, 58.3333, -29.1667, 75.8333, -99.1667, 94.1667, -189.167, 106.667, -240.833, 125, -275.833, 153.333, -190.833, 150, -129.167, 174, -28, 324, -17, 494.167, -97.5, 455.833, -220.833, 492.5, -384.167, 390.833, -323.333, 460, -473.333, 389.167, -478.333, 299, -558, 246.726, -585.241, 184, -438, 201.781, -608.664, 157, -632, 79.4575, -628.329, 59, -532, 36.9736, -626.318, -119.63, -618.905, -175, -386, -225.489, -613.894)
+
+[node name="CaveBg" type="Sprite2D" parent="GUI\'s"]
+z_index = -5
+position = Vector2(4.76837e-06, -281)
+scale = Vector2(0.599997, 0.599997)
+texture = ExtResource("16_lyk8w")
+
+[node name="Lamps" type="Node" parent="GUI\'s"]
+
+[node name="Lamp" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(315, -483)
+sprite_frames = SubResource("SpriteFrames_6o7al")
+animation = &"LavaLamp"
+frame_progress = 0.160004
+script = ExtResource("18_u84rt")
+
+[node name="Chain" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(315, -527)
+texture = ExtResource("23_ahniq")
+
+[node name="Lamp2" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-403, -396)
+sprite_frames = SubResource("SpriteFrames_6o7al")
+animation = &"LavaLamp"
+frame_progress = 0.0810805
+script = ExtResource("18_u84rt")
+
+[node name="Chain2" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-403, -440)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain3" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-403, -503)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain4" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-403, -567)
+texture = ExtResource("23_ahniq")
+
+[node name="Grounds" type="Node" parent="."]
+script = ExtResource("17_dl8n8")
+Ground = ExtResource("17_r3jvq")
+
+[node name="MovingThingTimer" type="Timer" parent="Grounds"]
+wait_time = 5.0
+autostart = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nsxlv")
+rendering_quadrant_size = 64
+format = 2
+
+[node name="SpawnPos\'" type="Node" parent="."]
+
+[node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-427, -209)
+
+[node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(158, -212)
+
+[node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(404, -204)
+
+[node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(497, -208)
+
+[node name="PlatformSprites" type="Node" parent="."]
+
+[node name="Platform1" type="Node" parent="PlatformSprites"]
+
+[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(88, -140)
+scale = Vector2(-1, 1)
+texture = ExtResource("19_pb1q1")
+
+[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(152, -140)
+scale = Vector2(-1, 1)
+texture = ExtResource("20_8lcat")
+
+[node name="Platform2" type="Node" parent="PlatformSprites"]
+
+[node name="PlatformRight3" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -3
+position = Vector2(493, -140)
+texture = ExtResource("21_08hxu")
+
+[node name="PlatformRight4" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -3
+position = Vector2(397, -140)
+texture = ExtResource("21_08hxu")
+
+[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -3
+position = Vector2(437, -140)
+scale = Vector2(-1, 1)
+texture = ExtResource("20_8lcat")
+
+[node name="Platform3" type="Node" parent="PlatformSprites"]
+
+[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform3"]
+z_index = -3
+position = Vector2(-444, -140)
+texture = ExtResource("21_08hxu")
+
+[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform3"]
+z_index = -3
+position = Vector2(-380, -140)
+texture = ExtResource("20_8lcat")
+
+[node name="PlatformLeft3" type="Sprite2D" parent="PlatformSprites/Platform3"]
+z_index = -3
+position = Vector2(-501, -140)
+texture = ExtResource("21_08hxu")
+
+[node name="Platform4" type="Node" parent="PlatformSprites"]
+
+[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-212, -199)
+scale = Vector2(1, -1)
+texture = ExtResource("21_6qbj4")
+
+[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-84, -199)
+scale = Vector2(1, -1)
+texture = ExtResource("22_13ha6")
+
+[node name="StonePlatform" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-148, -183)
+scale = Vector2(-1, 1)
+texture = ExtResource("24_r1gh4")
+
+[node name="Chain" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -262)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain2" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -326)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain3" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -390)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain4" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -455)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain5" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -518)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain6" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -582)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain7" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-236, -646)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain8" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -262)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain9" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -326)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain10" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -390)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain11" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -455)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain12" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -518)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain13" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -582)
+texture = ExtResource("23_ahniq")
+
+[node name="Chain14" type="Sprite2D" parent="PlatformSprites/Platform4"]
+z_index = -3
+position = Vector2(-60, -646)
+texture = ExtResource("23_ahniq")
+
+[node name="Timer" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("14_wat2e")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22_wrdv2")
+
+[node name="Timer" type="Timer" parent="Timer"]
+wait_time = 0.01
+autostart = true
+
+[node name="Trans" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("14_wat2e")
+theme_override_styles/normal = ExtResource("23_wnxve")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+z_index = 10
+z_as_relative = false
+offset_left = -576.0
+offset_top = -648.0
+offset_right = 576.0
+theme = ExtResource("14_wat2e")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/normal = ExtResource("23_wnxve")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("24_oo3eg")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="Countdown"]
+
+[node name="Power-Ups" type="Node" parent="."]
+script = ExtResource("25_5ojgr")
+Shield = ExtResource("26_wsw1l")
+
+[node name="Timer" type="Timer" parent="Power-Ups"]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
+[connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
+[connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Grounds/MovingThingTimer" to="Grounds" method="_on_moving_thing_timer_timeout"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
+[connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]

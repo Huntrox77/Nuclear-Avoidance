@@ -1,6 +1,6 @@
 extends Area2D
 @onready var Modifier = get_node("/root/Modifiers")
-@onready var DOGSprite = preload("res://Sprites/DOG.png")
+@onready var DOGSprite = preload("res://Sprites/InGame/DOG.png")
 var sweepingdir = false
 var randomsweeperplace16 = randi_range(1,6)
 # Called when the node enters the scene tree for the first time.

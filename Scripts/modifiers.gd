@@ -50,6 +50,7 @@ var map5 = false
 var map6 = false
 var map7 = false
 var map8 = false
+var map9 = false
 var resmap1 = false
 var resmap2 = false
 var resmap3 = false
@@ -58,6 +59,7 @@ var resmap5 = false
 var resmap6 = false
 var resmap7 = false
 var resmap8 = false
+var resmap9 = false
 var Nuke2 = false
 var Nuke3 = false
 var Nuke4 = false
@@ -66,6 +68,7 @@ var powermaxtime = 25
 var playersleft = 2
 var HowManyPlayersLeft = 1
 var HowManyPlayersLeftChoice = 1
+var UISize = 0
 var P1Alive = false
 var P2Alive = false
 var P3Alive = false
@@ -95,6 +98,7 @@ func _resetmaps():
 	map6 = resmap6
 	map7 = resmap7
 	map8 = resmap8
+	map9 = resmap9
 	resmap1 = false
 	resmap2 = false
 	resmap3 = false
@@ -103,6 +107,7 @@ func _resetmaps():
 	resmap6 = false
 	resmap7 = false
 	resmap8 = false
+	resmap9 = false
 	currentmap = "menu"
 
 func _ready():
@@ -160,6 +165,7 @@ var DOGMUSIC2 = false
 
 
 func _resetplayers():
+	playersleft = 0
 	spawnsused = []
 	for i in listofplayers:
 			if i == true:
@@ -262,9 +268,17 @@ func _process(_delta):
 				resmap8 = true
 				_resetplayers()
 				countdown()
+			elif map9 == true:
+				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay9.tscn")
+				currentmap = "map9"
+				map9 = false
+				resmap9 = true
+				_resetplayers()
+				countdown()
 			elif loop == true:
 					_resetmaps()
 			else:
+				playersleft = 0
 				_reset()
 				if ChallengeOrLocal == "local":
 					get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
@@ -273,7 +287,7 @@ func _process(_delta):
 	#Code to pause the game by sending them back to the title screen.
 	if Input.is_action_pressed("Pause"):
 		if gameplaying == true:
-			listofplayers = 0
+			playersleft = 0
 			_reset()
 			if ChallengeOrLocal == "local":
 				get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
