@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dp32ktwvi1qq6"]
+[gd_scene load_steps=23 format=3 uid="uid://dp32ktwvi1qq6"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_j3bf6"]
 [ext_resource type="AudioStream" uid="uid://3wuiotvo6106" path="res://Music/20 - Threat - Superstructure.mp3" id="2_c6p78"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/In Game Stuff/GroundRight.tscn" id="15_n2h2o"]
 [ext_resource type="Script" path="res://Scripts/UI/ChallengeTimers.gd" id="16_xwfjw"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="17_1n4pp"]
+[ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="18_cxfgx"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/GravSwitch.gd" id="18_jcm2a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq0am"]
@@ -206,6 +207,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BG" type="Node2D" parent="."]
+
+[node name="Sky2" type="Sprite2D" parent="BG"]
+z_index = -20
+position = Vector2(1, -294)
+scale = Vector2(0.673437, 0.673437)
+texture = ExtResource("18_cxfgx")
 
 [node name="GravSwitch" type="Node" parent="."]
 script = ExtResource("18_jcm2a")

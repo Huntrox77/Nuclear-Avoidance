@@ -110,3 +110,17 @@ func _on_pressed():
 			Modifier.resmap9 = true
 			_playeralive()
 			countdown()
+		elif Modifier.map10 == true:
+			Modifier.currentmap = "map10"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay10.tscn")
+			Modifier.map10 = false
+			Modifier.gameplaying = true
+			Modifier.resmap10 = true
+		elif Modifier.map11 == true:
+			Modifier.currentmap = "map11"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay11.tscn")
+			Modifier.map11 = false
+			Modifier.gameplaying = true
+			Modifier.resmap11 = true
+			_playeralive()
+			countdown()

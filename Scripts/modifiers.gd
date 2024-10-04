@@ -51,6 +51,8 @@ var map6 = false
 var map7 = false
 var map8 = false
 var map9 = false
+var map10 = false
+var map11 = false
 var resmap1 = false
 var resmap2 = false
 var resmap3 = false
@@ -60,6 +62,8 @@ var resmap6 = false
 var resmap7 = false
 var resmap8 = false
 var resmap9 = false
+var resmap10 = false
+var resmap11 = false
 var Nuke2 = false
 var Nuke3 = false
 var Nuke4 = false
@@ -99,6 +103,8 @@ func _resetmaps():
 	map7 = resmap7
 	map8 = resmap8
 	map9 = resmap9
+	map10 = resmap10
+	map11 = resmap11
 	resmap1 = false
 	resmap2 = false
 	resmap3 = false
@@ -108,6 +114,8 @@ func _resetmaps():
 	resmap7 = false
 	resmap8 = false
 	resmap9 = false
+	resmap10 = false
+	resmap11 = false
 	currentmap = "menu"
 
 func _ready():
@@ -273,6 +281,20 @@ func _process(_delta):
 				currentmap = "map9"
 				map9 = false
 				resmap9 = true
+				_resetplayers()
+				countdown()
+			elif map10 == true:
+				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay10.tscn")
+				currentmap = "map10"
+				map10 = false
+				resmap10 = true
+				_resetplayers()
+				countdown()
+			elif map11 == true:
+				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay11.tscn")
+				currentmap = "map11"
+				map11 = false
+				resmap11 = true
 				_resetplayers()
 				countdown()
 			elif loop == true:

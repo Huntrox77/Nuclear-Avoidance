@@ -1,117 +1,70 @@
-[gd_scene load_steps=45 format=3 uid="uid://6da6lksj0ijf"]
+[gd_scene load_steps=34 format=3 uid="uid://bc5eb78ibb13v"]
 
-[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_0opni"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_aoast"]
-[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_85isp"]
-[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="4_v8dmk"]
-[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="5_3ogcf"]
-[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="6_58b3u"]
-[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="7_3lydt"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="8_upkdh"]
-[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="9_e6000"]
-[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="10_rqsin"]
-[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="11_ycqyj"]
-[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="12_b77hh"]
-[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="13_d8h16"]
-[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="14_wat2e"]
-[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="15_ce4ij"]
-[ext_resource type="Texture2D" uid="uid://dv8f2b2hao1sk" path="res://Sprites/Backgrounds/CaveBG.png" id="16_lyk8w"]
-[ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="17_pjtgv"]
-[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="18_50ykw"]
-[ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="18_u84rt"]
-[ext_resource type="Texture2D" uid="uid://3v2d52ctqy2" path="res://Sprites/Grounds/PlatformLeft.png" id="20_8lcat"]
-[ext_resource type="PackedScene" uid="uid://ccfykld012a00" path="res://Scenes/In Game Stuff/Platform.tscn" id="20_fswl8"]
-[ext_resource type="Texture2D" uid="uid://do7jn4j7njan2" path="res://Sprites/Grounds/StonePlatformRight.png" id="21_6qbj4"]
-[ext_resource type="Texture2D" uid="uid://mdripfnih4mw" path="res://Sprites/Grounds/Platform.png" id="21_m84ii"]
-[ext_resource type="Texture2D" uid="uid://cr751rypspfhe" path="res://Sprites/Grounds/StonePlatformLeft.png" id="22_13ha6"]
-[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="22_wrdv2"]
-[ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="23_ahniq"]
-[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="23_wnxve"]
-[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="24_oo3eg"]
-[ext_resource type="Texture2D" uid="uid://bsj8xxw6uc6u2" path="res://Sprites/Grounds/StonePlatform.png" id="24_r1gh4"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="25_5ojgr"]
-[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="26_wsw1l"]
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_5jy56"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_sgype"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_hblpu"]
+[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="4_h6ssj"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="5_n1gbc"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="6_4hpxf"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="7_gsxp0"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="8_wkm22"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="9_b3ewd"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="10_5cqsy"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="11_i8qkb"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="12_h4wnk"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="13_qts88"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="14_4tkdy"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="15_6ndfm"]
+[ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="16_mdf36"]
+[ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/In Game Stuff/GroundLeft.tscn" id="18_17pqg"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="19_0467a"]
+[ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/In Game Stuff/GroundRight.tscn" id="20_35hja"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="21_rq651"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="22_uhjwo"]
+[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="23_8o5v3"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="24_uc883"]
+[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="25_nv63f"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/GravSwitch.gd" id="26_q26ch"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_am33l"]
 size = Vector2(12446, 154)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlp6b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk5fa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlml5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_412o4"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0n6v"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh2qx"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5vht"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11rrk"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyrw2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwlby"]
 size = Vector2(60, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_btuk5"]
-atlas = ExtResource("17_pjtgv")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="TileSet" id="TileSet_ppbij"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kuqlr"]
-atlas = ExtResource("17_pjtgv")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qcfvy"]
-atlas = ExtResource("17_pjtgv")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijx56"]
-atlas = ExtResource("17_pjtgv")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6o7al"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_btuk5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kuqlr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qcfvy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ijx56")
-}],
-"loop": true,
-"name": &"LavaLamp",
-"speed": 1.0
-}]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
-texture = ExtResource("18_50ykw")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_nsxlv"]
-sources/1 = SubResource("TileSetAtlasSource_3dxoi")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5t4j"]
+size = Vector2(119, 40)
 
 [node name="Arena_01" type="Node2D"]
-script = ExtResource("1_0opni")
+script = ExtResource("1_5jy56")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
-metadata/_edit_lock_ = true
 
 [node name="void" type="Area2D" parent="."]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("2_aoast")
+script = ExtResource("2_sgype")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 234)
-shape = SubResource("RectangleShape2D_wrwvd")
+shape = SubResource("RectangleShape2D_am33l")
 
 [node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
-stream = ExtResource("3_85isp")
+stream = ExtResource("3_hblpu")
 
 [node name="ColorRect" type="ColorRect" parent="void"]
 visible = false
@@ -140,11 +93,9 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-visible = false
-z_index = -3
-position = Vector2(-508, -196)
+position = Vector2(-278, -213)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_h6ssj")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
@@ -158,13 +109,13 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("5_3ogcf")
+texture = ExtResource("5_n1gbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
 visible = false
 position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_mlp6b")
+shape = SubResource("RectangleShape2D_jk5fa")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 1"]
@@ -189,14 +140,12 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_4hpxf")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-visible = false
-z_index = -3
-position = Vector2(-507, -272)
+position = Vector2(61, -324)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_h6ssj")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
@@ -211,11 +160,11 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("7_3lydt")
+texture = ExtResource("7_gsxp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
-shape = SubResource("RectangleShape2D_xlml5")
+shape = SubResource("RectangleShape2D_412o4")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 2"]
@@ -240,14 +189,12 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_4hpxf")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-visible = false
-z_index = -3
-position = Vector2(80, -213)
+position = Vector2(267, -428)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_h6ssj")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
@@ -262,11 +209,11 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("5_3ogcf")
+texture = ExtResource("5_n1gbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
-shape = SubResource("RectangleShape2D_j0n6v")
+shape = SubResource("RectangleShape2D_kh2qx")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 3"]
@@ -291,14 +238,12 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_4hpxf")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-visible = false
-z_index = -3
-position = Vector2(77.9999, -273)
+position = Vector2(-349, -210)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_h6ssj")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
@@ -313,11 +258,11 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("7_3lydt")
+texture = ExtResource("7_gsxp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
-shape = SubResource("RectangleShape2D_g5vht")
+shape = SubResource("RectangleShape2D_11rrk")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 4"]
@@ -342,14 +287,12 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_4hpxf")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-visible = false
-z_index = -3
-position = Vector2(-147, -301)
+position = Vector2(61, -405)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_h6ssj")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
@@ -364,11 +307,11 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("7_3lydt")
+texture = ExtResource("7_gsxp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
-shape = SubResource("RectangleShape2D_qyrw2")
+shape = SubResource("RectangleShape2D_bwlby")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 5"]
@@ -393,14 +336,14 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_4hpxf")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
 [node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
-script = ExtResource("8_upkdh")
-nuke_scene = ExtResource("9_e6000")
-sweeper_scene = ExtResource("10_rqsin")
+script = ExtResource("8_wkm22")
+nuke_scene = ExtResource("9_b3ewd")
+sweeper_scene = ExtResource("10_5cqsy")
 
 [node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
 wait_time = 5.0
@@ -429,9 +372,9 @@ autostart = true
 [node name="Modifier Stuff" type="Node" parent="."]
 
 [node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
-script = ExtResource("11_ycqyj")
-blackout = ExtResource("12_b77hh")
-fog = ExtResource("13_d8h16")
+script = ExtResource("11_i8qkb")
+blackout = ExtResource("12_h4wnk")
+fog = ExtResource("13_qts88")
 
 [node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
 wait_time = 10.0
@@ -449,10 +392,10 @@ offset_left = -552.0
 offset_top = -625.0
 offset_right = -330.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P2" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -460,11 +403,11 @@ offset_left = -304.0
 offset_top = -625.0
 offset_right = -77.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P3" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -472,10 +415,10 @@ offset_left = 78.0
 offset_top = -625.0
 offset_right = 300.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P4" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -483,11 +426,11 @@ offset_left = 326.0
 offset_top = -625.0
 offset_right = 553.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -495,10 +438,10 @@ offset_left = -533.0
 offset_top = -65.0
 offset_right = -333.0
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "P1 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -506,10 +449,10 @@ offset_left = -245.5
 offset_top = -65.0
 offset_right = -40.5
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "P2 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -517,10 +460,10 @@ offset_left = 42.0
 offset_top = -65.0
 offset_right = 247.0
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "P3 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -528,179 +471,76 @@ offset_left = 329.5
 offset_top = -65.0
 offset_right = 534.5
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "P4 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_6ndfm")
 
-[node name="Cave" type="Polygon2D" parent="GUI\'s"]
-z_index = -2
-color = Color(0.247059, 0.101961, 0, 1)
-invert_enabled = true
-polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -510, -292, -551, -183, -505, -55, -398.657, -40.6469, -358.582, -130.417, -345, -256, -323, -122, -300.347, -27.3781, -179, -11, 23, -44, 74, -39, 86, -78, 94, -127, 119, -186, 160, -126, 174, -28, 324, -17, 528, -92, 563, -272, 542.714, -358.484, 476, -277, 498, -453, 455, -516, 299, -558, 246.726, -585.241, 184, -438, 201.781, -608.664, 157, -632, 79.4575, -628.329, 59, -532, 36.9736, -626.318, -119.63, -618.905, -175, -386, -225.489, -613.894)
-
-[node name="Cave2" type="Polygon2D" parent="GUI\'s"]
-z_index = -1
-position = Vector2(-11, 57)
-scale = Vector2(-1.2, 1.2)
-color = Color(0.203922, 0.0784314, 0, 1)
-invert_enabled = true
-polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -510, -292, -551, -183, -505, -55, -398.657, -40.6469, -358.582, -130.417, -345, -256, -323, -122, -300.347, -27.3781, -179, -11, 23, -44, 74, -39, 58.3333, -29.1667, 75.8333, -99.1667, 94.1667, -189.167, 106.667, -240.833, 125, -275.833, 153.333, -190.833, 150, -129.167, 174, -28, 324, -17, 494.167, -97.5, 455.833, -220.833, 492.5, -384.167, 390.833, -323.333, 460, -473.333, 389.167, -478.333, 299, -558, 246.726, -585.241, 184, -438, 201.781, -608.664, 157, -632, 79.4575, -628.329, 59, -532, 36.9736, -626.318, -119.63, -618.905, -175, -386, -225.489, -613.894)
-
-[node name="CaveBg" type="Sprite2D" parent="GUI\'s"]
-z_index = -5
-position = Vector2(4.76837e-06, -281)
-scale = Vector2(0.599997, 0.599997)
-texture = ExtResource("16_lyk8w")
-
-[node name="Lamps" type="Node" parent="GUI\'s"]
-
-[node name="Lamp" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
-z_index = -3
-position = Vector2(315, -483)
-sprite_frames = SubResource("SpriteFrames_6o7al")
-animation = &"LavaLamp"
-frame_progress = 0.160004
-script = ExtResource("18_u84rt")
-
-[node name="Chain" type="Sprite2D" parent="GUI\'s/Lamps"]
-z_index = -3
-position = Vector2(315, -527)
-texture = ExtResource("23_ahniq")
-
-[node name="Lamp2" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
-z_index = -3
-position = Vector2(-403, -396)
-sprite_frames = SubResource("SpriteFrames_6o7al")
-animation = &"LavaLamp"
-frame_progress = 0.0810805
-script = ExtResource("18_u84rt")
-
-[node name="Chain2" type="Sprite2D" parent="GUI\'s/Lamps"]
-z_index = -3
-position = Vector2(-403, -440)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain3" type="Sprite2D" parent="GUI\'s/Lamps"]
-z_index = -3
-position = Vector2(-403, -503)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain4" type="Sprite2D" parent="GUI\'s/Lamps"]
-z_index = -3
-position = Vector2(-403, -567)
-texture = ExtResource("23_ahniq")
+[node name="Sky1" type="Sprite2D" parent="GUI\'s"]
+z_index = -20
+position = Vector2(-0.999855, -267)
+scale = Vector2(0.638437, 0.638437)
+texture = ExtResource("16_mdf36")
 
 [node name="Grounds" type="Node" parent="."]
 
-[node name="MovingThingTimer" type="Timer" parent="Grounds"]
-wait_time = 5.0
-autostart = true
+[node name="GroundLeft" parent="Grounds" instance=ExtResource("18_17pqg")]
+position = Vector2(-64, -243)
 
-[node name="Platform" parent="Grounds" instance=ExtResource("20_fswl8")]
+[node name="Ground" parent="Grounds" instance=ExtResource("19_0467a")]
+position = Vector2(0, -243)
+
+[node name="GroundRight" parent="Grounds" instance=ExtResource("20_35hja")]
+position = Vector2(64, -243)
+
+[node name="GroundLeft2" parent="Grounds" instance=ExtResource("18_17pqg")]
+position = Vector2(-417, -126)
+
+[node name="Ground2" parent="Grounds" instance=ExtResource("19_0467a")]
+position = Vector2(-353, -126)
+
+[node name="GroundRight2" parent="Grounds" instance=ExtResource("20_35hja")]
+position = Vector2(-289, -126)
+
+[node name="GroundLeft3" parent="Grounds" instance=ExtResource("18_17pqg")]
+position = Vector2(292, -370)
+
+[node name="Ground3" parent="Grounds" instance=ExtResource("19_0467a")]
+position = Vector2(356, -370)
+
+[node name="GroundRight3" parent="Grounds" instance=ExtResource("20_35hja")]
+position = Vector2(420, -370)
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_nsxlv")
+tile_set = SubResource("TileSet_ppbij")
 rendering_quadrant_size = 64
 format = 2
+layer_0/tile_data = PackedInt32Array(-1114115, 2, 0, -1179647, 65538, 0, -917503, 65538, 0, -655359, 65538, 0, -393215, 65538, 0, -327683, 2, 0, -589827, 2, 0, -1376259, 2, 0, -851971, 65538, 0, -1441791, 65538, 0)
 
 [node name="SpawnPos\'" type="Node" parent="."]
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-427, -209)
+position = Vector2(-415, -192)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(158, -212)
+position = Vector2(-66, -321)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(404, -204)
+position = Vector2(416, -434)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(497, -208)
-
-[node name="PlatformSprites" type="Node" parent="."]
-
-[node name="Platform1" type="Node" parent="PlatformSprites"]
-
-[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform1"]
-z_index = -3
-position = Vector2(-445, -353)
-scale = Vector2(-1, 1)
-texture = ExtResource("21_m84ii")
-
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform1"]
-z_index = -3
-position = Vector2(-509, -353)
-scale = Vector2(-1, 1)
-texture = ExtResource("20_8lcat")
-
-[node name="Platform2" type="Node" parent="PlatformSprites"]
-
-[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform2"]
-z_index = -3
-position = Vector2(461, -356)
-scale = Vector2(-1, 1)
-texture = ExtResource("21_m84ii")
-
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform2"]
-z_index = -3
-position = Vector2(524, -356)
-texture = ExtResource("20_8lcat")
-
-[node name="Platform3" type="Node" parent="PlatformSprites"]
-
-[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(-300, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("22_13ha6")
-
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(73, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("21_6qbj4")
-
-[node name="PlatformLeft3" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(9, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("24_r1gh4")
-
-[node name="PlatformLeft4" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(-55, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("24_r1gh4")
-
-[node name="PlatformLeft5" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(-119, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("24_r1gh4")
-
-[node name="PlatformLeft6" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(-236, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("24_r1gh4")
-
-[node name="PlatformLeft7" type="Sprite2D" parent="PlatformSprites/Platform3"]
-z_index = -3
-position = Vector2(-172, -102)
-scale = Vector2(-1, -1)
-texture = ExtResource("24_r1gh4")
+position = Vector2(355, -441)
 
 [node name="Timer" type="Label" parent="."]
 offset_left = -51.0
 offset_top = -622.0
 offset_right = 52.0
 offset_bottom = -581.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 text = "0:0:0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("22_wrdv2")
+script = ExtResource("21_rq651")
 
 [node name="Timer" type="Timer" parent="Timer"]
 wait_time = 0.01
@@ -711,37 +551,68 @@ offset_left = -51.0
 offset_top = -622.0
 offset_right = 52.0
 offset_bottom = -581.0
-theme = ExtResource("14_wat2e")
-theme_override_styles/normal = ExtResource("23_wnxve")
+theme = ExtResource("14_4tkdy")
+theme_override_styles/normal = ExtResource("22_uhjwo")
 text = "0:0:0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Countdown" type="Label" parent="."]
-visible = false
-z_index = 10
-z_as_relative = false
+z_index = 15
 offset_left = -576.0
 offset_top = -648.0
 offset_right = 576.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_4tkdy")
 theme_override_font_sizes/font_size = 256
-theme_override_styles/normal = ExtResource("23_wnxve")
+theme_override_styles/normal = ExtResource("22_uhjwo")
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("24_oo3eg")
-metadata/_edit_lock_ = true
+script = ExtResource("23_8o5v3")
 
 [node name="Timer" type="Timer" parent="Countdown"]
 
 [node name="Power-Ups" type="Node" parent="."]
-script = ExtResource("25_5ojgr")
-Shield = ExtResource("26_wsw1l")
+script = ExtResource("24_uc883")
+Shield = ExtResource("25_nv63f")
 
 [node name="Timer" type="Timer" parent="Power-Ups"]
 wait_time = 15.0
 one_shot = true
+
+[node name="GravSwitch" type="Node" parent="."]
+script = ExtResource("26_q26ch")
+
+[node name="GravSwitch1" type="Area2D" parent="GravSwitch"]
+position = Vector2(574, -379)
+
+[node name="ColorRect" type="ColorRect" parent="GravSwitch/GravSwitch1"]
+offset_left = -59.0
+offset_top = -20.0
+offset_right = -19.0
+offset_bottom = 20.0
+scale = Vector2(3, 1)
+color = Color(0, 1, 1, 0.490196)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwitch/GravSwitch1"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_e5t4j")
+
+[node name="GravSwitch2" type="Area2D" parent="GravSwitch"]
+position = Vector2(-576, -131)
+scale = Vector2(-1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="GravSwitch/GravSwitch2"]
+offset_left = -59.0
+offset_top = -20.0
+offset_right = -19.0
+offset_bottom = 20.0
+scale = Vector2(3, 1)
+color = Color(0, 1, 1, 0.490196)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwitch/GravSwitch2"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_e5t4j")
 
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
@@ -753,7 +624,8 @@ one_shot = true
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
-[connection signal="timeout" from="Grounds/MovingThingTimer" to="Grounds" method="_on_moving_thing_timer_timeout"]
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
 [connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
 [connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]
+[connection signal="body_entered" from="GravSwitch/GravSwitch1" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
+[connection signal="body_entered" from="GravSwitch/GravSwitch2" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
