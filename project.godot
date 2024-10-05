@@ -24,6 +24,7 @@ config/icon="res://Sprites/InGame/Nuke.png"
 Modifiers="*res://Scripts/modifiers.gd"
 GlobalTexts="*res://Scripts/GlobalTexts.gd"
 ConfigScript="*res://Scripts/config_script.gd"
+Moreglobalvars="*res://Scripts/moreglobalvars.gd"
 
 [display]
 

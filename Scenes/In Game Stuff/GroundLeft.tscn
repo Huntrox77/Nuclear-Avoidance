@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d342vv4g7762h"]
 
 [ext_resource type="Texture2D" uid="uid://dwnlkw12reoue" path="res://Sprites/Grounds/GroundL.png" id="1_4vt00"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/Grounds.gd" id="1_meo42"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Grounds.gd" id="1_meo42"]
 
 [node name="Ground" type="StaticBody2D"]
 z_index = -2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsh7a5xw0h0uo"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/Grounds.gd" id="1_qjs0b"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Grounds.gd" id="1_qjs0b"]
 [ext_resource type="Texture2D" uid="uid://bbssk1535eews" path="res://Sprites/Grounds/GroundR.png" id="1_t1v5j"]
 
 [node name="Ground" type="StaticBody2D"]

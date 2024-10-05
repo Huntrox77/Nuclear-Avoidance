@@ -283,6 +283,10 @@ text = "Map 10"
 layout_mode = 2
 text = "Map 11"
 
+[node name="Map12" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+layout_mode = 2
+text = "Map 12"
+
 [node name="Modifiers Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 0
 offset_left = 43.0
@@ -562,6 +566,7 @@ theme = ExtResource("2_dymia")
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map9" to="Buttons" method="_on_map_9_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map10" to="Buttons" method="_on_map_10_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map11" to="Buttons" method="_on_map_11_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map12" to="Buttons" method="_on_map_12_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccfykld012a00"]
+[gd_scene load_steps=4 format=3 uid="uid://bql40rgm3ilgc"]
 
-[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/Grounds.gd" id="1_eq2k4"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Grounds.gd" id="1_igdih"]
 [ext_resource type="Texture2D" uid="uid://dhni28atjui1l" path="res://Sprites/Grounds/Ground.png" id="2_y84qo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goni1"]
@@ -9,7 +9,7 @@ size = Vector2(64, 64)
 [node name="Ground" type="StaticBody2D"]
 z_index = -2
 position = Vector2(-160, -113)
-script = ExtResource("1_eq2k4")
+script = ExtResource("1_igdih")
 metadata/GroundM = true
 metadata/PlayerOnly = true
 

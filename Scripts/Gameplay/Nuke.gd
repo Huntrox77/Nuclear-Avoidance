@@ -32,7 +32,7 @@ var Halfit = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var RandomRock = randi_range(1,3)
-	if Modifier.currentmap == "map7" or Modifier.currentmap == "map8":
+	if Modifier.currentmap == "map7" or Modifier.currentmap == "map8" or Modifier.currentmap != "map11":
 		if randmovespeedY <= 0:
 			position.y = 32
 			rotation = 135
@@ -146,6 +146,48 @@ func _ready():
 		spawnradius2 = 500
 		negspawnradius3 = -100
 		spawnradius3 = 500
+	if Modifier.currentmap == "map10":
+		$Bomb.queue_free()
+		if RandomRock == 1:
+			$Rock1.show()
+			$Nuke.hide()
+		elif RandomRock == 2:
+			$Rock2.show()
+			$Nuke.hide()
+		elif RandomRock == 3:
+			$Rock3.show()
+			$Nuke.hide()
+		negspawnradius = -100
+		spawnradius = 500
+		negspawnradius2 = -100
+		spawnradius2 = 500
+		negspawnradius3 = -100
+		spawnradius3 = 500
+	if Modifier.currentmap == "map11":
+		$Rock.queue_free()
+		negspawnradius = -500
+		spawnradius = -372
+		negspawnradius2 = -64
+		spawnradius2 = 64
+		negspawnradius3 = 500
+		spawnradius3 = -372
+	if Modifier.currentmap == "map12":
+		$Bomb.queue_free()
+		if RandomRock == 1:
+			$Rock1.show()
+			$Nuke.hide()
+		elif RandomRock == 2:
+			$Rock2.show()
+			$Nuke.hide()
+		elif RandomRock == 3:
+			$Rock3.show()
+			$Nuke.hide()
+		negspawnradius = -100
+		spawnradius = 500
+		negspawnradius2 = -100
+		spawnradius2 = 500
+		negspawnradius3 = -100
+		spawnradius3 = 500
 	if Modifier.currentmap == "menu":
 		$Rock.queue_free()
 		negspawnradius = -100
@@ -181,7 +223,7 @@ func _ready():
 func _process(_delta):
 	if Modifier.Follow == false:
 		if move == true:
-			if Modifier.currentmap != "map7" and Modifier.currentmap != "map8":
+			if Modifier.currentmap != "map7" and Modifier.currentmap != "map8" and Modifier.currentmap != "map11":
 				if movex == -1:
 					position -= Vector2(-randmovespeed * 0.5, -randmovespeed) #Positive Diagonal Movement
 				elif movex == 1:
@@ -199,7 +241,7 @@ func _process(_delta):
 		if move == true:
 			if position.y <= -325:
 				position.x = Modifier.playerX[RandiPlayer]
-			if Modifier.currentmap == "map7" or Modifier.currentmap == "map8":
+			if Modifier.currentmap == "map7" or Modifier.currentmap == "map8" or Modifier.currentmap != "map11":
 				position.y += randmovespeedY
 				upsidedownbomb = true
 			else :
@@ -280,7 +322,10 @@ func _on_body_entered(body):
 		move = false
 		raidus.set_deferred("disabled", false)
 		get_parent().add_child(Expl)
-		Expl.get_child(0).color = Color(body.get_child(0).color)
+		if Modifier.currentmap == "map9" or Modifier.currentmap == "map10" or Modifier.currentmap == "map12":
+			Expl.get_child(0).color = Color(0.208, 0.082, 0)
+		else:
+			Expl.get_child(0).color = Color(body.get_child(0).color)
 		Expl.position = position
 		Expl.get_child(0).one_shot = true
 		Nuke.hide()

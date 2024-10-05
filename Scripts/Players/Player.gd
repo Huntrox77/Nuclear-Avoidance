@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 @onready var Modifier = get_node("/root/Modifiers")
+@onready var GlobalVar = get_node("/root/Moreglobalvars")
 @onready var SpawnPos1 = get_parent().get_parent().get_child(8).get_child(0)
 @onready var SpawnPos2 = get_parent().get_parent().get_child(8).get_child(1)
 @onready var SpawnPos3 = get_parent().get_parent().get_child(8).get_child(2)
@@ -19,6 +20,8 @@ var notspawned = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+	# Metadata
+	body.set_meta("Ladder", false)
 	# Kills player if they dont exist
 	if Modifier.p1selection == false:
 		if name == "Player 1":
@@ -49,9 +52,14 @@ func _physics_process(delta):
 	if Modifier.Ice == true:
 		groundslide = 0.01
 		aircontrol = 0.01
+
+
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		if get_meta("Ladder", false):
+			velocity.y += gravity * delta
+		else:
+			velocity.y -= gravity
 	
 	Modifier.p1aircontrol = aircontrol
 

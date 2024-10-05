@@ -47,6 +47,8 @@ func _process(_delta):
 		$"Map Container/HBoxContainer/Map10".button_pressed = true
 	if Modifier.map11 == true:
 		$"Map Container/HBoxContainer/Map11".button_pressed = true
+	if Modifier.map12 == true:
+		$"Map Container/HBoxContainer/Map12".button_pressed = true
 
 func _on_p_1_pressed():
 	Modifier.p1selection = not Modifier.p1selection
@@ -181,3 +183,7 @@ func _on_map_10_pressed():
 
 func _on_map_11_pressed():
 	Modifier.map11 = not Modifier.map11
+
+
+func _on_map_12_pressed():
+	Modifier.map12 = not Modifier.map12
