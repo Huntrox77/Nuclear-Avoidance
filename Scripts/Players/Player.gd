@@ -20,8 +20,6 @@ var notspawned = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	# Metadata
-	body.set_meta("Ladder", false)
 	# Kills player if they dont exist
 	if Modifier.p1selection == false:
 		if name == "Player 1":
@@ -53,13 +51,14 @@ func _physics_process(delta):
 		groundslide = 0.01
 		aircontrol = 0.01
 
-
 	# Add the gravity.
 	if not is_on_floor():
-		if get_meta("Ladder", false):
-			velocity.y += gravity * delta
+		if has_meta("Ladder"):
+			velocity.y = -100
+			airslide = 0.5
 		else:
-			velocity.y -= gravity
+			velocity.y += gravity * delta
+			airslide = 0.02
 	
 	Modifier.p1aircontrol = aircontrol
 

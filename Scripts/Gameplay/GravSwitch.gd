@@ -12,6 +12,10 @@ func _process(_delta):
 
 
 func _on_grav_switch_1_body_entered(body):
+	if body.has_meta("UpsideDown"):
+		body.remove_meta("UpsideDown")
+	else:
+		body.set_meta("UpsideDown", true)
 	if body.gravity > 0:
 		if Modifier.Crumble == true:
 			body.velocity += Vector2(0, 250)

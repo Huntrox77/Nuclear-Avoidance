@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -18,4 +18,4 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	if body.has_meta("Player"):
-		body.set_meta("Ladder", false)
+		body.remove_meta("Ladder")

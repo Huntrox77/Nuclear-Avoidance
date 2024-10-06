@@ -140,11 +140,11 @@ func _ready():
 		elif RandomRock == 3:
 			$Rock3.show()
 			$Nuke.hide()
-		negspawnradius = -100
-		spawnradius = 500
-		negspawnradius2 = -100
-		spawnradius2 = 500
-		negspawnradius3 = -100
+		negspawnradius = -500
+		spawnradius = -250
+		negspawnradius2 = -250
+		spawnradius2 = 250
+		negspawnradius3 = 250
 		spawnradius3 = 500
 	if Modifier.currentmap == "map10":
 		$Bomb.queue_free()
@@ -157,11 +157,11 @@ func _ready():
 		elif RandomRock == 3:
 			$Rock3.show()
 			$Nuke.hide()
-		negspawnradius = -100
-		spawnradius = 500
-		negspawnradius2 = -100
-		spawnradius2 = 500
-		negspawnradius3 = -100
+		negspawnradius = -500
+		spawnradius = -250
+		negspawnradius2 = -250
+		spawnradius2 = 250
+		negspawnradius3 = 250
 		spawnradius3 = 500
 	if Modifier.currentmap == "map11":
 		$Rock.queue_free()
@@ -182,11 +182,11 @@ func _ready():
 		elif RandomRock == 3:
 			$Rock3.show()
 			$Nuke.hide()
-		negspawnradius = -100
-		spawnradius = 500
-		negspawnradius2 = -100
-		spawnradius2 = 500
-		negspawnradius3 = -100
+		negspawnradius = -500
+		spawnradius = -250
+		negspawnradius2 = -250
+		spawnradius2 = 250
+		negspawnradius3 = 250
 		spawnradius3 = 500
 	if Modifier.currentmap == "menu":
 		$Rock.queue_free()
@@ -241,7 +241,7 @@ func _process(_delta):
 		if move == true:
 			if position.y <= -325:
 				position.x = Modifier.playerX[RandiPlayer]
-			if Modifier.currentmap == "map7" or Modifier.currentmap == "map8" or Modifier.currentmap != "map11":
+			if Modifier.currentmap == "map7" or Modifier.currentmap == "map8" or Modifier.currentmap == "map11":
 				position.y += randmovespeedY
 				upsidedownbomb = true
 			else :
@@ -271,7 +271,7 @@ func launch(body):
 	if Modifier.Smashbros:
 		pass
 	else:
-		if upsidedownbomb == true:
+		if body.has_meta("UpsideDown"):
 			body.velocity.y = -randi_range(-450, -750) * (Modifier.PSpeed / Halfit)
 		else:
 			body.velocity.y = randi_range(-450, -750) * (Modifier.PSpeed / Halfit)
