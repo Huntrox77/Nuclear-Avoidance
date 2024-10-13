@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d236nnawauve3"]
+[gd_scene load_steps=37 format=3 uid="uid://d236nnawauve3"]
 
 [ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_fdf1y"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_pswfu"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="25_hho2l"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="27_q6u0p"]
 [ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="28_k0kbv"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="28_qkb5p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
 size = Vector2(12446, 154)
@@ -598,6 +599,44 @@ Shield = ExtResource("28_k0kbv")
 wait_time = 15.0
 one_shot = true
 
+[node name="Pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -343.0
+offset_right = 1.0
+offset_bottom = -342.0
+script = ExtResource("28_qkb5p")
+
+[node name="Resume" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -109.0
+offset_right = 37.0
+offset_bottom = 41.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("15_jy8j4")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -150.0
+offset_right = 77.0
+offset_bottom = -109.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("15_jy8j4")
+text = "Exit to Titlescreen"
+
+[node name="Previous" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -205.0
+offset_top = 150.0
+offset_right = 70.0
+offset_bottom = 191.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("15_jy8j4")
+text = "Exit to Previous"
+
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
@@ -611,3 +650,6 @@ one_shot = true
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
 [connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
 [connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]
+[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
+[connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

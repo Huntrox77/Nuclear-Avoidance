@@ -32,7 +32,7 @@ var Halfit = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var RandomRock = randi_range(1,3)
-	if Modifier.currentmap == "map7" or Modifier.currentmap == "map8" or Modifier.currentmap != "map11":
+	if Modifier.currentmap == "map7" or Modifier.currentmap == "map8" or Modifier.currentmap == "map11":
 		if randmovespeedY <= 0:
 			position.y = 32
 			rotation = 135
@@ -140,12 +140,12 @@ func _ready():
 		elif RandomRock == 3:
 			$Rock3.show()
 			$Nuke.hide()
-		negspawnradius = -500
-		spawnradius = -250
-		negspawnradius2 = -250
-		spawnradius2 = 250
-		negspawnradius3 = 250
-		spawnradius3 = 500
+		negspawnradius = -501
+		spawnradius = -380
+		negspawnradius2 = -212
+		spawnradius2 = 152
+		negspawnradius3 = 397
+		spawnradius3 = 493
 	if Modifier.currentmap == "map10":
 		$Bomb.queue_free()
 		if RandomRock == 1:
@@ -157,20 +157,20 @@ func _ready():
 		elif RandomRock == 3:
 			$Rock3.show()
 			$Nuke.hide()
-		negspawnradius = -500
-		spawnradius = -250
-		negspawnradius2 = -250
-		spawnradius2 = 250
-		negspawnradius3 = 250
-		spawnradius3 = 500
+		negspawnradius = -481
+		spawnradius = -353
+		negspawnradius2 = -73
+		spawnradius2 = 47
+		negspawnradius3 = 328
+		spawnradius3 = 449
 	if Modifier.currentmap == "map11":
 		$Rock.queue_free()
-		negspawnradius = -500
-		spawnradius = -372
+		negspawnradius = -417
+		spawnradius = -289
 		negspawnradius2 = -64
 		spawnradius2 = 64
-		negspawnradius3 = 500
-		spawnradius3 = -372
+		negspawnradius3 = 292
+		spawnradius3 = 420
 	if Modifier.currentmap == "map12":
 		$Bomb.queue_free()
 		if RandomRock == 1:
@@ -182,12 +182,29 @@ func _ready():
 		elif RandomRock == 3:
 			$Rock3.show()
 			$Nuke.hide()
-		negspawnradius = -500
-		spawnradius = -250
-		negspawnradius2 = -250
-		spawnradius2 = 250
-		negspawnradius3 = 250
-		spawnradius3 = 500
+		negspawnradius = -509
+		spawnradius = -445
+		negspawnradius2 = -300
+		spawnradius2 = 194
+		negspawnradius3 = 524
+		spawnradius3 = 461
+	if Modifier.currentmap == "map13":
+		$Bomb.queue_free()
+		if RandomRock == 1:
+			$Rock1.show()
+			$Nuke.hide()
+		elif RandomRock == 2:
+			$Rock2.show()
+			$Nuke.hide()
+		elif RandomRock == 3:
+			$Rock3.show()
+			$Nuke.hide()
+		negspawnradius = -315
+		spawnradius = 137
+		negspawnradius2 = -527
+		spawnradius2 = -315
+		negspawnradius3 = 137
+		spawnradius3 = 454
 	if Modifier.currentmap == "menu":
 		$Rock.queue_free()
 		negspawnradius = -100
@@ -271,7 +288,7 @@ func launch(body):
 	if Modifier.Smashbros:
 		pass
 	else:
-		if body.has_meta("UpsideDown"):
+		if upsidedownbomb == true:
 			body.velocity.y = -randi_range(-450, -750) * (Modifier.PSpeed / Halfit)
 		else:
 			body.velocity.y = randi_range(-450, -750) * (Modifier.PSpeed / Halfit)
@@ -322,8 +339,8 @@ func _on_body_entered(body):
 		move = false
 		raidus.set_deferred("disabled", false)
 		get_parent().add_child(Expl)
-		if Modifier.currentmap == "map9" or Modifier.currentmap == "map10" or Modifier.currentmap == "map12":
-			Expl.get_child(0).color = Color(0.208, 0.082, 0)
+		if Modifier.currentmap == "map9" or Modifier.currentmap == "map10" or Modifier.currentmap == "map12" or Modifier.currentmap == "map13":
+			Expl.get_child(0).color = Color(0.306, 0.133, 0)
 		else:
 			Expl.get_child(0).color = Color(body.get_child(0).color)
 		Expl.position = position

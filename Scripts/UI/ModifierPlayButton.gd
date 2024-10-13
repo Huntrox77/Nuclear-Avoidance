@@ -134,3 +134,11 @@ func _on_pressed():
 			Modifier.resmap12 = true
 			_playeralive()
 			countdown()
+		elif Modifier.map13 == true:
+			Modifier.currentmap = "map13"
+			get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay13.tscn")
+			Modifier.map13 = false
+			Modifier.gameplaying = true
+			Modifier.resmap13 = true
+			_playeralive()
+			countdown()

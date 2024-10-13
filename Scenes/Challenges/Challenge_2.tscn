@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2cugesap60c2"]
+[gd_scene load_steps=22 format=3 uid="uid://d2cugesap60c2"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_31r28"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_igdc5"]
 [ext_resource type="Script" path="res://Scripts/Players/Player_1_ChallengeMode.gd" id="3_elng6"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="4_g6ue8"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_ulwav"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="5_xxrtc"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="6_pfql5"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="7_ex2r2"]
@@ -17,11 +18,12 @@
 [ext_resource type="Script" path="res://Scripts/UI/ChallengeTimers.gd" id="15_lqns3"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="16_ucc7a"]
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="17_4fl7x"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="18_qaiqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v81yx"]
 size = Vector2(6629, 193)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4p8s"]
 
 [node name="Arena_01" type="Node2D"]
 
@@ -65,7 +67,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(-50, -170)
+position = Vector2(-3.8147e-06, -452)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_elng6")
 metadata/Player = "Player"
@@ -73,7 +75,7 @@ metadata/Player = "Player"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
 visible = false
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
+shape = SubResource("RectangleShape2D_k4p8s")
 one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
@@ -88,6 +90,31 @@ visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("4_g6ue8")
+
+[node name="Black" type="ColorRect" parent="Players/Player 1"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 1"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 1"]
+visible = false
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_ulwav")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -166,6 +193,44 @@ position = Vector2(3.5, -307)
 scale = Vector2(0.617188, 0.617188)
 texture = ExtResource("17_4fl7x")
 
+[node name="Pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -343.0
+offset_right = 1.0
+offset_bottom = -342.0
+script = ExtResource("18_qaiqm")
+
+[node name="Resume" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -109.0
+offset_right = 37.0
+offset_bottom = 41.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("16_ucc7a")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -150.0
+offset_right = 77.0
+offset_bottom = -109.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("16_ucc7a")
+text = "Exit to Titlescreen"
+
+[node name="Previous" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -205.0
+offset_top = 150.0
+offset_right = 70.0
+offset_bottom = 191.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("16_ucc7a")
+text = "Exit to Previous"
+
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
@@ -177,3 +242,6 @@ texture = ExtResource("17_4fl7x")
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timers2/CounterTimer" to="Timers2" method="_on_counter_timer_timeout"]
 [connection signal="timeout" from="Timers2/Time2Survive" to="Timers2" method="_on_time_2_survive_timeout"]
+[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
+[connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

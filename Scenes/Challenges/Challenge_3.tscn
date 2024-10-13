@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cue8cnh8tuvi7"]
+[gd_scene load_steps=25 format=3 uid="uid://cue8cnh8tuvi7"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_fg08r"]
 [ext_resource type="AudioStream" uid="uid://3wuiotvo6106" path="res://Music/20 - Threat - Superstructure.mp3" id="2_ej3or"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_k32wn"]
 [ext_resource type="Script" path="res://Scripts/Players/Player_1_ChallengeMode.gd" id="3_oqkfy"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="5_mol7r"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="6_d0gqv"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="7_126io"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="8_4pxx2"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="9_8l2bm"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround7.gd" id="18_6kwht"]
 [ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="18_fo88r"]
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/In Game Stuff/GroundLeft.tscn" id="19_vl0f4"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="20_cnsc2"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="20_ueihu"]
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/In Game Stuff/GroundRight.tscn" id="21_2kree"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/GravSwitch.gd" id="26_spvpx"]
@@ -23,7 +25,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq0am"]
 size = Vector2(12446, 154)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1nq8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2310"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm4t3"]
 size = Vector2(40, 40)
@@ -113,10 +115,16 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(-1, -458)
+position = Vector2(0.999996, -476)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_oqkfy")
 metadata/Player = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+visible = false
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_o2310")
+one_way_collision = true
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
 offset_left = -30.0
@@ -125,17 +133,36 @@ offset_right = 30.0
 offset_bottom = 30.0
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
-
 [node name="Sprite" type="Sprite2D" parent="Players/Player 1"]
 visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
 texture = ExtResource("5_mol7r")
+
+[node name="Black" type="ColorRect" parent="Players/Player 1"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 1"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 1"]
+visible = false
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("6_d0gqv")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -250,6 +277,44 @@ position = Vector2(30, 10)
 scale = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_xm4t3")
 
+[node name="Pause" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_top = -343.0
+offset_right = 1.0
+offset_bottom = -342.0
+script = ExtResource("20_cnsc2")
+
+[node name="Resume" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -109.0
+offset_right = 37.0
+offset_bottom = 41.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("13_jn3q6")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -150.0
+offset_right = 77.0
+offset_bottom = -109.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("13_jn3q6")
+text = "Exit to Titlescreen"
+
+[node name="Previous" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -205.0
+offset_top = 150.0
+offset_right = 70.0
+offset_bottom = 191.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("13_jn3q6")
+text = "Exit to Previous"
+
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
@@ -267,3 +332,6 @@ shape = SubResource("RectangleShape2D_xm4t3")
 [connection signal="timeout" from="Timers3/Time2Survive" to="Timers3" method="_on_time_2_survive_timeout"]
 [connection signal="body_entered" from="GravSwitch/GravSwitch1" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
 [connection signal="body_entered" from="GravSwitch/GravSwitch2" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
+[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
+[connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

@@ -7,7 +7,6 @@ var RaniSpawn = randi_range(1,4)
 var RaniRespawn = randi_range(1,4)
 var Spawning = true
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# ThE FOG IS COMING

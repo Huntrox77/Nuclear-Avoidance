@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bc5eb78ibb13v"]
+[gd_scene load_steps=35 format=3 uid="uid://vvrmyn07ufkt"]
 
 [ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_5jy56"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_sgype"]
@@ -24,9 +24,10 @@
 [ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="23_8o5v3"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="24_uc883"]
 [ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="25_nv63f"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="26_6j2fx"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/GravSwitch.gd" id="26_q26ch"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_am33l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsg0o"]
 size = Vector2(12446, 154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk5fa"]
@@ -55,13 +56,14 @@ script = ExtResource("1_5jy56")
 position = Vector2(0, -324)
 
 [node name="void" type="Area2D" parent="."]
+position = Vector2(0, 434)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("2_sgype")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 234)
-shape = SubResource("RectangleShape2D_am33l")
+shape = SubResource("RectangleShape2D_jsg0o")
 
 [node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
 stream = ExtResource("3_hblpu")
@@ -87,6 +89,43 @@ theme_override_font_sizes/normal_font_size = 18
 text = "You are no god... but I shall feast upon your essence regardless!"
 
 [node name="TextTimer" type="Timer" parent="void"]
+wait_time = 3.0
+one_shot = true
+
+[node name="void2" type="Area2D" parent="void"]
+position = Vector2(0, -2058)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_sgype")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void/void2"]
+position = Vector2(-6, 234)
+shape = SubResource("RectangleShape2D_jsg0o")
+
+[node name="UniCollapse" type="AudioStreamPlayer2D" parent="void/void2"]
+stream = ExtResource("3_hblpu")
+
+[node name="ColorRect" type="ColorRect" parent="void/void2"]
+visible = false
+z_index = 1
+offset_left = -584.0
+offset_top = -651.0
+offset_right = 575.0
+offset_bottom = 21.0
+color = Color(0.713726, 0, 0.74902, 0.156863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="void/void2"]
+visible = false
+z_index = 3
+offset_left = -560.0
+offset_top = -61.0
+offset_right = -136.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0.760784, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "You are no god... but I shall feast upon your essence regardless!"
+
+[node name="TextTimer" type="Timer" parent="void/void2"]
 wait_time = 3.0
 one_shot = true
 
@@ -614,9 +653,49 @@ color = Color(0, 1, 1, 0.490196)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_e5t4j")
 
+[node name="Pause" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -343.0
+offset_right = 1.0
+offset_bottom = -342.0
+script = ExtResource("26_6j2fx")
+
+[node name="Resume" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -109.0
+offset_right = 37.0
+offset_bottom = 41.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("14_4tkdy")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -150.0
+offset_right = 77.0
+offset_bottom = -109.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("14_4tkdy")
+text = "Exit to Titlescreen"
+
+[node name="Previous" type="Button" parent="Pause"]
+layout_mode = 0
+offset_left = -205.0
+offset_top = 150.0
+offset_right = 70.0
+offset_bottom = 191.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("14_4tkdy")
+text = "Exit to Previous"
+
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
+[connection signal="area_entered" from="void/void2" to="void/void2" method="_on_area_entered"]
+[connection signal="body_entered" from="void/void2" to="void/void2" method="_on_body_entered"]
+[connection signal="timeout" from="void/void2/TextTimer" to="void/void2" method="_on_text_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
@@ -629,3 +708,6 @@ shape = SubResource("RectangleShape2D_e5t4j")
 [connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]
 [connection signal="body_entered" from="GravSwitch/GravSwitch1" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
 [connection signal="body_entered" from="GravSwitch/GravSwitch2" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
+[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
+[connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

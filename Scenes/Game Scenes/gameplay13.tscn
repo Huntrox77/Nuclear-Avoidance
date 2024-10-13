@@ -1,39 +1,39 @@
-[gd_scene load_steps=48 format=3 uid="uid://6da6lksj0ijf"]
+[gd_scene load_steps=51 format=3 uid="uid://cgi4utwjg36fd"]
 
-[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_0opni"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_aoast"]
-[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_85isp"]
-[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="4_v8dmk"]
-[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="5_3ogcf"]
-[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="6_58b3u"]
-[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="7_3lydt"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="8_upkdh"]
-[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="9_e6000"]
-[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="10_rqsin"]
-[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="11_ycqyj"]
-[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="12_b77hh"]
-[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="13_d8h16"]
-[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="14_wat2e"]
-[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="15_ce4ij"]
-[ext_resource type="Texture2D" uid="uid://dv8f2b2hao1sk" path="res://Sprites/Backgrounds/CaveBG.png" id="16_lyk8w"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/MapGrounds/AddGround9.gd" id="17_dl8n8"]
-[ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="17_pjtgv"]
-[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="17_r3jvq"]
-[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="18_50ykw"]
-[ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="18_u84rt"]
-[ext_resource type="Texture2D" uid="uid://ba3o1ur7v6rrm" path="res://Sprites/Grounds/PlatformRight.png" id="19_pb1q1"]
-[ext_resource type="Texture2D" uid="uid://3v2d52ctqy2" path="res://Sprites/Grounds/PlatformLeft.png" id="20_8lcat"]
-[ext_resource type="Texture2D" uid="uid://do7jn4j7njan2" path="res://Sprites/Grounds/StonePlatformRight.png" id="21_6qbj4"]
-[ext_resource type="Texture2D" uid="uid://c4h86eqm2fqcl" path="res://Sprites/Grounds/WoodPlatform.png" id="21_08hxu"]
-[ext_resource type="Texture2D" uid="uid://cr751rypspfhe" path="res://Sprites/Grounds/StonePlatformLeft.png" id="22_13ha6"]
-[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="22_wrdv2"]
-[ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="23_ahniq"]
-[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="23_wnxve"]
-[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="24_oo3eg"]
-[ext_resource type="Texture2D" uid="uid://bsj8xxw6uc6u2" path="res://Sprites/Grounds/StonePlatform.png" id="24_r1gh4"]
-[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="25_5ojgr"]
-[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="26_wsw1l"]
-[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="34_n7ij2"]
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_gtyig"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_kgfkf"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_eut05"]
+[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="4_xqm2r"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="5_x51e1"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="6_8hjcv"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="7_h7e0m"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="8_xd3om"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="9_ha1lr"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="10_4q0tn"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="11_3nrgm"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="12_bmery"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="13_uod0m"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="14_d6eyj"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="15_42rq2"]
+[ext_resource type="Texture2D" uid="uid://dv8f2b2hao1sk" path="res://Sprites/Backgrounds/CaveBG.png" id="16_ad5kg"]
+[ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="17_63vti"]
+[ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="18_5q3qs"]
+[ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="19_72ghc"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Ladder.gd" id="20_2777s"]
+[ext_resource type="Texture2D" uid="uid://cnio8d6ehmx1s" path="res://Sprites/Grounds/Ladder.png" id="21_anx4x"]
+[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="22_pnfqf"]
+[ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="23_gass0"]
+[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="24_h5kjt"]
+[ext_resource type="Texture2D" uid="uid://c4h86eqm2fqcl" path="res://Sprites/Grounds/WoodPlatform.png" id="25_stm2p"]
+[ext_resource type="Texture2D" uid="uid://3v2d52ctqy2" path="res://Sprites/Grounds/PlatformLeft.png" id="26_esk57"]
+[ext_resource type="Texture2D" uid="uid://bsj8xxw6uc6u2" path="res://Sprites/Grounds/StonePlatform.png" id="28_g8nyn"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="29_opbpt"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="30_kkyqk"]
+[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="31_phcx7"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="32_f8ap1"]
+[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="33_xdmxx"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Portals.gd" id="34_7rvo2"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="34_22awe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
 size = Vector2(12446, 154)
@@ -53,19 +53,19 @@ size = Vector2(60, 60)
 size = Vector2(60, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btuk5"]
-atlas = ExtResource("17_pjtgv")
+atlas = ExtResource("17_63vti")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kuqlr"]
-atlas = ExtResource("17_pjtgv")
+atlas = ExtResource("17_63vti")
 region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qcfvy"]
-atlas = ExtResource("17_pjtgv")
+atlas = ExtResource("17_63vti")
 region = Rect2(48, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijx56"]
-atlas = ExtResource("17_pjtgv")
+atlas = ExtResource("17_63vti")
 region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6o7al"]
@@ -88,8 +88,11 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqr5u"]
+size = Vector2(48, 281)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
-texture = ExtResource("18_50ykw")
+texture = ExtResource("24_h5kjt")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 1:0/0 = 0
@@ -97,8 +100,14 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_nsxlv"]
 sources/1 = SubResource("TileSetAtlasSource_3dxoi")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7j"]
+size = Vector2(95, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf88h"]
+size = Vector2(202.5, 5)
+
 [node name="Arena_01" type="Node2D"]
-script = ExtResource("1_0opni")
+script = ExtResource("1_gtyig")
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(0, -324)
@@ -107,14 +116,14 @@ metadata/_edit_lock_ = true
 [node name="void" type="Area2D" parent="."]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("2_aoast")
+script = ExtResource("2_kgfkf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 234)
 shape = SubResource("RectangleShape2D_wrwvd")
 
 [node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
-stream = ExtResource("3_85isp")
+stream = ExtResource("3_eut05")
 
 [node name="ColorRect" type="ColorRect" parent="void"]
 visible = false
@@ -143,11 +152,10 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-visible = false
 z_index = -3
-position = Vector2(-508, -196)
+position = Vector2(-166, -427)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_xqm2r")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
@@ -161,7 +169,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, -0.625001)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("5_3ogcf")
+texture = ExtResource("5_x51e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
 visible = false
@@ -192,14 +200,13 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_8hjcv")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-visible = false
 z_index = -3
-position = Vector2(-507, -272)
+position = Vector2(-29, -425)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_xqm2r")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
@@ -214,7 +221,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("7_3lydt")
+texture = ExtResource("7_h7e0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
@@ -243,14 +250,13 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_8hjcv")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-visible = false
 z_index = -3
-position = Vector2(80, -213)
+position = Vector2(-179, -165)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_xqm2r")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
@@ -265,7 +271,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("5_3ogcf")
+texture = ExtResource("5_x51e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
@@ -294,14 +300,13 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_8hjcv")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-visible = false
 z_index = -3
-position = Vector2(77.9999, -273)
+position = Vector2(3.00003, -168)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_xqm2r")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
@@ -316,7 +321,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("7_3lydt")
+texture = ExtResource("7_h7e0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
@@ -345,14 +350,13 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_8hjcv")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-visible = false
 z_index = -3
-position = Vector2(-147, -301)
+position = Vector2(-92, -167)
 scale = Vector2(0.8, 0.8)
-script = ExtResource("4_v8dmk")
+script = ExtResource("4_xqm2r")
 metadata/Player = "Player"
 
 [node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
@@ -367,7 +371,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(-1.25, 1.25)
 scale = Vector2(1.76471, 1.33152)
-texture = ExtResource("7_3lydt")
+texture = ExtResource("7_h7e0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
@@ -396,14 +400,14 @@ metadata/_edit_use_anchors_ = true
 z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
-texture = ExtResource("6_58b3u")
+texture = ExtResource("6_8hjcv")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
 [node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
-script = ExtResource("8_upkdh")
-nuke_scene = ExtResource("9_e6000")
-sweeper_scene = ExtResource("10_rqsin")
+script = ExtResource("8_xd3om")
+nuke_scene = ExtResource("9_ha1lr")
+sweeper_scene = ExtResource("10_4q0tn")
 
 [node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
 wait_time = 5.0
@@ -432,9 +436,9 @@ autostart = true
 [node name="Modifier Stuff" type="Node" parent="."]
 
 [node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
-script = ExtResource("11_ycqyj")
-blackout = ExtResource("12_b77hh")
-fog = ExtResource("13_d8h16")
+script = ExtResource("11_3nrgm")
+blackout = ExtResource("12_bmery")
+fog = ExtResource("13_uod0m")
 
 [node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
 wait_time = 10.0
@@ -452,10 +456,10 @@ offset_left = -552.0
 offset_top = -625.0
 offset_right = -330.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P2" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -463,11 +467,11 @@ offset_left = -304.0
 offset_top = -625.0
 offset_right = -77.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P3" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -475,10 +479,10 @@ offset_left = 78.0
 offset_top = -625.0
 offset_right = 300.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Player 1: 10%"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P4" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -486,11 +490,11 @@ offset_left = 326.0
 offset_top = -625.0
 offset_right = 553.0
 offset_bottom = -584.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Player 2: 10%"
 horizontal_alignment = 2
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -498,10 +502,10 @@ offset_left = -533.0
 offset_top = -65.0
 offset_right = -333.0
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "P1 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -509,10 +513,10 @@ offset_left = -245.5
 offset_top = -65.0
 offset_right = -40.5
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "P2 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -520,10 +524,10 @@ offset_left = 42.0
 offset_top = -65.0
 offset_right = 247.0
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "P3 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
 layout_mode = 0
@@ -531,10 +535,10 @@ offset_left = 329.5
 offset_top = -65.0
 offset_right = 534.5
 offset_bottom = -24.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "P4 Points: 0"
 vertical_alignment = 1
-script = ExtResource("15_ce4ij")
+script = ExtResource("15_42rq2")
 
 [node name="Cave" type="Polygon2D" parent="GUI\'s"]
 z_index = -2
@@ -554,7 +558,7 @@ polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -51
 z_index = -5
 position = Vector2(4.76837e-06, -281)
 scale = Vector2(0.599997, 0.599997)
-texture = ExtResource("16_lyk8w")
+texture = ExtResource("16_ad5kg")
 
 [node name="Lamps" type="Node" parent="GUI\'s"]
 
@@ -564,12 +568,12 @@ position = Vector2(315, -483)
 sprite_frames = SubResource("SpriteFrames_6o7al")
 animation = &"LavaLamp"
 frame_progress = 0.160004
-script = ExtResource("18_u84rt")
+script = ExtResource("18_5q3qs")
 
 [node name="Chain" type="Sprite2D" parent="GUI\'s/Lamps"]
 z_index = -3
 position = Vector2(315, -527)
-texture = ExtResource("23_ahniq")
+texture = ExtResource("19_72ghc")
 
 [node name="Lamp2" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
 z_index = -3
@@ -577,30 +581,128 @@ position = Vector2(-403, -396)
 sprite_frames = SubResource("SpriteFrames_6o7al")
 animation = &"LavaLamp"
 frame_progress = 0.0810805
-script = ExtResource("18_u84rt")
+script = ExtResource("18_5q3qs")
 
 [node name="Chain2" type="Sprite2D" parent="GUI\'s/Lamps"]
 z_index = -3
 position = Vector2(-403, -440)
-texture = ExtResource("23_ahniq")
+texture = ExtResource("19_72ghc")
 
 [node name="Chain3" type="Sprite2D" parent="GUI\'s/Lamps"]
 z_index = -3
 position = Vector2(-403, -503)
-texture = ExtResource("23_ahniq")
+texture = ExtResource("19_72ghc")
 
 [node name="Chain4" type="Sprite2D" parent="GUI\'s/Lamps"]
 z_index = -3
 position = Vector2(-403, -567)
-texture = ExtResource("23_ahniq")
+texture = ExtResource("19_72ghc")
 
 [node name="Grounds" type="Node" parent="."]
-script = ExtResource("17_dl8n8")
-Ground = ExtResource("17_r3jvq")
 
-[node name="MovingThingTimer" type="Timer" parent="Grounds"]
-wait_time = 5.0
-autostart = true
+[node name="Grounds" type="Node" parent="Grounds"]
+
+[node name="Platform" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(-315, -337)
+
+[node name="Platform2" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(-251, -337)
+
+[node name="Platform3" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(-187, -337)
+
+[node name="Platform4" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(-122, -337)
+
+[node name="Platform5" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(-57, -337)
+
+[node name="Platform6" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(8, -337)
+
+[node name="Platform7" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(72, -337)
+
+[node name="Platform8" parent="Grounds/Grounds" instance=ExtResource("22_pnfqf")]
+visible = false
+position = Vector2(137, -337)
+
+[node name="Ground" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(-317, -70)
+
+[node name="Ground2" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(-253, -70)
+
+[node name="Ground3" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(-189, -70)
+
+[node name="Ground4" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(-125, -70)
+
+[node name="Ground5" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(-61, -70)
+
+[node name="Ground6" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(3, -70)
+
+[node name="Ground7" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(67, -70)
+
+[node name="Ground8" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(131, -70)
+
+[node name="Ground9" parent="Grounds/Grounds" instance=ExtResource("23_gass0")]
+visible = false
+position = Vector2(134, -70)
+
+[node name="Ladders" type="Node" parent="Grounds"]
+
+[node name="Ladder1" type="Area2D" parent="Grounds/Ladders"]
+z_index = -5
+position = Vector2(-54, -191)
+script = ExtResource("20_2777s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -38.5)
+shape = SubResource("RectangleShape2D_nqr5u")
+
+[node name="Ladder" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, 70)
+texture = ExtResource("21_anx4x")
+
+[node name="Ladder2" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, 6)
+texture = ExtResource("21_anx4x")
+
+[node name="Ladder3" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -58)
+scale = Vector2(1, -1)
+texture = ExtResource("21_anx4x")
+
+[node name="Ladder4" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -122)
+scale = Vector2(-1, -1)
+texture = ExtResource("21_anx4x")
+
+[node name="Ladder5" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -138)
+scale = Vector2(-1, -1)
+texture = ExtResource("21_anx4x")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nsxlv")
@@ -610,168 +712,215 @@ format = 2
 [node name="SpawnPos\'" type="Node" parent="."]
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-427, -209)
+position = Vector2(-269, -430)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(158, -212)
+position = Vector2(90, -429)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(404, -204)
+position = Vector2(-270, -165)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(497, -208)
+position = Vector2(87, -166)
 
 [node name="PlatformSprites" type="Node" parent="."]
 
 [node name="Platform1" type="Node" parent="PlatformSprites"]
 
-[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform1"]
+[node name="1" type="Sprite2D" parent="PlatformSprites/Platform1"]
 z_index = -3
-position = Vector2(88, -140)
-scale = Vector2(-1, 1)
-texture = ExtResource("19_pb1q1")
+position = Vector2(-315, -102)
+rotation = -3.14159
+texture = ExtResource("28_g8nyn")
 
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform1"]
+[node name="2" type="Sprite2D" parent="PlatformSprites/Platform1"]
 z_index = -3
-position = Vector2(152, -140)
-scale = Vector2(-1, 1)
-texture = ExtResource("20_8lcat")
+position = Vector2(-251, -102)
+rotation = -3.14159
+texture = ExtResource("28_g8nyn")
+
+[node name="3" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-187, -102)
+rotation = -3.14159
+texture = ExtResource("28_g8nyn")
+
+[node name="4" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-134, -102)
+rotation = -3.14159
+texture = ExtResource("28_g8nyn")
+
+[node name="5" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-70, -102)
+rotation = -3.14159
+texture = ExtResource("28_g8nyn")
+
+[node name="6" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-6, -102)
+rotation = -3.14159
+texture = ExtResource("28_g8nyn")
+
+[node name="7" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(58, -102)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_g8nyn")
+
+[node name="8" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(122, -102)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_g8nyn")
+
+[node name="9" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(134, -102)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_g8nyn")
+
+[node name="Chain2" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(-338, -135)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain3" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(-338, -198)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain4" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(-338, -262)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain5" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(-338, -326)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain6" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(158, -134)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain7" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(158, -198)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain8" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(158, -262)
+texture = ExtResource("19_72ghc")
+
+[node name="Chain9" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -4
+position = Vector2(158, -326)
+texture = ExtResource("19_72ghc")
 
 [node name="Platform2" type="Node" parent="PlatformSprites"]
 
-[node name="PlatformRight3" type="Sprite2D" parent="PlatformSprites/Platform2"]
+[node name="1" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(493, -140)
-texture = ExtResource("21_08hxu")
+position = Vector2(-314, -370)
+rotation = -3.14159
+texture = ExtResource("26_esk57")
 
-[node name="PlatformRight4" type="Sprite2D" parent="PlatformSprites/Platform2"]
+[node name="2" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(397, -140)
-texture = ExtResource("21_08hxu")
+position = Vector2(-250, -370)
+rotation = -3.14159
+texture = ExtResource("25_stm2p")
 
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform2"]
+[node name="3" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(437, -140)
-scale = Vector2(-1, 1)
-texture = ExtResource("20_8lcat")
+position = Vector2(-186, -370)
+rotation = -3.14159
+texture = ExtResource("25_stm2p")
 
-[node name="Platform3" type="Node" parent="PlatformSprites"]
-
-[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform3"]
+[node name="4" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(-444, -140)
-texture = ExtResource("21_08hxu")
+position = Vector2(-122, -370)
+rotation = -3.14159
+texture = ExtResource("25_stm2p")
 
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform3"]
+[node name="5" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(-380, -140)
-texture = ExtResource("20_8lcat")
+position = Vector2(-58, -370)
+rotation = -3.14159
+texture = ExtResource("25_stm2p")
 
-[node name="PlatformLeft3" type="Sprite2D" parent="PlatformSprites/Platform3"]
+[node name="6" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(-501, -140)
-texture = ExtResource("21_08hxu")
+position = Vector2(6, -370)
+rotation = -3.14159
+texture = ExtResource("25_stm2p")
 
-[node name="Platform4" type="Node" parent="PlatformSprites"]
-
-[node name="PlatformRight2" type="Sprite2D" parent="PlatformSprites/Platform4"]
+[node name="7" type="Sprite2D" parent="PlatformSprites/Platform2"]
 z_index = -3
-position = Vector2(-212, -199)
+position = Vector2(70, -370)
+scale = Vector2(-1, -1)
+texture = ExtResource("25_stm2p")
+
+[node name="8" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -3
+position = Vector2(134, -370)
 scale = Vector2(1, -1)
-texture = ExtResource("21_6qbj4")
+texture = ExtResource("26_esk57")
 
-[node name="PlatformLeft2" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-84, -199)
-scale = Vector2(1, -1)
-texture = ExtResource("22_13ha6")
+[node name="Chain2" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(-338, -433)
+texture = ExtResource("19_72ghc")
 
-[node name="StonePlatform" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-148, -183)
-scale = Vector2(-1, 1)
-texture = ExtResource("24_r1gh4")
+[node name="Chain3" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(-338, -496)
+texture = ExtResource("19_72ghc")
 
-[node name="Chain" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -262)
-texture = ExtResource("23_ahniq")
+[node name="Chain4" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(-338, -560)
+texture = ExtResource("19_72ghc")
 
-[node name="Chain2" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -326)
-texture = ExtResource("23_ahniq")
+[node name="Chain5" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(-338, -608)
+texture = ExtResource("19_72ghc")
 
-[node name="Chain3" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -390)
-texture = ExtResource("23_ahniq")
+[node name="Chain6" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(158, -433)
+texture = ExtResource("19_72ghc")
 
-[node name="Chain4" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -455)
-texture = ExtResource("23_ahniq")
+[node name="Chain7" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(158, -496)
+texture = ExtResource("19_72ghc")
 
-[node name="Chain5" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -518)
-texture = ExtResource("23_ahniq")
+[node name="Chain8" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(158, -560)
+texture = ExtResource("19_72ghc")
 
-[node name="Chain6" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -582)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain7" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-236, -646)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain8" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -262)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain9" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -326)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain10" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -390)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain11" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -455)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain12" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -518)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain13" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -582)
-texture = ExtResource("23_ahniq")
-
-[node name="Chain14" type="Sprite2D" parent="PlatformSprites/Platform4"]
-z_index = -3
-position = Vector2(-60, -646)
-texture = ExtResource("23_ahniq")
+[node name="Chain9" type="Sprite2D" parent="PlatformSprites/Platform2"]
+z_index = -4
+position = Vector2(158, -608)
+texture = ExtResource("19_72ghc")
 
 [node name="Timer" type="Label" parent="."]
 offset_left = -51.0
 offset_top = -622.0
 offset_right = 52.0
 offset_bottom = -581.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "0:0:0"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("22_wrdv2")
+script = ExtResource("29_opbpt")
 
 [node name="Timer" type="Timer" parent="Timer"]
 wait_time = 0.01
@@ -782,8 +931,8 @@ offset_left = -51.0
 offset_top = -622.0
 offset_right = 52.0
 offset_bottom = -581.0
-theme = ExtResource("14_wat2e")
-theme_override_styles/normal = ExtResource("23_wnxve")
+theme = ExtResource("14_d6eyj")
+theme_override_styles/normal = ExtResource("30_kkyqk")
 text = "0:0:0"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -795,33 +944,86 @@ z_as_relative = false
 offset_left = -576.0
 offset_top = -648.0
 offset_right = 576.0
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 theme_override_font_sizes/font_size = 256
-theme_override_styles/normal = ExtResource("23_wnxve")
+theme_override_styles/normal = ExtResource("30_kkyqk")
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("24_oo3eg")
+script = ExtResource("31_phcx7")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="Countdown"]
 
 [node name="Power-Ups" type="Node" parent="."]
-script = ExtResource("25_5ojgr")
-Shield = ExtResource("26_wsw1l")
+script = ExtResource("32_f8ap1")
+Shield = ExtResource("33_xdmxx")
 
 [node name="Timer" type="Timer" parent="Power-Ups"]
 wait_time = 15.0
 one_shot = true
 
-[node name="Pause" type="Control" parent="."]
+[node name="Portals" type="Node" parent="."]
+script = ExtResource("34_7rvo2")
+
+[node name="P1" type="ColorRect" parent="Portals"]
+z_index = -5
+offset_left = -527.0
+offset_top = -105.0
+offset_right = -432.0
+offset_bottom = -101.0
+color = Color(0.92549, 0.541176, 0, 1)
+
+[node name="P1" type="Area2D" parent="Portals/P1"]
 visible = false
+position = Vector2(284, 106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/P1/P1"]
+position = Vector2(-236.5, -104)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_c5q7j")
+one_way_collision_margin = 10.0
+
+[node name="P2-30" type="ColorRect" parent="Portals"]
+z_index = -5
+offset_left = 454.0
+offset_top = -105.0
+offset_right = 549.0
+offset_bottom = -101.0
+rotation = -0.523599
+color = Color(0, 0.733333, 0.784314, 1)
+
+[node name="P2" type="Area2D" parent="Portals/P2-30"]
+visible = false
+position = Vector2(284, 106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/P2-30/P2"]
+position = Vector2(-236.5, -104)
+shape = SubResource("RectangleShape2D_c5q7j")
+one_way_collision_margin = 10.0
+
+[node name="VeloDect" type="Area2D" parent="Portals"]
+position = Vector2(-4, 229)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/VeloDect"]
+position = Vector2(-472.25, -367)
+shape = SubResource("RectangleShape2D_vf88h")
+
+[node name="VeloDect2" type="Area2D" parent="Portals"]
+position = Vector2(1073, -73)
+rotation = -0.523599
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/VeloDect2"]
+position = Vector2(-472.25, -367)
+shape = SubResource("RectangleShape2D_vf88h")
+
+[node name="Pause" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -343.0
 offset_right = 1.0
 offset_bottom = -342.0
-script = ExtResource("34_n7ij2")
+script = ExtResource("34_22awe")
 
 [node name="Resume" type="Button" parent="Pause"]
 layout_mode = 0
@@ -829,7 +1031,7 @@ offset_left = -109.0
 offset_right = 37.0
 offset_bottom = 41.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
@@ -839,7 +1041,7 @@ offset_top = -150.0
 offset_right = 77.0
 offset_bottom = -109.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
@@ -849,7 +1051,7 @@ offset_top = 150.0
 offset_right = 70.0
 offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("14_wat2e")
+theme = ExtResource("14_d6eyj")
 text = "Exit to Previous"
 
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
@@ -862,10 +1064,15 @@ text = "Exit to Previous"
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
 [connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
-[connection signal="timeout" from="Grounds/MovingThingTimer" to="Grounds" method="_on_moving_thing_timer_timeout"]
+[connection signal="body_entered" from="Grounds/Ladders/Ladder1" to="Grounds/Ladders/Ladder1" method="_on_body_entered"]
+[connection signal="body_exited" from="Grounds/Ladders/Ladder1" to="Grounds/Ladders/Ladder1" method="_on_body_exited"]
 [connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
 [connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
 [connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Portals/P1/P1" to="Portals" method="_on_p_1_body_entered"]
+[connection signal="body_entered" from="Portals/P2-30/P2" to="Portals" method="_on_p_2_body_entered"]
+[connection signal="body_entered" from="Portals/VeloDect" to="Portals" method="_on_velo_dect_body_entered"]
+[connection signal="body_entered" from="Portals/VeloDect2" to="Portals" method="_on_velo_dect_body_entered"]
 [connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
 [connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

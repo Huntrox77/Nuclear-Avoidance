@@ -26,6 +26,7 @@ var GravityMult = 100
 var PSpeed = 100
 
 # Global Stuff
+var pause = false
 var StartCountdown = false
 var CountdownFinished = false
 var reset = false
@@ -54,6 +55,7 @@ var map9 = false
 var map10 = false
 var map11 = false
 var map12 = false
+var map13 = false
 var resmap1 = false
 var resmap2 = false
 var resmap3 = false
@@ -66,6 +68,7 @@ var resmap9 = false
 var resmap10 = false
 var resmap11 = false
 var resmap12 = false
+var resmap13 = false
 var Nuke2 = false
 var Nuke3 = false
 var Nuke4 = false
@@ -108,6 +111,7 @@ func _resetmaps():
 	map10 = resmap10
 	map11 = resmap11
 	map12 = resmap12
+	map13 = resmap13
 	resmap1 = false
 	resmap2 = false
 	resmap3 = false
@@ -120,11 +124,11 @@ func _resetmaps():
 	resmap10 = false
 	resmap11 = false
 	resmap12 = false
+	resmap13 = false
 	currentmap = "menu"
 
 func _ready():
-	InTimer = Config.InTimer
-	pass # Replace with function body.
+	pass
 
 func _reset():
 	gameplaying = false
@@ -217,6 +221,8 @@ func countdown():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if currentmap == "menu":
+		pause = false
 	if ChallengeOrLocal == "local":
 		HowManyPlayersLeft = HowManyPlayersLeftChoice
 	else:
@@ -308,6 +314,13 @@ func _process(_delta):
 				resmap12 = true
 				_resetplayers()
 				countdown()
+			elif map13 == true:
+				get_tree().change_scene_to_file("res://Scenes/Game Scenes/gameplay13.tscn")
+				currentmap = "map13"
+				map13 = false
+				resmap13 = true
+				_resetplayers()
+				countdown()
 			elif loop == true:
 					_resetmaps()
 			else:
@@ -317,12 +330,5 @@ func _process(_delta):
 					get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
 				elif ChallengeOrLocal == "Challenge":
 					get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
-	#Code to pause the game by sending them back to the title screen.
-	if Input.is_action_pressed("Pause"):
-		if gameplaying == true:
-			playersleft = 0
-			_reset()
-			if ChallengeOrLocal == "local":
-				get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
-			elif ChallengeOrLocal == "Challenge":
-				get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
+	if Input.is_action_just_pressed("Pause"):
+		pause = not pause
