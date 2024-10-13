@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=25 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/UI/RedArrows.png" id="18_v0ldg"]
 [ext_resource type="Texture2D" uid="uid://cgrmkd8krqru0" path="res://Sprites/UI/YellowStar.png" id="19_4komw"]
 [ext_resource type="Texture2D" uid="uid://dbtoxbijx0u5f" path="res://Sprites/UI/GreenArrows.png" id="19_6l8jy"]
+[ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="23_ohndb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -95,6 +96,16 @@ expand_icon = true
 script = ExtResource("4_efgvg")
 metadata/_edit_use_anchors_ = true
 metadata/Back2Menu = true
+
+[node name="Panel" type="Panel" parent="Buttons"]
+z_index = -5
+layout_mode = 0
+offset_left = 22.0
+offset_top = 13.0
+offset_right = 1132.0
+offset_bottom = 637.0
+mouse_filter = 2
+theme = ExtResource("2_dymia")
 
 [node name="P1" type="TextureButton" parent="Buttons"]
 layout_mode = 1
@@ -543,14 +554,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="."]
-z_index = -5
-offset_left = -553.0
-offset_top = -311.0
-offset_right = 557.0
-offset_bottom = 313.0
-mouse_filter = 2
-theme = ExtResource("2_dymia")
+[node name="Sky2" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(-12, 13)
+scale = Vector2(0.613, 0.613)
+texture = ExtResource("23_ohndb")
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/AdvMod" to="Buttons" method="_on_adv_mod_pressed"]

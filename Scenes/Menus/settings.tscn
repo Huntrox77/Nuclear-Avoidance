@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b54x5poduok87"]
+[gd_scene load_steps=8 format=3 uid="uid://b54x5poduok87"]
 
 [ext_resource type="Script" path="res://Scripts/UI/AllTheButtonStuffInSettings.gd" id="1_ilj2u"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_cxbd7"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="3_pf0l7"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="4_kvfiq"]
 [ext_resource type="Script" path="res://Scripts/Players/PlayerControls.gd" id="5_cwdhd"]
+[ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="6_f0bd5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lnbot"]
 font = ExtResource("3_pf0l7")
@@ -73,6 +74,16 @@ popup/item_0/id = 0
 popup/item_1/text = "End game on: 1 player left"
 popup/item_1/id = 1
 
+[node name="Panel" type="Panel" parent="Buttons and Stuff"]
+z_index = -5
+layout_mode = 0
+offset_left = -540.0
+offset_top = -311.0
+offset_right = 570.0
+offset_bottom = 313.0
+mouse_filter = 2
+theme = ExtResource("4_kvfiq")
+
 [node name="UI Size" type="OptionButton" parent="Buttons and Stuff"]
 layout_mode = 0
 offset_left = 269.0
@@ -117,16 +128,6 @@ action_mode = 0
 text = "               < Back"
 expand_icon = true
 script = ExtResource("2_cxbd7")
-
-[node name="Panel" type="Panel" parent="Buttons and Stuff"]
-z_index = -5
-layout_mode = 0
-offset_left = -540.0
-offset_top = -311.0
-offset_right = 570.0
-offset_bottom = 313.0
-mouse_filter = 2
-theme = ExtResource("4_kvfiq")
 
 [node name="PlayerTab" type="TabBar" parent="Buttons and Stuff"]
 layout_mode = 1
@@ -342,6 +343,12 @@ text = "t"
 layout_mode = 2
 text = "g
 "
+
+[node name="Sky2" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(-12, 13)
+scale = Vector2(0.613, 0.613)
+texture = ExtResource("6_f0bd5")
 
 [connection signal="item_selected" from="Buttons and Stuff/OptionButton" to="Buttons and Stuff" method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="Buttons and Stuff/Timer" to="Buttons and Stuff" method="_on_timer_item_selected"]

@@ -443,6 +443,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -552.0
 offset_top = -625.0
@@ -454,6 +455,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P2" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -304.0
 offset_top = -625.0
@@ -466,6 +468,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P3" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 78.0
 offset_top = -625.0
@@ -477,6 +480,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P4" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 326.0
 offset_top = -625.0
@@ -489,6 +493,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -533.0
 offset_top = -65.0
@@ -500,6 +505,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -245.5
 offset_top = -65.0
@@ -511,6 +517,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 42.0
 offset_top = -65.0
@@ -522,6 +529,7 @@ vertical_alignment = 1
 script = ExtResource("20_8vcyw")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 329.5
 offset_top = -65.0
@@ -664,6 +672,7 @@ wait_time = 15.0
 one_shot = true
 
 [node name="Pause" type="Control" parent="."]
+process_mode = 3
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -673,6 +682,8 @@ offset_bottom = -342.0
 script = ExtResource("28_62bht")
 
 [node name="Resume" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -109.0
 offset_right = 37.0
@@ -682,6 +693,8 @@ theme = ExtResource("16_51bwm")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -230.0
 offset_top = -150.0
@@ -692,6 +705,8 @@ theme = ExtResource("16_51bwm")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -205.0
 offset_top = 150.0

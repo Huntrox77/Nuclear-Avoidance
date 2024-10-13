@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=17 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
-[ext_resource type="Script" path="res://Scripts/UI/PlayButton.gd" id="1_nig56"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_6gjgd"]
 [ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_unan6"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="5_kcqfq"]
@@ -9,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_r4wjf"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_uwdjg"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="9_m05l0"]
-[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="10_ihrwe"]
+[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="10_ihrwe"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_n42oj"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_h4j2j"]
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_tsq2a"]
@@ -58,7 +57,6 @@ theme = ExtResource("1_0l6ev")
 theme_override_fonts/font = ExtResource("2_6gjgd")
 action_mode = 0
 text = "Play Local"
-script = ExtResource("1_nig56")
 metadata/_edit_use_anchors_ = true
 
 [node name="Online" type="Button" parent="Buttons"]
@@ -114,7 +112,6 @@ theme_override_fonts/font = ExtResource("2_6gjgd")
 action_mode = 0
 text = "Challenges
 "
-script = ExtResource("1_nig56")
 metadata/_edit_use_anchors_ = true
 
 [node name="Settings" type="Button" parent="Buttons"]
@@ -269,7 +266,7 @@ position = Vector2(-12, 13)
 scale = Vector2(0.613281, 0.613281)
 texture = ExtResource("12_tsq2a")
 
-[connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Play Button" to="Buttons/Quit Game" method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/Online" to="Buttons/Online" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Quit Game" to="Buttons/Quit Game" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Challenges" to="Buttons/Quit Game" method="_on_challenges_pressed"]

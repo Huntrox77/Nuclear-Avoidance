@@ -15,6 +15,8 @@ func _ready():
 	Modifier.PlayerThree = $"Players/Player 3"
 	Modifier.PlayerFour = $"Players/Player 4"
 	Modifier.PlayerFive = $"Players/Player 5"
+	Modifier.LampOne = $Lamps/Lamp1
+	Modifier.LampTwo = $Lamps/Lamp2
 	#Random Spawn
 	while Spawning == true:
 		for i in Players.get_children():

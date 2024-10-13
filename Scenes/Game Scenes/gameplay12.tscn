@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="17_u2w2q"]
 [ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="18_k8tsw"]
 [ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="19_cffsg"]
-[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="20_bhu5k"]
+[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="20_bhu5k"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Ladder.gd" id="20_yhqho"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="21_lbaik"]
 [ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="22_m387n"]
@@ -455,6 +455,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -552.0
 offset_top = -625.0
@@ -466,6 +467,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P2" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -304.0
 offset_top = -625.0
@@ -478,6 +480,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P3" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 78.0
 offset_top = -625.0
@@ -489,6 +492,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P4" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 326.0
 offset_top = -625.0
@@ -501,6 +505,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -533.0
 offset_top = -65.0
@@ -512,6 +517,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -245.5
 offset_top = -65.0
@@ -523,6 +529,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 42.0
 offset_top = -65.0
@@ -534,6 +541,7 @@ vertical_alignment = 1
 script = ExtResource("15_x2o7x")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 329.5
 offset_top = -65.0
@@ -931,6 +939,8 @@ position = Vector2(9.5, 8.0625)
 shape = SubResource("RectangleShape2D_rtewf")
 
 [node name="Pause" type="Control" parent="."]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -343.0
@@ -939,6 +949,8 @@ offset_bottom = -342.0
 script = ExtResource("35_0oele")
 
 [node name="Resume" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -109.0
 offset_right = 37.0
@@ -948,6 +960,8 @@ theme = ExtResource("14_r65cf")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -230.0
 offset_top = -150.0
@@ -958,6 +972,8 @@ theme = ExtResource("14_r65cf")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -205.0
 offset_top = 150.0
@@ -966,6 +982,14 @@ offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
 theme = ExtResource("14_r65cf")
 text = "Exit to Previous"
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="Lamp1" type="Node2D" parent="Lamps"]
+position = Vector2(-403, -396)
+
+[node name="Lamp2" type="Node2D" parent="Lamps"]
+position = Vector2(315, -483)
 
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]

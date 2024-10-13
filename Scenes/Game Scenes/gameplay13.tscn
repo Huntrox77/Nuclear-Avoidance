@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="19_72ghc"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Ladder.gd" id="20_2777s"]
 [ext_resource type="Texture2D" uid="uid://cnio8d6ehmx1s" path="res://Sprites/Grounds/Ladder.png" id="21_anx4x"]
-[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="22_pnfqf"]
+[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="22_pnfqf"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="23_gass0"]
 [ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="24_h5kjt"]
 [ext_resource type="Texture2D" uid="uid://c4h86eqm2fqcl" path="res://Sprites/Grounds/WoodPlatform.png" id="25_stm2p"]
@@ -89,7 +89,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqr5u"]
-size = Vector2(48, 281)
+size = Vector2(48, 279)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
 texture = ExtResource("24_h5kjt")
@@ -152,7 +152,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-z_index = -3
+z_index = -4
 position = Vector2(-166, -427)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("4_xqm2r")
@@ -203,7 +203,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("6_8hjcv")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-z_index = -3
+z_index = -4
 position = Vector2(-29, -425)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("4_xqm2r")
@@ -253,7 +253,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("6_8hjcv")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-z_index = -3
+z_index = -4
 position = Vector2(-179, -165)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("4_xqm2r")
@@ -303,7 +303,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("6_8hjcv")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-z_index = -3
+z_index = -4
 position = Vector2(3.00003, -168)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("4_xqm2r")
@@ -353,7 +353,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("6_8hjcv")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-z_index = -3
+z_index = -4
 position = Vector2(-92, -167)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("4_xqm2r")
@@ -451,6 +451,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="P1" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -552.0
 offset_top = -625.0
@@ -462,6 +463,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P2" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -304.0
 offset_top = -625.0
@@ -474,6 +476,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P3" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 78.0
 offset_top = -625.0
@@ -485,6 +488,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P4" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 326.0
 offset_top = -625.0
@@ -497,6 +501,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P1Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -533.0
 offset_top = -65.0
@@ -508,6 +513,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P2Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = -245.5
 offset_top = -65.0
@@ -519,6 +525,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P3Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 42.0
 offset_top = -65.0
@@ -530,6 +537,7 @@ vertical_alignment = 1
 script = ExtResource("15_42rq2")
 
 [node name="P4Score" type="Label" parent="GUI\'s"]
+z_index = 20
 layout_mode = 0
 offset_left = 329.5
 offset_top = -65.0
@@ -678,7 +686,7 @@ position = Vector2(-54, -191)
 script = ExtResource("20_2777s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grounds/Ladders/Ladder1"]
-position = Vector2(-38, -38.5)
+position = Vector2(-38, -37.5)
 shape = SubResource("RectangleShape2D_nqr5u")
 
 [node name="Ladder" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
@@ -1018,6 +1026,8 @@ position = Vector2(-472.25, -367)
 shape = SubResource("RectangleShape2D_vf88h")
 
 [node name="Pause" type="Control" parent="."]
+process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -343.0
@@ -1026,6 +1036,8 @@ offset_bottom = -342.0
 script = ExtResource("34_22awe")
 
 [node name="Resume" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -109.0
 offset_right = 37.0
@@ -1035,6 +1047,8 @@ theme = ExtResource("14_d6eyj")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -230.0
 offset_top = -150.0
@@ -1045,6 +1059,8 @@ theme = ExtResource("14_d6eyj")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
+process_mode = 3
+z_index = 30
 layout_mode = 0
 offset_left = -205.0
 offset_top = 150.0
@@ -1053,6 +1069,14 @@ offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
 theme = ExtResource("14_d6eyj")
 text = "Exit to Previous"
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="Lamp1" type="Node2D" parent="Lamps"]
+position = Vector2(-403, -396)
+
+[node name="Lamp2" type="Node2D" parent="Lamps"]
+position = Vector2(315, -483)
 
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]

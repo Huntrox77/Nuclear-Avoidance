@@ -1,12 +1,14 @@
 extends Node
 @onready var Config = get_node("/root/ConfigScript")
 
-# Players
+# Players & Lamps
 var PlayerOne = null
 var PlayerTwo = null
 var PlayerThree = null
 var PlayerFour = null
 var PlayerFive = null
+var LampOne = null
+var LampTwo = null
 
 # Modifiers
 var listofplayers = []
@@ -324,11 +326,7 @@ func _process(_delta):
 			elif loop == true:
 					_resetmaps()
 			else:
-				playersleft = 0
-				_reset()
-				if ChallengeOrLocal == "local":
-					get_tree().change_scene_to_file("res://Scenes/Menus/modifiers&players.tscn")
-				elif ChallengeOrLocal == "Challenge":
-					get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
+				get_tree().change_scene_to_file("res://Scenes/Game Scenes/win_screen.tscn")
 	if Input.is_action_just_pressed("Pause"):
 		pause = not pause
+		get_tree().paused = pause

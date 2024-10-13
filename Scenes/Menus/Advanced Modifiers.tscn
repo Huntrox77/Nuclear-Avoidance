@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bijf1mjlkepfu"]
+[gd_scene load_steps=6 format=3 uid="uid://bijf1mjlkepfu"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sliders.gd" id="1_avl2f"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_7aw80"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="3_p7ts3"]
 [ext_resource type="Script" path="res://Scripts/Players/P5.gd" id="4_pcirl"]
+[ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="5_qvc4s"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -236,6 +237,12 @@ offset_bottom = -176.0
 theme = ExtResource("2_7aw80")
 text = "Player 5"
 script = ExtResource("4_pcirl")
+
+[node name="Sky2" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(-12, 13)
+scale = Vector2(0.613, 0.613)
+texture = ExtResource("5_qvc4s")
 
 [connection signal="pressed" from="Back2Modifiers" to="Back2Modifiers" method="_on_pressed"]
 [connection signal="pressed" from="P5" to="P5" method="_on_pressed"]

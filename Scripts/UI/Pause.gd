@@ -16,9 +16,12 @@ func _process(_delta):
 
 func _on_resume_pressed():
 	Modifier.pause = false
+	get_tree().paused = false
 
 
 func _on_title_pressed():
+	Modifier.pause = false
+	get_tree().paused = false
 	if Modifier.gameplaying == true:
 			Modifier.playersleft = 0
 			Modifier._reset()
@@ -26,6 +29,8 @@ func _on_title_pressed():
 
 
 func _on_previous_pressed():
+	Modifier.pause = false
+	get_tree().paused = false
 	if Modifier.gameplaying == true:
 			Modifier.playersleft = 0
 			Modifier._reset()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://17etr8vtr1ye"]
+[gd_scene load_steps=8 format=3 uid="uid://17etr8vtr1ye"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_tu6iy"]
 [ext_resource type="Texture2D" uid="uid://cjmvkra7ok58k" path="res://Sprites/UI/Red X.png" id="2_bhle1"]
@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://dcsrqxsry8qx8" path="res://StyleBoxes/BlackBG_WhiteOutline_StyleBox.tres" id="3_rmtqv"]
 [ext_resource type="Texture2D" uid="uid://doyv3vrgpp531" path="res://Sprites/UI/Check.webp" id="5_sifh2"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="6_e1vkb"]
+[ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="7_sbb8a"]
 
 [node name="Achievements" type="Control"]
 layout_mode = 3
@@ -423,5 +424,11 @@ action_mode = 0
 text = "               < Back"
 expand_icon = true
 script = ExtResource("6_e1vkb")
+
+[node name="Sky2" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(-12, 13)
+scale = Vector2(0.613, 0.613)
+texture = ExtResource("7_sbb8a")
 
 [connection signal="pressed" from="Back Button" to="Back Button" method="_on_pressed"]

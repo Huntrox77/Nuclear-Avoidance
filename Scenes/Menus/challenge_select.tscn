@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1k34sp6aj5kc"]
+[gd_scene load_steps=7 format=3 uid="uid://b1k34sp6aj5kc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Challenges.gd" id="1_agl05"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_avbpt"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_euinn"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="4_k8mhk"]
 [ext_resource type="Script" path="res://Scripts/UI/ChallengeText.gd" id="4_tt3cm"]
+[ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="6_s0lk7"]
 
 [node name="ChallengeSelect" type="Control"]
 layout_mode = 3
@@ -204,6 +205,12 @@ text = "Description Goes Here"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_tt3cm")
+
+[node name="Sky2" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(-12, 13)
+scale = Vector2(0.613, 0.613)
+texture = ExtResource("6_s0lk7")
 
 [connection signal="pressed" from="Challenges/Button" to="Challenges" method="_on_button_pressed"]
 [connection signal="pressed" from="Challenges/Button2" to="Challenges" method="_on_button_2_pressed"]

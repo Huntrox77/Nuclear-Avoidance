@@ -27,7 +27,7 @@ func _on_pressed():
 	if name == "Back Button":
 		for i in parentchild:
 			i.hide()
-			if i == panel:
+			if i == panel or i.name == "Sky2":
 				i.show()
 		SettingsSize = true
 	else:
