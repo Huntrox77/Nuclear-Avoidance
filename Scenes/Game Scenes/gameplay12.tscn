@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="17_u2w2q"]
 [ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="18_k8tsw"]
 [ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="19_cffsg"]
-[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="20_bhu5k"]
+[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="20_bhu5k"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Ladder.gd" id="20_yhqho"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="21_lbaik"]
 [ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="22_m387n"]
@@ -940,7 +940,6 @@ shape = SubResource("RectangleShape2D_rtewf")
 
 [node name="Pause" type="Control" parent="."]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -343.0
@@ -950,38 +949,59 @@ script = ExtResource("35_0oele")
 
 [node name="Resume" type="Button" parent="Pause"]
 process_mode = 3
+visible = false
 z_index = 30
 layout_mode = 0
-offset_left = -109.0
-offset_right = 37.0
-offset_bottom = 41.0
+offset_left = -73.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(73, 20)
 theme = ExtResource("14_r65cf")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
 process_mode = 3
+visible = false
 z_index = 30
 layout_mode = 0
-offset_left = -230.0
-offset_top = -150.0
-offset_right = 77.0
-offset_bottom = -109.0
+offset_left = -153.0
+offset_top = -100.5
+offset_right = 154.0
+offset_bottom = -59.5
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(153, 120)
 theme = ExtResource("14_r65cf")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
 process_mode = 3
+visible = false
 z_index = 30
 layout_mode = 0
-offset_left = -205.0
-offset_top = 150.0
-offset_right = 70.0
-offset_bottom = 191.0
+offset_left = -137.0
+offset_top = 99.0
+offset_right = 138.0
+offset_bottom = 140.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(137, -80)
 theme = ExtResource("14_r65cf")
 text = "Exit to Previous"
+
+[node name="Panel" type="Panel" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 29
+layout_mode = 0
+offset_left = -184.5
+offset_top = -125.5
+offset_right = 173.5
+offset_bottom = 157.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(179, 141)
+mouse_filter = 2
+theme = ExtResource("14_r65cf")
 
 [node name="Lamps" type="Node" parent="."]
 

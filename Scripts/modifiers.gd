@@ -130,7 +130,7 @@ func _resetmaps():
 	currentmap = "menu"
 
 func _ready():
-	pass
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _reset():
 	gameplaying = false
@@ -327,6 +327,9 @@ func _process(_delta):
 					_resetmaps()
 			else:
 				get_tree().change_scene_to_file("res://Scenes/Game Scenes/win_screen.tscn")
+				_resetplayers()
+				currentmap = "winscreen"
 	if Input.is_action_just_pressed("Pause"):
-		pause = not pause
-		get_tree().paused = pause
+		if gameplaying == true:
+			pause = not pause
+			get_tree().paused = pause

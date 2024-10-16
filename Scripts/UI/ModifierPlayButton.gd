@@ -30,6 +30,7 @@ func countdown():
 
 	# Code to change the scene to the game.
 func _on_pressed():
+	Modifier._resetnukes()
 	if Modifier.playersleft == 0:
 		pass
 	else:

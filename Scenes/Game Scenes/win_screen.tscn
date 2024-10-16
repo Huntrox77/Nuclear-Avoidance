@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://biiy266ikrp1s"]
+[gd_scene load_steps=23 format=3 uid="uid://biiy266ikrp1s"]
 
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/In Game Stuff/GroundLeft.tscn" id="1_08ypx"]
+[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_keu5t"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="2_rm4sk"]
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/In Game Stuff/GroundRight.tscn" id="3_wbhij"]
 [ext_resource type="Texture2D" uid="uid://cpvk7yem2u1tg" path="res://Sprites/InGame/1st.png" id="4_h0t2x"]
@@ -14,22 +15,25 @@
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="12_md1tm"]
 [ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="13_qwlee"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="14_ll58f"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="15_lg13q"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="16_7p278"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx47y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fysi4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfrh2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkeb0"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rks78"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3t3"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k102x"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_43sct"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wiwq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjkh5"]
 size = Vector2(60, 60)
 
 [node name="WinScreen" type="Node2D"]
+script = ExtResource("1_keu5t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -144,10 +148,75 @@ text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Pause" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_top = -343.0
+offset_right = 1.0
+offset_bottom = -342.0
+script = ExtResource("15_lg13q")
+
+[node name="Resume" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = -73.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(73, 20)
+theme = ExtResource("10_ugt6c")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = -153.0
+offset_top = -100.5
+offset_right = 154.0
+offset_bottom = -59.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(153, 120)
+theme = ExtResource("10_ugt6c")
+text = "Exit to Titlescreen"
+
+[node name="Previous" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = -137.0
+offset_top = 99.0
+offset_right = 138.0
+offset_bottom = 140.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(137, -80)
+theme = ExtResource("10_ugt6c")
+text = "Exit to Previous"
+
+[node name="Panel" type="Panel" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 29
+layout_mode = 0
+offset_left = -184.5
+offset_top = -125.5
+offset_right = 173.5
+offset_bottom = 157.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(179, 141)
+mouse_filter = 2
+theme = ExtResource("10_ugt6c")
+
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-position = Vector2(2.38419e-07, -29)
+position = Vector2(-50, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
 metadata/Player = "Player"
@@ -169,7 +238,7 @@ texture = ExtResource("12_md1tm")
 visible = false
 position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_nx47y")
+shape = SubResource("RectangleShape2D_fysi4")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 1"]
@@ -197,7 +266,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(-300, 83)
+position = Vector2(48, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
 metadata/Player = "Player"
@@ -218,7 +287,7 @@ texture = ExtResource("14_ll58f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
-shape = SubResource("RectangleShape2D_lfrh2")
+shape = SubResource("RectangleShape2D_kkeb0")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 2"]
@@ -246,7 +315,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(298, 128)
+position = Vector2(-152, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
 metadata/Player = "Player"
@@ -267,7 +336,7 @@ texture = ExtResource("12_md1tm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
-shape = SubResource("RectangleShape2D_rks78")
+shape = SubResource("RectangleShape2D_gu3t3")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 3"]
@@ -295,7 +364,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(-63, 271)
+position = Vector2(145, -265)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
 metadata/Player = "Player"
@@ -316,7 +385,7 @@ texture = ExtResource("14_ll58f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
-shape = SubResource("RectangleShape2D_k102x")
+shape = SubResource("RectangleShape2D_43sct")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 4"]
@@ -344,7 +413,7 @@ scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-position = Vector2(66, 269)
+position = Vector2(145, -265)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
 metadata/Player = "Player"
@@ -365,7 +434,7 @@ texture = ExtResource("14_ll58f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
-shape = SubResource("RectangleShape2D_7wiwq")
+shape = SubResource("RectangleShape2D_fjkh5")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 5"]
@@ -392,24 +461,128 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
-[node name="5" type="Node" parent="."]
+[node name="GUI\'s" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 267.0
+offset_right = 40.0
+offset_bottom = 307.0
 
-[node name="6" type="Node" parent="."]
+[node name="P1" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -552.0
+offset_top = -566.0
+offset_right = -330.0
+offset_bottom = -525.0
+theme = ExtResource("10_ugt6c")
+text = "Player 1: 10%"
+vertical_alignment = 1
+script = ExtResource("16_7p278")
 
-[node name="7" type="Node" parent="."]
+[node name="P2" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -304.0
+offset_top = -566.0
+offset_right = -77.0
+offset_bottom = -525.0
+theme = ExtResource("10_ugt6c")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="P3" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 78.0
+offset_top = -566.0
+offset_right = 300.0
+offset_bottom = -525.0
+theme = ExtResource("10_ugt6c")
+text = "Player 1: 10%"
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="P4" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 326.0
+offset_top = -566.0
+offset_right = 553.0
+offset_bottom = -525.0
+theme = ExtResource("10_ugt6c")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="P1Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -533.0
+offset_top = -6.0
+offset_right = -333.0
+offset_bottom = 35.0
+theme = ExtResource("10_ugt6c")
+text = "P1 Points: 0"
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="P2Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -245.5
+offset_top = -6.0
+offset_right = -40.5
+offset_bottom = 35.0
+theme = ExtResource("10_ugt6c")
+text = "P2 Points: 0"
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="P3Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 42.0
+offset_top = -6.0
+offset_right = 247.0
+offset_bottom = 35.0
+theme = ExtResource("10_ugt6c")
+text = "P3 Points: 0"
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="P4Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 329.5
+offset_top = -6.0
+offset_right = 534.5
+offset_bottom = 35.0
+theme = ExtResource("10_ugt6c")
+text = "P4 Points: 0"
+vertical_alignment = 1
+script = ExtResource("16_7p278")
+
+[node name="7" type="Node2D" parent="."]
 
 [node name="SpawnPos\'" type="Node" parent="."]
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(0, -27)
+position = Vector2(0, -40)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-299, 81)
+position = Vector2(-303, 76)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(300, 131)
+position = Vector2(302, 115)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(0, 267)
+position = Vector2(-4, 268)
 
 [connection signal="timeout" from="Bybetimer" to="Bybetimer" method="_on_timeout"]
+[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
+[connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

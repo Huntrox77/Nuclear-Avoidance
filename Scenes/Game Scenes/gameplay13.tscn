@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cgi4utwjg36fd"]
+[gd_scene load_steps=51 format=3 uid="uid://bg0u8bk5gcpld"]
 
 [ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_gtyig"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_kgfkf"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="19_72ghc"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Ladder.gd" id="20_2777s"]
 [ext_resource type="Texture2D" uid="uid://cnio8d6ehmx1s" path="res://Sprites/Grounds/Ladder.png" id="21_anx4x"]
-[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="22_pnfqf"]
+[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="22_pnfqf"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="23_gass0"]
 [ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="24_h5kjt"]
 [ext_resource type="Texture2D" uid="uid://c4h86eqm2fqcl" path="res://Sprites/Grounds/WoodPlatform.png" id="25_stm2p"]
@@ -1027,7 +1027,6 @@ shape = SubResource("RectangleShape2D_vf88h")
 
 [node name="Pause" type="Control" parent="."]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_top = -343.0
@@ -1037,38 +1036,59 @@ script = ExtResource("34_22awe")
 
 [node name="Resume" type="Button" parent="Pause"]
 process_mode = 3
+visible = false
 z_index = 30
 layout_mode = 0
-offset_left = -109.0
-offset_right = 37.0
-offset_bottom = 41.0
+offset_left = -73.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(73, 20)
 theme = ExtResource("14_d6eyj")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
 process_mode = 3
+visible = false
 z_index = 30
 layout_mode = 0
-offset_left = -230.0
-offset_top = -150.0
-offset_right = 77.0
-offset_bottom = -109.0
+offset_left = -153.0
+offset_top = -100.5
+offset_right = 154.0
+offset_bottom = -59.5
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(153, 120)
 theme = ExtResource("14_d6eyj")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
 process_mode = 3
+visible = false
 z_index = 30
 layout_mode = 0
-offset_left = -205.0
-offset_top = 150.0
-offset_right = 70.0
-offset_bottom = 191.0
+offset_left = -137.0
+offset_top = 99.0
+offset_right = 138.0
+offset_bottom = 140.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(137, -80)
 theme = ExtResource("14_d6eyj")
 text = "Exit to Previous"
+
+[node name="Panel" type="Panel" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 29
+layout_mode = 0
+offset_left = -184.5
+offset_top = -125.5
+offset_right = 173.5
+offset_bottom = 157.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(179, 141)
+mouse_filter = 2
+theme = ExtResource("14_d6eyj")
 
 [node name="Lamps" type="Node" parent="."]
 

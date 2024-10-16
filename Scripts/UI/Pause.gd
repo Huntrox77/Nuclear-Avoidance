@@ -9,9 +9,18 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Modifier.pause == false:
-		hide()
+		for i in get_children():
+			if i.scale.x > 0:
+				i.scale.x -= 0.05
+				i.scale.y -= 0.05
+			if i.scale.x <= 0:
+				i.hide()
 	elif Modifier.pause == true:
-		show()
+		for i in get_children():
+			i.show()
+			if i.scale.x < 1.5:
+				i.scale.x += 0.05
+				i.scale.y += 0.05
 
 
 func _on_resume_pressed():
