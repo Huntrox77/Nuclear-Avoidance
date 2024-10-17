@@ -13,14 +13,14 @@
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_qk3en"]
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_40kga"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
-size = Vector2(417, 647)
-
 [sub_resource type="LabelSettings" id="LabelSettings_8b1ob"]
 font = ExtResource("2_tatf1")
 font_size = 36
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
+size = Vector2(417, 647)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t31xx"]
 size = Vector2(12446, 154)
@@ -34,53 +34,171 @@ size = Vector2(12446, 154)
 [node name="Buttons" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -210.0
+offset_left = -575.0
 offset_top = -324.0
-offset_right = 943.0
+offset_right = 578.0
 offset_bottom = 323.0
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="EndCredits" type="Button" parent="Buttons"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0128335
 anchor_top = 0.906028
 anchor_right = 0.0949089
 anchor_bottom = 0.983028
-offset_left = -2.79701
-offset_top = -0.200012
-offset_right = -2.42999
-offset_bottom = -0.019043
+offset_left = 354.203
+offset_top = -582.2
+offset_right = 354.57
+offset_bottom = -582.019
 pivot_offset = Vector2(334, -310)
 theme = ExtResource("1_dbvki")
 theme_override_fonts/font = ExtResource("2_tatf1")
 action_mode = 0
-text = "< Back"
+text = "Back"
 script = ExtResource("3_cieam")
-metadata/_edit_use_anchors_ = true
 
-[node name="1" type="Node" parent="Buttons"]
+[node name="Youtube" type="Button" parent="Buttons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0128335
+anchor_top = 0.906028
+anchor_right = 0.0949089
+anchor_bottom = 0.983028
+offset_left = 450.203
+offset_top = -582.2
+offset_right = 485.57
+offset_bottom = -582.019
+pivot_offset = Vector2(334, -310)
+theme = ExtResource("1_dbvki")
+theme_override_fonts/font = ExtResource("2_tatf1")
+action_mode = 0
+text = "My YT"
 
-[node name="2" type="Node" parent="Buttons"]
+[node name="Itch" type="Button" parent="Buttons"]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0128335
+anchor_top = 0.906028
+anchor_right = 0.0949089
+anchor_bottom = 0.983028
+offset_left = 581.203
+offset_top = -582.2
+offset_right = 669.57
+offset_bottom = -582.019
+pivot_offset = Vector2(334, -310)
+theme = ExtResource("1_dbvki")
+theme_override_fonts/font = ExtResource("2_tatf1")
+action_mode = 0
+text = "My Itch.io"
 
-[node name="3" type="Node" parent="Buttons"]
+[node name="3" type="Node2D" parent="Buttons"]
 
-[node name="4" type="Node" parent="Buttons"]
+[node name="4" type="Node2D" parent="Buttons"]
 
-[node name="5" type="Node" parent="Buttons"]
+[node name="5" type="Node2D" parent="Buttons"]
 
-[node name="6" type="Node" parent="Buttons"]
+[node name="6" type="Node2D" parent="Buttons"]
 
-[node name="7" type="Node" parent="Buttons"]
+[node name="7" type="Node2D" parent="Buttons"]
 
 [node name="Panel" type="Panel" parent="Buttons"]
 z_index = -5
+y_sort_enabled = true
 layout_mode = 0
-offset_right = 417.0
+offset_left = 365.0
+offset_right = 782.0
 offset_bottom = 647.0
 mouse_filter = 2
 theme = ExtResource("1_dbvki")
+
+[node name="Container" type="Container" parent="Buttons/Panel"]
+clip_contents = true
+layout_mode = 0
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 415.0
+offset_bottom = 645.0
+mouse_filter = 2
+
+[node name="Credits" type="Label" parent="Buttons/Panel/Container"]
+z_index = 5
+y_sort_enabled = true
+custom_minimum_size = Vector2(415, 109)
+layout_mode = 2
+theme = ExtResource("1_dbvki")
+theme_override_styles/normal = ExtResource("5_b8ura")
+text = "Nuclear Avoidance"
+label_settings = SubResource("LabelSettings_8b1ob")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="Buttons/Panel/Container/Credits"]
+z_index = 5
+layout_mode = 0
+offset_left = -1.0
+offset_top = 131.0
+offset_right = 552.0
+offset_bottom = 3992.0
+scale = Vector2(0.75, 0.75)
+theme = ExtResource("1_dbvki")
+theme_override_font_sizes/font_size = 0
+theme_override_styles/normal = ExtResource("5_b8ura")
+text = "
+
+Original Idea by: 2020 Hunter
+
+
+
+Coding by: Huntress
+
+
+
+Sprites by: Huntress
+
+
+
+Backgrounds by: Charlie (Chortle)
+
+
+
+Play Testers: Huntress, Charlie (Chortle), Sylvia, James, Will, Jamie & Nathaneal.
+
+
+
+Special Thanks to:
+
+
+My past self for this idea.
+
+Me!
+
+James for always finding bugs.
+
+
+Charlie for the amazing backgrounds!
+
+
+My Family for being supportive and showing intrest in my passion.
+
+
+All the Play testers for enjoying the game and giving me ideas.
+
+
+All my freinds & family for helping shape me into who I am today.
+
+
+
+And a special thanks to you, the player(s) for playing and (hopefully) enjoying my game! <3"
+label_settings = SubResource("LabelSettings_8b1ob")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Area2D" type="Area2D" parent="Buttons/Panel"]
 collision_layer = 2
@@ -91,20 +209,6 @@ script = ExtResource("4_ybvu1")
 position = Vector2(208.5, 323.5)
 shape = SubResource("RectangleShape2D_3oj3v")
 metadata/_edit_lock_ = true
-
-[node name="Label" type="Label" parent="Buttons"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 50.0
-offset_right = 416.0
-offset_bottom = 159.0
-theme = ExtResource("1_dbvki")
-theme_override_styles/normal = ExtResource("5_b8ura")
-text = "Nuclear Avoidance"
-label_settings = SubResource("LabelSettings_8b1ob")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -192,6 +296,8 @@ texture = ExtResource("12_40kga")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Buttons/EndCredits" to="Buttons/EndCredits" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Youtube" to="Buttons/EndCredits" method="_on_youtube_pressed"]
+[connection signal="pressed" from="Buttons/Itch" to="Buttons/EndCredits" method="_on_itch_pressed"]
 [connection signal="area_entered" from="Buttons/Panel/Area2D" to="Buttons/Panel/Area2D" method="_on_area_entered"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]

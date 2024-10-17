@@ -66,6 +66,7 @@ func _physics_process(delta):
 	if Modifier.CountdownFinished == true:
 		var direction = Input.get_axis("p1-left", "p1-right")
 		if name == "Player 1":
+			Modifier.playerX[0] = position.x
 			direction = Input.get_axis("p1-left", "p1-right")
 			if Input.is_action_pressed("p1-jump") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
@@ -73,6 +74,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_VELOCITY
 				coyotetime = false
 		if name == "Player 2":
+			Modifier.playerX[1] = position.x
 			direction = Input.get_axis("p2-left", "p2-right")
 			if Input.is_action_pressed("p2-jump") and is_on_floor():
 				if is_on_floor():
@@ -82,6 +84,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_VELOCITY
 				coyotetime = false
 		if name == "Player 3":
+			Modifier.playerX[2] = position.x
 			direction = Input.get_axis("p3-left", "p3-right")
 			if Input.is_action_pressed("p3-jump") and is_on_floor():
 				if is_on_floor():
@@ -91,6 +94,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_VELOCITY
 				coyotetime = false
 		if name == "Player 4":
+			Modifier.playerX[3] = position.x
 			direction = Input.get_axis("p4-left", "p4-right")
 			if Input.is_action_pressed("p4-jump") and is_on_floor():
 				if is_on_floor():
@@ -100,6 +104,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_VELOCITY
 				coyotetime = false
 		if name == "Player 5":
+			Modifier.playerX[4] = position.x
 			direction = Input.get_axis("p5-left", "p5-right")
 			if Input.is_action_pressed("p5-jump") and is_on_floor():
 				if is_on_floor():

@@ -26,9 +26,9 @@ func _process(_delta):
 	if Modifier.loop == true:
 		$"Loop Button".button_pressed = true
 	if Modifier.map1 == true:
-		$"Map Container/HBoxContainer/Map1".button_pressed = true
+		$"Map Container/HBoxContainer/Map1/Map1".button_pressed = true
 	if Modifier.map2 == true:
-		$"Map Container/HBoxContainer/Map2".button_pressed = true
+		$"Map Container/HBoxContainer/Map2/Map2".button_pressed = true
 	if Modifier.map3 == true:
 		$"Map Container/HBoxContainer/Map3".button_pressed = true
 	if Modifier.map4 == true:

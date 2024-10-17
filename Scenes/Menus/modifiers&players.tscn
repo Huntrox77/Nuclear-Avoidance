@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=28 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -17,7 +17,10 @@
 [ext_resource type="Script" path="res://Scripts/Secrets/DOG.gd" id="13_ufcak"]
 [ext_resource type="Script" path="res://Scripts/UI/KeepModifiers.gd" id="14_dqpoy"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="14_nwcpy"]
+[ext_resource type="Texture2D" uid="uid://dskkp3pd56ixd" path="res://Sprites/UI/Map1Dark.png" id="16_35ee5"]
+[ext_resource type="Texture2D" uid="uid://dkoy0ji4tjpff" path="res://Sprites/UI/Map1.png" id="16_38ca1"]
 [ext_resource type="Script" path="res://Scripts/UI/FavouriteButton.gd" id="17_8y8lk"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="18_0ovuk"]
 [ext_resource type="Texture2D" uid="uid://bytalcosl6lpe" path="res://Sprites/UI/GreyStar.png" id="18_5xysq"]
 [ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/UI/RedArrows.png" id="18_v0ldg"]
 [ext_resource type="Texture2D" uid="uid://cgrmkd8krqru0" path="res://Sprites/UI/YellowStar.png" id="19_4komw"]
@@ -242,21 +245,76 @@ vertical_alignment = 1
 
 [node name="Map Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 2
-offset_left = 599.0
-offset_top = 324.0
-offset_right = 706.0
-offset_bottom = 501.0
+offset_left = 584.0
+offset_top = 312.0
+offset_right = 1121.0
+offset_bottom = 564.0
+horizontal_scroll_mode = 0
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Buttons/Map Container"]
+[node name="HBoxContainer" type="GridContainer" parent="Buttons/Map Container"]
 layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 4
 
-[node name="Map1" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map1" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
-text = "Map 1"
+mouse_filter = 2
+theme = ExtResource("2_dymia")
 
-[node name="Map2" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map1" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map1"]
 layout_mode = 2
-text = "Map 2"
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("16_35ee5")
+texture_pressed = ExtResource("16_38ca1")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map1"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 65.0
+offset_right = 81.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Island 1"
+horizontal_alignment = 1
+
+[node name="Map2" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map2" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map2"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+texture_normal = ExtResource("16_38ca1")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map2"]
+offset_left = 22.0
+offset_top = 65.0
+offset_right = 81.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Island 2"
+horizontal_alignment = 1
 
 [node name="Map3" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
 layout_mode = 2
@@ -559,6 +617,7 @@ z_index = -20
 position = Vector2(-12, 13)
 scale = Vector2(0.613, 0.613)
 texture = ExtResource("23_ohndb")
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/AdvMod" to="Buttons" method="_on_adv_mod_pressed"]
@@ -567,8 +626,8 @@ texture = ExtResource("23_ohndb")
 [connection signal="pressed" from="Buttons/P2" to="Buttons" method="_on_p_2_pressed"]
 [connection signal="pressed" from="Buttons/P3" to="Buttons" method="_on_p_3_pressed"]
 [connection signal="pressed" from="Buttons/P4" to="Buttons" method="_on_p_4_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map1" to="Buttons" method="_on_map_1_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map2" to="Buttons" method="_on_map_2_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map1/Map1" to="Buttons" method="_on_map_1_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map2/Map2" to="Buttons" method="_on_map_2_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map3" to="Buttons" method="_on_map_3_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map4" to="Buttons" method="_on_map_4_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_pressed"]

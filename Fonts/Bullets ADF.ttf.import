@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bbbix8tnn7f74"
+path="res://.godot/imported/Bullets ADF.ttf-ca88978aa2ac8c06f6bb8a8ef62d294d.fontdata"
+
+[deps]
+
+source_file="res://Fonts/Bullets ADF.ttf"
+dest_files=["res://.godot/imported/Bullets ADF.ttf-ca88978aa2ac8c06f6bb8a8ef62d294d.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

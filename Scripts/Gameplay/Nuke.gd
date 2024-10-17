@@ -213,6 +213,14 @@ func _ready():
 		spawnradius2 = 500
 		negspawnradius3 = -100
 		spawnradius3 = 500
+	if Modifier.currentmap == "credits":
+		$Rock.queue_free()
+		negspawnradius = -600
+		spawnradius = -230
+		negspawnradius2 = -230
+		spawnradius2 = 230
+		negspawnradius3 = 230
+		spawnradius3 = 600
 
 	if randomspawnbutlikemore == 1:
 		position.x = randi_range(negspawnradius, spawnradius)
@@ -311,18 +319,18 @@ func _on_blast_radius_body_entered(body):
 			body.position.y += 1000
 			body.timer.start()
 
-# Chooses a player to follow on hominh gamemode
+# Chooses a player to follow on homing gamemode
 func _chooseplayer():
 	if RandiPlayer == 0 and Modifier.P1Alive == true:
-		pass
+		print("1")
 	elif RandiPlayer == 1 and Modifier.P2Alive == true:
-		pass
+		print("2")
 	elif RandiPlayer == 2 and Modifier.P3Alive == true:
-		pass
+		print("3")
 	elif RandiPlayer == 3 and Modifier.P4Alive == true:
-		pass
+		print("4")
 	elif RandiPlayer == 4 and Modifier.P5Alive == true:
-		pass
+		print("5")
 	else:
 		RandiPlayer = randi_range(0,4)
 		_chooseplayer()
