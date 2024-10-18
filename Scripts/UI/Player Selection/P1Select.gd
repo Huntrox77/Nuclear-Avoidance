@@ -5,7 +5,10 @@ extends Control
 @onready var P3Button = get_node("P3")
 @onready var P4Button = get_node("P4")
 @onready var AdvModBut = $AdvMod
-
+var gold = preload("res://StyleBoxes/BlackBG_GoldOutline_StyleBox.tres")
+var white = preload("res://StyleBoxes/BlackBG_WhiteOutline_StyleBox.tres")
+var white_outline = preload("res://StyleBoxes/WhiteOutline_StyleBox.tres")
+var gold_outline = preload("res://StyleBoxes/GoldOutline_StyleBox.tres")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,41 +19,92 @@ func _process(_delta):
 	#Players
 	if Modifier.p1selection == true:
 		P1Button.button_pressed = true
+		P1Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+	else:
+		P1Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
 	if Modifier.p2selection == true:
 		P2Button.button_pressed = true
+		P2Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+	else:
+		P2Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
 	if Modifier.p3selection == true:
 		P3Button.button_pressed = true
+		P3Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+	else:
+		P3Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
 	if Modifier.p4selection == true:
 		P4Button.button_pressed = true
+		P4Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+	else:
+		P4Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
 	#Maps
 	if Modifier.loop == true:
 		$"Loop Button".button_pressed = true
 	if Modifier.map1 == true:
 		$"Map Container/HBoxContainer/Map1/Map1".button_pressed = true
+		$"Map Container/HBoxContainer/Map1".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map1".add_theme_stylebox_override("panel", white)
 	if Modifier.map2 == true:
 		$"Map Container/HBoxContainer/Map2/Map2".button_pressed = true
+		$"Map Container/HBoxContainer/Map2".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map2".add_theme_stylebox_override("panel", white)
 	if Modifier.map3 == true:
-		$"Map Container/HBoxContainer/Map3".button_pressed = true
+		$"Map Container/HBoxContainer/Map3/Map3".button_pressed = true
+		$"Map Container/HBoxContainer/Map3".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map3".add_theme_stylebox_override("panel", white)
 	if Modifier.map4 == true:
-		$"Map Container/HBoxContainer/Map4".button_pressed = true
+		$"Map Container/HBoxContainer/Map4/Map4".button_pressed = true
+		$"Map Container/HBoxContainer/Map4".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map4".add_theme_stylebox_override("panel", white)
 	if Modifier.map5 == true:
-		$"Map Container/HBoxContainer/Map5".button_pressed = true
+		$"Map Container/HBoxContainer/Map5/Map5".button_pressed = true
+		$"Map Container/HBoxContainer/Map5".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map5".add_theme_stylebox_override("panel", white)
 	if Modifier.map6 == true:
-		$"Map Container/HBoxContainer/Map6".button_pressed = true
+		$"Map Container/HBoxContainer/Map6/Map6".button_pressed = true
+		$"Map Container/HBoxContainer/Map6".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map6".add_theme_stylebox_override("panel", white)
 	if Modifier.map7 == true:
-		$"Map Container/HBoxContainer/Map7".button_pressed = true
+		$"Map Container/HBoxContainer/Map7/Map7".button_pressed = true
+		$"Map Container/HBoxContainer/Map7".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map7".add_theme_stylebox_override("panel", white)
 	if Modifier.map8 == true:
-		$"Map Container/HBoxContainer/Map8".button_pressed = true
+		$"Map Container/HBoxContainer/Map8/Map8".button_pressed = true
+		$"Map Container/HBoxContainer/Map8".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map8".add_theme_stylebox_override("panel", white)
 	if Modifier.map9 == true:
-		$"Map Container/HBoxContainer/Map9".button_pressed = true
+		$"Map Container/HBoxContainer/Map9/Map9".button_pressed = true
+		$"Map Container/HBoxContainer/Map9".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map9".add_theme_stylebox_override("panel", white)
 	if Modifier.map10 == true:
-		$"Map Container/HBoxContainer/Map10".button_pressed = true
+		$"Map Container/HBoxContainer/Map10/Map10".button_pressed = true
+		$"Map Container/HBoxContainer/Map10".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map10".add_theme_stylebox_override("panel", white)
 	if Modifier.map11 == true:
-		$"Map Container/HBoxContainer/Map11".button_pressed = true
+		$"Map Container/HBoxContainer/Map11/Map11".button_pressed = true
+		$"Map Container/HBoxContainer/Map11".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map11".add_theme_stylebox_override("panel", white)
 	if Modifier.map12 == true:
-		$"Map Container/HBoxContainer/Map12".button_pressed = true
+		$"Map Container/HBoxContainer/Map12/Map12".button_pressed = true
+		$"Map Container/HBoxContainer/Map12".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map12".add_theme_stylebox_override("panel", white)
 	if Modifier.map13 == true:
-		$"Map Container/HBoxContainer/Map13".button_pressed = true
+		$"Map Container/HBoxContainer/Map13/Map13".button_pressed = true
+		$"Map Container/HBoxContainer/Map13".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map13".add_theme_stylebox_override("panel", white)
 
 func _on_p_1_pressed():
 	Modifier.p1selection = not Modifier.p1selection

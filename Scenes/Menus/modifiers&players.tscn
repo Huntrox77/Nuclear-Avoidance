@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=54 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bdaqhq1u8kxw" path="res://Sprites/UI/Scug1nochoose.png" id="5_chenq"]
 [ext_resource type="Texture2D" uid="uid://coam47xs7lh54" path="res://Sprites/UI/Scug.png" id="6_aol7f"]
 [ext_resource type="Texture2D" uid="uid://okoyc6qmk2bg" path="res://Sprites/UI/Scug2nochoose.png" id="7_uwjmx"]
+[ext_resource type="StyleBox" uid="uid://dr0q1y0xh1qmm" path="res://StyleBoxes/WhiteOutline_StyleBox.tres" id="8_2ihqd"]
 [ext_resource type="Texture2D" uid="uid://cl8ifukgeglmg" path="res://Sprites/UI/Scug2.png" id="8_jitkp"]
 [ext_resource type="Texture2D" uid="uid://dvd38rxnjklhe" path="res://Sprites/UI/Scug3nochoose.png" id="9_8lfwy"]
 [ext_resource type="Texture2D" uid="uid://sm2n565dcbxa" path="res://Sprites/UI/Scug3.png" id="10_d5ebb"]
@@ -25,7 +26,33 @@
 [ext_resource type="Texture2D" uid="uid://scuf8o4pdkif" path="res://Sprites/UI/RedArrows.png" id="18_v0ldg"]
 [ext_resource type="Texture2D" uid="uid://cgrmkd8krqru0" path="res://Sprites/UI/YellowStar.png" id="19_4komw"]
 [ext_resource type="Texture2D" uid="uid://dbtoxbijx0u5f" path="res://Sprites/UI/GreenArrows.png" id="19_6l8jy"]
+[ext_resource type="Texture2D" uid="uid://4m541xjm46qo" path="res://Sprites/UI/Map2Dark.png" id="19_t8htb"]
+[ext_resource type="Texture2D" uid="uid://cblhqk1ur0se4" path="res://Sprites/UI/Map2.png" id="20_3qjrd"]
+[ext_resource type="Texture2D" uid="uid://b4gq41dt746d6" path="res://Sprites/UI/Map3Dark.png" id="21_5w0kp"]
+[ext_resource type="Texture2D" uid="uid://cdvfi7h5ky20h" path="res://Sprites/UI/Map3.png" id="21_esht2"]
 [ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="23_ohndb"]
+[ext_resource type="Texture2D" uid="uid://cdnwhr3pdjdwq" path="res://Sprites/UI/Map4Dark.png" id="23_x1buy"]
+[ext_resource type="Texture2D" uid="uid://suaiy72m37dj" path="res://Sprites/UI/Map4.png" id="24_bmq4f"]
+[ext_resource type="Texture2D" uid="uid://cw7ly033igerg" path="res://Sprites/UI/Map5Dark.png" id="25_kpqek"]
+[ext_resource type="Texture2D" uid="uid://cvlfcl5whbeop" path="res://Sprites/UI/Map5.png" id="26_3gg82"]
+[ext_resource type="Texture2D" uid="uid://42ojo6nvqpky" path="res://Sprites/UI/Map6Dark.png" id="27_qv6x0"]
+[ext_resource type="Texture2D" uid="uid://dbcr7ar56h2ci" path="res://Sprites/UI/Map6.png" id="28_qvwkg"]
+[ext_resource type="Texture2D" uid="uid://bo4hk1t77li6" path="res://Sprites/UI/Map7Dark.png" id="29_r50m7"]
+[ext_resource type="Texture2D" uid="uid://3pcboivterow" path="res://Sprites/UI/Map7.png" id="30_ppg1b"]
+[ext_resource type="Texture2D" uid="uid://cejpxq1dgj1ij" path="res://Sprites/UI/Map8Dark.png" id="31_hwvpq"]
+[ext_resource type="Texture2D" uid="uid://w10hysegxsnh" path="res://Sprites/UI/Map8.png" id="32_cj70w"]
+[ext_resource type="Texture2D" uid="uid://dls8ah4ldsetw" path="res://Sprites/UI/Map9Dark.png" id="33_xx3ha"]
+[ext_resource type="Texture2D" uid="uid://chmvg3gc4dcmj" path="res://Sprites/UI/Map9.png" id="34_ftsyw"]
+[ext_resource type="Texture2D" uid="uid://dee31t8q5404l" path="res://Sprites/UI/Map10Dark.png" id="35_7r85l"]
+[ext_resource type="Texture2D" uid="uid://byerwd5krwj0t" path="res://Sprites/UI/Map10.png" id="35_nj33o"]
+[ext_resource type="Texture2D" uid="uid://cuoiptdafiqby" path="res://Sprites/UI/Map11Dark.png" id="37_ftfyk"]
+[ext_resource type="Texture2D" uid="uid://dst8fy30q50kj" path="res://Sprites/UI/Map11.png" id="38_mnnsv"]
+[ext_resource type="Texture2D" uid="uid://bsao66103vpp1" path="res://Sprites/UI/Map12Dark.png" id="39_r0gfp"]
+[ext_resource type="Texture2D" uid="uid://dsxj4j4fkih6g" path="res://Sprites/UI/Map12.png" id="40_aqmd1"]
+[ext_resource type="Texture2D" uid="uid://ba28uqkdkc6ip" path="res://Sprites/UI/Map13Dark.png" id="41_1uxej"]
+[ext_resource type="Texture2D" uid="uid://cpncutkkcy61l" path="res://Sprites/UI/Map13.png" id="42_yifhu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htct4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yd0k2"]
 
@@ -120,14 +147,23 @@ anchor_bottom = 0.217
 offset_left = -54.762
 offset_top = -54.399
 offset_right = 54.238
-offset_bottom = 54.601
+offset_bottom = 53.601
 theme = ExtResource("2_dymia")
 toggle_mode = true
 button_pressed = true
 texture_normal = ExtResource("5_chenq")
 texture_pressed = ExtResource("6_aol7f")
 
+[node name="Panel" type="Panel" parent="Buttons/P1"]
+z_index = 2
+layout_mode = 0
+offset_right = 109.0
+offset_bottom = 109.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("8_2ihqd")
+
 [node name="P2" type="TextureButton" parent="Buttons"]
+z_as_relative = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.67
@@ -141,6 +177,13 @@ offset_bottom = 54.601
 toggle_mode = true
 texture_normal = ExtResource("7_uwjmx")
 texture_pressed = ExtResource("8_jitkp")
+
+[node name="Panel" type="Panel" parent="Buttons/P2"]
+z_index = 2
+offset_right = 109.0
+offset_bottom = 109.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("8_2ihqd")
 
 [node name="P3" type="TextureButton" parent="Buttons"]
 layout_mode = 1
@@ -157,6 +200,13 @@ toggle_mode = true
 texture_normal = ExtResource("9_8lfwy")
 texture_pressed = ExtResource("10_d5ebb")
 
+[node name="Panel" type="Panel" parent="Buttons/P3"]
+z_index = 2
+offset_right = 109.0
+offset_bottom = 109.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("8_2ihqd")
+
 [node name="P4" type="TextureButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
@@ -171,6 +221,13 @@ offset_bottom = 54.307
 toggle_mode = true
 texture_normal = ExtResource("11_6ge4a")
 texture_pressed = ExtResource("12_677y4")
+
+[node name="Panel" type="Panel" parent="Buttons/P4"]
+z_index = 2
+offset_right = 109.0
+offset_bottom = 109.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("8_2ihqd")
 
 [node name="Modifiers" type="Label" parent="Buttons"]
 layout_mode = 1
@@ -285,12 +342,12 @@ offset_bottom = 83.0
 theme = ExtResource("2_dymia")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = ExtResource("18_0ovuk")
-text = "Island 1"
+text = "Island"
 horizontal_alignment = 1
 
 [node name="Map2" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
 z_index = -1
-custom_minimum_size = Vector2(86, 86)
+custom_minimum_size = Vector2(105, 86)
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("2_dymia")
@@ -301,11 +358,15 @@ offset_left = 6.0
 offset_top = 6.0
 offset_right = 99.0
 offset_bottom = 63.0
-texture_normal = ExtResource("16_38ca1")
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("19_t8htb")
+texture_pressed = ExtResource("20_3qjrd")
 ignore_texture_size = true
 stretch_mode = 6
 
 [node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map2"]
+layout_mode = 0
 offset_left = 22.0
 offset_top = 65.0
 offset_right = 81.0
@@ -313,52 +374,388 @@ offset_bottom = 83.0
 theme = ExtResource("2_dymia")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Islands"
+horizontal_alignment = 1
+
+[node name="Map3" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map3" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map3"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("21_5w0kp")
+texture_pressed = ExtResource("21_esht2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map3"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 66.0
+offset_right = 108.0
+offset_bottom = 84.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Moving Island"
+horizontal_alignment = 1
+
+[node name="Map9" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map9" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map9"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("33_xx3ha")
+texture_pressed = ExtResource("34_ftsyw")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map9"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Cave 1"
+horizontal_alignment = 1
+
+[node name="Map7" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map7" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map7"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("29_r50m7")
+texture_pressed = ExtResource("30_ppg1b")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map7"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
 text = "Island 2"
 horizontal_alignment = 1
 
-[node name="Map3" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map5" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
-text = "Map 3"
+mouse_filter = 2
+theme = ExtResource("2_dymia")
 
-[node name="Map4" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map5" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map5"]
 layout_mode = 2
-text = "Map 4"
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("25_kpqek")
+texture_pressed = ExtResource("26_3gg82")
+ignore_texture_size = true
+stretch_mode = 6
 
-[node name="Map5" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
-layout_mode = 2
-text = "Map 5"
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map5"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Islands 2"
+horizontal_alignment = 1
 
-[node name="Map6" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map4" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
-text = "Map 6"
+mouse_filter = 2
+theme = ExtResource("2_dymia")
 
-[node name="Map7" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map4" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map4"]
 layout_mode = 2
-text = "Map 7"
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("23_x1buy")
+texture_pressed = ExtResource("24_bmq4f")
+ignore_texture_size = true
+stretch_mode = 6
 
-[node name="Map8" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
-layout_mode = 2
-text = "Map 8"
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map4"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 68.0
+offset_right = 108.0
+offset_bottom = 86.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Moving Island 2"
+horizontal_alignment = 1
 
-[node name="Map9" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map10" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
-text = "Map 9"
+mouse_filter = 2
+theme = ExtResource("2_dymia")
 
-[node name="Map10" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map10" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map10"]
 layout_mode = 2
-text = "Map 10"
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("35_7r85l")
+texture_pressed = ExtResource("35_nj33o")
+ignore_texture_size = true
+stretch_mode = 6
 
-[node name="Map11" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
-layout_mode = 2
-text = "Map 11"
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map10"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Cave 2"
+horizontal_alignment = 1
 
-[node name="Map12" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Blank" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
 layout_mode = 2
-text = "Map 12"
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_htct4")
 
-[node name="Map13" type="CheckButton" parent="Buttons/Map Container/HBoxContainer"]
+[node name="Map6" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
-text = "Map 13"
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map6" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map6"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("27_qv6x0")
+texture_pressed = ExtResource("28_qvwkg")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map6"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Islands 3"
+horizontal_alignment = 1
+
+[node name="Blank2" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_htct4")
+
+[node name="Map12" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map12" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map12"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("39_r0gfp")
+texture_pressed = ExtResource("40_aqmd1")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map12"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Cave 3"
+horizontal_alignment = 1
+
+[node name="Blank3" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_htct4")
+
+[node name="Map8" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map8" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map8"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("31_hwvpq")
+texture_pressed = ExtResource("32_cj70w")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map8"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Islands 4"
+horizontal_alignment = 1
+
+[node name="Blank4" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_htct4")
+
+[node name="Map13" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map13" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map13"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+texture_normal = ExtResource("41_1uxej")
+texture_pressed = ExtResource("42_yifhu")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map13"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Cave  4"
+horizontal_alignment = 1
+
+[node name="Blank6" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_htct4")
+
+[node name="Map11" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map11" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map11"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("37_ftfyk")
+texture_pressed = ExtResource("38_mnnsv")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map11"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Islands 5"
+horizontal_alignment = 1
 
 [node name="Modifiers Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 0
@@ -594,10 +991,10 @@ script = ExtResource("17_8y8lk")
 
 [node name="Loop Button" type="TextureButton" parent="Buttons"]
 layout_mode = 0
-offset_left = 721.0
-offset_top = 460.0
-offset_right = 761.0
-offset_bottom = 500.0
+offset_left = 911.0
+offset_top = 266.0
+offset_right = 941.0
+offset_bottom = 296.0
 theme = ExtResource("2_dymia")
 toggle_mode = true
 texture_normal = ExtResource("18_v0ldg")
@@ -608,8 +1005,8 @@ stretch_mode = 4
 [node name="Panel" type="Panel" parent="Buttons/Loop Button"]
 z_index = -1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 30.0
+offset_bottom = 30.0
 mouse_filter = 2
 
 [node name="Sky2" type="Sprite2D" parent="."]
@@ -628,17 +1025,17 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="Buttons/P4" to="Buttons" method="_on_p_4_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map1/Map1" to="Buttons" method="_on_map_1_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map2/Map2" to="Buttons" method="_on_map_2_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map3" to="Buttons" method="_on_map_3_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map4" to="Buttons" method="_on_map_4_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map5" to="Buttons" method="_on_map_5_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map6" to="Buttons" method="_on_map_6_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map7" to="Buttons" method="_on_map_7_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map8" to="Buttons" method="_on_map_8_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map9" to="Buttons" method="_on_map_9_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map10" to="Buttons" method="_on_map_10_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map11" to="Buttons" method="_on_map_11_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map12" to="Buttons" method="_on_map_12_pressed"]
-[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map13" to="Buttons" method="_on_map_13_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map3/Map3" to="Buttons" method="_on_map_3_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map9/Map9" to="Buttons" method="_on_map_9_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map7/Map7" to="Buttons" method="_on_map_7_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map5/Map5" to="Buttons" method="_on_map_5_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map4/Map4" to="Buttons" method="_on_map_4_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map10/Map10" to="Buttons" method="_on_map_10_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map6/Map6" to="Buttons" method="_on_map_6_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map12/Map12" to="Buttons" method="_on_map_12_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map8/Map8" to="Buttons" method="_on_map_8_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map13/Map13" to="Buttons" method="_on_map_13_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map11/Map11" to="Buttons" method="_on_map_11_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
