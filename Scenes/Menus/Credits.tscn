@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdg1m6gv7tmit"]
+[gd_scene load_steps=18 format=3 uid="uid://cdg1m6gv7tmit"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_dbvki"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_tatf1"]
 [ext_resource type="Script" path="res://Scripts/UI/ExitButton.gd" id="3_cieam"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="4_ybvu1"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="5_b8ura"]
+[ext_resource type="Texture2D" uid="uid://1qotgtlvrn0k" path="res://Sprites/UI/icon.svg" id="5_bgr48"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_mxiyu"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_ekyes"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_ivnos"]
@@ -167,7 +168,7 @@ Backgrounds by: Charlie (Chortle)
 
 
 
-Play Testers: Huntress, Charlie (Chortle), Sylvia, James, Will, Jamie & Nathaneal.
+Play Testers: Huntress, Charlie (Chortle), Sylvia, Michael, Fearghal, Alex, James, Will, Jamie & Nathaneal.
 
 
 
@@ -182,6 +183,15 @@ James for always finding bugs.
 
 
 Charlie for the amazing backgrounds!
+
+
+Sylvia for being a real one and helping me code half my ideas XD.
+
+
+Michael and fearghal for argueing like a married couple.
+
+
+Mr. Robins for being a  wonderful teacher :)
 
 
 My Family for being supportive and showing intrest in my passion.
@@ -199,6 +209,11 @@ label_settings = SubResource("LabelSettings_8b1ob")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Icon" type="Sprite2D" parent="Buttons/Panel/Container/Credits/Label2"]
+position = Vector2(278.667, 4686.67)
+scale = Vector2(1.33333, 1.33333)
+texture = ExtResource("5_bgr48")
 
 [node name="Area2D" type="Area2D" parent="Buttons/Panel"]
 collision_layer = 2

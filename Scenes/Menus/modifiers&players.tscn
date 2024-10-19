@@ -180,6 +180,7 @@ texture_pressed = ExtResource("8_jitkp")
 
 [node name="Panel" type="Panel" parent="Buttons/P2"]
 z_index = 2
+layout_mode = 0
 offset_right = 109.0
 offset_bottom = 109.0
 mouse_filter = 2
@@ -202,6 +203,7 @@ texture_pressed = ExtResource("10_d5ebb")
 
 [node name="Panel" type="Panel" parent="Buttons/P3"]
 z_index = 2
+layout_mode = 0
 offset_right = 109.0
 offset_bottom = 109.0
 mouse_filter = 2
@@ -224,6 +226,7 @@ texture_pressed = ExtResource("12_677y4")
 
 [node name="Panel" type="Panel" parent="Buttons/P4"]
 z_index = 2
+layout_mode = 0
 offset_right = 109.0
 offset_bottom = 109.0
 mouse_filter = 2
