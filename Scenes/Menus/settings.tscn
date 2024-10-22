@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b54x5poduok87"]
+[gd_scene load_steps=9 format=3 uid="uid://b54x5poduok87"]
 
 [ext_resource type="Script" path="res://Scripts/UI/AllTheButtonStuffInSettings.gd" id="1_ilj2u"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_cxbd7"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="3_pf0l7"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="4_kvfiq"]
-[ext_resource type="Script" path="res://Scripts/Players/PlayerControls.gd" id="5_cwdhd"]
+[ext_resource type="Script" path="res://Scripts/Players/Player_Controls.gd" id="5_cwdhd"]
 [ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="6_f0bd5"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="6_kdpcw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lnbot"]
 font = ExtResource("3_pf0l7")
@@ -101,6 +102,20 @@ popup/item_1/id = 1
 popup/item_2/text = "UI Size: Small"
 popup/item_2/id = 2
 
+[node name="Windows Size" type="OptionButton" parent="Buttons and Stuff"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 120.0
+offset_right = 553.0
+offset_bottom = 161.0
+theme = ExtResource("4_kvfiq")
+item_count = 2
+selected = 0
+popup/item_0/text = "Window: Windowed Mode"
+popup/item_0/id = 0
+popup/item_1/text = "Window: Fullscreen Mode"
+popup/item_1/id = 1
+
 [node name="Modifiers" type="Label" parent="Buttons and Stuff"]
 layout_mode = 1
 anchors_preset = -1
@@ -173,31 +188,62 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.357
 anchor_bottom = 8.628
-offset_left = 56.0
+offset_left = 124.0
 offset_top = 96.0
-offset_right = -94.133
+offset_right = -26.133
 offset_bottom = -36.004
 theme_override_constants/v_separation = 25
-
-[node name="Left" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
-layout_mode = 2
-toggle_mode = true
-text = "a"
-
-[node name="Right" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
-layout_mode = 2
-text = "d
-"
 
 [node name="Jump" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
 layout_mode = 2
 text = "w
 "
 
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Jump"]
+layout_mode = 2
+offset_left = -74.0
+offset_top = 4.0
+offset_bottom = 39.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Up - "
+
+[node name="Left" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
+layout_mode = 2
+text = "a"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Left"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Left - "
+
 [node name="Special" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
 layout_mode = 2
 text = "s
 "
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Special"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Down - "
+
+[node name="Right" type="Button" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls"]
+layout_mode = 2
+text = "d
+"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Right"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Right - "
 
 [node name="Player2ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
 visible = false
@@ -224,29 +270,59 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.357
 anchor_bottom = 8.628
-offset_left = 56.0
+offset_left = 124.0
 offset_top = 96.0
-offset_right = -94.133
+offset_right = -26.133
 offset_bottom = -36.004
 theme_override_constants/v_separation = 25
 
-[node name="Left2" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
-layout_mode = 2
-text = "Left"
-
-[node name="Right2" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
-layout_mode = 2
-text = "Right"
-
 [node name="Jump2" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
 layout_mode = 2
-text = "Up
-"
+text = "up"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Jump2"]
+layout_mode = 2
+offset_left = -74.0
+offset_top = 4.0
+offset_bottom = 39.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Up - "
+
+[node name="Left2" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
+layout_mode = 2
+text = "left"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Left2"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Left - "
 
 [node name="Special2" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
 layout_mode = 2
-text = "Down
-"
+text = "down"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Special2"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Down - "
+
+[node name="Right2" type="Button" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls"]
+layout_mode = 2
+text = "right"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Right2"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Right - "
 
 [node name="Player3ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
 visible = false
@@ -273,28 +349,59 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.357
 anchor_bottom = 8.628
-offset_left = 56.0
+offset_left = 124.0
 offset_top = 96.0
-offset_right = -94.133
+offset_right = -26.133
 offset_bottom = -36.004
 theme_override_constants/v_separation = 25
+
+[node name="Jump3" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
+layout_mode = 2
+text = "i"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Jump3"]
+layout_mode = 2
+offset_left = -74.0
+offset_top = 4.0
+offset_bottom = 39.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Up - "
 
 [node name="Left3" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
 layout_mode = 2
 text = "j"
 
-[node name="Right3" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
-layout_mode = 2
-text = "l"
-
-[node name="Jump3" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
-layout_mode = 2
-text = "i
-"
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Left3"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Left - "
 
 [node name="Special3" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
 layout_mode = 2
 text = "k"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Special3"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Down - "
+
+[node name="Right3" type="Button" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls"]
+layout_mode = 2
+text = "l"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Right3"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Right - "
 
 [node name="Player4ControlTab" type="TabBar" parent="Buttons and Stuff/PlayerTab"]
 visible = false
@@ -321,39 +428,87 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.357
 anchor_bottom = 8.628
-offset_left = 56.0
+offset_left = 124.0
 offset_top = 96.0
-offset_right = -94.133
+offset_right = -26.133
 offset_bottom = -36.004
 theme_override_constants/v_separation = 25
-
-[node name="Left4" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
-layout_mode = 2
-text = "f"
-
-[node name="Right4" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
-layout_mode = 2
-text = "h"
 
 [node name="Jump4" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
 layout_mode = 2
 text = "t"
 
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Jump4"]
+layout_mode = 2
+offset_left = -74.0
+offset_top = 4.0
+offset_bottom = 39.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Up - "
+
+[node name="Left4" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
+layout_mode = 2
+text = "f"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Left4"]
+layout_mode = 0
+offset_left = -97.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Left - "
+
 [node name="Special4" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
 layout_mode = 2
-text = "g
-"
+text = "g"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Special4"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Down - "
+
+[node name="Right4" type="Button" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls"]
+layout_mode = 2
+text = "h"
+
+[node name="Label" type="Label" parent="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Right4"]
+layout_mode = 0
+offset_left = -116.0
+offset_top = 3.0
+offset_bottom = 38.0
+theme_override_styles/normal = ExtResource("6_kdpcw")
+text = "Right - "
 
 [node name="Sky2" type="Sprite2D" parent="."]
 z_index = -20
 position = Vector2(-12, 13)
 scale = Vector2(0.613, 0.613)
 texture = ExtResource("6_f0bd5")
+metadata/_edit_lock_ = true
 
 [connection signal="item_selected" from="Buttons and Stuff/OptionButton" to="Buttons and Stuff" method="_on_option_button_item_selected"]
 [connection signal="item_selected" from="Buttons and Stuff/Timer" to="Buttons and Stuff" method="_on_timer_item_selected"]
 [connection signal="item_selected" from="Buttons and Stuff/HowManyPlayersLeft" to="Buttons and Stuff" method="_on_how_many_players_left_item_selected"]
 [connection signal="item_selected" from="Buttons and Stuff/UI Size" to="Buttons and Stuff" method="_on_ui_size_item_selected"]
+[connection signal="item_selected" from="Buttons and Stuff/Windows Size" to="Buttons and Stuff" method="_on_windows_size_item_selected"]
 [connection signal="pressed" from="Buttons and Stuff/Back Button" to="Buttons and Stuff/Back Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="Buttons and Stuff/PlayerTab" to="Buttons and Stuff" method="_on_player_tab_tab_clicked"]
-[connection signal="toggled" from="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Left" to="Buttons and Stuff/PlayerTab" method="_on_left_toggled"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Jump" to="Buttons and Stuff/PlayerTab" method="_on_jump_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Left" to="Buttons and Stuff/PlayerTab" method="_on_left_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Special" to="Buttons and Stuff/PlayerTab" method="_on_special_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player1ControlTab/Controls/Right" to="Buttons and Stuff/PlayerTab" method="_on_right_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Jump2" to="Buttons and Stuff/PlayerTab" method="_on_jump_2_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Left2" to="Buttons and Stuff/PlayerTab" method="_on_left_2_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Special2" to="Buttons and Stuff/PlayerTab" method="_on_special_2_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player2ControlTab/Controls/Right2" to="Buttons and Stuff/PlayerTab" method="_on_right_2_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Jump3" to="Buttons and Stuff/PlayerTab" method="_on_jump_3_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Left3" to="Buttons and Stuff/PlayerTab" method="_on_left_3_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Special3" to="Buttons and Stuff/PlayerTab" method="_on_special_3_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player3ControlTab/Controls/Right3" to="Buttons and Stuff/PlayerTab" method="_on_right_3_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Jump4" to="Buttons and Stuff/PlayerTab" method="_on_jump_4_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Left4" to="Buttons and Stuff/PlayerTab" method="_on_left_4_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Special4" to="Buttons and Stuff/PlayerTab" method="_on_special_4_pressed"]
+[connection signal="pressed" from="Buttons and Stuff/PlayerTab/Player4ControlTab/Controls/Right4" to="Buttons and Stuff/PlayerTab" method="_on_right_4_pressed"]

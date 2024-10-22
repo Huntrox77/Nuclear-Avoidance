@@ -1,12 +1,13 @@
-[gd_scene load_steps=36 format=3 uid="uid://qdnvsjmntuhi"]
+[gd_scene load_steps=39 format=3 uid="uid://qdnvsjmntuhi"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_buvqp"]
-[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_udkgh"]
+[ext_resource type="Script" path="res://Scripts/Players/Player_Spawning.gd" id="1_udkgh"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_1ylfr"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="4_uldfh"]
 [ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_80b8j"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_21lkd"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="6_wikyi"]
+[ext_resource type="Texture2D" uid="uid://nuvn2m322pir" path="res://Sprites/InGame/Pusher.png" id="7_8cl7m"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_wdus6"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_l0lws"]
 [ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="9_50f8h"]
@@ -25,24 +26,28 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="26_tvwrp"]
 [ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="27_b45kp"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="27_bfrmt"]
+[ext_resource type="PackedScene" uid="uid://chdl1qguga6h1" path="res://Scenes/In Game Stuff/Spring.tscn" id="27_ph7yh"]
 [ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="27_rp6ur"]
 [ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="28_q6ndc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u84nq"]
 size = Vector2(12446, 154)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y814n"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvoju"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4k7j"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yokmh"]
+size = Vector2(28.6667, 58.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfrt5"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ins04"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro0n0"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_04a1l"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ppe"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cqb3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq0bn"]
 size = Vector2(60, 60)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4ggo"]
@@ -99,8 +104,7 @@ one_shot = true
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
-visible = false
-position = Vector2(-411, -302)
+position = Vector2(-446, -328)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_eytm8")
 metadata/Player = "Player"
@@ -122,7 +126,7 @@ texture = ExtResource("4_uldfh")
 visible = false
 position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_y814n")
+shape = SubResource("RectangleShape2D_hvoju")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 1"]
@@ -149,9 +153,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_80b8j")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 1"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("7_8cl7m")
+
+[node name="Spring" type="Area2D" parent="Players/Player 1/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_yokmh")
+
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-visible = false
-position = Vector2(416, -296)
+position = Vector2(446, -306)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_eytm8")
 metadata/Player = "Player"
@@ -172,7 +187,7 @@ texture = ExtResource("6_wikyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
-shape = SubResource("RectangleShape2D_m4k7j")
+shape = SubResource("RectangleShape2D_bfrt5")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 2"]
@@ -199,9 +214,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_80b8j")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 2"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("7_8cl7m")
+
+[node name="Spring" type="Area2D" parent="Players/Player 2/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_yokmh")
+
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-visible = false
-position = Vector2(-466, -303)
+position = Vector2(-446, -397)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_eytm8")
 metadata/Player = "Player"
@@ -222,7 +248,7 @@ texture = ExtResource("4_uldfh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
-shape = SubResource("RectangleShape2D_ins04")
+shape = SubResource("RectangleShape2D_ro0n0")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 3"]
@@ -245,13 +271,23 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Shield" type="Sprite2D" parent="Players/Player 3"]
 z_index = 1
-position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_80b8j")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 3"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("7_8cl7m")
+
+[node name="Spring" type="Area2D" parent="Players/Player 3/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_yokmh")
+
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-visible = false
-position = Vector2(477, -294)
+position = Vector2(443, -371)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_eytm8")
 metadata/Player = "Player"
@@ -272,7 +308,7 @@ texture = ExtResource("6_wikyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
-shape = SubResource("RectangleShape2D_04a1l")
+shape = SubResource("RectangleShape2D_y7ppe")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 4"]
@@ -299,9 +335,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_80b8j")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 4"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("7_8cl7m")
+
+[node name="Spring" type="Area2D" parent="Players/Player 4/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_yokmh")
+
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
-visible = false
-position = Vector2(-441, -371)
+position = Vector2(-448, -468)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("9_eytm8")
 metadata/Player = "Player"
@@ -322,7 +369,7 @@ texture = ExtResource("6_wikyi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
-shape = SubResource("RectangleShape2D_4cqb3")
+shape = SubResource("RectangleShape2D_mq0bn")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 5"]
@@ -348,6 +395,18 @@ z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("5_80b8j")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 5"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("7_8cl7m")
+
+[node name="Spring" type="Area2D" parent="Players/Player 5/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_yokmh")
 
 [node name="Nuke Stuff" type="Node" parent="."]
 
@@ -575,6 +634,7 @@ script = ExtResource("28_q6ndc")
 [node name="Power-Ups" type="Node" parent="."]
 script = ExtResource("26_tvwrp")
 Shield = ExtResource("27_rp6ur")
+Spring = ExtResource("27_ph7yh")
 
 [node name="Timer" type="Timer" parent="Power-Ups"]
 wait_time = 15.0
@@ -648,6 +708,11 @@ theme = ExtResource("15_a3kop")
 [connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
+[connection signal="body_entered" from="Players/Player 1/Spring/Spring" to="Players/Player 1" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 2/Spring/Spring" to="Players/Player 2" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 3/Spring/Spring" to="Players/Player 3" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 4/Spring/Spring" to="Players/Player 4" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 5/Spring/Spring" to="Players/Player 5" method="_on_spring_body_entered"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]

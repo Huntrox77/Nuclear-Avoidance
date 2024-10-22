@@ -123,3 +123,19 @@ func _on_shield_body_entered(body):
 		if body.has_meta("Player"):
 			body.set_meta("Shield", true)
 			queue_free()
+
+
+func _on_sweeper_body_entered(body):
+	if body.has_meta("PlayerOnly"):
+		if body.get_meta("PlayerOnly") == true:
+			if randi_range(1,2) == 1:
+				randmovespeed = 0
+				randmovespeedY = 0
+			else:
+				pass
+	else:
+		randmovespeed = 0
+		randmovespeedY = 0
+		if body.has_meta("Player"):
+			body.set_meta("Spring", true)
+			queue_free()

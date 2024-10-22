@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba82sjsmja2py"]
+[gd_scene load_steps=43 format=3 uid="uid://ba82sjsmja2py"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_vawcd"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_85nv8"]
@@ -10,11 +10,144 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_bkn4s"]
 [ext_resource type="FontFile" uid="uid://dtxdl4fp2pyrn" path="res://Fonts/Arrows ADF.ttf" id="7_4eano"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_jtwb8"]
+[ext_resource type="Texture2D" uid="uid://dhni28atjui1l" path="res://Sprites/Grounds/Ground.png" id="8_7dk6w"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_npqhx"]
-[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="9_makr3"]
+[ext_resource type="Texture2D" uid="uid://bbssk1535eews" path="res://Sprites/Grounds/GroundR.png" id="9_hedwl"]
+[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="9_makr3"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_gndqb"]
+[ext_resource type="Texture2D" uid="uid://dwnlkw12reoue" path="res://Sprites/Grounds/GroundL.png" id="10_hhlhn"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_4xfra"]
+[ext_resource type="Texture2D" uid="uid://yh2l0hhq77oo" path="res://Sprites/InGame/Nuke.png" id="11_ybl3p"]
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_75huy"]
+[ext_resource type="Texture2D" uid="uid://cpvk7yem2u1tg" path="res://Sprites/InGame/1st.png" id="12_xdqs8"]
+[ext_resource type="Texture2D" uid="uid://4lvcuowqis5p" path="res://Sprites/Gifs/Explosion.png" id="13_1q5l2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02s5x"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(1600, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wmhg"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(1800, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lwov"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(2000, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qht1s"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(2200, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pecku"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(2400, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyncu"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(2600, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h24uj"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(2800, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50bf2"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(3000, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4mot"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(3200, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usoov"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(0, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g60o5"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(200, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okmht"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(400, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2bdt"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(600, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kjes"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(800, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhg0q"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(1000, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5rrb"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(1200, 1, 200, 199)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2phfm"]
+atlas = ExtResource("13_1q5l2")
+region = Rect2(1400, 1, 200, 199)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlhkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02s5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wmhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lwov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qht1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pecku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyncu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h24uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50bf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4mot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usoov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g60o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okmht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2bdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kjes")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhg0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5rrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2phfm")
+}],
+"loop": true,
+"name": &"Explosion",
+"speed": 17.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
 size = Vector2(417, 501)
@@ -73,6 +206,7 @@ offset_top = 8.0
 offset_right = 31.667
 offset_bottom = 26.667
 toggle_mode = true
+button_pressed = true
 texture_normal = ExtResource("4_2h0s7")
 texture_pressed = ExtResource("5_oaoje")
 ignore_texture_size = true
@@ -159,16 +293,409 @@ theme_override_font_sizes/font_size = 64
 text = "k"
 
 [node name="2" type="Node2D" parent="Buttons"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/2"]
+offset_left = 569.0
+offset_top = 289.0
+offset_right = 629.0
+offset_bottom = 349.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black" type="ColorRect" parent="Buttons/2"]
+offset_left = 575.0
+offset_top = 294.0
+offset_right = 635.0
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Buttons/2"]
+offset_left = 588.75
+offset_top = 294.0
+offset_right = 648.75
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="Sprite2D" parent="Buttons/2"]
+position = Vector2(576, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7dk6w")
+
+[node name="GroundR" type="Sprite2D" parent="Buttons/2"]
+position = Vector2(608, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_hedwl")
+
+[node name="GroundL" type="Sprite2D" parent="Buttons/2"]
+position = Vector2(544, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hhlhn")
+
+[node name="Label" type="Label" parent="Buttons/2"]
+offset_left = 371.0
+offset_top = 352.0
+offset_right = 785.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("2_85nv8")
+theme_override_font_sizes/font_size = 12
+text = "Welcome to Nuclear Avoidance! The white cube with eyes is your (player one's) player."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="3" type="Node2D" parent="Buttons"]
+visible = false
+
+[node name="Nuke" type="Sprite2D" parent="Buttons/3"]
+position = Vector2(638, 253)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="Nuke2" type="Sprite2D" parent="Buttons/3"]
+position = Vector2(514, 212)
+scale = Vector2(-0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/3"]
+offset_left = 569.0
+offset_top = 289.0
+offset_right = 629.0
+offset_bottom = 349.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black" type="ColorRect" parent="Buttons/3"]
+offset_left = 575.0
+offset_top = 294.0
+offset_right = 635.0
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Buttons/3"]
+offset_left = 588.75
+offset_top = 294.0
+offset_right = 648.75
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="Sprite2D" parent="Buttons/3"]
+position = Vector2(576, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7dk6w")
+
+[node name="GroundR" type="Sprite2D" parent="Buttons/3"]
+position = Vector2(608, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_hedwl")
+
+[node name="GroundL" type="Sprite2D" parent="Buttons/3"]
+position = Vector2(544, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hhlhn")
+
+[node name="Label" type="Label" parent="Buttons/3"]
+offset_left = 371.0
+offset_top = 352.0
+offset_right = 785.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("2_85nv8")
+theme_override_font_sizes/font_size = 12
+text = "Use WASD (or whatever your controls are) to move and avoid bombs falling from the sky."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="4" type="Node2D" parent="Buttons"]
+visible = false
+
+[node name="Nuke" type="Sprite2D" parent="Buttons/4"]
+position = Vector2(626, 277)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="Nuke2" type="Sprite2D" parent="Buttons/4"]
+position = Vector2(526, 240)
+scale = Vector2(-0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/4"]
+offset_left = 569.0
+offset_top = 289.0
+offset_right = 629.0
+offset_bottom = 349.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black" type="ColorRect" parent="Buttons/4"]
+offset_left = 575.0
+offset_top = 294.0
+offset_right = 635.0
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Buttons/4"]
+offset_left = 588.75
+offset_top = 294.0
+offset_right = 648.75
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="Sprite2D" parent="Buttons/4"]
+position = Vector2(576, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7dk6w")
+
+[node name="GroundR" type="Sprite2D" parent="Buttons/4"]
+position = Vector2(608, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_hedwl")
+
+[node name="GroundL" type="Sprite2D" parent="Buttons/4"]
+position = Vector2(544, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hhlhn")
+
+[node name="Label" type="Label" parent="Buttons/4"]
+offset_left = 371.0
+offset_top = 352.0
+offset_right = 785.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("2_85nv8")
+theme_override_font_sizes/font_size = 12
+text = "If you are hit by the nuke, you will go flying in that direction."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="5" type="Node2D" parent="Buttons"]
 
+[node name="ColorRect" type="ColorRect" parent="Buttons/5"]
+offset_left = 560.0
+offset_top = 289.0
+offset_right = 620.0
+offset_bottom = 349.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black" type="ColorRect" parent="Buttons/5"]
+offset_left = 566.0
+offset_top = 294.0
+offset_right = 626.0
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Buttons/5"]
+offset_left = 579.75
+offset_top = 294.0
+offset_right = 639.75
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="Sprite2D" parent="Buttons/5"]
+position = Vector2(576, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7dk6w")
+
+[node name="GroundR" type="Sprite2D" parent="Buttons/5"]
+position = Vector2(608, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_hedwl")
+
+[node name="GroundL" type="Sprite2D" parent="Buttons/5"]
+position = Vector2(544, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hhlhn")
+
+[node name="Label" type="Label" parent="Buttons/5"]
+offset_left = 371.0
+offset_top = 352.0
+offset_right = 785.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("2_85nv8")
+theme_override_font_sizes/font_size = 12
+text = "If all other players are eliminated, you will gain a point. The player with the most points at the end wins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="1St" type="Sprite2D" parent="Buttons/5"]
+position = Vector2(575, 259)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("12_xdqs8")
+
 [node name="6" type="Node2D" parent="Buttons"]
+visible = false
+
+[node name="Nuke" type="Sprite2D" parent="Buttons/6"]
+position = Vector2(645, 242)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="Nuke2" type="Sprite2D" parent="Buttons/6"]
+position = Vector2(545, 205)
+scale = Vector2(-0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/6"]
+offset_left = 515.0
+offset_top = 289.0
+offset_right = 575.0
+offset_bottom = 349.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black" type="ColorRect" parent="Buttons/6"]
+offset_left = 521.0
+offset_top = 294.0
+offset_right = 581.0
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black3" type="ColorRect" parent="Buttons/6"]
+z_index = 20
+offset_left = 527.0
+offset_top = 148.0
+offset_right = 587.0
+offset_bottom = 208.0
+scale = Vector2(0.894922, 3.39097)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black4" type="ColorRect" parent="Buttons/6"]
+z_index = 20
+offset_left = 634.0
+offset_top = 148.0
+offset_right = 694.0
+offset_bottom = 208.0
+scale = Vector2(0.534923, 3.39097)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Buttons/6"]
+offset_left = 534.75
+offset_top = 294.0
+offset_right = 594.75
+offset_bottom = 354.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="Sprite2D" parent="Buttons/6"]
+position = Vector2(576, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7dk6w")
+
+[node name="GroundR" type="Sprite2D" parent="Buttons/6"]
+position = Vector2(608, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_hedwl")
+
+[node name="GroundL" type="Sprite2D" parent="Buttons/6"]
+position = Vector2(544, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hhlhn")
+
+[node name="Label" type="Label" parent="Buttons/6"]
+offset_left = 370.0
+offset_top = 350.0
+offset_right = 785.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("2_85nv8")
+theme_override_font_sizes/font_size = 12
+text = "There are other modifiers you can turn on to affect gameplay, such as \"blackout\" which blacks out the screen randomly leaving you unable to see some of it."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="7" type="Node2D" parent="Buttons"]
+visible = false
+
+[node name="Nuke" type="Sprite2D" parent="Buttons/7"]
+position = Vector2(615, 222)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_ybl3p")
+
+[node name="ColorRect" type="ColorRect" parent="Buttons/7"]
+offset_left = 421.0
+offset_top = 233.0
+offset_right = 481.0
+offset_bottom = 293.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black" type="ColorRect" parent="Buttons/7"]
+offset_left = 427.0
+offset_top = 238.0
+offset_right = 487.0
+offset_bottom = 298.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Buttons/7"]
+offset_left = 440.75
+offset_top = 238.0
+offset_right = 500.75
+offset_bottom = 298.0
+scale = Vector2(0.075, 0.2)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Ground" type="Sprite2D" parent="Buttons/7"]
+position = Vector2(576, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_7dk6w")
+
+[node name="GroundR" type="Sprite2D" parent="Buttons/7"]
+position = Vector2(608, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_hedwl")
+
+[node name="GroundL" type="Sprite2D" parent="Buttons/7"]
+position = Vector2(544, 335)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_hhlhn")
+
+[node name="Label" type="Label" parent="Buttons/7"]
+offset_left = 370.0
+offset_top = 350.0
+offset_right = 785.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("2_85nv8")
+theme_override_font_sizes/font_size = 12
+text = "Last of all, Have fun! and beat all your friends!
+Thanks for playing! - Huntress"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Explosion" type="AnimatedSprite2D" parent="Buttons/7"]
+z_index = -4
+position = Vector2(559, 274)
+scale = Vector2(0.469612, 0.469612)
+sprite_frames = SubResource("SpriteFrames_mlhkg")
+animation = &"Explosion"
+frame = 4
+frame_progress = 0.708391
 
 [node name="Panel" type="Panel" parent="Buttons"]
 z_index = -5

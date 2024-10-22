@@ -24,5 +24,9 @@ func _process(_delta):
 func _on_timer_timeout():
 	if Modifier.Power == true:
 		var Sh1 = Shield.instantiate()
-		add_child(Sh1)
+		var Spr1 = Spring.instantiate()
+		if randi_range(1,2) == 1:
+			add_child(Sh1)
+		else:
+			add_child(Spr1)
 		$Timer.start(randf_range(powerminimumtime, powermaximumtime))

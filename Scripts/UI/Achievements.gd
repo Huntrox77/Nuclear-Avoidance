@@ -8,15 +8,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Saves.ChallengeOneComplete == true:
+	if Saves.Challenge_One_Complete == true:
 		$"Container/Achievement 1/RedX".hide()
 		$"Container/Achievement 1/Check".show()
-	if Saves.ChallengeTwoComplete == true:
+	if Saves.Challenge_Two_Complete == true:
 		$"Container/Achievement 2/RedX".hide()
 		$"Container/Achievement 2/Check".show()
-	if Saves.ChallengeThreeComplete == true:
+	if Saves.Challenge_Three_Complete == true:
 		$"Container/Achievement 3/RedX".hide()
 		$"Container/Achievement 3/Check".show()
-	if Saves.ChallengeFourComplete == true:
+	if Saves.Challenge_Four_Complete == true:
 		$"Container/Achievement 4/RedX".hide()
 		$"Container/Achievement 4/Check".show()

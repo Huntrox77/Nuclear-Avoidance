@@ -1,13 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://biiy266ikrp1s"]
+[gd_scene load_steps=24 format=3 uid="uid://biiy266ikrp1s"]
 
 [ext_resource type="PackedScene" uid="uid://d342vv4g7762h" path="res://Scenes/In Game Stuff/GroundLeft.tscn" id="1_08ypx"]
-[ext_resource type="Script" path="res://Scripts/Players/PlayerSpawning.gd" id="1_keu5t"]
+[ext_resource type="Script" path="res://Scripts/Players/Player_Spawning.gd" id="1_keu5t"]
 [ext_resource type="PackedScene" uid="uid://crvy5gfiqpum2" path="res://Scenes/In Game Stuff/Ground.tscn" id="2_rm4sk"]
 [ext_resource type="PackedScene" uid="uid://dsh7a5xw0h0uo" path="res://Scenes/In Game Stuff/GroundRight.tscn" id="3_wbhij"]
 [ext_resource type="Texture2D" uid="uid://cpvk7yem2u1tg" path="res://Sprites/InGame/1st.png" id="4_h0t2x"]
 [ext_resource type="Texture2D" uid="uid://belvse7qrcdqc" path="res://Sprites/InGame/2nd.png" id="5_muwlf"]
 [ext_resource type="Texture2D" uid="uid://bqv6j253utyl2" path="res://Sprites/InGame/3rd.png" id="6_evywx"]
-[ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="7_tlt7j"]
 [ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="8_4av1c"]
 [ext_resource type="Script" path="res://Scripts/UI/Bybetimer.gd" id="9_w82my"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="10_ugt6c"]
@@ -17,19 +16,23 @@
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="14_ll58f"]
 [ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="15_lg13q"]
 [ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="16_7p278"]
+[ext_resource type="Texture2D" uid="uid://nuvn2m322pir" path="res://Sprites/InGame/Pusher.png" id="16_x2i51"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fysi4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nenyo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kkeb0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqdlo"]
+size = Vector2(30, 61.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1qeh"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gu3t3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b4giq"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_43sct"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re203"]
 size = Vector2(60, 60)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjkh5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6i4h7"]
 size = Vector2(60, 60)
 
 [node name="WinScreen" type="Node2D"]
@@ -101,35 +104,22 @@ position = Vector2(64, 0)
 
 [node name="BG" type="Node2D" parent="."]
 
-[node name="Sky1" type="Sprite2D" parent="BG"]
-z_index = -20
-position = Vector2(0.00012207, 0)
-scale = Vector2(0.3, -0.3)
-texture = ExtResource("7_tlt7j")
-centered = false
-flip_v = true
-
 [node name="Sky2" type="Sprite2D" parent="BG"]
 z_index = -20
+position = Vector2(580, 176)
 rotation = 3.14159
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.61, 0.61)
 texture = ExtResource("8_4av1c")
 centered = false
 flip_h = true
 flip_v = true
 
-[node name="Sky3" type="Sprite2D" parent="BG"]
-z_index = -20
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_tlt7j")
-centered = false
-flip_v = true
-
 [node name="Sky4" type="Sprite2D" parent="BG"]
 z_index = -20
-position = Vector2(0, -1)
+position = Vector2(617, 175)
 rotation = 3.14159
-scale = Vector2(0.3, -0.3)
+scale = Vector2(0.65, -0.6)
+skew = 0.261799
 texture = ExtResource("8_4av1c")
 centered = false
 flip_v = true
@@ -216,6 +206,7 @@ theme = ExtResource("10_ugt6c")
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(-50, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
@@ -238,7 +229,7 @@ texture = ExtResource("12_md1tm")
 visible = false
 position = Vector2(0, -1.52588e-05)
 scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_fysi4")
+shape = SubResource("RectangleShape2D_nenyo")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 1"]
@@ -265,7 +256,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 1"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("16_x2i51")
+
+[node name="Area2D" type="Area2D" parent="Players/Player 1/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1/Spring/Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_xqdlo")
+
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(48, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
@@ -287,7 +291,7 @@ texture = ExtResource("14_ll58f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
 visible = false
-shape = SubResource("RectangleShape2D_kkeb0")
+shape = SubResource("RectangleShape2D_e1qeh")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 2"]
@@ -314,7 +318,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 2"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("16_x2i51")
+
+[node name="Area2D" type="Area2D" parent="Players/Player 2/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2/Spring/Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_xqdlo")
+
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(-152, -264)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
@@ -336,7 +353,7 @@ texture = ExtResource("12_md1tm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
 visible = false
-shape = SubResource("RectangleShape2D_gu3t3")
+shape = SubResource("RectangleShape2D_b4giq")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 3"]
@@ -363,7 +380,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 3"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("16_x2i51")
+
+[node name="Area2D" type="Area2D" parent="Players/Player 3/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3/Spring/Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_xqdlo")
+
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(145, -265)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
@@ -385,7 +415,7 @@ texture = ExtResource("14_ll58f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
 visible = false
-shape = SubResource("RectangleShape2D_43sct")
+shape = SubResource("RectangleShape2D_re203")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 4"]
@@ -412,7 +442,20 @@ position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
 
+[node name="Spring" type="Sprite2D" parent="Players/Player 4"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("16_x2i51")
+
+[node name="Area2D" type="Area2D" parent="Players/Player 4/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4/Spring/Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_xqdlo")
+
 [node name="Player 5" type="CharacterBody2D" parent="Players"]
+visible = false
 position = Vector2(145, -265)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("11_mbqd1")
@@ -434,7 +477,7 @@ texture = ExtResource("14_ll58f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
 visible = false
-shape = SubResource("RectangleShape2D_fjkh5")
+shape = SubResource("RectangleShape2D_6i4h7")
 one_way_collision = true
 
 [node name="Black" type="ColorRect" parent="Players/Player 5"]
@@ -460,6 +503,18 @@ z_index = 1
 position = Vector2(9.53674e-07, 0)
 scale = Vector2(0.703125, 0.703125)
 texture = ExtResource("13_qwlee")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 5"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("16_x2i51")
+
+[node name="Area2D" type="Area2D" parent="Players/Player 5/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5/Spring/Area2D"]
+position = Vector2(15, 0)
+shape = SubResource("RectangleShape2D_xqdlo")
 
 [node name="GUI\'s" type="Control" parent="."]
 layout_mode = 3

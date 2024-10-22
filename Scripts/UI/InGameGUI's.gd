@@ -10,13 +10,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Modifier.UISize == 0:
+	if Modifier.UI_Size == 0:
 		scale.x = 1
 		scale.y = 1
-	if Modifier.UISize == 1:
+	if Modifier.UI_Size == 1:
 		scale.x = 0.85
 		scale.y = 0.85
-	if Modifier.UISize == 2:
+	if Modifier.UI_Size == 2:
 		scale.x = 0.7
 		scale.y = 0.7
 	# AirControls

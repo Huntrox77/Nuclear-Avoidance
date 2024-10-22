@@ -12,12 +12,12 @@ func _ready():
 	hide()
 	Trans.hide()
 	Trans.position.y = -625
-	if Modifier.InTimer == 0:
-		print(Modifier.InTimer)
-	elif Modifier.InTimer == 1:
+	if Modifier.In_Timer == 0:
+		pass
+	elif Modifier.In_Timer == 1:
 		hide()
 		Trans.show()
-	elif Modifier.InTimer == 2:
+	elif Modifier.In_Timer == 2:
 		show()
 		Trans.hide()
 

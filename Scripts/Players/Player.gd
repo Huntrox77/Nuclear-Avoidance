@@ -15,7 +15,7 @@ var aircontrol = 0.09
 var groundslide = 0.5
 var coyotetime = true
 var notspawned = true
-
+var spring
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -39,6 +39,9 @@ func _ready():
 
 	show()
 	$Shield.hide()
+	spring = get_node("Spring")
+	spring.hide()
+	
 	SPEED = 3 * Modifier.PSpeed
 	#Funny Sprite Enabling
 	if Modifier.Clam == true:
@@ -116,6 +119,8 @@ func _physics_process(delta):
 
 
 		if direction:
+			spring.scale.x = direction
+			spring.position.x = direction * 30
 			if is_on_floor():
 				velocity.x = lerp(velocity.x, direction * SPEED, groundslide)
 			if not is_on_floor():
@@ -141,5 +146,25 @@ func _process(_delta):
 		else:
 			$Shield.hide()
 
+	if has_meta("Spring"):
+		if get_meta("Spring", true):
+			spring.show()
+			var timer = get_tree().create_timer(5.0)
+			timer.connect("timeout", _killspring)
+		else:
+			spring.hide()
+
 func _coyotetime():
 	coyotetime = false
+
+func _killspring():
+	set_meta("Spring", false)
+
+
+func _on_spring_body_entered(body):
+	if has_meta("Spring"):
+		if get_meta("Spring", true):
+			if body.has_meta("Player"):
+				if body != self:
+					body.velocity = (global_position.direction_to(body.global_position) * 3100)
+					body.velocity.y = randi_range(-300, -600)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://chdl1qguga6h1"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUps.gd" id="1_pvt87"]
+[ext_resource type="Texture2D" uid="uid://nuvn2m322pir" path="res://Sprites/InGame/Pusher.png" id="2_pb4ae"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcd82"]
+size = Vector2(37, 36)
+
+[node name="Sweeper" type="Node2D"]
+position = Vector2(0, -1276)
+script = ExtResource("1_pvt87")
+
+[node name="Sweeper" type="Area2D" parent="."]
+position = Vector2(-19, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sweeper"]
+position = Vector2(18.5, 0)
+shape = SubResource("RectangleShape2D_fcd82")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -5
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("2_pb4ae")
+
+[connection signal="body_entered" from="Sweeper" to="." method="_on_sweeper_body_entered"]

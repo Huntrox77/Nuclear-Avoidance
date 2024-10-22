@@ -78,8 +78,9 @@ var powermintime = 10
 var powermaxtime = 25
 var playersleft = 2
 var HowManyPlayersLeft = 1
-var HowManyPlayersLeftChoice = 1
-var UISize = 0
+var How_Many_Players_Left_Choice = 1
+var UI_Size = 0
+var Window_Mode = 0
 var P1Alive = false
 var P2Alive = false
 var P3Alive = false
@@ -93,7 +94,7 @@ var P5Points = 0
 var currentmap = "menu"
 var currentmapno = 1
 var ChallengeNo = 1
-var InTimer = 0
+var In_Timer = 0
 
 func _resetnukes():
 	Nuke2 = false
@@ -226,12 +227,16 @@ func _process(_delta):
 	if currentmap == "menu":
 		pause = false
 	if ChallengeOrLocal == "local":
-		HowManyPlayersLeft = HowManyPlayersLeftChoice
+		HowManyPlayersLeft = How_Many_Players_Left_Choice
 	else:
 		HowManyPlayersLeft = 0
 	if reset == true:
 		_resetmods()
 	ProjectSettings.set_setting("physics/2d/default_gravity", GravityMult * 9.8)
+	if Window_Mode == 0:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	elif Window_Mode == 1:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	listofplayers = [p1selection, p2selection, p3selection, p4selection, p5selection]
 	if Clam == true:
 		Yharon = true
@@ -326,9 +331,14 @@ func _process(_delta):
 			elif loop == true:
 					_resetmaps()
 			else:
-				get_tree().change_scene_to_file("res://Scenes/Game Scenes/win_screen.tscn")
-				_resetplayers()
-				currentmap = "winscreen"
+				if ChallengeOrLocal == "local":
+					get_tree().change_scene_to_file("res://Scenes/Game Scenes/win_screen.tscn")
+					_resetplayers()
+					currentmap = "winscreen"
+				elif ChallengeOrLocal == "Challenge":
+					get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")
+					_resetplayers()
+					currentmap = "menu"
 	if Input.is_action_just_pressed("Pause"):
 		if gameplaying == true:
 			pause = not pause

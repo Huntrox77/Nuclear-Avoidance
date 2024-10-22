@@ -1,6 +1,6 @@
 extends Control
 @onready var Modifier = get_node("/root/Modifiers")
-@onready var GlobalText = get_node("/root/GlobalTexts")
+@onready var Global_Text = get_node("/root/GlobalTexts")
 @onready var Config = get_node("/root/ConfigScript")
 
 # Called when the node enters the scene tree for the first time.
@@ -10,25 +10,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$OptionButton.selected = Config.TextSpeed
-	$Timer.selected = Config.InTimer
-	$HowManyPlayersLeft.selected = Config.HowManyPlayersLeftChoice
-	$"UI Size".selected = Config.UISize
+	$OptionButton.selected = Config.Text_Speed
+	$Timer.selected = Config.In_Timer
+	$HowManyPlayersLeft.selected = Config.How_Many_Players_Left_Choice
+	$"UI Size".selected = Config.UI_Size
+	$"Windows Size".selected = Config.Window_Mode
 	pass
 
 func _on_option_button_item_selected(index):
 	if index == 0:
-		GlobalText.textspeed = 1
-		Config.TextSpeed = 0
+		Global_Text.text_speedd = 1
+		Config.Text_Speed = 0
 	if index == 1:
-		GlobalText.textspeed = 0.03
-		Config.TextSpeed = 1
+		Global_Text.text_speedd = 0.03
+		Config.Text_Speed = 1
 	if index == 2:
-		GlobalText.textspeed = 0.02
-		Config.TextSpeed = 2
+		Global_Text.text_speedd = 0.02
+		Config.Text_Speed = 2
 	if index == 3:
-		GlobalText.textspeed = 0.01
-		Config.TextSpeed = 3
+		Global_Text.text_speedd = 0.01
+		Config.Text_Speed = 3
 
 
 func _on_player_tab_tab_clicked(tab):
@@ -55,16 +56,26 @@ func _on_player_tab_tab_clicked(tab):
 
 
 func _on_timer_item_selected(index):
-	Modifier.InTimer = index
-	Config.InTimer = index
+	Modifier.In_Timer = index
+	Config.In_Timer = index
 
 
 
 func _on_how_many_players_left_item_selected(index):
-	Modifier.HowManyPlayersLeftChoice = index
-	Config.HowManyPlayersLeftChoice = index
+	Modifier.How_Many_Players_Left_Choice = index
+	Config.How_Many_Players_Left_Choice = index
 
 
 func _on_ui_size_item_selected(index):
-	Modifier.UISize = index
-	Config.UISize = index
+	Modifier.UI_Size = index
+	Config.UI_Size = index
+
+
+func _on_windows_size_item_selected(index):
+	Modifier.Window_Mode = index
+	Config.Window_Mode = index
+
+
+func _on_res_item_selected(index):
+	Modifier.Res = index
+	Config.Res = index

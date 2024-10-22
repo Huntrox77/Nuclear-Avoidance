@@ -1,48 +1,64 @@
 extends Node
 @onready var Modifier = get_node("/root/Modifiers")
 var config = ConfigFile.new()
-var TextSpeed = 0
-var player1con = []
-var player2con = []
-var player3con = []
-var player4con = []
+var player1_controls = []
+var player2_controls = []
+var player3_controls = []
+var player4_controls = []
+var player1_control_UI = []
+var player2_control_UI = []
+var player3_control_UI = []
+var player4_control_UI = []
+var Text_Speed = 0
 var Favourites = []
-var HowManyPlayersLeftChoice = 1
-var UISize = 0
-var ChallengeOneComplete = false
-var ChallengeTwoComplete = false
-var ChallengeThreeComplete = false
-var ChallengeFourComplete = false
+var How_Many_Players_Left_Choice = 1
+var UI_Size = 0
+var Window_Mode = 0
+var Res = 0
+var Challenge_One_Complete = false
+var Challenge_Two_Complete = false
+var Challenge_Three_Complete = false
+var Challenge_Four_Complete = false
 var achievements = []
-var InTimer = 0
+var In_Timer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# Loads the config
 	config.load("res://config.cfg")
-	TextSpeed = config.get_value("Textspeed", "Choice", 1) 
-	player1con = config.get_value("PlayerOne", "Controls", player1con) 
+	# Settings
+	Text_Speed = config.get_value("Text_Speed", "Choice", 1) 
 	Favourites = config.get_value("Modifiers", "Favourited", [])
-	InTimer = config.get_value("Timer", "Choice", 1)
-	HowManyPlayersLeftChoice = config.get_value("Playersleft", "Choice", 1)
-	UISize = config.get_value("UISize", "Choice", 1)
-	ChallengeOneComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[0] 
-	ChallengeTwoComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[1]
-	ChallengeThreeComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[2] 
-	ChallengeFourComplete = config.get_value("Achivements", "Completed", [false, false, false, false])[3]
-
-
+	In_Timer = config.get_value("Timer", "Choice", 1)
+	How_Many_Players_Left_Choice = config.get_value("Playersleft", "Choice", 1)
+	UI_Size = config.get_value("UI_Size", "Choice", 1)
+	Window_Mode = config.get_value("Window_Mode", "Choice", 1)
+	Res = config.get_value("Res", "Choice", 1)
+	# Challenge Save
+	Challenge_One_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[0] 
+	Challenge_Two_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[1]
+	Challenge_Three_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[2] 
+	Challenge_Four_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[3]
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	achievements = [ChallengeOneComplete, ChallengeTwoComplete, ChallengeThreeComplete, ChallengeFourComplete]
-	config.set_value("Textspeed", "Choice", TextSpeed) 
-	config.set_value("PlayerOne", "Controls", player1con)
+	# sets all the values
+	config.set_value("Player1_Controls", "Controls", player1_controls)
+	config.set_value("Player2_Controls", "Controls", player2_controls)
+	config.set_value("Player3_Controls", "Controls", player3_controls)
+	config.set_value("Player4_Controls", "Controls", player4_controls)
+	achievements = [Challenge_One_Complete, Challenge_Two_Complete, Challenge_Three_Complete, Challenge_Four_Complete]
+	config.set_value("Text_Speed", "Choice", Text_Speed) 
 	config.set_value("Achivements", "Completed", achievements)
 	config.set_value("Modifiers", "Favourited", Favourites)
-	config.set_value("Timer", "Choice", InTimer)
-	config.set_value("Playersleft", "Choice", HowManyPlayersLeftChoice)
-	config.set_value("UISize", "Choice", UISize)
-	Modifier.InTimer = InTimer
-	Modifier.HowManyPlayersLeftChoice = HowManyPlayersLeftChoice
+	config.set_value("Timer", "Choice", In_Timer)
+	config.set_value("Playersleft", "Choice", How_Many_Players_Left_Choice)
+	config.set_value("UI_Size", "Choice", UI_Size)
+	config.set_value("Window_Mode", "Choice", Window_Mode)
+	config.set_value("Res", "Choice", Res)
+	Modifier.Window_Mode = Window_Mode
+	Modifier.In_Timer = In_Timer
+	Modifier.How_Many_Players_Left_Choice = How_Many_Players_Left_Choice
 	_save()
 
 
