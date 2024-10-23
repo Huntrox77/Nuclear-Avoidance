@@ -2,15 +2,15 @@ extends Node
 @onready var Modifier = get_node("/root/Modifiers")
 @export var Shield:PackedScene
 @export var Spring:PackedScene
-var powerminimumtime = 10
-var powermaximumtime = 25
+var power_minimum_time = 10
+var power_maximum_time = 25
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#FIX
-	powerminimumtime = Modifier.powermintime
-	powermaximumtime = Modifier.powermaxtime
-	$Timer.start(randf_range(powerminimumtime, powermaximumtime))
+	#Sets the power up max and mix spawning times from the modifiers and start the timer
+	power_minimum_time = Modifier.power_min_time
+	power_maximum_time = Modifier.powermaxtime
+	$Timer.start(randf_range(power_minimum_time, power_maximum_time))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +21,7 @@ func _process(_delta):
 		pass
 
 
+# On timeout, spawn a power-up and start the timer again
 func _on_timer_timeout():
 	if Modifier.Power == true:
 		var Sh1 = Shield.instantiate()
@@ -29,4 +30,4 @@ func _on_timer_timeout():
 			add_child(Sh1)
 		else:
 			add_child(Spr1)
-		$Timer.start(randf_range(powerminimumtime, powermaximumtime))
+		$Timer.start(randf_range(power_minimum_time, power_maximum_time))

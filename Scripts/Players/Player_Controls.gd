@@ -15,6 +15,7 @@ func _process(_delta):
 	pass
 
 
+# If its waiting for a input, and the input is a key it will replace the selected movement key with the new key
 func _input(event):
 	if awaiting_input and event is InputEventKey:
 		if event.is_pressed():
@@ -24,6 +25,7 @@ func _input(event):
 			awaiting_input = false
 
 
+# All movement setting UI's
 func _on_left_pressed():
 	target = "p1-left"
 	awaiting_input = true
@@ -134,3 +136,5 @@ func _on_right_4_pressed():
 	awaiting_input = true
 	$Player4ControlTab/Controls/Right4.text = "Awaiting Input"
 	target_UI = $Player4ControlTab/Controls/Right4
+
+

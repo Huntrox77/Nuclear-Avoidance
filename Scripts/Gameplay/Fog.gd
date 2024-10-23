@@ -1,24 +1,26 @@
 extends GridContainer
 @onready var Modifier = get_node("/root/Modifiers")
-var listofplayers = []
-var PlayerNo = 0.75
+var list_of_players = []
+var Player_No = 0.75
 var TRANSPARENT_DIST = 128
 var OPAQUE_DIST = 255
-# Called when the node enters the scene tree for the first time.
+
+# Gets the amount of players and sets fog density to counter it.
 func _ready():
-	PlayerNo = 0.8
-	listofplayers = Modifier.listofplayers
-	for i in listofplayers:
+	Player_No = 0.8
+	list_of_players = Modifier.list_of_players
+	for i in list_of_players:
 		if i == true:
-			PlayerNo += 0.1
+			Player_No += 0.1
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(_delta):
-	TRANSPARENT_DIST = 128 / PlayerNo
-	OPAQUE_DIST = 255 / PlayerNo
-	var Players = [Modifier.PlayerOne, Modifier.PlayerTwo, Modifier.PlayerThree, Modifier.PlayerFour, Modifier.PlayerFive]
-	var Lamps = [Modifier.LampOne, Modifier.LampTwo]
+	# This gets the distance between the players and the furthest fog piece they can view due to their view distances, which is based on the density of the fog (due to more or less players)
+	TRANSPARENT_DIST = 128 / Player_No
+	OPAQUE_DIST = 255 / Player_No
+	var Players = [Modifier.Player_One, Modifier.Player_Two, Modifier.Player_Three, Modifier.Player_Four, Modifier.Player_Five]
+	var Lamps = [Modifier.Lamp_One, Modifier.Lamp_Two]
 	for i in get_children():
 		var distance = 100000000
 		for player in Players:
@@ -32,6 +34,7 @@ func _process(_delta):
 			i.color.a = 1
 		else:
 			i.color.a = (distance - TRANSPARENT_DIST) / (OPAQUE_DIST - TRANSPARENT_DIST)
+		# Same thing but for the lamps in a level
 		for lamp in Lamps:
 			if !is_instance_valid(lamp): continue
 			var d = i.global_position.distance_to(lamp.global_position)

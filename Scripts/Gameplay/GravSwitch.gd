@@ -10,7 +10,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-
+# Reverses or normalizes gravity based on the players meta data by detecting it tthen changing its gravity and boosting it a little.
 func _on_grav_switch_1_body_entered(body):
 	if body.has_meta("UpsideDown"):
 		body.remove_meta("UpsideDown")
@@ -35,7 +35,8 @@ func _on_grav_switch_1_body_entered(body):
 func _on_timer_timeout():
 	$DeleteSwitch.queue_free()
 
-
+# Reverses or normalizes gravity based on the players meta data by detecting it then changing its gravity,
+# and boosting it more than usual because of the crumble modifier otherwise players would lose instantly.
 func _on_delete_switch_body_entered(body):
 	if body.gravity > 0:
 		if Modifier.Crumble == true:

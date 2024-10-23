@@ -6,14 +6,16 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Keep Player 5 on inbetween games
 func _process(_delta):
-	if Modifier.p5selection == true:
+	if Modifier.p5_selection == true:
 		button_pressed = true
 
+
+# Toggle player 5 on and / or off
 func _on_pressed():
-	Modifier.p5selection = not Modifier.p5selection
-	if Modifier.p5selection == true:
-		Modifier.playersleft += 1
+	Modifier.p5_selection = not Modifier.p5_selection
+	if Modifier.p5_selection == true:
+		Modifier.players_left += 1
 	else:
-		Modifier.playersleft -= 1
+		Modifier.players_left -= 1

@@ -7,7 +7,8 @@ var G9 = null
 var G10 = null
 var G11 = null
 var movespeed = -0.5
-# Called when the node enters the scene tree for the first time.
+
+# instantiates the ground scenes then adds them at the desired position
 func _ready():
 	MovingPlatChildren = get_parent().get_child(9).get_child(3).get_children()
 	var G = Ground.instantiate()

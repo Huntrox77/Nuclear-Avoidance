@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=55 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://dsxj4j4fkih6g" path="res://Sprites/UI/Map12.png" id="40_aqmd1"]
 [ext_resource type="Texture2D" uid="uid://ba28uqkdkc6ip" path="res://Sprites/UI/Map13Dark.png" id="41_1uxej"]
 [ext_resource type="Texture2D" uid="uid://cpncutkkcy61l" path="res://Sprites/UI/Map13.png" id="42_yifhu"]
+[ext_resource type="AudioStream" uid="uid://bnsn18yv5il5g" path="res://Music/06. Triptrap.mp3" id="52_goatd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htct4"]
 
@@ -1018,6 +1019,10 @@ position = Vector2(-12, 13)
 scale = Vector2(0.613, 0.613)
 texture = ExtResource("23_ohndb")
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("52_goatd")
+autoplay = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Play Button" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/AdvMod" to="Buttons" method="_on_adv_mod_pressed"]

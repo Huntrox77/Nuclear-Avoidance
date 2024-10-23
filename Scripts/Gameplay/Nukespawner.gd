@@ -4,9 +4,10 @@ extends Node2D
 @export var nuke_scene:PackedScene
 @export var sweeper_scene:PackedScene
 @onready var Swimer = $Swimer
-# Called when the node enters the scene tree for the first time.
+
+# if challenges is on please spawn nuke 2 and 3 also 
 func _ready():
-	if Modifier.ChallengeOrLocal == "Challenge":
+	if Modifier.Challenge_Or_Local == "Challenge":
 		Modifier.Nuke2 = true
 		Modifier.Nuke3 = true
 	pass # Replace with function body.
@@ -16,7 +17,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-
+# A bunch of timer stuff to tell the game when to start spawning the next bomb
 func _on_timer_timeout():
 	var k = nuke_scene.instantiate()
 	add_child(k)

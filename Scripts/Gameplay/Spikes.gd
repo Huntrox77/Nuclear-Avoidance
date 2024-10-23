@@ -10,8 +10,8 @@ func _ready():
 func _process(_delta):
 	pass
 
-
+# kill player on enter spike
 func _on_spike_body_entered(body):
 	if body.has_meta("Player"):
 		body.queue_free()
-		Modifier.playersleft -= 1
+		Modifier.players_left -= 1

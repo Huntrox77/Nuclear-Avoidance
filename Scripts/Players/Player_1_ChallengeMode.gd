@@ -5,9 +5,9 @@ extends CharacterBody2D
 @onready var Shape = $ColorRect
 var SPEED = 300.0
 var JUMP_VELOCITY = -400.0
-var airslide = 0.02
-var aircontrol = 0.09
-var groundslide = 0.5
+var air_slide = 0.02
+var air_control = 0.09
+var ground_slide = 0.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -18,34 +18,35 @@ func _ready():
 func _physics_process(delta):
 	#Funny Sprite Enabling
 	if Modifier.Ice == true:
-		groundslide = 0.01
-		aircontrol = 0.01
+		ground_slide = 0.01
+		air_control = 0.01
 	# Kills player if they dont exist
-	if Modifier.p1selection == false:
+	if Modifier.p1_selection == false:
 		queue_free()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
-	Modifier.p1aircontrol = aircontrol
+	Modifier.p1_air_control = air_control
 
 	# Handle jump.
 	if Input.is_action_pressed("p1-jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	
+# Left makes direction left and vice versa
 	var direction = Input.get_axis("p1-left", "p1-right")
 
+# Handles movement / friction on ground and air
 	if direction:
 		if is_on_floor():
-			velocity.x = lerp(velocity.x, direction * SPEED, groundslide)
+			velocity.x = lerp(velocity.x, direction * SPEED, ground_slide)
 		if not is_on_floor():
-			velocity.x = lerp(velocity.x, direction * SPEED, aircontrol)
+			velocity.x = lerp(velocity.x, direction * SPEED, air_control)
 	elif is_on_floor():
-		velocity.x = lerp(velocity.x, 0.0, groundslide)
+		velocity.x = lerp(velocity.x, 0.0, ground_slide)
 	else:
-		velocity.x = lerp(velocity.x, 0.0, airslide)
+		velocity.x = lerp(velocity.x, 0.0, air_slide)
 	
 	
 

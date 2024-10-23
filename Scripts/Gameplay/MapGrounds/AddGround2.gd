@@ -1,18 +1,18 @@
 extends Node
-@export var GroundLeft:PackedScene
+@export var Ground_Left:PackedScene
 @export var Ground:PackedScene
-@export var GroundRight:PackedScene
+@export var Ground_Right:PackedScene
 
-# Called when the node enters the scene tree for the first time.
+# instantiates the ground scenes then adds them at the desired position
 func _ready():
-	var GL = GroundLeft.instantiate()
-	var GL2 = GroundLeft.instantiate()
-	var GL3 = GroundLeft.instantiate()
+	var GL = Ground_Left.instantiate()
+	var GL2 = Ground_Left.instantiate()
+	var GL3 = Ground_Left.instantiate()
 	var G = Ground.instantiate()
 	var G2 = Ground.instantiate()
-	var GR = GroundRight.instantiate()
-	var GR2 = GroundRight.instantiate()
-	var GR3 = GroundRight.instantiate()
+	var GR = Ground_Right.instantiate()
+	var GR2 = Ground_Right.instantiate()
+	var GR3 = Ground_Right.instantiate()
 	
 	add_child(GL)
 	GL.position.x = -480

@@ -1,30 +1,31 @@
 extends Node
-@export var GroundLeft:PackedScene
+@export var Ground_Left:PackedScene
 @export var Ground:PackedScene
-@export var GroundRight:PackedScene
+@export var Ground_Right:PackedScene
 
-var movespeed = 1
-var movespeed2 = 0.66
-var movespeed3 = 1.33
-var trueGR2 = GroundRight
-var trueGL2 = GroundLeft
-var trueG2 = Ground
-var trueGR = GroundRight
-var trueGL = GroundLeft
-var trueG = Ground
-var trueGR3 = GroundRight
-var trueGL3 = GroundLeft
-var trueG3 = Ground
-# Called when the node enters the scene tree for the first time.
+var move_speed = 1
+var move_speed2 = 0.66
+var move_speed3 = 1.33
+var true_GR2 = Ground_Right
+var true_GL2 = Ground_Left
+var true_G2 = Ground
+var true_GR = Ground_Right
+var true_GL = Ground_Left
+var true_G = Ground
+var true_GR3 = Ground_Right
+var true_GL3 = Ground_Left
+var true_G3 = Ground
+
+# instantiates the ground scenes then adds them at the desired position
 func _ready():
-	var GL = GroundLeft.instantiate()
-	var GL2 = GroundLeft.instantiate()
-	var GL3 = GroundLeft.instantiate()
+	var GL = Ground_Left.instantiate()
+	var GL2 = Ground_Left.instantiate()
+	var GL3 = Ground_Left.instantiate()
 	var G = Ground.instantiate()
 	var G2 = Ground.instantiate()
-	var GR = GroundRight.instantiate()
-	var GR2 = GroundRight.instantiate()
-	var GR3 = GroundRight.instantiate()
+	var GR = Ground_Right.instantiate()
+	var GR2 = Ground_Right.instantiate()
+	var GR3 = Ground_Right.instantiate()
 	
 	add_child(GL)
 	GL.position.x = -480
@@ -45,49 +46,49 @@ func _ready():
 	add_child(GL3)
 	GL3.position.x = -32
 	
-	trueGR2 = GR2
-	trueGL2 = GL2
-	trueG2 = G2
-	trueGR = GR
-	trueGL = GL
-	trueG = G
-	trueGR3 = GR3
-	trueGL3 = GL3
+	true_GR2 = GR2
+	true_GL2 = GL2
+	true_G2 = G2
+	true_GR = GR
+	true_GL = GL
+	true_G = G
+	true_GR3 = GR3
+	true_GL3 = GL3
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Moves Moving Platforms
 func _process(_delta):
-	trueGL2.position.y -= movespeed
-	trueG2.position.y -= movespeed
-	trueGR2.position.y -= movespeed
-	trueGL.position.y -= movespeed2
-	trueG.position.y -= movespeed2
-	trueGR.position.y -= movespeed2
-	trueGL3.position.y -= movespeed3
-	trueGR3.position.y -= movespeed3
+	true_GL2.position.y -= move_speed
+	true_G2.position.y -= move_speed
+	true_GR2.position.y -= move_speed
+	true_GL.position.y -= move_speed2
+	true_G.position.y -= move_speed2
+	true_GR.position.y -= move_speed2
+	true_GL3.position.y -= move_speed3
+	true_GR3.position.y -= move_speed3
 	pass
 
-
+# Changes Direction
 func _on_timer_timeout():
-	if movespeed == -1:
-		movespeed = 1
+	if move_speed == -1:
+		move_speed = 1
 	else:
-		movespeed = -1
+		move_speed = -1
 	pass # Replace with function body.
 
 
 func _on_timer_2_timeout():
-	if movespeed2 == -0.66:
-		movespeed2 = 0.66
+	if move_speed2 == -0.66:
+		move_speed2 = 0.66
 	else:
-		movespeed2 = -0.66
+		move_speed2 = -0.66
 	pass # Replace with function body.
 
 
 func _on_timer_3_timeout():
-	if movespeed3 == -1.33:
-		movespeed3 = 1.33
+	if move_speed3 == -1.33:
+		move_speed3 = 1.33
 	else:
-		movespeed3 = -1.33
+		move_speed3 = -1.33
 	pass # Replace with function body.

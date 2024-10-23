@@ -1,21 +1,22 @@
 extends Node
-@export var GroundLeft:PackedScene
+@export var Ground_Left:PackedScene
 @export var Ground:PackedScene
-@export var GroundRight:PackedScene
+@export var Ground_Right:PackedScene
 
-var movespeed = 1
-var trueGR3 = GroundRight
-var trueGL3 = GroundLeft
-# Called when the node enters the scene tree for the first time.
+var move_speed = 1
+var true_GR3 = Ground_Right
+var true_GL3 = Ground_Left
+
+# instantiates the ground scenes then adds them at the desired position
 func _ready():
-	var GL = GroundLeft.instantiate()
-	var GL2 = GroundLeft.instantiate()
-	var GL3 = GroundLeft.instantiate()
+	var GL = Ground_Left.instantiate()
+	var GL2 = Ground_Left.instantiate()
+	var GL3 = Ground_Left.instantiate()
 	var G = Ground.instantiate()
 	var G2 = Ground.instantiate()
-	var GR = GroundRight.instantiate()
-	var GR2 = GroundRight.instantiate()
-	var GR3 = GroundRight.instantiate()
+	var GR = Ground_Right.instantiate()
+	var GR2 = Ground_Right.instantiate()
+	var GR3 = Ground_Right.instantiate()
 	
 	add_child(GL)
 	GL.position.x = -480
@@ -36,21 +37,21 @@ func _ready():
 	add_child(GL3)
 	GL3.position.x = 352 - 128
 	
-	trueGR3 = GR3
-	trueGL3 = GL3
+	true_GR3 = GR3
+	true_GL3 = GL3
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Moves Moving Platforms
 func _process(_delta):
-	trueGL3.position.x -= movespeed
-	trueGR3.position.x -= movespeed
+	true_GL3.position.x -= move_speed
+	true_GR3.position.x -= move_speed
 	pass
 
-
+# Changes Direction
 func _on_timer_timeout():
-	if movespeed == 1:
-		movespeed = -1
+	if move_speed == 1:
+		move_speed = -1
 	else:
-		movespeed = 1
+		move_speed = 1
 	pass # Replace with function body.

@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="6_mxiyu"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_ekyes"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_ivnos"]
-[ext_resource type="PackedScene" path="res://Scenes/In Game Stuff/Platform.tscn" id="9_lt75u"]
+[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="9_lt75u"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_2scp3"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_qk3en"]
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_40kga"]
@@ -164,6 +164,10 @@ Sprites by: Huntress
 
 
 
+Music: Some by me, Some by James Primate for his game: Rain World, I am merely just using it for a non-profit project and will replace the music if requested :)
+
+
+
 Backgrounds by: Charlie (Chortle)
 
 
@@ -211,7 +215,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Icon" type="Sprite2D" parent="Buttons/Panel/Container/Credits/Label2"]
-position = Vector2(278.667, 4686.67)
+position = Vector2(278.667, 5517.34)
 scale = Vector2(1.33333, 1.33333)
 texture = ExtResource("5_bgr48")
 

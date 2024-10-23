@@ -79,3 +79,4 @@ func _on_windows_size_item_selected(index):
 func _on_res_item_selected(index):
 	Modifier.Res = index
 	Config.Res = index
+

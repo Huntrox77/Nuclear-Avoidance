@@ -1,12 +1,16 @@
-[gd_scene load_steps=40 format=3 uid="uid://d236nnawauve3"]
+[gd_scene load_steps=44 format=3 uid="uid://d236nnawauve3"]
 
 [ext_resource type="Script" path="res://Scripts/Players/Player_Spawning.gd" id="1_fdf1y"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_pswfu"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_uxi58"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="4_0mt1h"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="4_peawc"]
 [ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_4e7pc"]
+[ext_resource type="AudioStream" uid="uid://gtd741w2wmo1" path="res://Music/28 - Threat - Sky Islands.mp3" id="5_meyd8"]
 [ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="6_y81bw"]
+[ext_resource type="AudioStream" uid="uid://diidthyshwnrr" path="res://Music/31 - Threat - Farm Arrays.mp3" id="6_yw8kc"]
 [ext_resource type="Texture2D" uid="uid://nuvn2m322pir" path="res://Sprites/InGame/Pusher.png" id="7_q4fo3"]
+[ext_resource type="AudioStream" uid="uid://bfppmgfpqqy48" path="res://Music/Threat_-_Chimney_Canopy_(The_Gutter).mp3" id="7_yknhx"]
 [ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="9_hpv5f"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="9_tufkx"]
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="10_nrk6f"]
@@ -101,6 +105,18 @@ text = "You are no god... but I shall feast upon your essence regardless!"
 [node name="TextTimer" type="Timer" parent="void"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("4_peawc")
+
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("5_meyd8")
+
+[node name="FarmArrays" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("6_yw8kc")
+
+[node name="Cave" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("7_yknhx")
 
 [node name="Players" type="Node" parent="."]
 

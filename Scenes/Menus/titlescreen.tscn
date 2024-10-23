@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://4w1gncy6lgoo"]
+[gd_scene load_steps=21 format=3 uid="uid://4w1gncy6lgoo"]
 
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_0l6ev"]
 [ext_resource type="FontFile" uid="uid://sh4btkwdrjd3" path="res://Fonts/KGNexttoMeSolid.ttf" id="2_6gjgd"]
@@ -11,7 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="10_ihrwe"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_n42oj"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_h4j2j"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="11_p5cbq"]
+[ext_resource type="AudioStream" uid="uid://gtd741w2wmo1" path="res://Music/28 - Threat - Sky Islands.mp3" id="12_4262w"]
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_tsq2a"]
+[ext_resource type="AudioStream" uid="uid://diidthyshwnrr" path="res://Music/31 - Threat - Farm Arrays.mp3" id="13_a8p48"]
+[ext_resource type="AudioStream" uid="uid://bfppmgfpqqy48" path="res://Music/Threat_-_Chimney_Canopy_(The_Gutter).mp3" id="14_ohv0j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
 size = Vector2(417, 647)
@@ -282,6 +286,18 @@ text = "You are no god... but I shall feast upon your essence regardless!"
 [node name="TextTimer" type="Timer" parent="void"]
 wait_time = 3.0
 one_shot = true
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("11_p5cbq")
+
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("12_4262w")
+
+[node name="FarmArrays" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("13_a8p48")
+
+[node name="Cave" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("14_ohv0j")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(203, 7)

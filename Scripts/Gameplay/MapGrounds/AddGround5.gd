@@ -1,23 +1,23 @@
 extends Node
-@export var GroundRight:PackedScene
+@export var Ground_Right:PackedScene
 @onready var Besprite = null
 
-# Called when the node enters the scene tree for the first time.
+# instantiates the ground scenes then adds them at the desired position
 func _ready():
-	var GR = GroundRight.instantiate()
-	var GR2 = GroundRight.instantiate()
-	var GR3 = GroundRight.instantiate()
-	var GR4 = GroundRight.instantiate()
-	var GR5 = GroundRight.instantiate()
-	var GR6 = GroundRight.instantiate()
-	var GR7 = GroundRight.instantiate()
-	var GR8 = GroundRight.instantiate()
-	var GR9 = GroundRight.instantiate()
-	var GR10 = GroundRight.instantiate()
-	var GR11 = GroundRight.instantiate()
-	var GR12 = GroundRight.instantiate()
-	var GR13 = GroundRight.instantiate()
-	var GR14 = GroundRight.instantiate()
+	var GR = Ground_Right.instantiate()
+	var GR2 = Ground_Right.instantiate()
+	var GR3 = Ground_Right.instantiate()
+	var GR4 = Ground_Right.instantiate()
+	var GR5 = Ground_Right.instantiate()
+	var GR6 = Ground_Right.instantiate()
+	var GR7 = Ground_Right.instantiate()
+	var GR8 = Ground_Right.instantiate()
+	var GR9 = Ground_Right.instantiate()
+	var GR10 = Ground_Right.instantiate()
+	var GR11 = Ground_Right.instantiate()
+	var GR12 = Ground_Right.instantiate()
+	var GR13 = Ground_Right.instantiate()
+	var GR14 = Ground_Right.instantiate()
 	
 	#Top platform 1
 	add_child(GR)
