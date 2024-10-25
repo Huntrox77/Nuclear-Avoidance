@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1k34sp6aj5kc"]
+[gd_scene load_steps=9 format=3 uid="uid://b1k34sp6aj5kc"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Challenges.gd" id="1_agl05"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="1_avbpt"]
 [ext_resource type="Script" path="res://Scripts/UI/ModifierBackButton.gd" id="2_euinn"]
 [ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="4_k8mhk"]
+[ext_resource type="Texture2D" uid="uid://bkxyh2aofqjn6" path="res://Sprites/UI/Challenge1.png" id="4_r0mna"]
 [ext_resource type="Script" path="res://Scripts/UI/ChallengeText.gd" id="4_tt3cm"]
 [ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="6_s0lk7"]
+[ext_resource type="AudioStream" uid="uid://cbnnptpb3vdtf" path="res://Music/21 - Weyuon.mp3" id="8_ep7kx"]
 
 [node name="ChallengeSelect" type="Control"]
 layout_mode = 3
@@ -17,9 +19,9 @@ anchors_preset = 0
 clip_contents = true
 layout_mode = 2
 offset_left = -287.0
-offset_top = 2.0
-offset_right = 289.0
-offset_bottom = 86.0
+offset_top = 93.0
+offset_right = 337.0
+offset_bottom = 179.0
 columns = 10
 script = ExtResource("1_agl05")
 
@@ -170,6 +172,28 @@ mouse_filter = 2
 theme = ExtResource("1_avbpt")
 metadata/_edit_lock_ = true
 
+[node name="Image Panel" type="Panel" parent="."]
+z_index = -5
+layout_mode = 0
+offset_left = -250.0
+offset_top = -281.0
+offset_right = 860.0
+offset_bottom = 343.0
+scale = Vector2(0.45, 0.45)
+mouse_filter = 2
+theme = ExtResource("1_avbpt")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Image Panel"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 31.0
+offset_right = 1057.0
+offset_bottom = 593.0
+texture = ExtResource("4_r0mna")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Play" type="Button" parent="."]
 layout_mode = 0
 offset_left = 409.0
@@ -184,9 +208,9 @@ expand_icon = true
 [node name="ChallengeText" type="Label" parent="."]
 layout_mode = 2
 offset_left = -96.0
-offset_top = -46.0
+offset_top = 45.0
 offset_right = 98.0
-offset_bottom = -5.0
+offset_bottom = 86.0
 theme = ExtResource("1_avbpt")
 text = "Challenge 1"
 horizontal_alignment = 1
@@ -196,9 +220,8 @@ script = ExtResource("4_tt3cm")
 [node name="Description" type="Label" parent="."]
 layout_mode = 2
 offset_left = -553.0
-offset_top = -91.0
 offset_right = 557.0
-offset_bottom = -51.0
+offset_bottom = 40.0
 theme = ExtResource("1_avbpt")
 theme_override_styles/normal = ExtResource("4_k8mhk")
 text = "Description Goes Here"
@@ -211,10 +234,16 @@ z_index = -20
 position = Vector2(-12, 13)
 scale = Vector2(0.613, 0.613)
 texture = ExtResource("6_s0lk7")
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ep7kx")
+autoplay = true
 
 [connection signal="pressed" from="Challenges/Button" to="Challenges" method="_on_button_pressed"]
 [connection signal="pressed" from="Challenges/Button2" to="Challenges" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Challenges/Button3" to="Challenges" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Challenges/Button4" to="Challenges" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Challenges/Button5" to="Challenges" method="_on_button_5_pressed"]
 [connection signal="pressed" from="Back Button" to="Back Button" method="_on_pressed"]
 [connection signal="pressed" from="Play" to="Challenges" method="_on_play_pressed"]

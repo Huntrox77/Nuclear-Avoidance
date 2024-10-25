@@ -9,7 +9,7 @@ var power_maximum_time = 25
 func _ready():
 	#Sets the power up max and mix spawning times from the modifiers and start the timer
 	power_minimum_time = Modifier.power_min_time
-	power_maximum_time = Modifier.powermaxtime
+	power_maximum_time = Modifier.power_max_time
 	$Timer.start(randf_range(power_minimum_time, power_maximum_time))
 
 

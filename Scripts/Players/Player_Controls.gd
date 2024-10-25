@@ -15,7 +15,7 @@ func _process(_delta):
 	pass
 
 
-# If its waiting for a input, and the input is a key it will replace the selected movement key with the new key
+# If its waiting for a input, and if the input is a key it will replace the selected movement key with the newly pressed key
 func _input(event):
 	if awaiting_input and event is InputEventKey:
 		if event.is_pressed():

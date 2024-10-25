@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://b1bc0ft3ej8da"]
+[gd_scene load_steps=23 format=3 uid="uid://b1bc0ft3ej8da"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="1_q7rei"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="2_7fut0"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="3_1xig0"]
 [ext_resource type="Script" path="res://Scripts/Players/Player_1_ChallengeMode.gd" id="3_2uwab"]
 [ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="4_kedub"]
 [ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="5_wfi4f"]
@@ -64,6 +65,10 @@ text = "You are no god... but I shall feast upon your essence regardless!"
 wait_time = 3.0
 one_shot = true
 
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("3_1xig0")
+autoplay = true
+
 [node name="Players" type="Node" parent="."]
 
 [node name="Player 1" type="CharacterBody2D" parent="Players"]
@@ -72,18 +77,18 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("3_2uwab")
 metadata/Player = "Player"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
-visible = false
-scale = Vector2(3, 3)
-shape = SubResource("RectangleShape2D_q1nq8")
-one_way_collision = true
-
 [node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
 offset_left = -30.0
 offset_top = -30.0
 offset_right = 30.0
 offset_bottom = 30.0
 metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+visible = false
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_q1nq8")
+one_way_collision = true
 
 [node name="Sprite" type="Sprite2D" parent="Players/Player 1"]
 visible = false
@@ -160,9 +165,9 @@ autostart = true
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("19_i5bll")
-GroundLeft = ExtResource("20_hc1t2")
+Ground_Left = ExtResource("20_hc1t2")
 Ground = ExtResource("21_tt23i")
-GroundRight = ExtResource("22_svit2")
+Ground_Right = ExtResource("22_svit2")
 
 [node name="Timers" type="Node" parent="."]
 script = ExtResource("15_cvc1f")
@@ -194,7 +199,7 @@ scale = Vector2(0.60625, 0.60625)
 texture = ExtResource("17_kqhqk")
 
 [node name="Pause" type="Control" parent="."]
-visible = false
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_top = -343.0
@@ -203,33 +208,60 @@ offset_bottom = -342.0
 script = ExtResource("18_s20hy")
 
 [node name="Resume" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
 layout_mode = 0
-offset_left = -109.0
-offset_right = 37.0
-offset_bottom = 41.0
+offset_left = -73.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 40.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(73, 20)
 theme = ExtResource("16_74315")
 text = "Resume"
 
 [node name="Title" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
 layout_mode = 0
-offset_left = -230.0
-offset_top = -150.0
-offset_right = 77.0
-offset_bottom = -109.0
+offset_left = -153.0
+offset_top = -100.5
+offset_right = 154.0
+offset_bottom = -59.5
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(153, 120)
 theme = ExtResource("16_74315")
 text = "Exit to Titlescreen"
 
 [node name="Previous" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
 layout_mode = 0
-offset_left = -205.0
-offset_top = 150.0
-offset_right = 70.0
-offset_bottom = 191.0
+offset_left = -137.0
+offset_top = 99.0
+offset_right = 138.0
+offset_bottom = 140.0
 scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(137, -80)
 theme = ExtResource("16_74315")
 text = "Exit to Previous"
+
+[node name="Panel" type="Panel" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 29
+layout_mode = 0
+offset_left = -184.5
+offset_top = -125.5
+offset_right = 173.5
+offset_bottom = 157.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(179, 141)
+mouse_filter = 2
+theme = ExtResource("16_74315")
 
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
 [connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]

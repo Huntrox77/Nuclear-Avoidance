@@ -71,7 +71,7 @@ sources/1 = SubResource("TileSetAtlasSource_3dxoi")
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2o1f"]
-size = Vector2(1166, 117)
+size = Vector2(1152, 231)
 
 [node name="Arena_01" type="Node2D"]
 script = ExtResource("1_s8scq")
@@ -230,7 +230,7 @@ position = Vector2(15.6667, 0)
 shape = SubResource("RectangleShape2D_wt2rw")
 
 [node name="Player 2" type="CharacterBody2D" parent="Players"]
-position = Vector2(-528, -243)
+position = Vector2(-71, -407)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -291,7 +291,7 @@ position = Vector2(15.6667, 0)
 shape = SubResource("RectangleShape2D_wt2rw")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(520, -247)
+position = Vector2(11, -405)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -351,7 +351,7 @@ position = Vector2(15.6667, 0)
 shape = SubResource("RectangleShape2D_wt2rw")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(349, -243)
+position = Vector2(84, -408)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_vki55")
 metadata/Player = "Player"
@@ -626,9 +626,9 @@ texture = ExtResource("16_hmr2f")
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("17_1xrdu")
-GroundLeft = ExtResource("18_iyhtu")
+Ground_Left = ExtResource("18_iyhtu")
 Ground = ExtResource("19_gmluh")
-GroundRight = ExtResource("20_5fsqv")
+Ground_Right = ExtResource("20_5fsqv")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nsxlv")
@@ -638,16 +638,16 @@ format = 2
 [node name="SpawnPos\'" type="Node" parent="."]
 
 [node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-67, -412)
+position = Vector2(-480, -247)
 
 [node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(56, -413)
+position = Vector2(483, -248)
 
 [node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(441, -256)
+position = Vector2(-394, -260)
 
 [node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
-position = Vector2(-437, -250)
+position = Vector2(376, -247)
 
 [node name="Timer" type="Label" parent="."]
 offset_left = -51.0
@@ -728,18 +728,19 @@ scale = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_j57a7")
 
 [node name="DeleteSwitch" type="Area2D" parent="GravSwitch"]
-position = Vector2(30, -265)
+position = Vector2(35, -103)
 scale = Vector2(-1, 1)
 
 [node name="Timer" type="Timer" parent="GravSwitch/DeleteSwitch"]
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="GravSwitch/DeleteSwitch"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwitch/DeleteSwitch"]
-position = Vector2(16, 48.5)
+position = Vector2(22, -61)
 shape = SubResource("RectangleShape2D_s2o1f")
 
 [node name="Platfroms" type="Node" parent="."]

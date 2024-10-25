@@ -579,7 +579,7 @@ texture = ExtResource("16_6ns0a")
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("19_hbwba")
-GroundRight = ExtResource("20_riy2t")
+Ground_Right = ExtResource("20_riy2t")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nsxlv")

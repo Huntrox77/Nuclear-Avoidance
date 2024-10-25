@@ -570,9 +570,9 @@ texture = ExtResource("16_wytkn")
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("18_68srx")
-GroundLeft = ExtResource("19_an7lg")
+Ground_Left = ExtResource("19_an7lg")
 Ground = ExtResource("20_pe1sc")
-GroundRight = ExtResource("21_6l6ay")
+Ground_Right = ExtResource("21_6l6ay")
 
 [node name="Timer" type="Timer" parent="Grounds"]
 wait_time = 5.0

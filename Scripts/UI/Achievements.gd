@@ -6,7 +6,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# checks the save data and toggles
 func _process(_delta):
 	if Saves.Challenge_One_Complete == true:
 		$"Container/Achievement 1/RedX".hide()

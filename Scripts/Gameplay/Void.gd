@@ -1,23 +1,34 @@
 extends Area2D
 @export var Ground_Left:PackedScene
 @onready var Modifier = get_node("/root/Modifiers")
+@onready var Config = get_node("/root/ConfigScript")
 var Players = null
 var random_music = randi_range(1,3)
 
 # Play music in-game gets all the players in-game and turns collision on for them if the chosen modifier is on.
 func _ready():
-	if Modifier.current_map == "menu":
-		pass
-	else:
-		if Modifier.current_map != "map9" or Modifier.current_map != "map10" or Modifier.current_map != "map11" or Modifier.current_map != "map12" or Modifier.current_map != "map13":
-			if random_music == 1:
-				$Outskirts.play()
-			elif random_music == 2:
-				$SkyIslands.play()
-			elif random_music == 3:
-				$FarmArrays.play()
+	# fullscreens stuff and yk?
+	if Config.Window_Mode == 0:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	elif Config.Window_Mode == 1:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	if Modifier.game_playing == true:
+		if (
+				not Modifier.current_map == "map9" 
+				and not Modifier.current_map == "map10" 
+				and not Modifier.current_map == "map12" 
+				and not Modifier.current_map == "map13"
+				and not Modifier.current_map == "map14"
+		):
+			if name == "void":
+				if random_music == 1:
+					$Outskirts.play()
+				elif random_music == 2:
+					$SkyIslands.play()
+				elif random_music == 3:
+					$FarmArrays.play()
 		else:
-			$Caves.play()
+			$Cave.play()
 	
 	if name == "void":
 		Players = get_parent().get_child(2).get_children()

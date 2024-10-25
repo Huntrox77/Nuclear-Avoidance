@@ -1,43 +1,48 @@
 extends Node
 @onready var Modifier = get_node("/root/Modifiers")
 @onready var Saves = get_node("/root/ConfigScript")
-var timeleft = null
-# Called when the node enters the scene tree for the first time.
+var time_left = null
+
+
+# Sets the challenges time limit
 func _ready():
 	#Timers & Modifiers
 	if name == "Timers":
-		timeleft = 45
+		time_left = 45
 	elif name == "Timers2":
-		timeleft = 60
+		time_left = 60
 	elif name == "Timers3":
-		timeleft = 30
+		time_left = 30
 		Modifier.Crumble = true
 	elif name == "Timers4":
-		timeleft = 60
+		time_left = 60
 
 
+#sets the base data for the challenge
 func _process(_delta):
-	Modifier.playersleft = 1
-	Modifier.gameplaying = true
-	Modifier.ChallengeOrLocal = "Challenge"
+	Modifier.players_left = 1
+	Modifier.game_playing = true
+	Modifier.Challenge_Or_Local = "Challenge"
 	pass
 
 
+# makes the timer time
 func _on_counter_timer_timeout():
-	timeleft -= 1
-	$RichTextLabel.text = "Time Left: " + str(timeleft)
+	time_left -= 1
+	$RichTextLabel.text = "Time Left: " + str(time_left)
 	pass # Replace with function body.
 
 
+# Updates the achievemetns
 func _on_time_2_survive_timeout():
-	Modifier.ChallengeOrLocal = "local"
+	Modifier.Challenge_Or_Local = "local"
 	Modifier._reset()
 	if name == "Timers":
-		Saves.ChallengeOneComplete = true
+		Saves.Challenge_One_Complete = true
 	elif name == "Timers2":
-		Saves.ChallengeTwoComplete = true
+		Saves.Challenge_Two_Complete = true
 	elif name == "Timers3":
-		Saves.ChallengeThreeComplete = true
+		Saves.Challenge_Three_Complete = true
 	elif name == "Timers4":
-		Saves.ChallengeFourComplete = true
+		Saves.Challenge_Four_Complete = true
 	get_tree().change_scene_to_file("res://Scenes/Menus/challenge_select.tscn")

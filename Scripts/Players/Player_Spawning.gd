@@ -22,7 +22,12 @@ func _ready():
 	Modifier.Player_Three = $"Players/Player 3"
 	Modifier.Player_Four = $"Players/Player 4"
 	Modifier.Player_Five = $"Players/Player 5"
-	if Modifier.current_map == "map9" or Modifier.current_map == "map10" or Modifier.current_map == "map12" or Modifier.current_map == "map13":
+	if (
+			Modifier.current_map == "map9"
+			or Modifier.current_map == "map10" 
+			or Modifier.current_map == "map12" 
+			or Modifier.current_map == "map13"
+	):
 		Modifier.Lamp_One = $Lamps/Lamp1
 		Modifier.Lamp_Two = $Lamps/Lamp2
 	if Modifier.current_map == "winscreen":
@@ -66,7 +71,12 @@ func _ready():
 	
 	# Give players their placings on the winscreen via a array being rearragnged and checked.
 	if Modifier.current_map == "winscreen":
-		var Points = [[Modifier.P1_Points, Modifier.Player_One],[Modifier.P2_Points, Modifier.Player_Two],[Modifier.P3_Points, Modifier.Player_Three],[Modifier.P4_Points, Modifier.Player_Four]]
+		var Points = [
+				[Modifier.P1_Points, Modifier.Player_One],
+				[Modifier.P2_Points, Modifier.Player_Two],
+				[Modifier.P3_Points, Modifier.Player_Three],
+				[Modifier.P4_Points, Modifier.Player_Four],
+		]
 		Points.sort_custom(compare)
 		for i in 4:
 			Points[i][1].position = Spawns.get_child(i).position

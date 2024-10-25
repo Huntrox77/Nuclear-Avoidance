@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://0h02cxapaytq"]
+[gd_scene load_steps=57 format=3 uid="uid://0h02cxapaytq"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Player Selection/P1Select.gd" id="1_8v6yf"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_dymia"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bdaqhq1u8kxw" path="res://Sprites/UI/Scug1nochoose.png" id="5_chenq"]
 [ext_resource type="Texture2D" uid="uid://coam47xs7lh54" path="res://Sprites/UI/Scug.png" id="6_aol7f"]
 [ext_resource type="Texture2D" uid="uid://okoyc6qmk2bg" path="res://Sprites/UI/Scug2nochoose.png" id="7_uwjmx"]
-[ext_resource type="StyleBox" uid="uid://dr0q1y0xh1qmm" path="res://StyleBoxes/WhiteOutline_StyleBox.tres" id="8_2ihqd"]
+[ext_resource type="StyleBox" path="res://StyleBoxes/WhiteOutline_StyleBox.tres" id="8_2ihqd"]
 [ext_resource type="Texture2D" uid="uid://cl8ifukgeglmg" path="res://Sprites/UI/Scug2.png" id="8_jitkp"]
 [ext_resource type="Texture2D" uid="uid://dvd38rxnjklhe" path="res://Sprites/UI/Scug3nochoose.png" id="9_8lfwy"]
 [ext_resource type="Texture2D" uid="uid://sm2n565dcbxa" path="res://Sprites/UI/Scug3.png" id="10_d5ebb"]
@@ -51,6 +51,8 @@
 [ext_resource type="Texture2D" uid="uid://dsxj4j4fkih6g" path="res://Sprites/UI/Map12.png" id="40_aqmd1"]
 [ext_resource type="Texture2D" uid="uid://ba28uqkdkc6ip" path="res://Sprites/UI/Map13Dark.png" id="41_1uxej"]
 [ext_resource type="Texture2D" uid="uid://cpncutkkcy61l" path="res://Sprites/UI/Map13.png" id="42_yifhu"]
+[ext_resource type="Texture2D" uid="uid://b0d2xuyavekug" path="res://Sprites/UI/Map14.png" id="44_2j5f4"]
+[ext_resource type="Texture2D" uid="uid://cw35s0p4acihg" path="res://Sprites/UI/Map14Dark.png" id="44_gb060"]
 [ext_resource type="AudioStream" uid="uid://bnsn18yv5il5g" path="res://Music/06. Triptrap.mp3" id="52_goatd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htct4"]
@@ -761,6 +763,45 @@ theme_override_styles/normal = ExtResource("18_0ovuk")
 text = "Islands 5"
 horizontal_alignment = 1
 
+[node name="Blank7" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_htct4")
+
+[node name="Map14" type="Panel" parent="Buttons/Map Container/HBoxContainer"]
+z_index = -1
+custom_minimum_size = Vector2(105, 86)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_dymia")
+
+[node name="Map14" type="TextureButton" parent="Buttons/Map Container/HBoxContainer/Map14"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 99.0
+offset_bottom = 63.0
+toggle_mode = true
+texture_normal = ExtResource("44_gb060")
+texture_pressed = ExtResource("44_2j5f4")
+ignore_texture_size = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Buttons/Map Container/HBoxContainer/Map14"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 65.0
+offset_right = 88.0
+offset_bottom = 83.0
+theme = ExtResource("2_dymia")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = ExtResource("18_0ovuk")
+text = "Cave 5"
+horizontal_alignment = 1
+
 [node name="Modifiers Container" type="ScrollContainer" parent="Buttons"]
 layout_mode = 0
 offset_left = 43.0
@@ -993,6 +1034,28 @@ ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("17_8y8lk")
 
+[node name="Reverse" type="CheckButton" parent="Buttons/Modifiers Container/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_dymia")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yd0k2")
+action_mode = 0
+text = "Reverse Controls"
+expand_icon = true
+script = ExtResource("14_dqpoy")
+
+[node name="Favourite" type="TextureButton" parent="Buttons/Modifiers Container/VBoxContainer/Reverse"]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 6.0
+offset_right = 388.0
+offset_bottom = 41.0
+toggle_mode = true
+texture_normal = ExtResource("18_5xysq")
+texture_pressed = ExtResource("19_4komw")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("17_8y8lk")
+
 [node name="Loop Button" type="TextureButton" parent="Buttons"]
 layout_mode = 0
 offset_left = 911.0
@@ -1044,6 +1107,7 @@ autoplay = true
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map8/Map8" to="Buttons" method="_on_map_8_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map13/Map13" to="Buttons" method="_on_map_13_pressed"]
 [connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map11/Map11" to="Buttons" method="_on_map_11_pressed"]
+[connection signal="pressed" from="Buttons/Map Container/HBoxContainer/Map14/Map14" to="Buttons" method="_on_map_14_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout" to="Buttons" method="_on_blackout_button_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Blackout/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/SmashBros" to="Buttons" method="_on_smash_bros_button_pressed"]
@@ -1064,4 +1128,6 @@ autoplay = true
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Collide/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Collide/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/HomingBombs" to="Buttons" method="_on_homing_bombs_pressed"]
 [connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/HomingBombs/Favourite" to="Buttons/Modifiers Container/VBoxContainer/HomingBombs/Favourite" method="_on_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Reverse" to="Buttons" method="_on_reverse_pressed"]
+[connection signal="pressed" from="Buttons/Modifiers Container/VBoxContainer/Reverse/Favourite" to="Buttons/Modifiers Container/VBoxContainer/Reverse/Favourite" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/Loop Button" to="Buttons" method="_on_loop_button_pressed"]

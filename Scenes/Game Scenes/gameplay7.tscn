@@ -288,7 +288,7 @@ position = Vector2(15.6667, 0)
 shape = SubResource("RectangleShape2D_cv4q8")
 
 [node name="Player 3" type="CharacterBody2D" parent="Players"]
-position = Vector2(-67, -165)
+position = Vector2(-68, -522)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_02iep")
 metadata/Player = "Player"
@@ -348,7 +348,7 @@ position = Vector2(15.6667, 0)
 shape = SubResource("RectangleShape2D_cv4q8")
 
 [node name="Player 4" type="CharacterBody2D" parent="Players"]
-position = Vector2(70, -162)
+position = Vector2(69, -519)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("3_02iep")
 metadata/Player = "Player"
@@ -623,9 +623,9 @@ texture = ExtResource("16_e5sjt")
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("21_eub2i")
-GroundLeft = ExtResource("22_o43ew")
+Ground_Left = ExtResource("22_o43ew")
 Ground = ExtResource("23_ldret")
-GroundRight = ExtResource("24_g2ql3")
+Ground_Right = ExtResource("24_g2ql3")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_nsxlv")

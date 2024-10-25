@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bijf1mjlkepfu"]
+[gd_scene load_steps=8 format=3 uid="uid://bijf1mjlkepfu"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Sliders.gd" id="1_avl2f"]
 [ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="2_7aw80"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Players/P5.gd" id="4_pcirl"]
 [ext_resource type="Texture2D" uid="uid://dysirfv58iu3w" path="res://Sprites/Backgrounds/sky2.png" id="5_qvc4s"]
 [ext_resource type="AudioStream" uid="uid://bnsn18yv5il5g" path="res://Music/06. Triptrap.mp3" id="6_f8s34"]
+[ext_resource type="Script" path="res://Scripts/UI/ColorPanel.gd" id="7_wks8u"]
 
 [node name="Node2D" type="Control"]
 layout_mode = 3
@@ -248,6 +249,107 @@ texture = ExtResource("5_qvc4s")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_f8s34")
 autoplay = true
+
+[node name="ColorPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_wks8u")
+
+[node name="P1Label" type="Label" parent="ColorPanel"]
+layout_mode = 2
+offset_left = -151.0
+offset_top = 42.0
+offset_right = -5.0
+offset_bottom = 83.0
+theme = ExtResource("2_7aw80")
+text = "Player 1"
+horizontal_alignment = 1
+
+[node name="P2Label" type="Label" parent="ColorPanel"]
+layout_mode = 2
+offset_left = 29.0
+offset_top = 42.0
+offset_right = 180.0
+offset_bottom = 83.0
+theme = ExtResource("2_7aw80")
+text = "Player 2"
+horizontal_alignment = 1
+
+[node name="P3Label" type="Label" parent="ColorPanel"]
+layout_mode = 2
+offset_left = 209.0
+offset_top = 42.0
+offset_right = 360.0
+offset_bottom = 83.0
+theme = ExtResource("2_7aw80")
+text = "Player 3"
+horizontal_alignment = 1
+
+[node name="P4Label" type="Label" parent="ColorPanel"]
+layout_mode = 2
+offset_left = 389.0
+offset_top = 42.0
+offset_right = 540.0
+offset_bottom = 83.0
+theme = ExtResource("2_7aw80")
+text = "Player 4"
+horizontal_alignment = 1
+
+[node name="P1" type="ColorPicker" parent="ColorPanel"]
+layout_mode = 0
+offset_left = -156.0
+offset_top = 92.0
+offset_right = 175.0
+offset_bottom = 805.0
+scale = Vector2(0.5, 0.56)
+theme = ExtResource("2_7aw80")
+edit_alpha = false
+color_modes_visible = false
+sliders_visible = false
+presets_visible = false
+
+[node name="P2" type="ColorPicker" parent="ColorPanel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 92.0
+offset_right = 355.0
+offset_bottom = 805.0
+scale = Vector2(0.5, 0.56)
+theme = ExtResource("2_7aw80")
+color = Color(1, 1, 0, 1)
+edit_alpha = false
+color_modes_visible = false
+sliders_visible = false
+presets_visible = false
+
+[node name="P3" type="ColorPicker" parent="ColorPanel"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 92.0
+offset_right = 535.0
+offset_bottom = 805.0
+scale = Vector2(0.5, 0.56)
+theme = ExtResource("2_7aw80")
+color = Color(0.627451, 0, 0.717647, 1)
+edit_alpha = false
+color_modes_visible = false
+sliders_visible = false
+presets_visible = false
+
+[node name="P4" type="ColorPicker" parent="ColorPanel"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 92.0
+offset_right = 714.0
+offset_bottom = 805.0
+scale = Vector2(0.5, 0.56)
+theme = ExtResource("2_7aw80")
+color = Color(0.741176, 0, 0.309804, 1)
+edit_alpha = false
+color_modes_visible = false
+sliders_visible = false
+presets_visible = false
 
 [connection signal="pressed" from="Back2Modifiers" to="Back2Modifiers" method="_on_pressed"]
 [connection signal="pressed" from="P5" to="P5" method="_on_pressed"]

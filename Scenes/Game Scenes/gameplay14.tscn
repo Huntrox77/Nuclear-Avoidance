@@ -1,0 +1,1448 @@
+[gd_scene load_steps=60 format=3 uid="uid://b7fcsi0rgl5dd"]
+
+[ext_resource type="Script" path="res://Scripts/Players/Player_Spawning.gd" id="1_c5clv"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="2_u4sed"]
+[ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="3_mnwyo"]
+[ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="4_mde3l"]
+[ext_resource type="AudioStream" uid="uid://gtd741w2wmo1" path="res://Music/28 - Threat - Sky Islands.mp3" id="5_lmagd"]
+[ext_resource type="AudioStream" uid="uid://diidthyshwnrr" path="res://Music/31 - Threat - Farm Arrays.mp3" id="6_ru3vh"]
+[ext_resource type="AudioStream" uid="uid://bfppmgfpqqy48" path="res://Music/Threat_-_Chimney_Canopy_(The_Gutter).mp3" id="7_1nusa"]
+[ext_resource type="Script" path="res://Scripts/Players/Player.gd" id="8_yjtbd"]
+[ext_resource type="Texture2D" uid="uid://cnkg5na4bsn4h" path="res://Sprites/InGame/Clam.png" id="9_wdo64"]
+[ext_resource type="Texture2D" uid="uid://bexoeuyuxg5uc" path="res://Sprites/PowerUps/Shield.png" id="10_4y1q2"]
+[ext_resource type="Texture2D" uid="uid://nuvn2m322pir" path="res://Sprites/InGame/Pusher.png" id="11_iupck"]
+[ext_resource type="Texture2D" uid="uid://b7jtl38wmyy0j" path="res://Sprites/InGame/ClamHood.png" id="12_eqwms"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Nukespawner.gd" id="13_5xyj7"]
+[ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="14_3t1cv"]
+[ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="15_sipb3"]
+[ext_resource type="Script" path="res://Scripts/Blackout/Blackout Timer.gd" id="16_xuemo"]
+[ext_resource type="PackedScene" uid="uid://dswsedgoqefr7" path="res://Scenes/In Game Stuff/blackout.tscn" id="17_mpft2"]
+[ext_resource type="PackedScene" uid="uid://dcv5hh4o4rswm" path="res://Scenes/In Game Stuff/Fog.tscn" id="18_2p14n"]
+[ext_resource type="Theme" uid="uid://2os1x4i4c3g5" path="res://Themes/Rainworld_SquareButtonTheme.tres" id="19_74ycg"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameGUI's.gd" id="20_1rwsf"]
+[ext_resource type="Texture2D" uid="uid://dv8f2b2hao1sk" path="res://Sprites/Backgrounds/CaveBG.png" id="21_vrijy"]
+[ext_resource type="Texture2D" uid="uid://dc1820a8yt1qu" path="res://Sprites/Gifs/LavaLamp.png" id="22_kras1"]
+[ext_resource type="Script" path="res://Scripts/UI/Lamp.gd" id="23_0xbay"]
+[ext_resource type="Texture2D" uid="uid://b4kxggls8fx8e" path="res://Sprites/Grounds/Chain.png" id="24_xupjb"]
+[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="25_f6avu"]
+[ext_resource type="Texture2D" uid="uid://cchqvvjw261hh" path="res://Sprites/InGame/ladder-dark.png" id="27_di4h4"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Ladder.gd" id="27_mbg85"]
+[ext_resource type="Texture2D" uid="uid://cnio8d6ehmx1s" path="res://Sprites/Grounds/Ladder.png" id="28_5nhal"]
+[ext_resource type="Texture2D" uid="uid://daavju0v8oif3" path="res://Sprites/Backgrounds/DirtBackroung.png" id="29_um6u4"]
+[ext_resource type="Texture2D" uid="uid://ba3o1ur7v6rrm" path="res://Sprites/Grounds/PlatformRight.png" id="30_lpc6u"]
+[ext_resource type="Texture2D" uid="uid://c4h86eqm2fqcl" path="res://Sprites/Grounds/WoodPlatform.png" id="31_yoic4"]
+[ext_resource type="Script" path="res://Scripts/UI/InGameTimer.gd" id="33_igglb"]
+[ext_resource type="StyleBox" uid="uid://dp73x7trpbyyu" path="res://StyleBoxes/EmptyOutline_StyleBox.tres" id="34_aa61u"]
+[ext_resource type="Script" path="res://Scripts/UI/StartandEndCountdown.gd" id="35_3q4qq"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/PowerUpSpawner.gd" id="36_r16r2"]
+[ext_resource type="PackedScene" uid="uid://ci1qkm7nyoai2" path="res://Scenes/In Game Stuff/shield.tscn" id="37_0fbx3"]
+[ext_resource type="PackedScene" uid="uid://chdl1qguga6h1" path="res://Scenes/In Game Stuff/Spring.tscn" id="38_s5p7j"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Portals.gd" id="39_tgdv1"]
+[ext_resource type="Script" path="res://Scripts/UI/Pause.gd" id="40_ndbrv"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/GravSwitch.gd" id="42_5l0x6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrwvd"]
+size = Vector2(12446, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppkjf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_euesp"]
+size = Vector2(28.6667, 58.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61p2n"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25bfv"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21j2o"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ymu3"]
+size = Vector2(60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btuk5"]
+atlas = ExtResource("22_kras1")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuqlr"]
+atlas = ExtResource("22_kras1")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcfvy"]
+atlas = ExtResource("22_kras1")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijx56"]
+atlas = ExtResource("22_kras1")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6o7al"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btuk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuqlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcfvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijx56")
+}],
+"loop": true,
+"name": &"LavaLamp",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqr5u"]
+size = Vector2(48, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrg76"]
+size = Vector2(48, 77)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dxoi"]
+texture = ExtResource("29_um6u4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nsxlv"]
+sources/1 = SubResource("TileSetAtlasSource_3dxoi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5q7j"]
+size = Vector2(192, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf88h"]
+size = Vector2(202.5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5osm"]
+size = Vector2(84, 28)
+
+[node name="Arena_01" type="Node2D"]
+script = ExtResource("1_c5clv")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -324)
+metadata/_edit_lock_ = true
+
+[node name="void" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_u4sed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
+position = Vector2(-6, 234)
+shape = SubResource("RectangleShape2D_wrwvd")
+
+[node name="UniCollapse" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("3_mnwyo")
+
+[node name="ColorRect" type="ColorRect" parent="void"]
+visible = false
+z_index = 1
+offset_left = -584.0
+offset_top = -651.0
+offset_right = 575.0
+offset_bottom = 21.0
+color = Color(0.713726, 0, 0.74902, 0.156863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="void"]
+visible = false
+z_index = 3
+offset_left = -560.0
+offset_top = -61.0
+offset_right = -136.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0.760784, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "You are no god... but I shall feast upon your essence regardless!"
+
+[node name="TextTimer" type="Timer" parent="void"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("4_mde3l")
+
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("5_lmagd")
+
+[node name="FarmArrays" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("6_ru3vh")
+
+[node name="Cave" type="AudioStreamPlayer2D" parent="void"]
+stream = ExtResource("7_1nusa")
+
+[node name="void" type="Area2D" parent="void"]
+position = Vector2(14, -1326)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_u4sed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void/void"]
+position = Vector2(-6, 234)
+shape = SubResource("RectangleShape2D_wrwvd")
+
+[node name="UniCollapse" type="AudioStreamPlayer2D" parent="void/void"]
+stream = ExtResource("3_mnwyo")
+
+[node name="ColorRect" type="ColorRect" parent="void/void"]
+visible = false
+z_index = 1
+offset_left = -584.0
+offset_top = -651.0
+offset_right = 575.0
+offset_bottom = 21.0
+color = Color(0.713726, 0, 0.74902, 0.156863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="void/void"]
+visible = false
+z_index = 3
+offset_left = -560.0
+offset_top = -61.0
+offset_right = -136.0
+offset_bottom = 17.0
+theme_override_colors/default_color = Color(0, 0.760784, 1, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "You are no god... but I shall feast upon your essence regardless!"
+
+[node name="TextTimer" type="Timer" parent="void/void"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Outskirts" type="AudioStreamPlayer2D" parent="void/void"]
+stream = ExtResource("4_mde3l")
+
+[node name="SkyIslands" type="AudioStreamPlayer2D" parent="void/void"]
+stream = ExtResource("5_lmagd")
+
+[node name="FarmArrays" type="AudioStreamPlayer2D" parent="void/void"]
+stream = ExtResource("6_ru3vh")
+
+[node name="Cave" type="AudioStreamPlayer2D" parent="void/void"]
+stream = ExtResource("7_1nusa")
+
+[node name="Players" type="Node" parent="."]
+
+[node name="Player 1" type="CharacterBody2D" parent="Players"]
+position = Vector2(-447, -489)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_yjtbd")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 1"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 1"]
+visible = false
+position = Vector2(-1.25, -0.625001)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("9_wdo64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1"]
+visible = false
+position = Vector2(0, -1.52588e-05)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_ppkjf")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 1"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 1"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 1"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("10_4y1q2")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 1"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("11_iupck")
+
+[node name="Spring" type="Area2D" parent="Players/Player 1/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 1/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_euesp")
+
+[node name="Player 2" type="CharacterBody2D" parent="Players"]
+position = Vector2(-327, -490)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_yjtbd")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 2"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(1, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 2"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("12_eqwms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2"]
+visible = false
+shape = SubResource("RectangleShape2D_61p2n")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 2"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 2"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 2"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("10_4y1q2")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 2"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("11_iupck")
+
+[node name="Spring" type="Area2D" parent="Players/Player 2/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 2/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_euesp")
+
+[node name="Player 3" type="CharacterBody2D" parent="Players"]
+position = Vector2(295, -493)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_yjtbd")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 3"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.627451, 0, 0.717647, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 3"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("9_wdo64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3"]
+visible = false
+shape = SubResource("RectangleShape2D_25bfv")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 3"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 3"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 3"]
+z_index = 1
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("10_4y1q2")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 3"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("11_iupck")
+
+[node name="Spring" type="Area2D" parent="Players/Player 3/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 3/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_euesp")
+
+[node name="Player 4" type="CharacterBody2D" parent="Players"]
+position = Vector2(433, -491)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_yjtbd")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 4"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0.741176, 0, 0.309804, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 4"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("12_eqwms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4"]
+visible = false
+shape = SubResource("RectangleShape2D_21j2o")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 4"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 4"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 4"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("10_4y1q2")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 4"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("11_iupck")
+
+[node name="Spring" type="Area2D" parent="Players/Player 4/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 4/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_euesp")
+
+[node name="Player 5" type="CharacterBody2D" parent="Players"]
+position = Vector2(-380, -556)
+scale = Vector2(0.8, 0.8)
+script = ExtResource("8_yjtbd")
+metadata/Player = "Player"
+
+[node name="ColorRect" type="ColorRect" parent="Players/Player 5"]
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+color = Color(0, 0.8, 0.180392, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Players/Player 5"]
+visible = false
+position = Vector2(-1.25, 1.25)
+scale = Vector2(1.76471, 1.33152)
+texture = ExtResource("12_eqwms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5"]
+visible = false
+shape = SubResource("RectangleShape2D_0ymu3")
+one_way_collision = true
+
+[node name="Black" type="ColorRect" parent="Players/Player 5"]
+offset_left = -18.75
+offset_top = -21.25
+offset_right = 41.25
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Black2" type="ColorRect" parent="Players/Player 5"]
+offset_left = 10.0
+offset_top = -21.25
+offset_right = 70.0
+offset_bottom = 38.75
+scale = Vector2(0.15, 0.4)
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Shield" type="Sprite2D" parent="Players/Player 5"]
+z_index = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("10_4y1q2")
+
+[node name="Spring" type="Sprite2D" parent="Players/Player 5"]
+z_index = -1
+position = Vector2(30, 0)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("11_iupck")
+
+[node name="Spring" type="Area2D" parent="Players/Player 5/Spring"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Players/Player 5/Spring/Spring"]
+position = Vector2(15.6667, 0)
+shape = SubResource("RectangleShape2D_euesp")
+
+[node name="Nuke Stuff" type="Node" parent="."]
+
+[node name="Nuke Spawner" type="Node2D" parent="Nuke Stuff"]
+script = ExtResource("13_5xyj7")
+nuke_scene = ExtResource("14_3t1cv")
+sweeper_scene = ExtResource("15_sipb3")
+
+[node name="Timer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 5.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 15.0
+autostart = true
+
+[node name="Timer3" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 30.0
+autostart = true
+
+[node name="Timer4" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 45.0
+autostart = true
+
+[node name="Swimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+wait_time = 18.33
+one_shot = true
+
+[node name="SwimerTimer" type="Timer" parent="Nuke Stuff/Nuke Spawner"]
+one_shot = true
+autostart = true
+
+[node name="Modifier Stuff" type="Node" parent="."]
+
+[node name="Blackout Timer" type="Node2D" parent="Modifier Stuff"]
+script = ExtResource("16_xuemo")
+blackout = ExtResource("17_mpft2")
+fog = ExtResource("18_2p14n")
+
+[node name="Timer" type="Timer" parent="Modifier Stuff/Blackout Timer"]
+wait_time = 10.0
+autostart = true
+
+[node name="GUI\'s" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="P1" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -552.0
+offset_top = -625.0
+offset_right = -330.0
+offset_bottom = -584.0
+theme = ExtResource("19_74ycg")
+text = "Player 1: 10%"
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P2" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -304.0
+offset_top = -625.0
+offset_right = -77.0
+offset_bottom = -584.0
+theme = ExtResource("19_74ycg")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P3" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 78.0
+offset_top = -625.0
+offset_right = 300.0
+offset_bottom = -584.0
+theme = ExtResource("19_74ycg")
+text = "Player 1: 10%"
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P4" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 326.0
+offset_top = -625.0
+offset_right = 553.0
+offset_bottom = -584.0
+theme = ExtResource("19_74ycg")
+text = "Player 2: 10%"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P1Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -533.0
+offset_top = -65.0
+offset_right = -333.0
+offset_bottom = -24.0
+theme = ExtResource("19_74ycg")
+text = "P1 Points: 0"
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P2Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = -245.5
+offset_top = -65.0
+offset_right = -40.5
+offset_bottom = -24.0
+theme = ExtResource("19_74ycg")
+text = "P2 Points: 0"
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P3Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 42.0
+offset_top = -65.0
+offset_right = 247.0
+offset_bottom = -24.0
+theme = ExtResource("19_74ycg")
+text = "P3 Points: 0"
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="P4Score" type="Label" parent="GUI\'s"]
+z_index = 20
+layout_mode = 0
+offset_left = 329.5
+offset_top = -65.0
+offset_right = 534.5
+offset_bottom = -24.0
+theme = ExtResource("19_74ycg")
+text = "P4 Points: 0"
+vertical_alignment = 1
+script = ExtResource("20_1rwsf")
+metadata/_edit_lock_ = true
+
+[node name="Cave" type="Polygon2D" parent="GUI\'s"]
+z_index = 4
+color = Color(0.247059, 0.101961, 0, 1)
+invert_enabled = true
+polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -510, -292, -551, -183, -505, -55, -398.657, -40.6469, -358.582, -130.417, -345, -256, -323, -122, -300.347, -27.3781, -179, -11, 23, -44, 74, -39, 86, -78, 94, -127, 119, -186, 160, -126, 174, -28, 324, -17, 528, -92, 563, -272, 542.714, -358.484, 476, -277, 498, -453, 455, -516, 299, -558, 246.726, -585.241, 184, -438, 201.781, -608.664, 157, -632, 79.4575, -628.329, 59, -532, 36.9736, -626.318, -119.63, -618.905, -175, -386, -225.489, -613.894)
+metadata/_edit_lock_ = true
+
+[node name="Cave2" type="Polygon2D" parent="GUI\'s"]
+z_index = 5
+position = Vector2(-11, 57)
+scale = Vector2(-1.2, 1.2)
+color = Color(0.203922, 0.0784314, 0, 1)
+invert_enabled = true
+polygon = PackedVector2Array(-350, -608, -454, -506, -535, -461, -541, -369, -510, -292, -551, -183, -505, -55, -398.657, -40.6469, -358.582, -130.417, -345, -256, -323, -122, -300.347, -27.3781, -179, -11, 23, -44, 74, -39, 58.3333, -29.1667, 75.8333, -99.1667, 94.1667, -189.167, 106.667, -240.833, 125, -275.833, 153.333, -190.833, 150, -129.167, 174, -28, 324, -17, 494.167, -97.5, 455.833, -220.833, 492.5, -384.167, 390.833, -323.333, 460, -473.333, 389.167, -478.333, 299, -558, 246.726, -585.241, 184, -438, 201.781, -608.664, 157, -632, 79.4575, -628.329, 59, -532, 36.9736, -626.318, -119.63, -618.905, -175, -386, -225.489, -613.894)
+metadata/_edit_lock_ = true
+
+[node name="CaveBg" type="Sprite2D" parent="GUI\'s"]
+z_index = -5
+position = Vector2(4.76837e-06, -281)
+scale = Vector2(0.599997, 0.599997)
+texture = ExtResource("21_vrijy")
+metadata/_edit_lock_ = true
+
+[node name="Lamps" type="Node" parent="GUI\'s"]
+
+[node name="Lamp" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
+z_index = 5
+position = Vector2(89, -368)
+sprite_frames = SubResource("SpriteFrames_6o7al")
+animation = &"LavaLamp"
+frame_progress = 0.160004
+script = ExtResource("23_0xbay")
+
+[node name="Chain" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-87, -413)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain2" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-87, -477)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain3" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-87, -541)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain4" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(-87, -541)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain6" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(87, -412)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain7" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(87, -476)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain8" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(87, -540)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain9" type="Sprite2D" parent="GUI\'s/Lamps"]
+z_index = -3
+position = Vector2(87, -540)
+texture = ExtResource("24_xupjb")
+
+[node name="Lamp2" type="AnimatedSprite2D" parent="GUI\'s/Lamps"]
+z_index = 5
+position = Vector2(-87, -369)
+sprite_frames = SubResource("SpriteFrames_6o7al")
+animation = &"LavaLamp"
+frame_progress = 0.0810805
+script = ExtResource("23_0xbay")
+
+[node name="Grounds" type="Node" parent="."]
+
+[node name="Grounds" type="Node" parent="Grounds"]
+
+[node name="Platform" parent="Grounds/Grounds" instance=ExtResource("25_f6avu")]
+visible = false
+position = Vector2(-316, -335)
+
+[node name="Platform2" parent="Grounds/Grounds" instance=ExtResource("25_f6avu")]
+visible = false
+position = Vector2(-380, -335)
+
+[node name="Platform3" parent="Grounds/Grounds" instance=ExtResource("25_f6avu")]
+visible = false
+position = Vector2(-444, -335)
+
+[node name="Platform4" parent="Grounds/Grounds" instance=ExtResource("25_f6avu")]
+visible = false
+position = Vector2(438, -383)
+rotation = 3.14159
+
+[node name="Platform5" parent="Grounds/Grounds" instance=ExtResource("25_f6avu")]
+visible = false
+position = Vector2(374, -383)
+rotation = 3.14159
+
+[node name="Platform6" parent="Grounds/Grounds" instance=ExtResource("25_f6avu")]
+visible = false
+position = Vector2(310, -383)
+rotation = 3.14159
+
+[node name="Ladders" type="Node" parent="Grounds"]
+
+[node name="Stepladder" type="Area2D" parent="Grounds/Ladders"]
+z_index = -5
+position = Vector2(203, -310)
+script = ExtResource("27_mbg85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grounds/Ladders/Stepladder"]
+position = Vector2(88.345, 232.825)
+skew = -0.191986
+shape = SubResource("RectangleShape2D_nqr5u")
+
+[node name="Ladder" type="Sprite2D" parent="Grounds/Ladders/Stepladder"]
+position = Vector2(65.3449, 263.824)
+skew = 0.10472
+texture = ExtResource("27_di4h4")
+
+[node name="Ladder2" type="Sprite2D" parent="Grounds/Ladders/Stepladder"]
+position = Vector2(72.3448, 200.825)
+skew = 0.10472
+texture = ExtResource("27_di4h4")
+
+[node name="Ladder3" type="Sprite2D" parent="Grounds/Ladders/Stepladder"]
+position = Vector2(82.345, 200.825)
+skew = -0.191986
+texture = ExtResource("28_5nhal")
+
+[node name="Ladder4" type="Sprite2D" parent="Grounds/Ladders/Stepladder"]
+position = Vector2(94.345, 262.824)
+skew = -0.191986
+texture = ExtResource("28_5nhal")
+
+[node name="Ladder1" type="Area2D" parent="Grounds/Ladders"]
+z_index = 4
+position = Vector2(-463, -22)
+script = ExtResource("27_mbg85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -128.5)
+shape = SubResource("RectangleShape2D_hrg76")
+
+[node name="Ladder4" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -122)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_5nhal")
+
+[node name="Ladder5" type="Sprite2D" parent="Grounds/Ladders/Ladder1"]
+position = Vector2(-38, -138)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_5nhal")
+
+[node name="Ladder2" type="Area2D" parent="Grounds/Ladders"]
+z_index = -5
+position = Vector2(292, -420)
+script = ExtResource("27_mbg85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grounds/Ladders/Ladder2"]
+position = Vector2(-38, -129)
+shape = SubResource("RectangleShape2D_hrg76")
+
+[node name="Ladder4" type="Sprite2D" parent="Grounds/Ladders/Ladder2"]
+position = Vector2(-38, -122)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_5nhal")
+
+[node name="Ladder5" type="Sprite2D" parent="Grounds/Ladders/Ladder2"]
+position = Vector2(-38, -138)
+scale = Vector2(-1, -1)
+texture = ExtResource("28_5nhal")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nsxlv")
+rendering_quadrant_size = 64
+format = 2
+
+[node name="SpawnPos\'" type="Node" parent="."]
+
+[node name="SpawnPos1" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-447, -402)
+
+[node name="SpawnPos2" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-323, -401)
+
+[node name="SpawnPos3" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(372, -495)
+
+[node name="SpawnPos4" type="Node2D" parent="SpawnPos\'"]
+position = Vector2(-384, -488)
+
+[node name="PlatformSprites" type="Node" parent="."]
+
+[node name="Platform1" type="Node" parent="PlatformSprites"]
+
+[node name="1" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-444, -351)
+rotation = -3.14159
+scale = Vector2(-1, -1)
+texture = ExtResource("30_lpc6u")
+
+[node name="2" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-380, -351)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="4" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-445, -112)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="8" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-381, -112)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="9" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-316, -112)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="10" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(310, -144)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="11" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(374, -144)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="12" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(438, -144)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="13" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-443, -556)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="14" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-379, -556)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="15" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-315, -556)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="16" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(310, -557)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="17" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(374, -557)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="18" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(438, -557)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="3" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(-316, -351)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("30_lpc6u")
+
+[node name="5" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(310, -367)
+rotation = -3.14159
+scale = Vector2(-1, 1)
+texture = ExtResource("30_lpc6u")
+
+[node name="6" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(374, -351)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("31_yoic4")
+
+[node name="7" type="Sprite2D" parent="PlatformSprites/Platform1"]
+z_index = -3
+position = Vector2(438, -367)
+rotation = -3.14159
+texture = ExtResource("30_lpc6u")
+
+[node name="Chains" type="Node" parent="PlatformSprites"]
+
+[node name="Chain" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-467, -399)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain2" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-467, -463)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain4" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-467, -525)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain5" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-468, -164)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain6" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-293, -398)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain7" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-293, -462)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain8" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-293, -526)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain9" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-293, -590)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain10" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-468, -228)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain12" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-468, -292)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain13" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-292, -164)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain14" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-292, -228)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain15" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(-292, -292)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain11" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(286, -430)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain16" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(286, -494)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain17" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(286, -558)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain18" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(462, -430)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain19" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(462, -494)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain20" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(462, -558)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain21" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(286, -196)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain22" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(286, -260)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain23" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(286, -324)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain24" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(462, -195)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain25" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(462, -259)
+texture = ExtResource("24_xupjb")
+
+[node name="Chain26" type="Sprite2D" parent="PlatformSprites/Chains"]
+z_index = -4
+position = Vector2(462, -323)
+texture = ExtResource("24_xupjb")
+
+[node name="Timer" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("19_74ycg")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("33_igglb")
+
+[node name="Timer" type="Timer" parent="Timer"]
+wait_time = 0.01
+autostart = true
+
+[node name="Trans" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -622.0
+offset_right = 52.0
+offset_bottom = -581.0
+theme = ExtResource("19_74ycg")
+theme_override_styles/normal = ExtResource("34_aa61u")
+text = "0:0:0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+z_index = 10
+z_as_relative = false
+offset_left = -576.0
+offset_top = -648.0
+offset_right = 576.0
+theme = ExtResource("19_74ycg")
+theme_override_font_sizes/font_size = 256
+theme_override_styles/normal = ExtResource("34_aa61u")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("35_3q4qq")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="Countdown"]
+
+[node name="Power-Ups" type="Node" parent="."]
+script = ExtResource("36_r16r2")
+Shield = ExtResource("37_0fbx3")
+Spring = ExtResource("38_s5p7j")
+
+[node name="Timer" type="Timer" parent="Power-Ups"]
+wait_time = 15.0
+one_shot = true
+
+[node name="Portals" type="Node" parent="."]
+script = ExtResource("39_tgdv1")
+
+[node name="P1" type="ColorRect" parent="Portals"]
+z_index = -3
+offset_left = -477.0
+offset_top = -132.0
+offset_right = -284.0
+offset_bottom = -128.0
+color = Color(0.92549, 0.541176, 0, 1)
+
+[node name="P1" type="Area2D" parent="Portals/P1"]
+position = Vector2(284, 106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/P1/P1"]
+position = Vector2(-187.5, -104)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_c5q7j")
+one_way_collision_margin = 10.0
+
+[node name="P2" type="ColorRect" parent="Portals"]
+z_index = -3
+offset_left = 278.0
+offset_top = -164.0
+offset_right = 470.0
+offset_bottom = -160.0
+color = Color(0, 0.733333, 0.784314, 1)
+
+[node name="P2" type="Area2D" parent="Portals/P2"]
+position = Vector2(284, 106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/P2/P2"]
+position = Vector2(-188, -104)
+shape = SubResource("RectangleShape2D_c5q7j")
+one_way_collision_margin = 10.0
+
+[node name="VeloDect" type="Area2D" parent="Portals"]
+z_index = -3
+position = Vector2(92, 214)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/VeloDect"]
+position = Vector2(-472.25, -367)
+shape = SubResource("RectangleShape2D_vf88h")
+
+[node name="VeloDect2" type="Area2D" parent="Portals"]
+z_index = -3
+position = Vector2(374, -178)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/VeloDect2"]
+shape = SubResource("RectangleShape2D_vf88h")
+
+[node name="Portals2" type="Node" parent="."]
+script = ExtResource("39_tgdv1")
+
+[node name="P1_down" type="ColorRect" parent="Portals2"]
+z_index = -3
+offset_left = -476.0
+offset_top = -557.0
+offset_right = -283.0
+offset_bottom = -553.0
+color = Color(0.92549, 0.541176, 0, 1)
+
+[node name="P1" type="Area2D" parent="Portals2/P1_down"]
+position = Vector2(284, 106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals2/P1_down/P1"]
+position = Vector2(-187.5, -104)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_c5q7j")
+one_way_collision_margin = 10.0
+
+[node name="P2_down" type="ColorRect" parent="Portals2"]
+z_index = -3
+offset_left = 278.0
+offset_top = -558.0
+offset_right = 470.0
+offset_bottom = -554.0
+color = Color(0, 0.733333, 0.784314, 1)
+
+[node name="P2" type="Area2D" parent="Portals2/P2_down"]
+position = Vector2(284, 106)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals2/P2_down/P2"]
+position = Vector2(-188, -104)
+shape = SubResource("RectangleShape2D_c5q7j")
+one_way_collision_margin = 10.0
+
+[node name="VeloDect" type="Area2D" parent="Portals2"]
+z_index = -3
+position = Vector2(-378, -532)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals2/VeloDect"]
+position = Vector2(3.05176e-05, -2)
+shape = SubResource("RectangleShape2D_vf88h")
+
+[node name="VeloDect2" type="Area2D" parent="Portals2"]
+z_index = -3
+position = Vector2(377, -538)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals2/VeloDect2"]
+shape = SubResource("RectangleShape2D_vf88h")
+
+[node name="GravSwitch" type="Node" parent="."]
+script = ExtResource("42_5l0x6")
+
+[node name="GravSwitch1" type="Area2D" parent="GravSwitch"]
+position = Vector2(-88, -335)
+
+[node name="ColorRect" type="ColorRect" parent="GravSwitch/GravSwitch1"]
+offset_left = -84.0
+offset_top = -14.0
+offset_right = -56.0
+offset_bottom = 14.0
+scale = Vector2(3, 1)
+color = Color(0, 1, 1, 0.490196)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwitch/GravSwitch1"]
+position = Vector2(-42, 0)
+shape = SubResource("RectangleShape2D_o5osm")
+
+[node name="GravSwitch2" type="Area2D" parent="GravSwitch"]
+position = Vector2(88, -334)
+scale = Vector2(-1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="GravSwitch/GravSwitch2"]
+offset_left = -68.0
+offset_top = -14.0
+offset_right = -41.0
+offset_bottom = 14.0
+scale = Vector2(3, 1)
+color = Color(0, 1, 1, 0.490196)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwitch/GravSwitch2"]
+position = Vector2(-27, 0)
+shape = SubResource("RectangleShape2D_o5osm")
+
+[node name="Pause" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_top = -343.0
+offset_right = 1.0
+offset_bottom = -342.0
+script = ExtResource("40_ndbrv")
+
+[node name="Resume" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = -73.0
+offset_top = -1.0
+offset_right = 73.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(73, 20)
+theme = ExtResource("19_74ycg")
+text = "Resume"
+
+[node name="Title" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = -153.0
+offset_top = -100.5
+offset_right = 154.0
+offset_bottom = -59.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(153, 120)
+theme = ExtResource("19_74ycg")
+text = "Exit to Titlescreen"
+
+[node name="Previous" type="Button" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 30
+layout_mode = 0
+offset_left = -137.0
+offset_top = 99.0
+offset_right = 138.0
+offset_bottom = 140.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(137, -80)
+theme = ExtResource("19_74ycg")
+text = "Exit to Previous"
+
+[node name="Panel" type="Panel" parent="Pause"]
+process_mode = 3
+visible = false
+z_index = 29
+layout_mode = 0
+offset_left = -184.5
+offset_top = -125.5
+offset_right = 173.5
+offset_bottom = 157.5
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(179, 141)
+mouse_filter = 2
+theme = ExtResource("19_74ycg")
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="Lamp1" type="Node2D" parent="Lamps"]
+position = Vector2(-88, -335)
+
+[node name="Lamp2" type="Node2D" parent="Lamps"]
+z_index = 5
+position = Vector2(88, -334)
+
+[connection signal="area_entered" from="void" to="void" method="_on_area_entered"]
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
+[connection signal="timeout" from="void/TextTimer" to="void" method="_on_text_timer_timeout"]
+[connection signal="area_entered" from="void/void" to="void/void" method="_on_area_entered"]
+[connection signal="body_entered" from="void/void" to="void/void" method="_on_body_entered"]
+[connection signal="timeout" from="void/void/TextTimer" to="void/void" method="_on_text_timer_timeout"]
+[connection signal="body_entered" from="Players/Player 1/Spring/Spring" to="Players/Player 1" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 2/Spring/Spring" to="Players/Player 2" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 3/Spring/Spring" to="Players/Player 3" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 4/Spring/Spring" to="Players/Player 4" method="_on_spring_body_entered"]
+[connection signal="body_entered" from="Players/Player 5/Spring/Spring" to="Players/Player 5" method="_on_spring_body_entered"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer" to="Nuke Stuff/Nuke Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer2" to="Nuke Stuff/Nuke Spawner" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer3" to="Nuke Stuff/Nuke Spawner" method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Timer4" to="Nuke Stuff/Nuke Spawner" method="_on_timer_4_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/Swimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timeout"]
+[connection signal="timeout" from="Nuke Stuff/Nuke Spawner/SwimerTimer" to="Nuke Stuff/Nuke Spawner" method="_on_swimer_timer_timeout"]
+[connection signal="timeout" from="Modifier Stuff/Blackout Timer/Timer" to="Modifier Stuff/Blackout Timer" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Grounds/Ladders/Stepladder" to="Grounds/Ladders/Stepladder" method="_on_body_entered"]
+[connection signal="body_exited" from="Grounds/Ladders/Stepladder" to="Grounds/Ladders/Stepladder" method="_on_body_exited"]
+[connection signal="body_entered" from="Grounds/Ladders/Ladder1" to="Grounds/Ladders/Ladder1" method="_on_body_entered"]
+[connection signal="body_exited" from="Grounds/Ladders/Ladder1" to="Grounds/Ladders/Ladder1" method="_on_body_exited"]
+[connection signal="body_entered" from="Grounds/Ladders/Ladder2" to="Grounds/Ladders/Ladder2" method="_on_body_entered"]
+[connection signal="body_exited" from="Grounds/Ladders/Ladder2" to="Grounds/Ladders/Ladder2" method="_on_body_exited"]
+[connection signal="timeout" from="Timer/Timer" to="Timer" method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
+[connection signal="timeout" from="Power-Ups/Timer" to="Power-Ups" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Portals/P1/P1" to="Portals" method="_on_p_1_body_entered"]
+[connection signal="body_entered" from="Portals/P2/P2" to="Portals" method="_on_p_2_body_entered"]
+[connection signal="body_entered" from="Portals/VeloDect" to="Portals" method="_on_velo_dect_body_entered"]
+[connection signal="body_entered" from="Portals/VeloDect2" to="Portals" method="_on_velo_dect_body_entered"]
+[connection signal="body_entered" from="Portals2/P1_down/P1" to="Portals2" method="_on_p_1_body_entered"]
+[connection signal="body_entered" from="Portals2/P2_down/P2" to="Portals2" method="_on_p_2_body_entered"]
+[connection signal="body_entered" from="Portals2/VeloDect" to="Portals2" method="_on_velo_dect_body_entered"]
+[connection signal="body_entered" from="Portals2/VeloDect2" to="Portals2" method="_on_velo_dect_body_entered"]
+[connection signal="body_entered" from="GravSwitch/GravSwitch1" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
+[connection signal="body_entered" from="GravSwitch/GravSwitch2" to="GravSwitch" method="_on_grav_switch_1_body_entered"]
+[connection signal="pressed" from="Pause/Resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Title" to="Pause" method="_on_title_pressed"]
+[connection signal="pressed" from="Pause/Previous" to="Pause" method="_on_previous_pressed"]

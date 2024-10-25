@@ -581,9 +581,9 @@ texture = ExtResource("17_ofa6m")
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("15_xbgmn")
-GroundLeft = ExtResource("16_1c585")
+Ground_Left = ExtResource("16_1c585")
 Ground = ExtResource("17_q7kd4")
-GroundRight = ExtResource("18_t4g3v")
+Ground_Right = ExtResource("18_t4g3v")
 
 [node name="SpawnPos\'" type="Node" parent="."]
 

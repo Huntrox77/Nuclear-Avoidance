@@ -3,7 +3,7 @@ extends Node2D
 @onready var Modifier = get_node("/root/Modifiers")
 @onready var timer = $Explodimer
 @onready var raidus = $BlastRadius/CollisionShape2D
-@onready var Explosive_Point = $BlastRadius/Explosive_Point
+@onready var Explosive_Point = $BlastRadius/ExplosivePoint
 @onready var Explosive_Anim = $Explosion
 @onready var Nuke = $Nuke
 @onready var Yharon = $Yharon
@@ -34,7 +34,11 @@ func _ready():
 	# Sets the bombs rock sprtie randomly
 	var Random_Rock = randi_range(1,3)
 	# If the map has grav flipping, make it so bombs can spawn upsidedown and look alright
-	if Modifier.current_map == "map7" or Modifier.current_map == "map8" or Modifier.current_map == "map11":
+	if (
+			Modifier.current_map == "map7"
+			or Modifier.current_map == "map8"
+			or Modifier.current_map == "map11"
+	):
 		if rand_move_speed_Y <= 0:
 			position.y = 32
 			rotation = 135
@@ -212,6 +216,23 @@ func _ready():
 		spawn_radius2 = -315
 		neg_spawn_radius3 = 137
 		spawn_radius3 = 454
+	if Modifier.current_map == "map14":
+		$Bomb.queue_free()
+		if Random_Rock == 1:
+			$Rock1.show()
+			$Nuke.hide()
+		elif Random_Rock == 2:
+			$Rock2.show()
+			$Nuke.hide()
+		elif Random_Rock == 3:
+			$Rock3.show()
+			$Nuke.hide()
+		neg_spawn_radius = -447
+		spawn_radius = -323
+		neg_spawn_radius2 = -323
+		spawn_radius2 = 316
+		neg_spawn_radius3 = 316
+		spawn_radius3 = 440
 	if Modifier.current_map == "menu":
 		$Rock.queue_free()
 		neg_spawn_radius = -100
@@ -249,7 +270,7 @@ func _ready():
 	else:
 		move_x = 0
 		Randi_Player = randi_range(0,4)
-		_chooseplayer()
+		_choose_player()
 	
 	# Disables collision with nuke pre-explosion.
 	$BlastRadius/CollisionShape2D.disabled = true
@@ -259,7 +280,11 @@ func _process(_delta):
 	# If the follow modifier does not exist, use the normal falling code and reverse it on flip grav maps.
 	if Modifier.Follow == false:
 		if move == true:
-			if Modifier.current_map != "map7" and Modifier.current_map != "map8" and Modifier.current_map != "map11":
+			if (
+					not Modifier.current_map == "map7"
+					and not Modifier.current_map == "map8"
+					and not Modifier.current_map == "map11"
+			):
 				if move_x == -1:
 					position -= Vector2(-rand_move_speed * 0.5, -rand_move_speed) #Positive Diagonal Movement
 				elif move_x == 1:
@@ -278,12 +303,17 @@ func _process(_delta):
 		if move == true:
 			if position.y <= -325:
 				position.x = Modifier.player_X[Randi_Player]
-			if Modifier.current_map == "map7" or Modifier.current_map == "map8" or Modifier.current_map == "map11":
+			if (
+					Modifier.current_map == "map7" 
+					or Modifier.current_map == "map8" 
+					or Modifier.current_map == "map11"
+			):
 				position.y += rand_move_speed_Y
 				upsidedown_bomb = true
 			else :
 				position.y += rand_move_speed
 				upsidedown_bomb = false
+
 
 #Pre-Launching Exceptions and Arguments
 func prelaunch(body):
@@ -296,6 +326,7 @@ func prelaunch(body):
 	else:
 		launch(body)
 
+
 # Launches the player in the direction away from the explosion
 func launch(body):
 	#Change Y Launch for the Smash_bros gamemode.
@@ -303,7 +334,7 @@ func launch(body):
 		exp_speed = 1200
 		#Launches Player by getting their position and direction compared to the middle of the bomb (explosion point).
 	body.velocity = (Explosive_Point.global_position.direction_to(body.global_position) * exp_speed) * (Modifier.P_Speed / Halfit)
-	
+
 		#Change Y Launch for the Smash_bros gamemode.
 	if Modifier.Smash_bros:
 		pass
@@ -314,11 +345,13 @@ func launch(body):
 			body.velocity.y = randi_range(-450, -750) * (Modifier.P_Speed / Halfit)
 	# Makes it harder to control midair
 	if Modifier.Smash_bros == true:
-		body.aircontrol -= 0.01
+		body.air_control -= 0.01
+
 
 # Delete Itself
 func _on_explodimer_timeout():
 	queue_free()
+
 
 # Blasts the player
 func _on_blast_radius_body_entered(body):
@@ -333,8 +366,9 @@ func _on_blast_radius_body_entered(body):
 			body.position.y += 1000
 			body.timer.start()
 
+
 # Chooses a player to follow on homing gamemode
-func _chooseplayer():
+func _choose_player():
 	# Homing bomb chooses a player to home on.
 	if Randi_Player == 0 and Modifier.P1_Alive == true:
 		print("1")
@@ -349,10 +383,11 @@ func _chooseplayer():
 	else:
 		# If chosen player dead, re-chose the player
 		Randi_Player = randi_range(0,4)
-		_chooseplayer()
+		_choose_player()
 
 # Explosion Script
 func _on_body_entered(body):
+	$NukeBoom.play()
 	var Expl = Explosion.instantiate()
 	if body.name == "BlastRadius":
 		pass
@@ -366,7 +401,12 @@ func _on_body_entered(body):
 		# Adds Particles
 		get_parent().add_child(Expl)
 		# Colors particles to be rock on rock maps, otherwise gets the color of the ground.
-		if Modifier.current_map == "map9" or Modifier.current_map == "map10" or Modifier.current_map == "map12" or Modifier.current_map == "map13":
+		if (
+				Modifier.current_map == "map9" 
+				or Modifier.current_map == "map10" 
+				or Modifier.current_map == "map12" 
+				or Modifier.current_map == "map13"
+		):
 			Expl.get_child(0).color = Color(0.306, 0.133, 0)
 		else:
 			Expl.get_child(0).color = Color(body.get_child(0).color)

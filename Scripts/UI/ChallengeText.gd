@@ -1,5 +1,5 @@
 extends Label
-@onready var GlobalText = get_node("/root/GlobalTexts")
+@onready var Global_Text = get_node("/root/GlobalTexts")
 @onready var Modifier = get_node("/root/Modifiers")
 var Vis = 0
 # Called when the node enters the scene tree for the first time.
@@ -7,12 +7,12 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# More challenge UI text stuff
 func _process(_delta):
 	if name == "ChallengeText":
-		text = GlobalText.ChallengeText
+		text = Global_Text.Challenge_Text
 		visible_ratio = 1
 	else:
-		Vis = GlobalText.ChallengeTextVis
+		Vis = Global_Text.Challenge_Text_Vis
 		visible_ratio = Vis
-		text = GlobalText.DescText
+		text = Global_Text.Desc_Text

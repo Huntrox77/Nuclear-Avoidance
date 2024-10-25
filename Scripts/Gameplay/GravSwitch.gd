@@ -22,18 +22,36 @@ func _on_grav_switch_1_body_entered(body):
 		else:
 			body.velocity += Vector2(0, 100)
 		body.up_direction = Vector2(0, 1)
+		_rotate(180, body)
 	else:
 		if Modifier.Crumble == true:
 			body.velocity += Vector2(0, -250)
 		else:
 			body.velocity += Vector2(0, -100)
 		body.up_direction = Vector2(0, -1)
+		_rotate(180, body)
 	body.gravity = -body.gravity
-	body.JUMP_VELOCITY = -body.JUMP_VELOCITY
+	body.Jump_Velocity = -body.Jump_Velocity
 
 
 func _on_timer_timeout():
 	$DeleteSwitch.queue_free()
+
+
+func _rotate(deg, body):
+	var Start_Deg = 0
+	while not Start_Deg == deg:
+		Start_Deg += 5
+		body.set_rotation_degrees(body.get_rotation_degrees() + 5)
+		var timer = get_tree().create_timer(0.01)
+		timer.connect("timeout", _useless)
+		await timer.timeout
+
+
+func _useless():
+	pass
+
+
 
 # Reverses or normalizes gravity based on the players meta data by detecting it then changing its gravity,
 # and boosting it more than usual because of the crumble modifier otherwise players would lose instantly.
@@ -44,11 +62,13 @@ func _on_delete_switch_body_entered(body):
 		else:
 			body.velocity += Vector2(0, 100)
 		body.up_direction = Vector2(0, 1)
+		body.set_rotation_degrees(body.get_rotation_degrees() + 180)
 	else:
 		if Modifier.Crumble == true:
 			body.velocity += Vector2(0, -250)
 		else:
 			body.velocity += Vector2(0, -100)
 		body.up_direction = Vector2(0, -1)
+		body.set_rotation_degrees(body.get_rotation_degrees() + 180)
 	body.gravity = -body.gravity
-	body.JUMP_VELOCITY = -body.JUMP_VELOCITY
+	body.Jump_Velocity = -body.Jump_Velocity

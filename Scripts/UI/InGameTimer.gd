@@ -5,7 +5,9 @@ var No = 0.00
 var Number = "%.2f" % No
 var Minute = 0
 var Trans
-# Called when the node enters the scene tree for the first time.
+
+
+# Sets up the timer
 func _ready():
 	position.y = -625
 	Trans = get_parent().get_node("Trans")	
@@ -26,7 +28,7 @@ func _ready():
 func _process(_delta):
 	pass
 
-
+# Timer Function, increases time each millisecond and rounds it to be accurate
 func _on_timer_timeout():
 	No += 0.01
 	Number = "%.2f" % No

@@ -1,13 +1,14 @@
 extends CheckButton
 @onready var Modifier = get_node("/root/Modifiers")
 
-# Called when the node enters the scene tree for the first time.
+
+# Keeps modifer UI's on through scene switch
 func _ready():
 	if name == "Blackout":
 		if Modifier.Blackout == true:
 			button_pressed = true
-	if name == "SmashBros":
-		if Modifier.Smashbros == true:
+	if name == "Smash_bros":
+		if Modifier.Smash_bros == true:
 			button_pressed = true
 	if name == "Impaction":
 		if Modifier.Impaction == true:
@@ -29,6 +30,9 @@ func _ready():
 			button_pressed = true
 	if name == "HomingBombs":
 		if Modifier.Follow == true:
+			button_pressed = true
+	if name == "Reverse":
+		if Modifier.Reverse == true:
 			button_pressed = true
 	pass # Replace with function body.
 

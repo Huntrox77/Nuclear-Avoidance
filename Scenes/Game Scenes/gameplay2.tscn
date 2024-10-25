@@ -571,9 +571,9 @@ metadata/_edit_lock_ = true
 
 [node name="Grounds" type="Node" parent="."]
 script = ExtResource("15_hb7om")
-GroundLeft = ExtResource("16_ph17f")
+Ground_Left = ExtResource("16_ph17f")
 Ground = ExtResource("17_3qrgp")
-GroundRight = ExtResource("18_mwq87")
+Ground_Right = ExtResource("18_mwq87")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ppbij")

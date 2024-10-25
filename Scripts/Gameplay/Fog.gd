@@ -19,12 +19,23 @@ func _process(_delta):
 	# This gets the distance between the players and the furthest fog piece they can view due to their view distances, which is based on the density of the fog (due to more or less players)
 	TRANSPARENT_DIST = 128 / Player_No
 	OPAQUE_DIST = 255 / Player_No
-	var Players = [Modifier.Player_One, Modifier.Player_Two, Modifier.Player_Three, Modifier.Player_Four, Modifier.Player_Five]
-	var Lamps = [Modifier.Lamp_One, Modifier.Lamp_Two]
+	var Players = [
+			Modifier.Player_One,
+			Modifier.Player_Two,
+			Modifier.Player_Three,
+			Modifier.Player_Four,
+			Modifier.Player_Five
+	]
+
+	var Lamps = [
+			Modifier.Lamp_One,
+			Modifier.Lamp_Two
+	]
+
 	for i in get_children():
 		var distance = 100000000
 		for player in Players:
-			if !is_instance_valid(player): continue
+			if not is_instance_valid(player): continue
 			var d = i.global_position.distance_to(player.global_position)
 			if d < distance:
 				distance = d
@@ -36,7 +47,7 @@ func _process(_delta):
 			i.color.a = (distance - TRANSPARENT_DIST) / (OPAQUE_DIST - TRANSPARENT_DIST)
 		# Same thing but for the lamps in a level
 		for lamp in Lamps:
-			if !is_instance_valid(lamp): continue
+			if not is_instance_valid(lamp): continue
 			var d = i.global_position.distance_to(lamp.global_position)
 			if d < distance:
 				distance = d

@@ -9,9 +9,19 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Modifier.Clam == false:
-		if Input.is_key_pressed(KEY_C) and Input.is_key_pressed(KEY_L) and Input.is_key_pressed(KEY_A) and Input.is_key_pressed(KEY_M):
+		if (
+				Input.is_key_pressed(KEY_C) 
+				and Input.is_key_pressed(KEY_L) 
+				and Input.is_key_pressed(KEY_A) 
+				and Input.is_key_pressed(KEY_M)
+		):
 			show()
 			Modifier.Clam = true
-	elif Input.is_key_pressed(KEY_N) and Input.is_key_pressed(KEY_O) and Input.is_key_pressed(KEY_R) and Input.is_key_pressed(KEY_M):
+	elif (
+			Input.is_key_pressed(KEY_N) 
+			and Input.is_key_pressed(KEY_O) 
+			and Input.is_key_pressed(KEY_R) 
+			and Input.is_key_pressed(KEY_M)
+	):
 			hide()
 			Modifier.Clam = false

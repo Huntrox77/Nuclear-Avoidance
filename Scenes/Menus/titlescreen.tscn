@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://cjyo8w1fk21e7" path="res://Scenes/In Game Stuff/nuke_scene.tscn" id="7_r4wjf"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_uwdjg"]
 [ext_resource type="Script" path="res://Scripts/Gameplay/Void.gd" id="9_m05l0"]
-[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="10_ihrwe"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_n42oj"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_h4j2j"]
 [ext_resource type="AudioStream" uid="uid://bhuao8op8csq5" path="res://Music/04 - Threat - Outskirts.mp3" id="11_p5cbq"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_tsq2a"]
 [ext_resource type="AudioStream" uid="uid://diidthyshwnrr" path="res://Music/31 - Threat - Farm Arrays.mp3" id="13_a8p48"]
 [ext_resource type="AudioStream" uid="uid://bfppmgfpqqy48" path="res://Music/Threat_-_Chimney_Canopy_(The_Gutter).mp3" id="14_ohv0j"]
+[ext_resource type="AudioStream" uid="uid://cbnnptpb3vdtf" path="res://Music/21 - Weyuon.mp3" id="16_u8rwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3oj3v"]
 size = Vector2(417, 647)
@@ -254,7 +254,6 @@ autostart = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("9_m05l0")
-GroundLeft = ExtResource("10_ihrwe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 574)
@@ -288,16 +287,24 @@ wait_time = 3.0
 one_shot = true
 
 [node name="Outskirts" type="AudioStreamPlayer2D" parent="void"]
+visible = false
 stream = ExtResource("11_p5cbq")
+volume_db = -80.0
 
 [node name="SkyIslands" type="AudioStreamPlayer2D" parent="void"]
+visible = false
 stream = ExtResource("12_4262w")
+volume_db = -80.0
 
 [node name="FarmArrays" type="AudioStreamPlayer2D" parent="void"]
+visible = false
 stream = ExtResource("13_a8p48")
+volume_db = -80.0
 
 [node name="Cave" type="AudioStreamPlayer2D" parent="void"]
+visible = false
 stream = ExtResource("14_ohv0j")
+volume_db = -80.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(203, 7)
@@ -318,6 +325,10 @@ position = Vector2(-12, 13)
 scale = Vector2(0.613281, 0.613281)
 texture = ExtResource("12_tsq2a")
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_u8rwi")
+autoplay = true
 
 [connection signal="pressed" from="Buttons/Play Button" to="Buttons/Quit Game" method="_on_play_button_pressed"]
 [connection signal="pressed" from="Buttons/Play Online" to="Buttons/Quit Game" method="_on_tutorial_pressed"]

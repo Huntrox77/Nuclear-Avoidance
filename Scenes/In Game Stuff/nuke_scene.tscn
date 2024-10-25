@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://cjyo8w1fk21e7"]
+[gd_scene load_steps=27 format=3 uid="uid://cjyo8w1fk21e7"]
 
 [ext_resource type="Script" path="res://Scripts/Gameplay/Nuke.gd" id="1_qbu4d"]
 [ext_resource type="PackedScene" uid="uid://n78qi4ywrbwj" path="res://Scenes/In Game Stuff/Explosion.tscn" id="2_k1fqc"]
 [ext_resource type="Texture2D" uid="uid://4lvcuowqis5p" path="res://Sprites/Gifs/Explosion.png" id="3_w685a"]
 [ext_resource type="Texture2D" uid="uid://yh2l0hhq77oo" path="res://Sprites/InGame/Nuke.png" id="4_ye6k0"]
 [ext_resource type="Texture2D" uid="uid://85jesodrvog1" path="res://Sprites/InGame/Yharon.png" id="5_examj"]
+[ext_resource type="AudioStream" uid="uid://0x24t0r7stet" path="res://Sounds/deltarune-explosion.mp3" id="6_olsfk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02s5x"]
 atlas = ExtResource("3_w685a")
@@ -211,6 +212,10 @@ position = Vector2(158, 14)
 color = Color(0.305882, 0.133333, 0, 1)
 polygon = PackedVector2Array(-178, -48, -144, -37, -134, -19, -127, 26, -151, 47, -201, 38, -216, 17, -219, -13, -209, -38)
 
+[node name="NukeBoom" type="AudioStreamPlayer2D" parent="Nuke"]
+stream = ExtResource("6_olsfk")
+max_distance = 200000.0
+
 [node name="Nuke2" type="Area2D" parent="."]
 z_index = -4
 position = Vector2(464, -561)
@@ -277,6 +282,10 @@ visible = false
 position = Vector2(158, 14)
 color = Color(0.305882, 0.133333, 0, 1)
 polygon = PackedVector2Array(-178, -48, -144, -37, -134, -19, -127, 26, -151, 47, -201, 38, -216, 17, -219, -13, -209, -38)
+
+[node name="NukeBoom" type="AudioStreamPlayer2D" parent="Nuke2"]
+stream = ExtResource("6_olsfk")
+max_distance = 200000.0
 
 [node name="Nuke3" type="Area2D" parent="."]
 z_index = -4
@@ -345,6 +354,10 @@ position = Vector2(158, 14)
 color = Color(0.305882, 0.133333, 0, 1)
 polygon = PackedVector2Array(-178, -48, -144, -37, -134, -19, -127, 26, -151, 47, -201, 38, -216, 17, -219, -13, -209, -38)
 
+[node name="NukeBoom" type="AudioStreamPlayer2D" parent="Nuke3"]
+stream = ExtResource("6_olsfk")
+max_distance = 200000.0
+
 [node name="Nuke4" type="Area2D" parent="."]
 z_index = -4
 position = Vector2(464, -561)
@@ -411,6 +424,10 @@ visible = false
 position = Vector2(158, 14)
 color = Color(0.305882, 0.133333, 0, 1)
 polygon = PackedVector2Array(-178, -48, -144, -37, -134, -19, -127, 26, -151, 47, -201, 38, -216, 17, -219, -13, -209, -38)
+
+[node name="NukeBoom" type="AudioStreamPlayer2D" parent="Nuke4"]
+stream = ExtResource("6_olsfk")
+max_distance = 200000.0
 
 [connection signal="area_entered" from="Nuke" to="Nuke" method="_on_area_entered"]
 [connection signal="body_entered" from="Nuke" to="Nuke" method="_on_body_entered"]

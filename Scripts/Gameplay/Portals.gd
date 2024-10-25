@@ -1,5 +1,4 @@
 extends Node
-@onready var Global_Var = get_node("/root/MoreGlobalVars")
 var vel1 = 0.0
 var vel2 = 0.0
 var vel3 = 0.0
@@ -10,7 +9,7 @@ var portal1 = null
 var portal2 = null
 
 
-#se the portals
+#see the portals
 func _ready():
 	portal1 = get_child(0)
 	portal2 = get_child(1)
@@ -27,6 +26,8 @@ func _on_p_1_body_entered(body):
 		distance = body.position.x - portal1.position.x
 		if portal2.name == "P2-30":
 			body.position = portal2.position + Vector2(25, -50)
+		elif portal2.name == "P2_down":
+			body.position = portal2.position + Vector2(distance, 35)
 		else:
 			body.position = portal2.position + Vector2(distance, -20)
 		# if portal is angled at 30 degrees then teleport to other portal and apply x and y velocity from the velocity detected later in the script
@@ -63,7 +64,10 @@ func _on_p_2_body_entered(body):
 	#Just portal 1 but like the 2nd one lol
 	if body.has_meta("Player"):
 		distance = body.position.x - portal2.position.x
-		body.position = portal1.position + Vector2(distance, -20)
+		if portal1.name == "P1_down":
+			body.position = portal1.position + Vector2(distance, 35)
+		else:
+			body.position = portal1.position + Vector2(distance, -20)
 		if body.name == "Player 1":
 			body.velocity.y = -vel1
 		elif body.name == "Player 2":
@@ -74,6 +78,7 @@ func _on_p_2_body_entered(body):
 			body.velocity.y = -vel4
 		elif body.name == "Player 5":
 			body.velocity.y = -vel5
+		
 
 #Gets Velocity from area2d
 func _on_velo_dect_body_entered(body):

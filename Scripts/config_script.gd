@@ -35,10 +35,30 @@ func _ready():
 	Window_Mode = config.get_value("Window_Mode", "Choice", 1)
 	Res = config.get_value("Res", "Choice", 1)
 	# Challenge Save
-	Challenge_One_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[0] 
-	Challenge_Two_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[1]
-	Challenge_Three_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[2] 
-	Challenge_Four_Complete = config.get_value("Achivements", "Completed", [false, false, false, false])[3]
+	Challenge_One_Complete = config.get_value("Achivements", "Completed", [
+			false, 
+			false, 
+			false, 
+			false,
+		])[0] 
+	Challenge_Two_Complete = config.get_value("Achivements", "Completed", [
+			false, 
+			false, 
+			false, 
+			false,
+		])[1] 
+	Challenge_Three_Complete = config.get_value("Achivements", "Completed", [
+			false, 
+			false, 
+			false, 
+			false,
+		])[2]  
+	Challenge_Four_Complete = config.get_value("Achivements", "Completed", [
+			false, 
+			false, 
+			false, 
+			false,
+		])[3] 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -47,7 +67,12 @@ func _process(_delta):
 	config.set_value("Player2_Controls", "Controls", player2_controls)
 	config.set_value("Player3_Controls", "Controls", player3_controls)
 	config.set_value("Player4_Controls", "Controls", player4_controls)
-	achievements = [Challenge_One_Complete, Challenge_Two_Complete, Challenge_Three_Complete, Challenge_Four_Complete]
+	achievements = [
+			Challenge_One_Complete, 
+			Challenge_Two_Complete, 
+			Challenge_Three_Complete, 
+			Challenge_Four_Complete,
+		]
 	config.set_value("Text_Speed", "Choice", Text_Speed) 
 	config.set_value("Achivements", "Completed", achievements)
 	config.set_value("Modifiers", "Favourited", Favourites)

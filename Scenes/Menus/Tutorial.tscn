@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://dhni28atjui1l" path="res://Sprites/Grounds/Ground.png" id="8_7dk6w"]
 [ext_resource type="PackedScene" uid="uid://bghs6em6eqof8" path="res://Scenes/In Game Stuff/Sweeper.tscn" id="8_npqhx"]
 [ext_resource type="Texture2D" uid="uid://bbssk1535eews" path="res://Sprites/Grounds/GroundR.png" id="9_hedwl"]
-[ext_resource type="PackedScene" uid="uid://bql40rgm3ilgc" path="res://Scenes/In Game Stuff/Platform.tscn" id="9_makr3"]
 [ext_resource type="AudioStream" uid="uid://gap6g2yu8kx3" path="res://Sounds/25. Universal Collapse.mp3" id="10_gndqb"]
 [ext_resource type="Texture2D" uid="uid://dwnlkw12reoue" path="res://Sprites/Grounds/GroundL.png" id="10_hhlhn"]
 [ext_resource type="Script" path="res://Scripts/UI/Mouse.gd" id="11_4xfra"]
@@ -21,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dypdda6irmva" path="res://Sprites/Backgrounds/sky1.png" id="12_75huy"]
 [ext_resource type="Texture2D" uid="uid://cpvk7yem2u1tg" path="res://Sprites/InGame/1st.png" id="12_xdqs8"]
 [ext_resource type="Texture2D" uid="uid://4lvcuowqis5p" path="res://Sprites/Gifs/Explosion.png" id="13_1q5l2"]
+[ext_resource type="AudioStream" uid="uid://cbnnptpb3vdtf" path="res://Music/21 - Weyuon.mp3" id="21_2g81i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02s5x"]
 atlas = ExtResource("13_1q5l2")
@@ -752,7 +752,6 @@ autostart = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("5_330qo")
-GroundLeft = ExtResource("9_makr3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="void"]
 position = Vector2(-6, 574)
@@ -804,6 +803,10 @@ position = Vector2(-12, 13)
 scale = Vector2(0.613281, 0.613281)
 texture = ExtResource("12_75huy")
 metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_2g81i")
+autoplay = true
 
 [connection signal="pressed" from="Buttons/EndTutorial" to="Buttons/EndTutorial" method="_on_pressed"]
 [connection signal="pressed" from="Buttons/DotPanel/Button" to="Buttons/DotPanel" method="_on_button_pressed"]

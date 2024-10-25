@@ -1,10 +1,10 @@
 extends Control
 @onready var Modifier = get_node("/root/Modifiers")
-@onready var P1Button = get_node("P1")
-@onready var P2Button = get_node("P2")
-@onready var P3Button = get_node("P3")
-@onready var P4Button = get_node("P4")
-@onready var AdvModBut = $AdvMod
+@onready var P1_Button = get_node("P1")
+@onready var P2_Button = get_node("P2")
+@onready var P3_Button = get_node("P3")
+@onready var P4_Button = get_node("P4")
+@onready var Adv_Mod_But = $AdvMod
 var gold = preload("res://StyleBoxes/BlackBG_GoldOutline_StyleBox.tres")
 var white = preload("res://StyleBoxes/BlackBG_WhiteOutline_StyleBox.tres")
 var white_outline = preload("res://StyleBoxes/WhiteOutline_StyleBox.tres")
@@ -17,26 +17,26 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#Players
-	if Modifier.p1selection == true:
-		P1Button.button_pressed = true
-		P1Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+	if Modifier.p1_selection == true:
+		P1_Button.button_pressed = true
+		P1_Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
 	else:
-		P1Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
-	if Modifier.p2selection == true:
-		P2Button.button_pressed = true
-		P2Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+		P1_Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
+	if Modifier.p2_selection == true:
+		P2_Button.button_pressed = true
+		P2_Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
 	else:
-		P2Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
-	if Modifier.p3selection == true:
-		P3Button.button_pressed = true
-		P3Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+		P2_Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
+	if Modifier.p3_selection == true:
+		P3_Button.button_pressed = true
+		P3_Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
 	else:
-		P3Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
-	if Modifier.p4selection == true:
-		P4Button.button_pressed = true
-		P4Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
+		P3_Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
+	if Modifier.p4_selection == true:
+		P4_Button.button_pressed = true
+		P4_Button.get_child(0).add_theme_stylebox_override("panel", gold_outline)
 	else:
-		P4Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
+		P4_Button.get_child(0).add_theme_stylebox_override("panel",  white_outline)
 	#Maps
 	if Modifier.loop == true:
 		$"Loop Button".button_pressed = true
@@ -105,41 +105,46 @@ func _process(_delta):
 		$"Map Container/HBoxContainer/Map13".add_theme_stylebox_override("panel", gold)
 	else:
 		$"Map Container/HBoxContainer/Map13".add_theme_stylebox_override("panel", white)
+	if Modifier.map14 == true:
+		$"Map Container/HBoxContainer/Map14/Map14".button_pressed = true
+		$"Map Container/HBoxContainer/Map14".add_theme_stylebox_override("panel", gold)
+	else:
+		$"Map Container/HBoxContainer/Map14".add_theme_stylebox_override("panel", white)
 
 func _on_p_1_pressed():
-	Modifier.p1selection = not Modifier.p1selection
-	if Modifier.p1selection == true:
-		Modifier.playersleft += 1
+	Modifier.p1_selection = not Modifier.p1_selection
+	if Modifier.p1_selection == true:
+		Modifier.players_left += 1
 	else:
-		Modifier.playersleft -= 1
+		Modifier.players_left -= 1
 
 
 func _on_p_2_pressed():
-	Modifier.p2selection = not Modifier.p2selection
-	if Modifier.p2selection == true:
-		Modifier.playersleft += 1
+	Modifier.p2_selection = not Modifier.p2_selection
+	if Modifier.p2_selection == true:
+		Modifier.players_left += 1
 	else:
-		Modifier.playersleft -= 1
+		Modifier.players_left -= 1
 
 
 func _on_p_3_pressed():
-	Modifier.p3selection = not Modifier.p3selection
-	if Modifier.p3selection == true:
-		Modifier.playersleft += 1
+	Modifier.p3_selection = not Modifier.p3_selection
+	if Modifier.p3_selection == true:
+		Modifier.players_left += 1
 	else:
-		Modifier.playersleft -= 1
+		Modifier.players_left -= 1
 
 
 func _on_p_4_pressed():
-	Modifier.p4selection = not Modifier.p4selection
-	if Modifier.p4selection == true:
-		Modifier.playersleft += 1
+	Modifier.p4_selection = not Modifier.p4_selection
+	if Modifier.p4_selection == true:
+		Modifier.players_left += 1
 	else:
-		Modifier.playersleft -= 1
+		Modifier.players_left -= 1
 
 
 func _on_smash_bros_button_pressed():
-	Modifier.Smashbros = not Modifier.Smashbros
+	Modifier.Smash_bros = not Modifier.Smash_bros
 	pass # Replace with function body.
 
 
@@ -164,10 +169,10 @@ func _on_sweeper_pressed():
 
 func _on_ice_pressed():
 	Modifier.Ice = not Modifier.Ice
-	if Modifier.PSpeed == 200:
-		Modifier.PSpeed = 100
-	elif Modifier.PSpeed == 100:
-		Modifier.PSpeed = 200
+	if Modifier.P_Speed == 200:
+		Modifier.P_Speed = 100
+	elif Modifier.P_Speed == 100:
+		Modifier.P_Speed = 200
 
 
 func _on_fog_pressed():
@@ -186,6 +191,10 @@ func _on_collide_pressed():
 
 func _on_homing_bombs_pressed():
 	Modifier.Follow = not Modifier.Follow
+
+
+func _on_reverse_pressed():
+	Modifier.Reverse = not Modifier.Reverse
 
 
 func _on_adv_mod_pressed():
@@ -247,3 +256,7 @@ func _on_map_12_pressed():
 
 func _on_map_13_pressed():
 	Modifier.map13 = not Modifier.map13
+
+
+func _on_map_14_pressed():
+	Modifier.map14 = not Modifier.map14

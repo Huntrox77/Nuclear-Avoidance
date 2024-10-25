@@ -142,9 +142,8 @@ vertical_alignment = 1
 process_mode = 3
 layout_mode = 3
 anchors_preset = 0
-offset_top = -343.0
 offset_right = 1.0
-offset_bottom = -342.0
+offset_bottom = 1.0
 script = ExtResource("15_lg13q")
 
 [node name="Resume" type="Button" parent="Pause"]

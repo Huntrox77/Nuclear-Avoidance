@@ -132,7 +132,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	# Use the normal falling code and reverse it on flip grav maps.
-	if Modifier.current_map != "map7" and Modifier.current_map != "map8":
+	if not Modifier.current_map == "map7" and not Modifier.current_map == "map8":
 		if move_x == -1:
 			position -= Vector2(-rand_move_speed * 0.5, -rand_move_speed) #Positive Diagonal Movement
 		elif move_x == 1:

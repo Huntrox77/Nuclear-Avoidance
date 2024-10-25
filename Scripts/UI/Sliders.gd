@@ -1,39 +1,41 @@
 extends HSlider
 @onready var Modifier = get_node("/root/Modifiers")
 @onready var Per = $Percentage
-# Called when the node enters the scene tree for the first time.
+
+
+# Prepares the sliders 
 func _ready():
 	if name == "DMNSC":
 		value = Modifier.DMNSC
 	if name == "Gravity":
-		value = Modifier.GravityMult
+		value = Modifier.Gravity_Mult
 	if name == "Speed":
-		value = Modifier.PSpeed
+		value = Modifier.P_Speed
 	if name == "Power Min Time":
-		value = Modifier.powermintime
+		value = Modifier.power_min_time
 	if name == "Power Max Time":
-		value = Modifier.powermaxtime
+		value = Modifier.power_max_time
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# sets sliders to represent the values.
 func _process(_delta):
 	if name == "DMNSC":
-		var valueamount = value * 100 / 4
+		var value_amount = value * 100 / 4
 		Modifier.DMNSC = value
-		Per.text = str(valueamount) + "% of the normal amount"
+		Per.text = str(value_amount) + "% of the normal amount"
 	if name == "Gravity":
-		var valueamount = value
-		Modifier.GravityMult = value
-		Per.text = str(valueamount) + "%"
+		var value_amount = value
+		Modifier.Gravity_Mult = value
+		Per.text = str(value_amount) + "%"
 	if name == "Speed":
-		var valueamount = value
-		Modifier.PSpeed = value
-		Per.text = str(valueamount) + "%"
+		var value_amount = value
+		Modifier.P_Speed = value
+		Per.text = str(value_amount) + "%"
 	if name == "Power Min Time":
-		var valueamount = value
-		Modifier.powermintime = value
-		Per.text = str(valueamount) + "s"
+		var value_amount = value
+		Modifier.power_min_time = value
+		Per.text = str(value_amount) + "s"
 	if name == "Power Max Time":
-		var valueamount = value
-		Modifier.powermaxtime = value
-		Per.text = str(valueamount) + "s"
+		var value_amount = value
+		Modifier.power_max_time = value
+		Per.text = str(value_amount) + "s"
