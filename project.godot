@@ -13,8 +13,9 @@ config_version=5
 config/name="Nuclear Avoidance"
 config/description="Bomb go woo
 "
+config/tags=PackedStringArray("2024", "school")
 run/main_scene="res://Scenes/Menus/titlescreen.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0.290196, 0.0784314, 0.211765, 1)
 boot_splash/image="res://Sprites/InGame/Nuke.png"
